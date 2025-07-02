@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azure.Api.Generator", "src\Azure.Api.Generator\Azure.Api.Generator.csproj", "{94A4C450-5054-40B0-A00A-FA940F0193BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azure.Files.Emulator", "src\Azure.Files.Emulator\Azure.Files.Emulator.csproj", "{C6732219-349B-4817-96DB-3D3D5B133670}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1B49274A-584D-4A35-A05F-FF34C3E960A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azure.Api.Generator.Tests", "tests\Azure.Api.Generator.Tests\Azure.Api.Generator.Tests.csproj", "{0FDB3B46-A8FA-41DA-BE52-565C3125DCF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94A4C450-5054-40B0-A00A-FA940F0193BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94A4C450-5054-40B0-A00A-FA940F0193BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94A4C450-5054-40B0-A00A-FA940F0193BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94A4C450-5054-40B0-A00A-FA940F0193BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6732219-349B-4817-96DB-3D3D5B133670}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6732219-349B-4817-96DB-3D3D5B133670}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6732219-349B-4817-96DB-3D3D5B133670}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6732219-349B-4817-96DB-3D3D5B133670}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FDB3B46-A8FA-41DA-BE52-565C3125DCF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FDB3B46-A8FA-41DA-BE52-565C3125DCF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FDB3B46-A8FA-41DA-BE52-565C3125DCF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FDB3B46-A8FA-41DA-BE52-565C3125DCF9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0FDB3B46-A8FA-41DA-BE52-565C3125DCF9} = {1B49274A-584D-4A35-A05F-FF34C3E960A8}
+	EndGlobalSection
+EndGlobal

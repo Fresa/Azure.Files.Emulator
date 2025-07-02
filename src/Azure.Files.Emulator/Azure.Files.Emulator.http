@@ -1,0 +1,6 @@
+@Azure.Files.Emulator_HostAddress = http://localhost:5210
+
+GET {{Azure.Files.Emulator_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
