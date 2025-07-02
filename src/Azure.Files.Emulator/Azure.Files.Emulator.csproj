@@ -11,9 +11,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="..\Microsoft.FileStorage.ApiSpecs\stable\2025-11-05\file.json">
-        <Link>file.json</Link>
-      </Content>
+        <ProjectReference Include="..\Azure.Api.Generator\Azure.Api.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
     </ItemGroup>
 
+    <ItemGroup>
+        <None Remove="..\Microsoft.FileStorage.ApiSpecs\stable\2025-11-05\file.json"/>
+        <AdditionalFiles Include="..\Microsoft.FileStorage.ApiSpecs\stable\2025-11-05\file.json"/>
+    </ItemGroup>
 </Project>
