@@ -11,18 +11,31 @@
 
         <RootNamespace>Azure.Api.Generator</RootNamespace>
         <PackageId>Azure.Api.Generator</PackageId>
+
+        <GetTargetPathDependsOn>$(GetTargetPathDependsOn);GetDependencyTargetPaths</GetTargetPathDependsOn>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Corvus.Json.SourceGeneratorTools" Version="4.3.11" />
+        <PackageReference Include="Microsoft.Bcl.HashCode" Version="1.1.1" PrivateAssets="all" GeneratePathProperty="true" />
+        <PackageReference Include="Corvus.Json.SourceGeneratorTools" Version="4.3.13" PrivateAssets="all" GeneratePathProperty="true"/>
         <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="4.14.0">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.14.0" />
-        <PackageReference Include="Microsoft.OpenApi" Version="1.6.24" />
-        <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.24" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.14.0" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.OpenApi" Version="1.6.24" OutputItemType="Analyzer" PrivateAssets="all" GeneratePathProperty="true" />
+        <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.24" OutputItemType="Analyzer" PrivateAssets="all" GeneratePathProperty="true" />
+        <PackageReference Include="SharpYaml" Version="2.1.1" OutputItemType="Analyzer" PrivateAssets="all" GeneratePathProperty="true" />
     </ItemGroup>
 
+    <Target Name="GetDependencyTargetPaths">
+        <ItemGroup>
+            <TargetPathWithTargetPlatformMoniker Include="$(PkgCorvus_Json_SourceGeneratorTools)\lib\netstandard2.0\*.dll" IncludeRuntimeDependency="false" />
+            <TargetPathWithTargetPlatformMoniker Include="$(PkgMicrosoft_OpenApi)\lib\netstandard2.0\*.dll" IncludeRuntimeDependency="false" />
+            <TargetPathWithTargetPlatformMoniker Include="$(PkgMicrosoft_OpenApi_Readers)\lib\netstandard2.0\*.dll" IncludeRuntimeDependency="false" />
+            <TargetPathWithTargetPlatformMoniker Include="$(PkgSharpYaml)\lib\netstandard2.0\*.dll" IncludeRuntimeDependency="false" />
+            <TargetPathWithTargetPlatformMoniker Include="$(PkgMicrosoft_Bcl_HashCode)\lib\netstandard2.0\*.dll" IncludeRuntimeDependency="false" />
+        </ItemGroup>
+    </Target>
 
 </Project>

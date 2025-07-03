@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using Azure.Api.Generator.Extensions;
 using Corvus.Json;
 using Corvus.Json.CodeGeneration;
@@ -20,14 +19,15 @@ using Microsoft.OpenApi.Writers;
 namespace Azure.Api.Generator;
 
 [Generator]
-public class ApiGenerator : IIncrementalGenerator
+public sealed class ApiGenerator : IIncrementalGenerator
 {
-        
     private static readonly IDocumentResolver MetaSchemaResolver = SourceGeneratorHelpers.CreateMetaSchemaResolver();
     private static readonly VocabularyRegistry VocabularyRegistry = SourceGeneratorHelpers.CreateVocabularyRegistry(MetaSchemaResolver);
 
     public void Initialize(IncrementalGeneratorInitializationContext context)
     {
+        // Debugger.Launch();
+
         var provider = context.AdditionalTextsProvider
             .Where(additionalText => Path.GetFileName(additionalText.Path).EndsWith(".json"))
             .Select((text, token) => new OpenApiStreamReader().Read(text.AsStream(), out _))
@@ -194,14 +194,4 @@ public class ApiGenerator : IIncrementalGenerator
             // Doesn't work
             description: null,
             customTags: WellKnownDiagnosticTags.AnalyzerException);
-}
-
-public class InMemoryAdditionalText(string path, string content) : AdditionalText
-{
-    public override SourceText? GetText(CancellationToken cancellationToken = new CancellationToken())
-    {
-        return SourceText.From(content);
-    }
-
-    public override string Path { get; } = path;
 }
