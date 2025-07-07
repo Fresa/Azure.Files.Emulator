@@ -11,7 +11,6 @@ using Corvus.Json.SourceGeneratorTools;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Text;
-using Microsoft.OpenApi.Extensions;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
 using Microsoft.OpenApi.Writers;
@@ -33,7 +32,8 @@ public sealed class ApiGenerator : IIncrementalGenerator
             .Select((text, token) => new OpenApiStreamReader().Read(text.AsStream(), out _))
             .Collect();
         
-        context.RegisterSourceOutput(provider, WithExceptionReporting<ImmutableArray<OpenApiDocument>>(GenerateCode));
+        var openapiDocumentProvider = provider.Select((array, _) => array.First());
+        context.RegisterSourceOutput(openapiDocumentProvider, WithExceptionReporting<OpenApiDocument>(GenerateCode));
         
         // Get global options
         var globalOptions =
@@ -45,35 +45,40 @@ public sealed class ApiGenerator : IIncrementalGenerator
                     alwaysAssertFormat: true,
                     ImmutableArray<string>.Empty));
 
-        var parameterReferences = provider.Select((array, token) => array.First())
-            .Select((document, token) =>
-                document.Paths.SelectMany((item, i) =>
-                        item.Value.Parameters.Select(parameter =>
+        var parameterReferences = openapiDocumentProvider
+            .Select((document, _) =>
+                document.Paths.SelectMany((path, i) =>
+                    {
+                        var pathItem = path.Value;
+                        var entityType = path.Key.ToPascalCase();
+                        return pathItem.Parameters.Select(parameter =>
                         {
-                            var r = parameter.Reference;
-                            using var sq = new StringWriter();
-                            var oajw = new OpenApiJsonWriter(sq);
+                            using var schemaWriter = new StringWriter();
+                            var openApiSchemaWriter = new OpenApiJsonWriter(schemaWriter);
                             parameter.Schema.SerializeAsV2WithoutReference(
-                                oajw);
+                                openApiSchemaWriter);
                             return new
                             {
-                                Parameter = parameter, Schema = sq.GetStringBuilder().ToString(),
-                                Location = $"//tmp/{i}{parameter.Name}{parameter.In}.json"
+                                Parameter = parameter,
+                                Schema = schemaWriter.GetStringBuilder().ToString(),
+                                Location = $"/{i}{parameter.Name}{parameter.In}.json",
+                                Namespace = entityType
                             };
-                        }))
+                        });
+                    })
                     .ToList());
         
-        var generationSpecifications = parameterReferences.SelectMany((enumerable, token) => 
-            enumerable.Select(s =>
+        var generationSpecifications = parameterReferences.SelectMany((enumerable, _) => 
+            enumerable.Select(parameterSpec =>
                 new SourceGeneratorHelpers.GenerationSpecification(
-                    ns: "test", 
-                    typeName: s.Parameter.Name+s.Parameter.In, 
-                    location: s.Location,
+                    ns: parameterSpec.Namespace, 
+                    typeName: parameterSpec.Parameter.Name.ToPascalCase() + parameterSpec.Parameter.In.ToString().ToPascalCase(), 
+                    location: parameterSpec.Location,
                     rebaseToRootPath: false))
                 .ToList());
         
         var documentResolver = parameterReferences
-            .Select((enumerable, token) => 
+            .Select((enumerable, _) => 
                 enumerable.Select(AdditionalText (arg) => 
                     new InMemoryAdditionalText(arg.Location, arg.Schema)))
             .Select((texts, token) => SourceGeneratorHelpers.BuildDocumentResolver([..texts], token));
@@ -91,17 +96,13 @@ public sealed class ApiGenerator : IIncrementalGenerator
         context.RegisterSourceOutput(typesToGenerate, GenerateCode);
     }
 
-    private void GenerateCode(SourceProductionContext context, ImmutableArray<OpenApiDocument> openApiDocuments)
+    private void GenerateCode(SourceProductionContext context, OpenApiDocument openApiDoc)
     {
-        var openApiDoc = openApiDocuments.FirstOrDefault();
-        if (openApiDoc is null)
-            return;
-        
         foreach (var path in openApiDoc.Paths)
         {
             foreach (var operation in path.Value.Operations)
             {
-                var operationName = operation.Value.OperationId.ToPascalCase('_');
+                var operationName = operation.Value.OperationId.ToPascalCase();
                 var source =
                     $$"""
                       namespace Endpoints;
@@ -114,18 +115,13 @@ public sealed class ApiGenerator : IIncrementalGenerator
                 context.AddSource($"{operationName}.g.cs", ParseCSharpCode(source));
                 
             }
-            
         }
-
     }
-
 
     private static void GenerateCode(SourceProductionContext context, SourceGeneratorHelpers.TypesToGenerate generationSource)
     {
         SourceGeneratorHelpers.GenerateCode(context, generationSource, VocabularyRegistry);
-        
     }
-
 
     private static SourceText ParseCSharpCode(string code, bool normalize = true)
     {
