@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
 using System.IO;
@@ -48,18 +49,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
 
         var typeSpec = openapiDocumentProvider
             .Select((document, _) =>
-                document.Paths.SelectMany(path =>
-                    {
-                        var pathItem = path.Value;
-                        var entityType = path.Key.ToPascalCase();
-                        return pathItem.Parameters.Select(parameter => new TypeSpecification(
-                            name: parameter.Name.ToPascalCase() + parameter.In.ToString().ToPascalCase(),
-                            schema: new InMemoryAdditionalText(
-                                $"/{entityType}-{parameter.Name}-{parameter.In}.json",
-                                parameter.Schema.SerializeToJson()),
-                            @namespace: entityType
-                        ));
-                    })
+                document.Paths.SelectMany(path => ExtractTypeSpecifications(path.Key, path.Value))
                     .ToList());
         
         var generationSpecifications = typeSpec.SelectMany((enumerable, _) => 
@@ -89,6 +79,41 @@ public sealed class ApiGenerator : IIncrementalGenerator
         context.RegisterSourceOutput(typesToGenerate, GenerateCode);
     }
 
+    private static IEnumerable<TypeSpecification> ExtractTypeSpecifications(string pathExpression, OpenApiPathItem pathItem)
+    {
+        var entityType = pathExpression.ToPascalCase();
+
+        foreach (var parameter in pathItem.Parameters)
+        {
+            var parameterTypeSpecification = new TypeSpecification(
+                parameter.Name.ToPascalCase() + parameter.In.ToString().ToPascalCase(),
+                schema: new InMemoryAdditionalText(
+                    $"/{entityType}-{parameter.Name}-{parameter.In}.json",
+                    parameter.Schema.SerializeToJson()),
+                @namespace: entityType
+            );
+            yield return parameterTypeSpecification;
+        }
+
+        foreach (var openApiOperation in pathItem.Operations)
+        {
+            var type = openApiOperation.Key;
+            var operation = openApiOperation.Value;
+            var operationId = ((string?)operation.OperationId ?? type.ToString()).ToPascalCase();
+            foreach (var parameter in operation.Parameters)
+            {
+                var parameterTypeSpecification = new TypeSpecification(
+                    parameter.Name.ToPascalCase() + parameter.In.ToString().ToPascalCase(),
+                    schema: new InMemoryAdditionalText(
+                        $"/{entityType}-{operationId}-{parameter.Name}-{parameter.In}.json",
+                        parameter.Schema.SerializeToJson()),
+                    @namespace: $"{entityType}.{operationId}"
+                );
+                yield return parameterTypeSpecification;
+            } 
+        }
+    }
+    
     private void GenerateCode(SourceProductionContext context, OpenApiDocument openApiDoc)
     {
         foreach (var path in openApiDoc.Paths)
