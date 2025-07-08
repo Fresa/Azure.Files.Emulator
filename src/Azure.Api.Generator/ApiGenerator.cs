@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using Azure.Api.Generator.CodeGeneration;
 using Azure.Api.Generator.Extensions;
 using Corvus.Json;
 using Corvus.Json.CodeGeneration;
@@ -47,18 +48,17 @@ public sealed class ApiGenerator : IIncrementalGenerator
 
         var typeSpec = openapiDocumentProvider
             .Select((document, _) =>
-                document.Paths.SelectMany((path, i) =>
+                document.Paths.SelectMany(path =>
                     {
                         var pathItem = path.Value;
                         var entityType = path.Key.ToPascalCase();
-                        return pathItem.Parameters.Select(parameter => new
-                        {
-                            TypeName = parameter.Name.ToPascalCase() + parameter.In.ToString().ToPascalCase(),
-                            Schema = new InMemoryAdditionalText(
+                        return pathItem.Parameters.Select(parameter => new TypeSpecification(
+                            name: parameter.Name.ToPascalCase() + parameter.In.ToString().ToPascalCase(),
+                            schema: new InMemoryAdditionalText(
                                 $"/{entityType}-{parameter.Name}-{parameter.In}.json",
                                 parameter.Schema.SerializeToJson()),
-                            Namespace = entityType
-                        });
+                            @namespace: entityType
+                        ));
                     })
                     .ToList());
         
@@ -66,7 +66,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
             enumerable.Select(parameterSpec =>
                 new SourceGeneratorHelpers.GenerationSpecification(
                     ns: parameterSpec.Namespace, 
-                    typeName: parameterSpec.TypeName, 
+                    typeName: parameterSpec.Name, 
                     location: parameterSpec.Schema.Path,
                     rebaseToRootPath: false))
                 .ToList());

@@ -2,7 +2,7 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Text;
 
-namespace Azure.Api.Generator;
+namespace Azure.Api.Generator.CodeGeneration;
 
 public class InMemoryAdditionalText(string path, string content) : AdditionalText
 {
