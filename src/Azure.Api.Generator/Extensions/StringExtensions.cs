@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace Azure.Api.Generator.Extensions;
@@ -6,9 +7,11 @@ namespace Azure.Api.Generator.Extensions;
 internal static class StringExtensions
 {
     private static readonly char[] DefaultDelimiters = ['/', '?', '=', '&', '{', '}', '-', '_'];
-    public static string ToPascalCase(this string str, params char[] delimiters)
+    
+    [return: NotNullIfNotNull(nameof(str))]
+    public static string? ToPascalCase(this string? str, params char[] delimiters)
     {
-        if (string.IsNullOrEmpty(str))
+        if (str is null or "")
         {
             return str;
         }
