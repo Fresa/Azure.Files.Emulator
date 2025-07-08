@@ -45,42 +45,35 @@ public sealed class ApiGenerator : IIncrementalGenerator
                     alwaysAssertFormat: true,
                     ImmutableArray<string>.Empty));
 
-        var parameterReferences = openapiDocumentProvider
+        var typeSpec = openapiDocumentProvider
             .Select((document, _) =>
                 document.Paths.SelectMany((path, i) =>
                     {
                         var pathItem = path.Value;
                         var entityType = path.Key.ToPascalCase();
-                        return pathItem.Parameters.Select(parameter =>
+                        return pathItem.Parameters.Select(parameter => new
                         {
-                            using var schemaWriter = new StringWriter();
-                            var openApiSchemaWriter = new OpenApiJsonWriter(schemaWriter);
-                            parameter.Schema.SerializeAsV2WithoutReference(
-                                openApiSchemaWriter);
-                            return new
-                            {
-                                Parameter = parameter,
-                                Schema = schemaWriter.GetStringBuilder().ToString(),
-                                Location = $"/{i}{parameter.Name}{parameter.In}.json",
-                                Namespace = entityType
-                            };
+                            TypeName = parameter.Name.ToPascalCase() + parameter.In.ToString().ToPascalCase(),
+                            Schema = new InMemoryAdditionalText(
+                                $"/{entityType}-{parameter.Name}-{parameter.In}.json",
+                                parameter.Schema.SerializeToJson()),
+                            Namespace = entityType
                         });
                     })
                     .ToList());
         
-        var generationSpecifications = parameterReferences.SelectMany((enumerable, _) => 
+        var generationSpecifications = typeSpec.SelectMany((enumerable, _) => 
             enumerable.Select(parameterSpec =>
                 new SourceGeneratorHelpers.GenerationSpecification(
                     ns: parameterSpec.Namespace, 
-                    typeName: parameterSpec.Parameter.Name.ToPascalCase() + parameterSpec.Parameter.In.ToString().ToPascalCase(), 
-                    location: parameterSpec.Location,
+                    typeName: parameterSpec.TypeName, 
+                    location: parameterSpec.Schema.Path,
                     rebaseToRootPath: false))
                 .ToList());
-        
-        var documentResolver = parameterReferences
-            .Select((enumerable, _) => 
-                enumerable.Select(AdditionalText (arg) => 
-                    new InMemoryAdditionalText(arg.Location, arg.Schema)))
+
+        var documentResolver = typeSpec
+            .Select((enumerable, _) =>
+                enumerable.Select(AdditionalText (arg) => arg.Schema))
             .Select((texts, token) => SourceGeneratorHelpers.BuildDocumentResolver([..texts], token));
 
         var generationContext = 
