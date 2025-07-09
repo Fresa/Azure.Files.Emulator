@@ -15,7 +15,6 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Text;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
-using Microsoft.OpenApi.Writers;
 
 namespace Azure.Api.Generator;
 
@@ -35,7 +34,6 @@ public sealed class ApiGenerator : IIncrementalGenerator
             .Collect();
         
         var openapiDocumentProvider = provider.Select((array, _) => array.First());
-        context.RegisterSourceOutput(openapiDocumentProvider, WithExceptionReporting<OpenApiDocument>(GenerateCode));
         
         // Get global options
         var globalOptions =
@@ -47,98 +45,74 @@ public sealed class ApiGenerator : IIncrementalGenerator
                     alwaysAssertFormat: true,
                     ImmutableArray<string>.Empty));
 
-        var typeSpec = openapiDocumentProvider
-            .Select((document, _) =>
-                document.Paths.SelectMany(path => ExtractTypeSpecifications(path.Key, path.Value))
-                    .ToList());
-        
-        var generationSpecifications = typeSpec.SelectMany((enumerable, _) => 
-            enumerable.Select(parameterSpec =>
-                new SourceGeneratorHelpers.GenerationSpecification(
-                    ns: parameterSpec.Namespace, 
-                    typeName: parameterSpec.Name, 
-                    location: parameterSpec.Schema.Path,
-                    rebaseToRootPath: false))
-                .ToList());
+        var openApiProvider = globalOptions.Combine(openapiDocumentProvider);
+     
+        context.RegisterSourceOutput(openApiProvider, WithExceptionReporting<(SourceGeneratorHelpers.GlobalOptions, OpenApiDocument)>(GenerateCode));
+    }
 
-        var documentResolver = typeSpec
-            .Select((enumerable, _) =>
-                enumerable.Select(AdditionalText (arg) => arg.Schema))
-            .Select((texts, token) => SourceGeneratorHelpers.BuildDocumentResolver([..texts], token));
-
-        var generationContext = 
-            documentResolver.Combine(globalOptions)
-                .Select((r, c) => 
-                    new SourceGeneratorHelpers.GenerationContext(r.Left, r.Right));
+    private static void GenerateCode(SourceProductionContext context, (SourceGeneratorHelpers.GlobalOptions Options, OpenApiDocument OpenApiDocument) generatorContext)
+    {
+        var openApi = generatorContext.OpenApiDocument;
+        var globalOptions = generatorContext.Options;
+        var schemas = new List<InMemoryAdditionalText>();
+        var generationSpecifications = new List<SourceGeneratorHelpers.GenerationSpecification>();
+        foreach (var path in openApi.Paths)
+        {
+            var pathExpression = path.Key;
+            var pathItem = path.Value;
+            var entityType = pathExpression.ToPascalCase();
             
-        var typesToGenerate = 
-            generationSpecifications.Collect()
-                .Combine(generationContext).Select((c, t) => 
-                    new SourceGeneratorHelpers.TypesToGenerate(c.Left, c.Right));
-
-        context.RegisterSourceOutput(typesToGenerate, GenerateCode);
-    }
-
-    private static IEnumerable<TypeSpecification> ExtractTypeSpecifications(string pathExpression, OpenApiPathItem pathItem)
-    {
-        var entityType = pathExpression.ToPascalCase();
-
-        foreach (var parameter in pathItem.Parameters)
-        {
-            var parameterTypeSpecification = new TypeSpecification(
-                parameter.Name.ToPascalCase() + parameter.In.ToString().ToPascalCase(),
-                schema: new InMemoryAdditionalText(
-                    $"/{entityType}-{parameter.Name}-{parameter.In}.json",
-                    parameter.Schema.SerializeToJson()),
-                @namespace: entityType
-            );
-            yield return parameterTypeSpecification;
-        }
-
-        foreach (var openApiOperation in pathItem.Operations)
-        {
-            var type = openApiOperation.Key;
-            var operation = openApiOperation.Value;
-            var operationId = ((string?)operation.OperationId ?? type.ToString()).ToPascalCase();
-            foreach (var parameter in operation.Parameters)
+            foreach (var parameter in pathItem.Parameters)
             {
-                var parameterTypeSpecification = new TypeSpecification(
-                    parameter.Name.ToPascalCase() + parameter.In.ToString().ToPascalCase(),
-                    schema: new InMemoryAdditionalText(
+                var schema = new InMemoryAdditionalText($"/{entityType}-{parameter.Name}-{parameter.In}.json",
+                        parameter.Schema.SerializeToJson());
+                schemas.Add(schema);
+                
+                var generationSpecification = new SourceGeneratorHelpers.GenerationSpecification(
+                    ns: entityType,
+                    typeName: parameter.Name.ToPascalCase() + parameter.In.ToString().ToPascalCase(),
+                    location: schema.Path,
+                    rebaseToRootPath: false);
+                generationSpecifications.Add(generationSpecification);
+            }
+
+            foreach (var openApiOperation in path.Value.Operations)
+            {
+                var type = openApiOperation.Key;
+                var operation = openApiOperation.Value;
+                var operationId = ((string?)operation.OperationId ?? type.ToString()).ToPascalCase();
+                
+                foreach (var parameter in operation.Parameters)
+                {
+                    var schema = new InMemoryAdditionalText(
                         $"/{entityType}-{operationId}-{parameter.Name}-{parameter.In}.json",
-                        parameter.Schema.SerializeToJson()),
-                    @namespace: $"{entityType}.{operationId}"
-                );
-                yield return parameterTypeSpecification;
-            } 
-        }
-    }
-    
-    private void GenerateCode(SourceProductionContext context, OpenApiDocument openApiDoc)
-    {
-        foreach (var path in openApiDoc.Paths)
-        {
-            foreach (var operation in path.Value.Operations)
-            {
-                var operationName = operation.Value.OperationId.ToPascalCase();
+                        parameter.Schema.SerializeToJson());
+                    schemas.Add(schema);
+                    
+                    var generationSpecification = new SourceGeneratorHelpers.GenerationSpecification(
+                        ns: $"{entityType}.{operationId}",
+                        typeName: parameter.Name.ToPascalCase() + parameter.In.ToString().ToPascalCase(),
+                        location: schema.Path,
+                        rebaseToRootPath: false);
+                    generationSpecifications.Add(generationSpecification);
+                } 
+                
                 var source =
                     $$"""
                       namespace Endpoints;
 
-                      internal partial class {{operationName}}
+                      internal partial class {{operationId}}
                       {
 
                       }
                       """;
-                context.AddSource($"{operationName}.g.cs", ParseCSharpCode(source));
-                
+                context.AddSource($"{operationId}.g.cs", ParseCSharpCode(source));
             }
         }
-    }
-
-    private static void GenerateCode(SourceProductionContext context, SourceGeneratorHelpers.TypesToGenerate generationSource)
-    {
-        SourceGeneratorHelpers.GenerateCode(context, generationSource, VocabularyRegistry);
+        
+        var generationContext = new SourceGeneratorHelpers.GenerationContext(SourceGeneratorHelpers.BuildDocumentResolver([..schemas], context.CancellationToken), globalOptions);
+        SourceGeneratorHelpers.GenerateCode(context, new SourceGeneratorHelpers.TypesToGenerate(
+            [..generationSpecifications], generationContext), VocabularyRegistry);
     }
 
     private static SourceText ParseCSharpCode(string code, bool normalize = true)
