@@ -61,19 +61,21 @@ public sealed class ApiGenerator : IIncrementalGenerator
             var pathExpression = path.Key;
             var pathItem = path.Value;
             var entityType = pathExpression.ToPascalCase();
-            
+            var parameterGenerators = new List<ParameterGenerator>();
             foreach (var parameter in pathItem.Parameters)
             {
-                var schema = new InMemoryAdditionalText($"/{entityType}-{parameter.Name}-{parameter.In}.json",
+                var parameterGenerator = new ParameterGenerator(entityType, parameter);
+                var schema = new InMemoryAdditionalText($"/{parameterGenerator.FullyQualifiedTypeDeclarationIdentifier}.json",
                         parameter.Schema.SerializeToJson());
                 schemas.Add(schema);
                 
                 var generationSpecification = new SourceGeneratorHelpers.GenerationSpecification(
                     ns: entityType,
-                    typeName: parameter.Name.ToPascalCase() + parameter.In.ToString().ToPascalCase(),
+                    typeName: parameterGenerator.TypeDeclarationIdentifier,
                     location: schema.Path,
                     rebaseToRootPath: false);
                 generationSpecifications.Add(generationSpecification);
+                parameterGenerators.Add(parameterGenerator);
             }
 
             foreach (var openApiOperation in path.Value.Operations)
@@ -81,32 +83,56 @@ public sealed class ApiGenerator : IIncrementalGenerator
                 var type = openApiOperation.Key;
                 var operation = openApiOperation.Value;
                 var operationId = ((string?)operation.OperationId ?? type.ToString()).ToPascalCase();
+                var @namespace = $"{entityType}.{operationId}";
                 
                 foreach (var parameter in operation.Parameters)
                 {
+                    var parameterGenerator = new ParameterGenerator(@namespace, parameter);
                     var schema = new InMemoryAdditionalText(
-                        $"/{entityType}-{operationId}-{parameter.Name}-{parameter.In}.json",
+                        $"/{parameterGenerator.FullyQualifiedTypeDeclarationIdentifier}.json",
                         parameter.Schema.SerializeToJson());
                     schemas.Add(schema);
                     
                     var generationSpecification = new SourceGeneratorHelpers.GenerationSpecification(
-                        ns: $"{entityType}.{operationId}",
-                        typeName: parameter.Name.ToPascalCase() + parameter.In.ToString().ToPascalCase(),
+                        ns: @namespace,
+                        typeName: parameterGenerator.TypeDeclarationIdentifier,
                         location: schema.Path,
                         rebaseToRootPath: false);
                     generationSpecifications.Add(generationSpecification);
-                } 
-                
-                var source =
+                    parameterGenerators.Add(parameterGenerator);
+                }
+
+                var requestSource =
                     $$"""
-                      namespace Endpoints;
+                        namespace {{@namespace}};
+
+                        internal partial class Request
+                        {
+                            {{parameterGenerators.Aggregate(new StringBuilder(),(builder, generator) => 
+                                builder.AppendLine(generator.GenerateRequestProperty()))}}
+
+                            public static Request Bind(HttpRequest request)
+                            {
+                                return new Request
+                                {
+                                    {{parameterGenerators.Aggregate(new StringBuilder(),(builder, generator) => 
+                                        builder.AppendLine(generator.GenerateRequestBindingDirective()))}}
+                                };
+                            }
+                        }
+                      """;
+                context.AddSource($"{operationId}/Request.g.cs", ParseCSharpCode(requestSource));
+                
+                var endpointSource =
+                    $$"""
+                      namespace {{@namespace}};
 
                       internal partial class {{operationId}}
                       {
 
                       }
                       """;
-                context.AddSource($"{operationId}.g.cs", ParseCSharpCode(source));
+                context.AddSource($"{operationId}/{operationId}.g.cs", ParseCSharpCode(endpointSource));
             }
         }
         
