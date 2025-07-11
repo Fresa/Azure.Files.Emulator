@@ -61,7 +61,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
             var pathExpression = path.Key;
             var pathItem = path.Value;
             var entityType = pathExpression.ToPascalCase();
-            var parameterGenerators = new List<ParameterGenerator>();
+            var parameterGenerators = new Dictionary<string, ParameterGenerator>();
             foreach (var parameter in pathItem.Parameters)
             {
                 var parameterGenerator = new ParameterGenerator(entityType, parameter);
@@ -75,7 +75,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
                     location: schema.Path,
                     rebaseToRootPath: false);
                 generationSpecifications.Add(generationSpecification);
-                parameterGenerators.Add(parameterGenerator);
+                parameterGenerators[parameter.Name] = parameterGenerator;
             }
 
             foreach (var openApiOperation in path.Value.Operations)
@@ -89,7 +89,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
                 {
                     var parameterGenerator = new ParameterGenerator(@namespace, parameter);
                     var schema = new InMemoryAdditionalText(
-                        $"/{parameterGenerator.FullyQualifiedTypeDeclarationIdentifier}.json",
+                        $"/{operationId}/{parameterGenerator.FullyQualifiedTypeDeclarationIdentifier}.json",
                         parameter.Schema.SerializeToJson());
                     schemas.Add(schema);
                     
@@ -99,7 +99,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
                         location: schema.Path,
                         rebaseToRootPath: false);
                     generationSpecifications.Add(generationSpecification);
-                    parameterGenerators.Add(parameterGenerator);
+                    parameterGenerators[parameter.Name] = parameterGenerator;
                 }
 
                 var requestSource =
@@ -108,14 +108,14 @@ public sealed class ApiGenerator : IIncrementalGenerator
 
                         internal partial class Request
                         {
-                            {{parameterGenerators.Aggregate(new StringBuilder(),(builder, generator) => 
+                            {{parameterGenerators.Values.Aggregate(new StringBuilder(),(builder, generator) => 
                                 builder.AppendLine(generator.GenerateRequestProperty()))}}
 
                             public static Request Bind(HttpRequest request)
                             {
                                 return new Request
                                 {
-                                    {{parameterGenerators.Aggregate(new StringBuilder(),(builder, generator) => 
+                                    {{parameterGenerators.Values.Aggregate(new StringBuilder(),(builder, generator) => 
                                         builder.AppendLine(generator.GenerateRequestBindingDirective()))}}
                                 };
                             }
