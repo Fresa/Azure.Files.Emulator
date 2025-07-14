@@ -1,17 +1,16 @@
 ﻿using Azure.Api.Generator.Extensions;
+using Corvus.Json.CodeGeneration;
+using Corvus.Json.CodeGeneration.CSharp;
 using Microsoft.OpenApi.Models;
 
 namespace Azure.Api.Generator.CodeGeneration;
 
-internal sealed class ParameterGenerator(string @namespace, OpenApiParameter parameter)
+internal sealed class ParameterGenerator(TypeDeclaration typeDeclaration, OpenApiParameter parameter)
 {
-    internal string FullyQualifiedTypeName =>
+    private string FullyQualifiedTypeName =>
         $"{FullyQualifiedTypeDeclarationIdentifier}{(parameter.Required ? "" : "?")}";
 
-    internal string FullyQualifiedTypeDeclarationIdentifier =>
-        $"{@namespace}.{TypeDeclarationIdentifier}";
-    internal string TypeDeclarationIdentifier { get; } =
-        parameter.Name.ToPascalCase() + parameter.In.ToString().ToPascalCase();
+    private string FullyQualifiedTypeDeclarationIdentifier => typeDeclaration.FullyQualifiedDotnetTypeName();
     
     private readonly string _propertyName = parameter.Name.ToPascalCase();
     

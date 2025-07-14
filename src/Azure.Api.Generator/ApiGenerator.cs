@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using Azure.Api.Generator.CodeGeneration;
 using Azure.Api.Generator.Extensions;
+using Azure.Api.Generator.OpenApi;
 using Corvus.Json;
 using Corvus.Json.CodeGeneration;
+using Corvus.Json.CodeGeneration.CSharp;
 using Corvus.Json.SourceGeneratorTools;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -64,18 +66,19 @@ public sealed class ApiGenerator : IIncrementalGenerator
             var parameterGenerators = new Dictionary<string, ParameterGenerator>();
             foreach (var parameter in pathItem.Parameters)
             {
-                var parameterGenerator = new ParameterGenerator(entityType, parameter);
-                var schema = new InMemoryAdditionalText($"/{parameterGenerator.FullyQualifiedTypeDeclarationIdentifier}.json",
+                var schema = new InMemoryAdditionalText(
+                    $"/{entityType}.{parameter.GetTypeDeclarationIdentifier()}.json",
                         parameter.Schema.SerializeToJson());
                 schemas.Add(schema);
                 
                 var generationSpecification = new SourceGeneratorHelpers.GenerationSpecification(
                     ns: entityType,
-                    typeName: parameterGenerator.TypeDeclarationIdentifier,
+                    typeName: parameter.GetTypeDeclarationIdentifier(),
                     location: schema.Path,
                     rebaseToRootPath: false);
                 generationSpecifications.Add(generationSpecification);
-                parameterGenerators[parameter.Name] = parameterGenerator;
+                var typeDeclaration = GenerateCode(context, generationSpecification, schema, globalOptions);
+                parameterGenerators[parameter.Name] = new ParameterGenerator(typeDeclaration, parameter);
             }
 
             foreach (var openApiOperation in path.Value.Operations)
@@ -87,19 +90,20 @@ public sealed class ApiGenerator : IIncrementalGenerator
                 
                 foreach (var parameter in operation.Parameters)
                 {
-                    var parameterGenerator = new ParameterGenerator(@namespace, parameter);
                     var schema = new InMemoryAdditionalText(
-                        $"/{operationId}/{parameterGenerator.FullyQualifiedTypeDeclarationIdentifier}.json",
+                        $"/{@namespace}.{parameter.GetTypeDeclarationIdentifier()}.json",
                         parameter.Schema.SerializeToJson());
                     schemas.Add(schema);
                     
                     var generationSpecification = new SourceGeneratorHelpers.GenerationSpecification(
                         ns: @namespace,
-                        typeName: parameterGenerator.TypeDeclarationIdentifier,
+                        typeName: parameter.GetTypeDeclarationIdentifier(),
                         location: schema.Path,
                         rebaseToRootPath: false);
                     generationSpecifications.Add(generationSpecification);
-                    parameterGenerators[parameter.Name] = parameterGenerator;
+
+                    var typeDeclaration = GenerateCode(context, generationSpecification, schema, globalOptions);
+                    parameterGenerators[parameter.Name] = new ParameterGenerator(typeDeclaration, parameter);
                 }
 
                 var requestSource =
@@ -135,12 +139,129 @@ public sealed class ApiGenerator : IIncrementalGenerator
                 context.AddSource($"{operationId}/{operationId}.g.cs", ParseCSharpCode(endpointSource));
             }
         }
-        
-        var generationContext = new SourceGeneratorHelpers.GenerationContext(SourceGeneratorHelpers.BuildDocumentResolver([..schemas], context.CancellationToken), globalOptions);
-        SourceGeneratorHelpers.GenerateCode(context, new SourceGeneratorHelpers.TypesToGenerate(
-            [..generationSpecifications], generationContext), VocabularyRegistry);
+    }
+    
+    private static readonly DiagnosticDescriptor Crv1001ErrorGeneratingCSharpCode =
+        new(
+            id: "CRV1001",
+            title: "JSON Schema Type Generator Error",
+            messageFormat: "Error generating C# code: {0}",
+            category: "JsonSchemaCodeGenerator",
+            DiagnosticSeverity.Error,
+            isEnabledByDefault: true);
+
+    private static TypeDeclaration GenerateCode(SourceProductionContext context,
+        SourceGeneratorHelpers.GenerationSpecification specification,
+        AdditionalText schema,
+        SourceGeneratorHelpers.GlobalOptions globalOptions)
+    {
+        var generationContext = new SourceGeneratorHelpers.GenerationContext(SourceGeneratorHelpers.BuildDocumentResolver([schema], context.CancellationToken), globalOptions);
+        var typeDeclarations = GenerateCode(context, new SourceGeneratorHelpers.TypesToGenerate(
+            [specification], generationContext), VocabularyRegistry);
+        return typeDeclarations.Single();
     }
 
+    private static List<TypeDeclaration> GenerateCode(SourceProductionContext context, SourceGeneratorHelpers.TypesToGenerate typesToGenerate, VocabularyRegistry vocabularyRegistry)
+    {
+        if (typesToGenerate.GenerationSpecifications.Length == 0)
+        {
+            // Nothing to generate
+            return [];
+        }
+
+        List<TypeDeclaration> typeDeclarationsToGenerate = [];
+        List<CSharpLanguageProvider.NamedType> namedTypes = [];
+        JsonSchemaTypeBuilder typeBuilder = new(typesToGenerate.DocumentResolver, vocabularyRegistry);
+
+        string? defaultNamespace = null;
+
+        foreach (SourceGeneratorHelpers.GenerationSpecification spec in typesToGenerate.GenerationSpecifications)
+        {
+            if (context.CancellationToken.IsCancellationRequested)
+            {
+                return [];
+            }
+
+            string schemaFile = spec.Location;
+            JsonReference reference = new(schemaFile);
+            TypeDeclaration rootType;
+            try
+            {
+                rootType = typeBuilder.AddTypeDeclarations(reference, typesToGenerate.FallbackVocabulary, spec.RebaseToRootPath, context.CancellationToken);
+            }
+            catch (Exception ex)
+            {
+                context.ReportDiagnostic(
+                    Diagnostic.Create(
+                        Crv1001ErrorGeneratingCSharpCode,
+                        Location.None,
+                        reference,
+                        ex.Message));
+
+                return [];
+            }
+            
+            typeDeclarationsToGenerate.Add(rootType);
+
+            defaultNamespace ??= spec.Namespace;
+
+            // Only add the named type if the spec.TypeName is not null or empty.
+            if (!string.IsNullOrEmpty(spec.TypeName))
+            {
+                namedTypes.Add(
+                    new CSharpLanguageProvider.NamedType(
+                        rootType.ReducedTypeDeclaration().ReducedType.LocatedSchema.Location,
+                        spec.TypeName,
+                        spec.Namespace,
+                        spec.Accessibility));
+            }
+        }
+
+        CSharpLanguageProvider.Options options = new(
+            defaultNamespace ?? "GeneratedTypes",
+            [.. namedTypes],
+            useOptionalNameHeuristics: typesToGenerate.UseOptionalNameHeuristics,
+            alwaysAssertFormat: typesToGenerate.AlwaysAssertFormat,
+            optionalAsNullable: typesToGenerate.OptionalAsNullable,
+            disabledNamingHeuristics: [.. typesToGenerate.DisabledNamingHeuristics],
+            fileExtension: ".g.cs",
+            defaultAccessibility: typesToGenerate.DefaultAccessibility);
+
+        var languageProvider = CSharpLanguageProvider.DefaultWithOptions(options);
+
+        IReadOnlyCollection<GeneratedCodeFile> generatedCode;
+
+        try
+        {
+            generatedCode =
+                typeBuilder.GenerateCodeUsing(
+                    languageProvider,
+                    context.CancellationToken,
+                    typeDeclarationsToGenerate);
+        }
+        catch (Exception ex)
+        {
+            context.ReportDiagnostic(
+                Diagnostic.Create(
+                    Crv1001ErrorGeneratingCSharpCode,
+                    Location.None,
+                    ex.Message));
+
+            return [];
+        }
+
+        foreach (GeneratedCodeFile codeFile in generatedCode)
+        {
+            if (!context.CancellationToken.IsCancellationRequested)
+            {
+                context.AddSource(codeFile.TypeDeclaration.DotnetNamespace().Replace('.', '/') + $"/{codeFile.FileName}", SourceText.From(codeFile.FileContent, Encoding.UTF8));
+            }
+        }
+
+        return typeDeclarationsToGenerate;
+    }
+    
+    
     private static SourceText ParseCSharpCode(string code, bool normalize = true)
     {
         var compilationUnit = SyntaxFactory
