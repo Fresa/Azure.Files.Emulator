@@ -1,0 +1,130 @@
+﻿using System.Collections.Concurrent;
+using System.Text.Json;
+using Corvus.Json;
+using Microsoft.Extensions.Primitives;
+using OpenAPI.ParameterStyleParsers.OpenApi20;
+using OpenAPI.ParameterStyleParsers.OpenApi20.ParameterParsers;
+using OpenAPI.ParameterStyleParsers.OpenApi20.ParameterParsers.Array;
+
+namespace Azure.Files.Emulator.Http;
+
+internal static class HttpRequestExtensions
+{
+    private static readonly ConcurrentDictionary<Parameter, ParameterValueParser> ParserCache = new();
+    
+    internal static T Bind<T>(this HttpRequest request, 
+        string name,
+        string location,  
+        string? type,
+        string? collectionFormat,
+        string? itemsType)
+        where T : struct, IJsonValue<T>
+    {
+        var parameter = Parameter.Parse(
+            name: name,
+            @in: location,
+            type: type,
+            collectionFormat: collectionFormat,
+            itemsType is null ? null : ItemsObject.Parse(itemsType));
+
+        var value = parameter switch
+        {
+            _ when parameter.InBody => T.Parse(request.Body),
+            _ when TryGetValue(request, parameter, out var stringValue) =>
+                Parse<T>(parameter, stringValue),
+            _ => T.Undefined
+        };
+        
+        var validationContext = ValidationContext.ValidContext;
+        value.Validate(validationContext);
+        if (validationContext.IsValid)
+        {
+            return value;
+        }
+
+        var validationResults = validationContext.Results.IsEmpty
+            ? "None"
+            : JsonSerializer.Serialize(validationContext.Results, new JsonSerializerOptions
+            {
+                WriteIndented = true
+            });
+
+        throw new InvalidOperationException($$"""
+                                              Object of type {{typeof(T)}} could not be parsed from parameter '{{name}}' in location '{{location}}'.
+                                              "Validation results: {{validationResults}}
+                                              """);
+    }
+
+    private static T Parse<T>(Parameter parameter, string? stringValue)
+        where T : struct, IJsonValue<T>
+    {
+        var parser = ParserCache.GetOrAdd(parameter, ParameterValueParser.Create);
+        if (!parser.TryParse(stringValue, out var instance, out var error))
+        {
+            throw new BadHttpRequestException(error);
+        }
+
+        return instance == null ? T.Null : T.Parse(instance.ToJsonString());
+    } 
+
+    private static bool TryGetValue(this HttpRequest request, Parameter parameter, out string? stringValue) =>
+        parameter switch
+        {
+            _ when parameter.InHeader => TryGetHeaderValue(request.Headers, parameter, out stringValue),
+            _ when parameter.InFormData => TryGetFormDataValue(request.Form, parameter, out stringValue),
+            _ when parameter.InPath => TryGetPathValue(request.RouteValues, parameter, out stringValue),
+            _ when parameter.InQuery => TryGetQueryValue(request.Query, parameter, out stringValue),
+            _ => throw new InvalidOperationException($"Parameter {parameter.Name} has an unknown location")
+        };
+
+    private static bool TryGetQueryValue(IQueryCollection query, Parameter parameter, out string? stringValue)
+    {
+        stringValue = null;
+        return query.TryGetValue(parameter.Name, out var values) &&
+               TryGetValue(values, parameter, out stringValue);
+    }
+
+    private static bool TryGetPathValue(RouteValueDictionary requestPath, Parameter parameter, out string? stringValue)
+    {
+        if (!requestPath.TryGetValue(parameter.Name, out var value))
+        {
+            stringValue = null;
+            return false;
+        }
+
+        stringValue = value switch
+        {
+            null => null,
+            string strValue => strValue,
+            _ => throw new InvalidOperationException(
+                $"Route value of '{value}' with type '{value.GetType()}' is not supported")
+        };
+        return true;
+    }
+
+    private static bool TryGetFormDataValue(IFormCollection requestForm, Parameter parameter, out string? stringValue)
+    {
+        stringValue = null;
+        return requestForm.TryGetValue(parameter.Name, out var values) && TryGetValue(values, parameter, out stringValue);
+    }
+
+    private static bool TryGetHeaderValue(IHeaderDictionary headers, Parameter parameter, out string? stringValue)
+    {
+        stringValue = null;
+        return headers.TryGetValue(parameter.Name, out var values) &&
+               TryGetValue(values, parameter, out stringValue);
+    }
+
+    private static bool TryGetValue(StringValues values, Parameter parameter, out string? stringValue)
+    {
+        if (values.Count == 0)
+        {
+            stringValue = null;
+            return false;
+        }
+        stringValue = parameter.ValueIncludesKey
+            ? string.Join('&', values.Select(value => $"{parameter.Name}=${value}"))
+            : values.Single();
+        return true;
+    }
+}
