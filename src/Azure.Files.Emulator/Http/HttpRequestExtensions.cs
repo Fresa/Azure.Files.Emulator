@@ -12,6 +12,18 @@ internal static class HttpRequestExtensions
 {
     private static readonly ConcurrentDictionary<Parameter, ParameterValueParser> ParserCache = new();
     
+    /// <summary>
+    /// Binds an http parameter to a json type
+    /// </summary>
+    /// <param name="request"></param>
+    /// <param name="name"></param>
+    /// <param name="location"></param>
+    /// <param name="type"></param>
+    /// <param name="collectionFormat"></param>
+    /// <param name="itemsType"></param>
+    /// <typeparam name="T"></typeparam>
+    /// <returns></returns>
+    /// <exception cref="BadHttpRequestException"></exception>
     internal static T Bind<T>(this HttpRequest request, 
         string name,
         string location,  
@@ -49,10 +61,10 @@ internal static class HttpRequestExtensions
                 WriteIndented = true
             });
 
-        throw new InvalidOperationException($$"""
-                                              Object of type {{typeof(T)}} could not be parsed from parameter '{{name}}' in location '{{location}}'.
-                                              "Validation results: {{validationResults}}
-                                              """);
+        throw new BadHttpRequestException($$"""
+                                            Object of type {{typeof(T)}} could not be parsed from parameter '{{name}}' in location '{{location}}'.
+                                            "Validation results: {{validationResults}}
+                                            """);
     }
 
     private static T Parse<T>(Parameter parameter, string? stringValue)
