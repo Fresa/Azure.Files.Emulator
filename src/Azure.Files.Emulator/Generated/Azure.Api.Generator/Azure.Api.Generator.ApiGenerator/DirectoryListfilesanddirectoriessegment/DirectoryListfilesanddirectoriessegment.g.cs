@@ -1,0 +1,4 @@
+﻿namespace SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment;
+internal partial class DirectoryListfilesanddirectoriessegment
+{
+}

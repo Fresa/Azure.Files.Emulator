@@ -1,0 +1,4 @@
+﻿namespace SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink;
+internal partial class FileCreatesymboliclink
+{
+}

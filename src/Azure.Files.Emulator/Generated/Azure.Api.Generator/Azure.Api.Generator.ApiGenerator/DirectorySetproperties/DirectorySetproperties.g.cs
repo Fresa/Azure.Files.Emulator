@@ -1,0 +1,4 @@
+﻿namespace SharenameDirectoryRestypeDirectoryCompProperties.DirectorySetproperties;
+internal partial class DirectorySetproperties
+{
+}

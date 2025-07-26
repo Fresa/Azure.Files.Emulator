@@ -1,0 +1,4 @@
+﻿namespace SharenameDirectoryCompForceclosehandles.DirectoryForceclosehandles;
+internal partial class DirectoryForceclosehandles
+{
+}

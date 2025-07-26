@@ -1,0 +1,108 @@
+﻿using Azure.Files.Emulator.Http;
+using Corvus.Json;
+
+namespace SharenameRestypeShareCompAcl.ShareGetaccesspolicy;
+internal partial class Request
+{
+    internal required Corvus.Json.JsonString Sharename { get; init; }
+    internal required SharenameRestypeShareCompAcl.RestypeQuery Restype { get; init; }
+    internal required SharenameRestypeShareCompAcl.CompQuery Comp { get; init; }
+    internal SharenameRestypeShareCompAcl.ShareGetaccesspolicy.TimeoutQuery? Timeout { get; init; }
+    internal required SharenameRestypeShareCompAcl.ShareGetaccesspolicy.XMsVersionHeader XMsVersion { get; init; }
+    internal Corvus.Json.JsonString? XMsLeaseId { get; init; }
+    internal SharenameRestypeShareCompAcl.ShareGetaccesspolicy.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+
+    public static Request Bind(HttpRequest request)
+    {
+        return new Request
+        {
+            Sharename = request.Bind<Corvus.Json.JsonString>("""
+{
+  "in": "path",
+  "name": "shareName",
+  "description": "The name of the target share.",
+  "required": true,
+  "type": "string",
+  "x-ms-parameter-location": "method"
+}
+"""),
+            Restype = request.Bind<SharenameRestypeShareCompAcl.RestypeQuery>("""
+{
+  "in": "query",
+  "name": "restype",
+  "description": "restype",
+  "required": true,
+  "type": "string",
+  "enum": [
+    "share"
+  ]
+}
+"""),
+            Comp = request.Bind<SharenameRestypeShareCompAcl.CompQuery>("""
+{
+  "in": "query",
+  "name": "comp",
+  "description": "comp",
+  "required": true,
+  "type": "string",
+  "enum": [
+    "acl"
+  ]
+}
+"""),
+            Timeout = request.Bind<SharenameRestypeShareCompAcl.ShareGetaccesspolicy.TimeoutQuery>("""
+{
+  "in": "query",
+  "name": "timeout",
+  "description": "The timeout parameter is expressed in seconds. For more information, see <a href=\"https://learn.microsoft.com/rest/api/storageservices/Setting-Timeouts-for-File-Service-Operations\">Setting Timeouts for File Service Operations.</a>",
+  "type": "integer",
+  "minimum": 0,
+  "x-ms-parameter-location": "method"
+}
+""").AsOptional(),
+            XMsVersion = request.Bind<SharenameRestypeShareCompAcl.ShareGetaccesspolicy.XMsVersionHeader>("""
+{
+  "in": "header",
+  "name": "x-ms-version",
+  "description": "Specifies the version of the operation to use for this request.",
+  "required": true,
+  "type": "string",
+  "enum": [
+    "2025-11-05"
+  ],
+  "x-ms-client-name": "version",
+  "x-ms-parameter-location": "client"
+}
+"""),
+            XMsLeaseId = request.Bind<Corvus.Json.JsonString>("""
+{
+  "in": "header",
+  "name": "x-ms-lease-id",
+  "description": "If specified, the operation only succeeds if the resource's lease is active and matches this ID.",
+  "type": "string",
+  "x-ms-client-name": "leaseId",
+  "x-ms-parameter-location": "method",
+  "x-ms-parameter-grouping": {
+    "name": "lease-access-conditions"
+  }
+}
+""").AsOptional(),
+            XMsFileRequestIntent = request.Bind<SharenameRestypeShareCompAcl.ShareGetaccesspolicy.XMsFileRequestIntentHeader>("""
+{
+  "in": "header",
+  "name": "x-ms-file-request-intent",
+  "description": "Valid value is backup",
+  "type": "string",
+  "enum": [
+    "backup"
+  ],
+  "x-ms-client-name": "fileRequestIntent",
+  "x-ms-enum": {
+    "name": "ShareTokenIntent",
+    "modelAsString": true
+  }
+}
+""").AsOptional(),
+        };
+    }
+}
