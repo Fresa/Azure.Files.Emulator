@@ -1,7 +1,9 @@
-﻿using Azure.Api.Generator.Extensions;
+﻿using System.IO;
+using Azure.Api.Generator.Extensions;
 using Corvus.Json.CodeGeneration;
 using Corvus.Json.CodeGeneration.CSharp;
 using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi.Writers;
 
 namespace Azure.Api.Generator.CodeGeneration;
 
@@ -23,12 +25,18 @@ internal sealed class ParameterGenerator(TypeDeclaration typeDeclaration, OpenAp
 
     internal string GenerateRequestBindingDirective()
     {
-        return $$"""
-                 {{_propertyName}} = 
-                     request.Bind<{{FullyQualifiedTypeName.TrimEnd('?')}}>(
-                        "{{parameter.In}}",
-                        "{{parameter.Name}}",
-                        {{parameter.Required.ToString().ToLower()}}){{(parameter.Required ? "" : ".AsOptional()")}},
-                 """;
+        using var textWriter = new StringWriter();
+        var jsonWriter = new OpenApiJsonWriter(textWriter);
+        parameter.SerializeAsV2WithoutReference(jsonWriter);
+        textWriter.Flush();
+
+        return $""""
+                 {_propertyName} = 
+                    request.Bind<{FullyQualifiedTypeName.TrimEnd('?')}>(
+                """
+                {textWriter.GetStringBuilder()}
+                """
+                ){(parameter.Required ? "" : ".AsOptional()")},
+                """";
     }
 }

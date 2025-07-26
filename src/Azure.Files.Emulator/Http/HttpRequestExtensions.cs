@@ -11,34 +11,20 @@ namespace Azure.Files.Emulator.Http;
 internal static class HttpRequestExtensions
 {
     private static readonly ConcurrentDictionary<Parameter, ParameterValueParser> ParserCache = new();
-    
+
     /// <summary>
     /// Binds an http parameter to a json type
     /// </summary>
     /// <param name="request"></param>
-    /// <param name="name"></param>
-    /// <param name="location"></param>
-    /// <param name="type"></param>
-    /// <param name="collectionFormat"></param>
-    /// <param name="itemsType"></param>
+    /// <param name="parameterSpecificationAsJson"></param>
     /// <typeparam name="T"></typeparam>
     /// <returns></returns>
     /// <exception cref="BadHttpRequestException"></exception>
     internal static T Bind<T>(this HttpRequest request, 
-        string name,
-        string location,  
-        string? type,
-        string? collectionFormat,
-        string? itemsType)
+        string parameterSpecificationAsJson)
         where T : struct, IJsonValue<T>
     {
-        var parameter = Parameter.Parse(
-            name: name,
-            @in: location,
-            type: type,
-            collectionFormat: collectionFormat,
-            itemsType is null ? null : ItemsObject.Parse(itemsType));
-
+        var parameter = Parameter.FromOpenApi20ParameterSpecification(parameterSpecificationAsJson);
         var value = parameter switch
         {
             _ when parameter.InBody => T.Parse(request.Body),
@@ -62,7 +48,7 @@ internal static class HttpRequestExtensions
             });
 
         throw new BadHttpRequestException($$"""
-                                            Object of type {{typeof(T)}} could not be parsed from parameter '{{name}}' in location '{{location}}'.
+                                            Object of type {{typeof(T)}} could not be parsed from parameter '{{parameter.Name}}'.
                                             "Validation results: {{validationResults}}
                                             """);
     }

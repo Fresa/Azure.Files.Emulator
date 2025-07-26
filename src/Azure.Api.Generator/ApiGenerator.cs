@@ -56,8 +56,6 @@ public sealed class ApiGenerator : IIncrementalGenerator
     {
         var openApi = generatorContext.OpenApiDocument;
         var globalOptions = generatorContext.Options;
-        var schemas = new List<InMemoryAdditionalText>();
-        var generationSpecifications = new List<SourceGeneratorHelpers.GenerationSpecification>();
         foreach (var path in openApi.Paths)
         {
             var pathExpression = path.Key;
@@ -69,14 +67,12 @@ public sealed class ApiGenerator : IIncrementalGenerator
                 var schema = new InMemoryAdditionalText(
                     $"/{entityType}.{parameter.GetTypeDeclarationIdentifier()}.json",
                         parameter.Schema.SerializeToJson());
-                schemas.Add(schema);
                 
                 var generationSpecification = new SourceGeneratorHelpers.GenerationSpecification(
                     ns: entityType,
                     typeName: parameter.GetTypeDeclarationIdentifier(),
                     location: schema.Path,
                     rebaseToRootPath: false);
-                generationSpecifications.Add(generationSpecification);
                 var typeDeclaration = GenerateCode(context, generationSpecification, schema, globalOptions);
                 parameterGenerators[parameter.Name] = new ParameterGenerator(typeDeclaration, parameter);
             }
@@ -88,19 +84,18 @@ public sealed class ApiGenerator : IIncrementalGenerator
                 var operationId = ((string?)operation.OperationId ?? type.ToString()).ToPascalCase();
                 var @namespace = $"{entityType}.{operationId}";
                 
+                
                 foreach (var parameter in operation.Parameters)
                 {
                     var schema = new InMemoryAdditionalText(
                         $"/{@namespace}.{parameter.GetTypeDeclarationIdentifier()}.json",
                         parameter.Schema.SerializeToJson());
-                    schemas.Add(schema);
                     
                     var generationSpecification = new SourceGeneratorHelpers.GenerationSpecification(
                         ns: @namespace,
                         typeName: parameter.GetTypeDeclarationIdentifier(),
                         location: schema.Path,
                         rebaseToRootPath: false);
-                    generationSpecifications.Add(generationSpecification);
 
                     var typeDeclaration = GenerateCode(context, generationSpecification, schema, globalOptions);
                     parameterGenerators[parameter.Name] = new ParameterGenerator(typeDeclaration, parameter);
@@ -108,8 +103,11 @@ public sealed class ApiGenerator : IIncrementalGenerator
 
                 var requestSource =
                     $$"""
+                        using Azure.Files.Emulator.Http;
+                        using Corvus.Json;
+                        
                         namespace {{@namespace}};
-
+                        
                         internal partial class Request
                         {
                             {{parameterGenerators.Values.Aggregate(new StringBuilder(),(builder, generator) => 
