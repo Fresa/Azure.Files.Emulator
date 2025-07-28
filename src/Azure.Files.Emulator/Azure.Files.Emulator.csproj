@@ -10,7 +10,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.cs" />
+        <Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.g.cs" />
     </ItemGroup>
 
     <Target Name="CleanSourceGeneratedFiles" BeforeTargets="BeforeBuild" DependsOnTargets="$(BeforeBuildDependsOn)">

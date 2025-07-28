@@ -79,9 +79,9 @@ public sealed class ApiGenerator : IIncrementalGenerator
 
             foreach (var openApiOperation in path.Value.Operations)
             {
-                var type = openApiOperation.Key;
+                var operationType = openApiOperation.Key;
                 var operation = openApiOperation.Value;
-                var operationId = ((string?)operation.OperationId ?? type.ToString()).ToPascalCase();
+                var operationId = ((string?)operation.OperationId ?? operationType.ToString()).ToPascalCase();
                 var @namespace = $"{entityType}.{operationId}";
                 
                 
@@ -125,13 +125,31 @@ public sealed class ApiGenerator : IIncrementalGenerator
                       """;
                 context.AddSource($"{operationId}/Request.g.cs", ParseCSharpCode(requestSource));
                 
+                var responseSource =
+                    $$"""
+                        using Azure.Files.Emulator.Http;
+                        using Corvus.Json;
+                        
+                        namespace {{@namespace}};
+                        
+                        internal partial class Response
+                        {
+                        }
+                      """;
+                context.AddSource($"{operationId}/Response.g.cs", ParseCSharpCode(responseSource));
+                
                 var endpointSource =
                     $$"""
+                      using System.Threading;
+                      
                       namespace {{@namespace}};
 
                       internal partial class {{operationId}}
                       {
+                        internal const string PathTemplate = "{{pathExpression}}";
+                        internal const string Method = "{{operationType}}";
 
+                        internal partial Task<Response> HandleAsync(Request request, CancellationToken cancellationToken);
                       }
                       """;
                 context.AddSource($"{operationId}/{operationId}.g.cs", ParseCSharpCode(endpointSource));
