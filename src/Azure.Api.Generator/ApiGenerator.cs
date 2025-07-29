@@ -14,6 +14,7 @@ using Corvus.Json.CodeGeneration.CSharp;
 using Corvus.Json.SourceGeneratorTools;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
@@ -47,15 +48,25 @@ public sealed class ApiGenerator : IIncrementalGenerator
                     alwaysAssertFormat: true,
                     ImmutableArray<string>.Empty));
 
-        var openApiProvider = globalOptions.Combine(openapiDocumentProvider);
-     
-        context.RegisterSourceOutput(openApiProvider, WithExceptionReporting<(SourceGeneratorHelpers.GlobalOptions, OpenApiDocument)>(GenerateCode));
+        var openApiProvider = globalOptions
+            .Combine(openapiDocumentProvider)
+            .Combine(context.CompilationProvider)
+            .Select((tuple, _) => (
+                Options: tuple.Left.Left,
+                OpenApiDocument: tuple.Left.Right,
+                Compilation: tuple.Right
+            ));
+
+        context.RegisterSourceOutput(openApiProvider,
+            WithExceptionReporting<(SourceGeneratorHelpers.GlobalOptions, OpenApiDocument, Compilation)>(GenerateCode));
     }
 
-    private static void GenerateCode(SourceProductionContext context, (SourceGeneratorHelpers.GlobalOptions Options, OpenApiDocument OpenApiDocument) generatorContext)
+    private static void GenerateCode(SourceProductionContext context, (SourceGeneratorHelpers.GlobalOptions Options, OpenApiDocument OpenApiDocument, Compilation Compilation) generatorContext)
     {
         var openApi = generatorContext.OpenApiDocument;
         var globalOptions = generatorContext.Options;
+        var compilation = generatorContext.Compilation;
+        var endpointGenerator = new EndpointGenerator(compilation);
         foreach (var path in openApi.Paths)
         {
             var pathExpression = path.Key;
@@ -123,7 +134,10 @@ public sealed class ApiGenerator : IIncrementalGenerator
                             }
                         }
                       """;
-                context.AddSource($"{operationId}/Request.g.cs", ParseCSharpCode(requestSource));
+                var requestSourceCode = new SourceCode(
+                    $"{operationId}/Request.g.cs",
+                    requestSource);
+                requestSourceCode.AddTo(context);
                 
                 var responseSource =
                     $$"""
@@ -136,27 +150,24 @@ public sealed class ApiGenerator : IIncrementalGenerator
                         {
                         }
                       """;
-                context.AddSource($"{operationId}/Response.g.cs", ParseCSharpCode(responseSource));
+                var responseSourceCode = new SourceCode(
+                    $"{operationId}/Response.g.cs",
+                    responseSource);
+                responseSourceCode.AddTo(context);
                 
-                var endpointSource =
-                    $$"""
-                      using System.Threading;
-                      
-                      namespace {{@namespace}};
-
-                      internal partial class {{operationId}}
-                      {
-                        internal const string PathTemplate = "{{pathExpression}}";
-                        internal const string Method = "{{operationType}}";
-
-                        internal partial Task<Response> HandleAsync(Request request, CancellationToken cancellationToken);
-                      }
-                      """;
-                context.AddSource($"{operationId}/{operationId}.g.cs", ParseCSharpCode(endpointSource));
+                endpointGenerator
+                    .Generate(@namespace, operationId, pathExpression, operationId)
+                    .AddTo(context);
             }
         }
+
+        if (endpointGenerator.TryGenerateMissingHandlers(out var sourceCode))
+        {
+            sourceCode.AddTo(context);
+            context.ReportDiagnostic(endpointGenerator.CreateMissingHandlersDiagnosticMessage());
+        }
     }
-    
+
     private static readonly DiagnosticDescriptor Crv1001ErrorGeneratingCSharpCode =
         new(
             id: "CRV1001",
@@ -275,19 +286,6 @@ public sealed class ApiGenerator : IIncrementalGenerator
         }
 
         return typeDeclarationsToGenerate;
-    }
-    
-    
-    private static SourceText ParseCSharpCode(string code, bool normalize = true)
-    {
-        var compilationUnit = SyntaxFactory
-            .ParseCompilationUnit(code, options: new CSharpParseOptions());
-        if (normalize)
-        {
-            compilationUnit = compilationUnit.NormalizeWhitespace();
-        }
-        return compilationUnit.WithTrailingTrivia(SyntaxFactory.CarriageReturnLineFeed)
-            .GetText(Encoding.UTF8);
     }
     
     private static Action<SourceProductionContext, T> WithExceptionReporting<T>(
