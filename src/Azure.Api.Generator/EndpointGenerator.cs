@@ -29,7 +29,7 @@ internal sealed class EndpointGenerator(Compilation compilation)
               """;
         
         var operationFqtn = $"{@namespace}.{className}";
-        if (!HasHandleMethod(compilation.GetTypeByMetadataName(operationFqtn), @namespace))
+        if (!HasHandleMethod(compilation.GetTypeByMetadataName(operationFqtn)))
         {
             _missingHandlers.Add((@namespace, className));
         }
@@ -41,15 +41,13 @@ internal sealed class EndpointGenerator(Compilation compilation)
 
     private const string HandleMethodSignature =
         "internal partial Task<Response> HandleAsync(Request request, CancellationToken cancellationToken)";
-    private static bool HasHandleMethod(INamedTypeSymbol? typeSymbol, string @namespace) =>
+    private static bool HasHandleMethod(INamedTypeSymbol? typeSymbol) =>
         typeSymbol?.GetMembers("HandleAsync")
             .OfType<IMethodSymbol>()
             .Any(method =>
-                method.DeclaredAccessibility == Accessibility.Internal &&
-                method.ReturnType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat) == $"System.Threading.Tasks.Task<{@namespace}.Response>" &&
                 method.Parameters.Length == 2 &&
-                method.Parameters[0].Type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat) == $"{@namespace}.Request" &&
-                method.Parameters[1].Type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat) == "System.Threading.CancellationToken") ?? false;
+                method.Parameters[0].Type.ToDisplayString() == "Request" &&
+                method.Parameters[1].Type.ToDisplayString() == "System.Threading.CancellationToken") ?? false;
 
     internal bool TryGenerateMissingHandlers(
         [NotNullWhen(true)] out SourceCode? sourceCode)
@@ -59,14 +57,12 @@ internal sealed class EndpointGenerator(Compilation compilation)
             sourceCode = null;
             return false;
         }
-            
-        var code =
-            $"""
-             using System;
 
-             {_missingHandlers.Aggregate(new StringBuilder(), (builder, tuple) => 
-                 builder.AppendLine(GenerateMissingHandler(tuple.Namespace, tuple.ClassName)))}
-             """;
+        var code =
+            _missingHandlers
+                .Aggregate(new StringBuilder(), (builder, tuple) =>
+                    builder.AppendLine(GenerateMissingHandler(tuple.Namespace, tuple.ClassName)))
+                .ToString();
         sourceCode = new SourceCode(GeneratedMissingHandlersFileName, code);
         return true;
     }
@@ -92,7 +88,8 @@ internal sealed class EndpointGenerator(Compilation compilation)
           """;
     
     private const string GeneratedMissingHandlersFileName = "MissingHandlers.g.cs";
-    internal static readonly DiagnosticDescriptor Af1001MissingApiOperationHandler =
+
+    private static readonly DiagnosticDescriptor Af1001MissingApiOperationHandler =
         new(
             id: "AF1001",
             title: "Missing API operation handlers",
