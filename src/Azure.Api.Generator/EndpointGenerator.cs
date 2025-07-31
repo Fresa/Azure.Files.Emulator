@@ -9,9 +9,9 @@ namespace Azure.Api.Generator;
 
 internal sealed class EndpointGenerator(Compilation compilation)
 {
-    private readonly List<(string Namespace, string ClassName)> _missingHandlers = [];
+    private readonly List<(string Namespace, string Path)> _missingHandlers = [];
 
-    internal SourceCode Generate(string @namespace, string className, string pathTemplate, string method)
+    internal SourceCode Generate(string @namespace, string pathTemplate, string method)
     {
         var endpointSource =
             $$"""
@@ -29,13 +29,14 @@ internal sealed class EndpointGenerator(Compilation compilation)
               """;
         
         var operationFqtn = $"{@namespace}.Operation";
+        var path = @namespace.Replace('.', '/');
         if (!HasHandleMethod(compilation.GetTypeByMetadataName(operationFqtn)))
         {
-            _missingHandlers.Add((@namespace, className));
+            _missingHandlers.Add((@namespace, path));
         }
 
         return new SourceCode(
-            $"{@namespace.Replace('.', '/')}/Operation.g.cs",
+            $"{path}/Operation.g.cs",
             endpointSource);
     }
 
@@ -50,47 +51,34 @@ internal sealed class EndpointGenerator(Compilation compilation)
                 method.Parameters[1].Type.ToDisplayString() == "System.Threading.CancellationToken") ?? false;
 
     internal bool TryGenerateMissingHandlers(
-        [NotNullWhen(true)] out SourceCode? sourceCode)
+        out (SourceCode SourceCode, Diagnostic Diagnostic)[] missingHandlers)
     {
         if (_missingHandlers.Count == 0)
         {
-            sourceCode = null;
+            missingHandlers = [];
             return false;
         }
 
-        var code =
-            _missingHandlers
-                .Aggregate(new StringBuilder(), (builder, tuple) =>
-                    builder.AppendLine(GenerateMissingHandler(tuple.Namespace, tuple.ClassName)))
-                .ToString();
-        sourceCode = new SourceCode(GeneratedMissingHandlersFileName, code);
-        return true;
-    }
-    
-    internal bool TryGenerateMissingHandlers(
-        [NotNullWhen(true)] out SourceCode[] sourceCode)
-    {
-        if (_missingHandlers.Count == 0)
-        {
-            sourceCode = null;
-            return false;
-        }
-
-        sourceCode =
-            _missingHandlers.Select(tuple => new SourceCode(
-                    $"{tuple.Namespace.Replace('.', '/')}/Operation.Handler.g.cs",
-                    GenerateMissingHandler(tuple.Namespace, tuple.ClassName)))
+        missingHandlers =
+            _missingHandlers.Select(handler =>
+                {
+                    var filename = $"{handler.Path}/Operation.Handler.g.cs";
+                    return (new SourceCode(
+                            filename,
+                            GenerateMissingHandler(handler.Namespace)),
+                        CreateMissingHandlersDiagnosticMessage(handler.Namespace, filename));
+                })
                 .ToArray();
         return true;
     }
 
-    internal Diagnostic CreateMissingHandlersDiagnosticMessage() =>
+    private static Diagnostic CreateMissingHandlersDiagnosticMessage(string @namespace, string filePath) =>
         Diagnostic.Create(
             Af1001MissingApiOperationHandler,
-            Location.Create(GeneratedMissingHandlersFileName, new TextSpan(), new LinePositionSpan()),
-            messageArgs: [_missingHandlers.Count]);
+            Location.Create(filePath, new TextSpan(), new LinePositionSpan()),
+            messageArgs: [@namespace, filePath]);
 
-    private static string GenerateMissingHandler(string @namespace, string className) =>
+    private static string GenerateMissingHandler(string @namespace) =>
         $$"""
             namespace {{@namespace}}
             {
@@ -103,15 +91,13 @@ internal sealed class EndpointGenerator(Compilation compilation)
                 }
             }
           """;
-    
-    private const string GeneratedMissingHandlersFileName = "MissingHandlers.g.cs";
 
     private static readonly DiagnosticDescriptor Af1001MissingApiOperationHandler =
         new(
             id: "AF1001",
             title: "Missing API operation handlers",
-            messageFormat: $"HandleAsync is missing for {{0}} operation(s). Copy the missing handler method signatures and classes from {GeneratedMissingHandlersFileName} and recompile.",
+            messageFormat: $"HandleAsync is missing for the {{0}} operation. A generated stub can be copied from {{1}}.",
             category: "Api",
-            DiagnosticSeverity.Error,
+            DiagnosticSeverity.Warning,
             isEnabledByDefault: true);
 }

@@ -163,20 +163,20 @@ public sealed class ApiGenerator : IIncrementalGenerator
                     $"{directory}/Response.g.cs",
                     responseSource);
                 responseSourceCode.AddTo(context);
-                
+
                 endpointGenerator
-                    .Generate(@namespace, operationId, pathExpression, operationId)
+                    .Generate(@namespace, pathExpression, operationId)
                     .AddTo(context);
             }
         }
 
-        if (endpointGenerator.TryGenerateMissingHandlers(out SourceCode[] sourceCode))
+        if (endpointGenerator.TryGenerateMissingHandlers(out var missingHandlers))
         {
-            foreach (var code in sourceCode)
+            foreach (var missingHandler in missingHandlers)
             {
-                code.AddTo(context);                
+                missingHandler.SourceCode.AddTo(context);
+                context.ReportDiagnostic(missingHandler.Diagnostic);
             }
-            // context.ReportDiagnostic(endpointGenerator.CreateMissingHandlersDiagnosticMessage());
         }
     }
 
