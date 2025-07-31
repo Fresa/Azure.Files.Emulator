@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 
 namespace SharenameDirectoryFilename.FileDelete;
-internal partial class FileDelete
+internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}/{directory}/{fileName}";
     internal const string Method = "FileDelete";

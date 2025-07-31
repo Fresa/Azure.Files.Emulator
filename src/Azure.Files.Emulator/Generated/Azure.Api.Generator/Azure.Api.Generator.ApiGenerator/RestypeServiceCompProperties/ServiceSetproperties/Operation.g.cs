@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 
 namespace RestypeServiceCompProperties.ServiceSetproperties;
-internal partial class ServiceSetproperties
+internal partial class Operation
 {
     internal const string PathTemplate = "/?restype=service&comp=properties";
     internal const string Method = "ServiceSetproperties";

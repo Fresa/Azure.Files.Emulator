@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 
 namespace SharenameRestypeShareCompLeaseChange.ShareChangelease;
-internal partial class ShareChangelease
+internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}?restype=share&comp=lease&change";
     internal const string Method = "ShareChangelease";

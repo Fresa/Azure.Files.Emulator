@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 
 namespace SharenameRestypeShare.ShareGetproperties;
-internal partial class ShareGetproperties
+internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}?restype=share";
     internal const string Method = "ShareGetproperties";

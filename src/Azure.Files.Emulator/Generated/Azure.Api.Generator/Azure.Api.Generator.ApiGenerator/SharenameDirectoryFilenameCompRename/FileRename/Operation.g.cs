@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 
 namespace SharenameDirectoryFilenameCompRename.FileRename;
-internal partial class FileRename
+internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}/{directory}/{fileName}?comp=rename";
     internal const string Method = "FileRename";

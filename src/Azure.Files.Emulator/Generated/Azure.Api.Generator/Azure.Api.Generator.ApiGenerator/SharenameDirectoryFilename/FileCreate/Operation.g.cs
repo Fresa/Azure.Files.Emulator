@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 
 namespace SharenameDirectoryFilename.FileCreate;
-internal partial class FileCreate
+internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}/{directory}/{fileName}";
     internal const string Method = "FileCreate";

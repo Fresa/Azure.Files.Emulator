@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 
 namespace SharenameRestypeShareCompMetadata.ShareSetmetadata;
-internal partial class ShareSetmetadata
+internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}?restype=share&comp=metadata";
     internal const string Method = "ShareSetmetadata";

@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 
 namespace SharenameDirectoryFilenameCompLeaseChange.FileChangelease;
-internal partial class FileChangelease
+internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}/{directory}/{fileName}?comp=lease&change";
     internal const string Method = "FileChangelease";

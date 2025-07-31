@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 
 namespace SharenameDirectoryFilename.FileDownload;
-internal partial class FileDownload
+internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}/{directory}/{fileName}";
     internal const string Method = "FileDownload";

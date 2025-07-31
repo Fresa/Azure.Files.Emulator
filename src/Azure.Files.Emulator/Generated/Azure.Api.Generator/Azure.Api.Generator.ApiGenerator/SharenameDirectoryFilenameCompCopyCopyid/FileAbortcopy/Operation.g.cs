@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 
 namespace SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy;
-internal partial class FileAbortcopy
+internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}/{directory}/{fileName}?comp=copy&copyid";
     internal const string Method = "FileAbortcopy";

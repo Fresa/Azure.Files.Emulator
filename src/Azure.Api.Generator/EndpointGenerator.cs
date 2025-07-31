@@ -19,7 +19,7 @@ internal sealed class EndpointGenerator(Compilation compilation)
 
               namespace {{@namespace}};
 
-              internal partial class {{className}}
+              internal partial class Operation
               {
                 internal const string PathTemplate = "{{pathTemplate}}";
                 internal const string Method = "{{method}}";
@@ -28,7 +28,7 @@ internal sealed class EndpointGenerator(Compilation compilation)
               }
               """;
         
-        var operationFqtn = $"{@namespace}.{className}";
+        var operationFqtn = $"{@namespace}.Operation";
         if (!HasHandleMethod(compilation.GetTypeByMetadataName(operationFqtn)))
         {
             _missingHandlers.Add((@namespace, className));
@@ -66,6 +66,23 @@ internal sealed class EndpointGenerator(Compilation compilation)
         sourceCode = new SourceCode(GeneratedMissingHandlersFileName, code);
         return true;
     }
+    
+    internal bool TryGenerateMissingHandlers(
+        [NotNullWhen(true)] out SourceCode[] sourceCode)
+    {
+        if (_missingHandlers.Count == 0)
+        {
+            sourceCode = null;
+            return false;
+        }
+
+        sourceCode =
+            _missingHandlers.Select(tuple => new SourceCode(
+                    $"{tuple.Namespace.Replace('.', '/')}/Operation.Handler.g.cs",
+                    GenerateMissingHandler(tuple.Namespace, tuple.ClassName)))
+                .ToArray();
+        return true;
+    }
 
     internal Diagnostic CreateMissingHandlersDiagnosticMessage() =>
         Diagnostic.Create(
@@ -77,7 +94,7 @@ internal sealed class EndpointGenerator(Compilation compilation)
         $$"""
             namespace {{@namespace}}
             {
-                internal partial class {{className}}
+                internal partial class Operation
                 {
                     {{HandleMethodSignature}}
                     {

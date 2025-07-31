@@ -37,6 +37,12 @@ public sealed class ApiGenerator : IIncrementalGenerator
             .Collect();
         
         var openapiDocumentProvider = provider.Select((array, _) => array.First());
+        var projectDir = context.AnalyzerConfigOptionsProvider.Select((config, _) =>
+            config.GlobalOptions
+                .TryGetValue("build_property.ProjectDir", out var projectDir)
+                ? projectDir
+                : null
+        );
         
         // Get global options
         var globalOptions =
@@ -51,21 +57,24 @@ public sealed class ApiGenerator : IIncrementalGenerator
         var openApiProvider = globalOptions
             .Combine(openapiDocumentProvider)
             .Combine(context.CompilationProvider)
+            .Combine(projectDir)
             .Select((tuple, _) => (
-                Options: tuple.Left.Left,
-                OpenApiDocument: tuple.Left.Right,
-                Compilation: tuple.Right
+                Options: tuple.Left.Left.Left,
+                OpenApiDocument: tuple.Left.Left.Right,
+                Compilation: tuple.Left.Right,
+                ProjectDir: tuple.Right
             ));
 
         context.RegisterSourceOutput(openApiProvider,
-            WithExceptionReporting<(SourceGeneratorHelpers.GlobalOptions, OpenApiDocument, Compilation)>(GenerateCode));
+            WithExceptionReporting<(SourceGeneratorHelpers.GlobalOptions, OpenApiDocument, Compilation, string?)>(GenerateCode));
     }
 
-    private static void GenerateCode(SourceProductionContext context, (SourceGeneratorHelpers.GlobalOptions Options, OpenApiDocument OpenApiDocument, Compilation Compilation) generatorContext)
+    private static void GenerateCode(SourceProductionContext context, (SourceGeneratorHelpers.GlobalOptions Options, OpenApiDocument OpenApiDocument, Compilation Compilation, string? ProjectDir) generatorContext)
     {
         var openApi = generatorContext.OpenApiDocument;
         var globalOptions = generatorContext.Options;
         var compilation = generatorContext.Compilation;
+        var projectDir = generatorContext.ProjectDir;
         var endpointGenerator = new EndpointGenerator(compilation);
         foreach (var path in openApi.Paths)
         {
@@ -94,7 +103,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
                 var operation = openApiOperation.Value;
                 var operationId = ((string?)operation.OperationId ?? operationType.ToString()).ToPascalCase();
                 var @namespace = $"{entityType}.{operationId}";
-                
+                var directory = @namespace.Replace('.', '/');
                 
                 foreach (var parameter in operation.Parameters)
                 {
@@ -135,7 +144,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
                         }
                       """;
                 var requestSourceCode = new SourceCode(
-                    $"{operationId}/Request.g.cs",
+                    $"{directory}/Request.g.cs",
                     requestSource);
                 requestSourceCode.AddTo(context);
                 
@@ -151,7 +160,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
                         }
                       """;
                 var responseSourceCode = new SourceCode(
-                    $"{operationId}/Response.g.cs",
+                    $"{directory}/Response.g.cs",
                     responseSource);
                 responseSourceCode.AddTo(context);
                 
@@ -161,10 +170,13 @@ public sealed class ApiGenerator : IIncrementalGenerator
             }
         }
 
-        if (endpointGenerator.TryGenerateMissingHandlers(out var sourceCode))
+        if (endpointGenerator.TryGenerateMissingHandlers(out SourceCode[] sourceCode))
         {
-            sourceCode.AddTo(context);
-            context.ReportDiagnostic(endpointGenerator.CreateMissingHandlersDiagnosticMessage());
+            foreach (var code in sourceCode)
+            {
+                code.AddTo(context);                
+            }
+            // context.ReportDiagnostic(endpointGenerator.CreateMissingHandlersDiagnosticMessage());
         }
     }
 

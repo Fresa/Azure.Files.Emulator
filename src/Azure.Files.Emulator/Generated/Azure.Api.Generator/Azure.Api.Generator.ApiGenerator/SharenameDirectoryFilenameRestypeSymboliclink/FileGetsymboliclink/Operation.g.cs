@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 
 namespace SharenameDirectoryFilenameRestypeSymboliclink.FileGetsymboliclink;
-internal partial class FileGetsymboliclink
+internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}/{directory}/{fileName}?restype=symboliclink";
     internal const string Method = "FileGetsymboliclink";

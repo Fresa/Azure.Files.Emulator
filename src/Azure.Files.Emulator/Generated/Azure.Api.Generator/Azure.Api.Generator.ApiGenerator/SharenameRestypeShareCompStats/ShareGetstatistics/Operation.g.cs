@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 
 namespace SharenameRestypeShareCompStats.ShareGetstatistics;
-internal partial class ShareGetstatistics
+internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}?restype=share&comp=stats";
     internal const string Method = "ShareGetstatistics";

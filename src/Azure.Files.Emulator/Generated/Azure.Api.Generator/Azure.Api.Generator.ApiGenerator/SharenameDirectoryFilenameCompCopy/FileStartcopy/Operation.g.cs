@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 
 namespace SharenameDirectoryFilenameCompCopy.FileStartcopy;
-internal partial class FileStartcopy
+internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}/{directory}/{fileName}?comp=copy";
     internal const string Method = "FileStartcopy";

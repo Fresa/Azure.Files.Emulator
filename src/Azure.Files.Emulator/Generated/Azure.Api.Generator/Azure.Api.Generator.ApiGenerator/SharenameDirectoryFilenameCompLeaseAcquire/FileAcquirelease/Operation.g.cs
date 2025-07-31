@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 
 namespace SharenameDirectoryFilenameCompLeaseAcquire.FileAcquirelease;
-internal partial class FileAcquirelease
+internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}/{directory}/{fileName}?comp=lease&acquire";
     internal const string Method = "FileAcquirelease";

@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 
 namespace SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment;
-internal partial class DirectoryListfilesanddirectoriessegment
+internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}/{directory}?restype=directory&comp=list";
     internal const string Method = "DirectoryListfilesanddirectoriessegment";

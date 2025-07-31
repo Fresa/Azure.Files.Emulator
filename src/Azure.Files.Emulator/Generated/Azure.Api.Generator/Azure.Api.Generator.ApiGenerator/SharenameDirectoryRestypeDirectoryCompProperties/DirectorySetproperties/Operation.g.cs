@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 
 namespace SharenameDirectoryRestypeDirectoryCompProperties.DirectorySetproperties;
-internal partial class DirectorySetproperties
+internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}/{directory}?restype=directory&comp=properties";
     internal const string Method = "DirectorySetproperties";
