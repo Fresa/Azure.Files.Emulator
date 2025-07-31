@@ -29,4 +29,14 @@
     <ItemGroup>
         <AdditionalFiles Include="..\..\Microsoft.FileStorage.ApiSpecs\stable\2025-11-05\file.json"/>
     </ItemGroup>
+
+    <Target Name="CopyMissingOperationHandlers" AfterTargets="Build">
+        <ItemGroup>
+            <TextFiles Include="$(CompilerGeneratedFilesOutputPath)\**\Operation.Handler.g.cs" />
+        </ItemGroup>
+        <Copy 
+                SourceFiles="@(TextFiles)"
+                DestinationFiles="@(TextFiles->'generated-api-handlers\%(RecursiveDir)%(Filename)%(Extension)')"
+                ContinueOnError="true" />
+    </Target>
 </Project>
