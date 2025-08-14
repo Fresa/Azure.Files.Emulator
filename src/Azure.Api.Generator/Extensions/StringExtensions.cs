@@ -22,7 +22,6 @@ internal static class StringExtensions
         }
         
         var sections = str
-            .ToLower()
             .Split(delimiters, StringSplitOptions.RemoveEmptyEntries)
             .Select(section => section.First().ToString().ToUpper() + string.Join(string.Empty, section.Skip(1)));
 
