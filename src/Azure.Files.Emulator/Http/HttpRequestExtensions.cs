@@ -49,7 +49,7 @@ internal static class HttpRequestExtensions
             });
 
         throw new BadHttpRequestException($$"""
-                                            Object of type {{typeof(T)}} could not be parsed from parameter '{{parameter.Name}}'.
+                                            Object of type {{typeof(T)}} could not be parsed from parameter '{{parameter?.Name}}'.
                                             "Validation results: {{validationResults}}
                                             """);
     }
