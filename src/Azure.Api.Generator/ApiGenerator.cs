@@ -250,7 +250,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
                 namedTypes.Add(
                     new CSharpLanguageProvider.NamedType(
                         rootType.ReducedTypeDeclaration().ReducedType.LocatedSchema.Location,
-                        spec.TypeName,
+                        spec.TypeName!,
                         spec.Namespace,
                         spec.Accessibility));
             }

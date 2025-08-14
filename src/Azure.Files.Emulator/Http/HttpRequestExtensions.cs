@@ -27,6 +27,7 @@ internal static class HttpRequestExtensions
         var parameter = Parameter.FromOpenApi20ParameterSpecification(parameterSpecificationAsJson);
         var value = parameter switch
         {
+            null => T.Undefined,
             _ when parameter.InBody => T.Parse(request.Body),
             _ when TryGetValue(request, parameter, out var stringValue) =>
                 Parse<T>(parameter, stringValue),
