@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Text;
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
 
 namespace Azure.Api.Generator;
@@ -28,13 +27,16 @@ internal sealed class EndpointGenerator(Compilation compilation)
               }
               """;
         
-        var operationFqtn = $"{@namespace}.Operation";
         var path = @namespace.Replace('.', '/');
-        if (!HasHandleMethod(compilation.GetTypeByMetadataName(operationFqtn)))
+        var found = compilation.GetSymbolsWithName("Operation", SymbolFilter.Type)
+            .OfType<INamedTypeSymbol>()
+            .Where(symbol => symbol.ContainingNamespace.ToDisplayString() == @namespace)
+            .Any(HasHandleMethod);
+        if (!found)
         {
             _missingHandlers.Add((@namespace, path));
         }
-
+        
         return new SourceCode(
             $"{path}/Operation.g.cs",
             endpointSource);
@@ -47,8 +49,14 @@ internal sealed class EndpointGenerator(Compilation compilation)
             .OfType<IMethodSymbol>()
             .Any(method =>
                 method.Parameters.Length == 2 &&
+                //method.PartialImplementationPart != null &&
+                method.DeclaringSyntaxReferences.Any(reference =>
+                {
+                    var syntax = reference.GetSyntax() as MethodDeclarationSyntax;
+                    return syntax?.Body != null || syntax?.ExpressionBody != null;
+                }) &&
                 method.Parameters[0].Type.ToDisplayString() == "Request" &&
-                method.Parameters[1].Type.ToDisplayString() == "System.Threading.CancellationToken") ?? false;
+                method.Parameters[1].Type.ToDisplayString() == "CancellationToken") ?? false;
 
     internal bool TryGenerateMissingHandlers(
         out (SourceCode SourceCode, Diagnostic Diagnostic)[] missingHandlers)
