@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryFilenameCompProperties.FileSethttpheaders
+﻿namespace ShareNameDirectoryFileNameCompProperties.FileSetHTTPHeaders
 {
     internal partial class Operation
     {

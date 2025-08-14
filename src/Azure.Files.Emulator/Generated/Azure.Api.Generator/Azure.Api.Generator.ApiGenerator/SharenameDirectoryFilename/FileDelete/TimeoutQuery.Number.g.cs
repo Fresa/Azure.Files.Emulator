@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilename.FileDelete;
+namespace ShareNameDirectoryFileName.FileDelete;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryFilename.FileDelete.TimeoutQuery>,
-      IAdditionOperators<SharenameDirectoryFilename.FileDelete.TimeoutQuery, SharenameDirectoryFilename.FileDelete.TimeoutQuery, SharenameDirectoryFilename.FileDelete.TimeoutQuery>,
-      ISubtractionOperators<SharenameDirectoryFilename.FileDelete.TimeoutQuery, SharenameDirectoryFilename.FileDelete.TimeoutQuery, SharenameDirectoryFilename.FileDelete.TimeoutQuery>,
-      IMultiplyOperators<SharenameDirectoryFilename.FileDelete.TimeoutQuery, SharenameDirectoryFilename.FileDelete.TimeoutQuery, SharenameDirectoryFilename.FileDelete.TimeoutQuery>,
-      IDivisionOperators<SharenameDirectoryFilename.FileDelete.TimeoutQuery, SharenameDirectoryFilename.FileDelete.TimeoutQuery, SharenameDirectoryFilename.FileDelete.TimeoutQuery>,
-      IIncrementOperators<SharenameDirectoryFilename.FileDelete.TimeoutQuery>,
-      IDecrementOperators<SharenameDirectoryFilename.FileDelete.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileName.FileDelete.TimeoutQuery>,
+      IAdditionOperators<ShareNameDirectoryFileName.FileDelete.TimeoutQuery, ShareNameDirectoryFileName.FileDelete.TimeoutQuery, ShareNameDirectoryFileName.FileDelete.TimeoutQuery>,
+      ISubtractionOperators<ShareNameDirectoryFileName.FileDelete.TimeoutQuery, ShareNameDirectoryFileName.FileDelete.TimeoutQuery, ShareNameDirectoryFileName.FileDelete.TimeoutQuery>,
+      IMultiplyOperators<ShareNameDirectoryFileName.FileDelete.TimeoutQuery, ShareNameDirectoryFileName.FileDelete.TimeoutQuery, ShareNameDirectoryFileName.FileDelete.TimeoutQuery>,
+      IDivisionOperators<ShareNameDirectoryFileName.FileDelete.TimeoutQuery, ShareNameDirectoryFileName.FileDelete.TimeoutQuery, ShareNameDirectoryFileName.FileDelete.TimeoutQuery>,
+      IIncrementOperators<ShareNameDirectoryFileName.FileDelete.TimeoutQuery>,
+      IDecrementOperators<ShareNameDirectoryFileName.FileDelete.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameDirectoryFilename.FileDelete.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileName.FileDelete.TimeoutQuery>
 #endif
 {
     /// <summary>

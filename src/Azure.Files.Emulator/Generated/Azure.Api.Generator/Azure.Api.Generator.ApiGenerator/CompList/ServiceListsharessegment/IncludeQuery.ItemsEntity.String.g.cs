@@ -15,7 +15,7 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace CompList.ServiceListsharessegment;
+namespace CompList.ServiceListSharesSegment;
 
 /// <summary>
 /// Generated from JSON Schema.
@@ -27,10 +27,10 @@ public readonly partial struct IncludeQuery
     /// </summary>
     public readonly partial struct ItemsEntity
 #if NET8_0_OR_GREATER
-        : IJsonString<CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity>,
+        : IJsonString<CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity>,
           ISpanFormattable
 #else
-        : IJsonString<CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity>
+        : IJsonString<CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity>
 #endif
     {
         /// <summary>

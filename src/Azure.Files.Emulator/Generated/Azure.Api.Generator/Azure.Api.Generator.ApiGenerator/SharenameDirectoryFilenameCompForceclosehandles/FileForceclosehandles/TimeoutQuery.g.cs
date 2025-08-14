@@ -15,7 +15,7 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles;
+namespace ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -62,7 +62,7 @@ public readonly partial struct TimeoutQuery
     /// <summary>
     /// Gets the schema location from which this type was generated.
     /// </summary>
-    public static string SchemaLocation { get; } = "SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.TimeoutQuery.json";
+    public static string SchemaLocation { get; } = "ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.TimeoutQuery.json";
 
     /// <summary>
     /// Gets a Null instance.

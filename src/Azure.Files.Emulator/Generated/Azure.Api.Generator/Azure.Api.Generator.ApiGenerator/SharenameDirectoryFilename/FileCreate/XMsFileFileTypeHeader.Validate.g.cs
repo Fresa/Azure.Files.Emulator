@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilename.FileCreate;
+namespace ShareNameDirectoryFileName.FileCreate;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct XMsFileFileTypeHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryFilename.FileCreate.XMsFileFileTypeHeader.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryFileName.FileCreate.XMsFileFileTypeHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct XMsFileFileTypeHeader
     {
         /// <summary>
         /// Gets the string 'Regular'
-        /// as a <see cref="SharenameDirectoryFilename.FileCreate.XMsFileFileTypeHeader"/>.
+        /// as a <see cref="ShareNameDirectoryFileName.FileCreate.XMsFileFileTypeHeader"/>.
         /// </summary>
         public static XMsFileFileTypeHeader Regular { get; } = CorvusValidation.Enum1.As<XMsFileFileTypeHeader>();
 
@@ -81,7 +81,7 @@ public readonly partial struct XMsFileFileTypeHeader
 
         /// <summary>
         /// Gets the string 'Directory'
-        /// as a <see cref="SharenameDirectoryFilename.FileCreate.XMsFileFileTypeHeader"/>.
+        /// as a <see cref="ShareNameDirectoryFileName.FileCreate.XMsFileFileTypeHeader"/>.
         /// </summary>
         public static XMsFileFileTypeHeader Directory { get; } = CorvusValidation.Enum2.As<XMsFileFileTypeHeader>();
 
@@ -93,7 +93,7 @@ public readonly partial struct XMsFileFileTypeHeader
 
         /// <summary>
         /// Gets the string 'SymLink'
-        /// as a <see cref="SharenameDirectoryFilename.FileCreate.XMsFileFileTypeHeader"/>.
+        /// as a <see cref="ShareNameDirectoryFileName.FileCreate.XMsFileFileTypeHeader"/>.
         /// </summary>
         public static XMsFileFileTypeHeader SymLink { get; } = CorvusValidation.Enum3.As<XMsFileFileTypeHeader>();
 

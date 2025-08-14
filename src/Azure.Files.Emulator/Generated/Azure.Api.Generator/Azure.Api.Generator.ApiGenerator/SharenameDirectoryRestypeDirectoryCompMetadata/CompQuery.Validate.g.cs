@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryRestypeDirectoryCompMetadata;
+namespace ShareNameDirectoryRestypeDirectoryCompMetadata;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct CompQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryRestypeDirectoryCompMetadata.CompQuery.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryRestypeDirectoryCompMetadata.CompQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct CompQuery
     {
         /// <summary>
         /// Gets the string 'metadata'
-        /// as a <see cref="SharenameDirectoryRestypeDirectoryCompMetadata.CompQuery"/>.
+        /// as a <see cref="ShareNameDirectoryRestypeDirectoryCompMetadata.CompQuery"/>.
         /// </summary>
         public static CompQuery Metadata { get; } = CorvusValidation.Enum.As<CompQuery>();
 

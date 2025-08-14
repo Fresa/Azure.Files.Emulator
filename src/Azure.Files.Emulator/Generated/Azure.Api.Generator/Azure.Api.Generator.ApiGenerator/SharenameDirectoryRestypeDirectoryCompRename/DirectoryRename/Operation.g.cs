@@ -1,6 +1,6 @@
 ﻿using System.Threading;
 
-namespace SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename;
+namespace ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename;
 internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}/{directory}?restype=directory&comp=rename";

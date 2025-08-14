@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameCompProperties.FileSethttpheaders;
+namespace ShareNameDirectoryFileNameCompProperties.FileSetHTTPHeaders;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryFilenameCompProperties.FileSethttpheaders.TimeoutQuery>,
-      IAdditionOperators<SharenameDirectoryFilenameCompProperties.FileSethttpheaders.TimeoutQuery, SharenameDirectoryFilenameCompProperties.FileSethttpheaders.TimeoutQuery, SharenameDirectoryFilenameCompProperties.FileSethttpheaders.TimeoutQuery>,
-      ISubtractionOperators<SharenameDirectoryFilenameCompProperties.FileSethttpheaders.TimeoutQuery, SharenameDirectoryFilenameCompProperties.FileSethttpheaders.TimeoutQuery, SharenameDirectoryFilenameCompProperties.FileSethttpheaders.TimeoutQuery>,
-      IMultiplyOperators<SharenameDirectoryFilenameCompProperties.FileSethttpheaders.TimeoutQuery, SharenameDirectoryFilenameCompProperties.FileSethttpheaders.TimeoutQuery, SharenameDirectoryFilenameCompProperties.FileSethttpheaders.TimeoutQuery>,
-      IDivisionOperators<SharenameDirectoryFilenameCompProperties.FileSethttpheaders.TimeoutQuery, SharenameDirectoryFilenameCompProperties.FileSethttpheaders.TimeoutQuery, SharenameDirectoryFilenameCompProperties.FileSethttpheaders.TimeoutQuery>,
-      IIncrementOperators<SharenameDirectoryFilenameCompProperties.FileSethttpheaders.TimeoutQuery>,
-      IDecrementOperators<SharenameDirectoryFilenameCompProperties.FileSethttpheaders.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompProperties.FileSetHTTPHeaders.TimeoutQuery>,
+      IAdditionOperators<ShareNameDirectoryFileNameCompProperties.FileSetHTTPHeaders.TimeoutQuery, ShareNameDirectoryFileNameCompProperties.FileSetHTTPHeaders.TimeoutQuery, ShareNameDirectoryFileNameCompProperties.FileSetHTTPHeaders.TimeoutQuery>,
+      ISubtractionOperators<ShareNameDirectoryFileNameCompProperties.FileSetHTTPHeaders.TimeoutQuery, ShareNameDirectoryFileNameCompProperties.FileSetHTTPHeaders.TimeoutQuery, ShareNameDirectoryFileNameCompProperties.FileSetHTTPHeaders.TimeoutQuery>,
+      IMultiplyOperators<ShareNameDirectoryFileNameCompProperties.FileSetHTTPHeaders.TimeoutQuery, ShareNameDirectoryFileNameCompProperties.FileSetHTTPHeaders.TimeoutQuery, ShareNameDirectoryFileNameCompProperties.FileSetHTTPHeaders.TimeoutQuery>,
+      IDivisionOperators<ShareNameDirectoryFileNameCompProperties.FileSetHTTPHeaders.TimeoutQuery, ShareNameDirectoryFileNameCompProperties.FileSetHTTPHeaders.TimeoutQuery, ShareNameDirectoryFileNameCompProperties.FileSetHTTPHeaders.TimeoutQuery>,
+      IIncrementOperators<ShareNameDirectoryFileNameCompProperties.FileSetHTTPHeaders.TimeoutQuery>,
+      IDecrementOperators<ShareNameDirectoryFileNameCompProperties.FileSetHTTPHeaders.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameDirectoryFilenameCompProperties.FileSethttpheaders.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompProperties.FileSetHTTPHeaders.TimeoutQuery>
 #endif
 {
     /// <summary>

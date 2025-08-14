@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryFilenameCompMetadata.FileSetmetadata
+﻿namespace ShareNameDirectoryFileNameCompMetadata.FileSetMetadata
 {
     internal partial class Operation
     {

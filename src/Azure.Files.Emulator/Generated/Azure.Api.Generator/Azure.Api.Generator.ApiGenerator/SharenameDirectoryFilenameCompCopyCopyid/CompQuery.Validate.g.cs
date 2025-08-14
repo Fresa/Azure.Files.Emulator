@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompCopyCopyid;
+namespace ShareNameDirectoryFileNameCompCopyCopyid;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct CompQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryFilenameCompCopyCopyid.CompQuery.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryFileNameCompCopyCopyid.CompQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct CompQuery
     {
         /// <summary>
         /// Gets the string 'copy'
-        /// as a <see cref="SharenameDirectoryFilenameCompCopyCopyid.CompQuery"/>.
+        /// as a <see cref="ShareNameDirectoryFileNameCompCopyCopyid.CompQuery"/>.
         /// </summary>
         public static CompQuery Copy { get; } = CorvusValidation.Enum.As<CompQuery>();
 

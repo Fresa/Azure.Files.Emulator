@@ -15,7 +15,7 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilename.FileDownload;
+namespace ShareNameDirectoryFileName.FileDownload;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -62,7 +62,7 @@ public readonly partial struct TimeoutQuery
     /// <summary>
     /// Gets the schema location from which this type was generated.
     /// </summary>
-    public static string SchemaLocation { get; } = "SharenameDirectoryFilename.FileDownload.TimeoutQuery.json";
+    public static string SchemaLocation { get; } = "ShareNameDirectoryFileName.FileDownload.TimeoutQuery.json";
 
     /// <summary>
     /// Gets a Null instance.

@@ -15,7 +15,7 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl;
+namespace ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -31,10 +31,10 @@ namespace SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl;
 /// </remarks>
 public readonly partial struct XMsWriteHeader
 #if NET8_0_OR_GREATER
-    : IJsonString<SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl.XMsWriteHeader>,
+    : IJsonString<ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL.XMsWriteHeader>,
       ISpanFormattable
 #else
-    : IJsonString<SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl.XMsWriteHeader>
+    : IJsonString<ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL.XMsWriteHeader>
 #endif
 {
     /// <summary>

@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameRestypeSymboliclink;
+namespace ShareNameDirectoryFileNameRestypeSymboliclink;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct RestypeQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryFilenameRestypeSymboliclink.RestypeQuery.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryFileNameRestypeSymboliclink.RestypeQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct RestypeQuery
     {
         /// <summary>
         /// Gets the string 'symboliclink'
-        /// as a <see cref="SharenameDirectoryFilenameRestypeSymboliclink.RestypeQuery"/>.
+        /// as a <see cref="ShareNameDirectoryFileNameRestypeSymboliclink.RestypeQuery"/>.
         /// </summary>
         public static RestypeQuery Symboliclink { get; } = CorvusValidation.Enum.As<RestypeQuery>();
 

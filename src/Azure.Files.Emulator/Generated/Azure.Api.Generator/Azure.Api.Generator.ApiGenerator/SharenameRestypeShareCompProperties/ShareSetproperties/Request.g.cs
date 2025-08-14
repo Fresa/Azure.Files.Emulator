@@ -1,23 +1,23 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameRestypeShareCompProperties.ShareSetproperties;
+namespace ShareNameRestypeShareCompProperties.ShareSetProperties;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
-    internal required SharenameRestypeShareCompProperties.RestypeQuery Restype { get; init; }
-    internal required SharenameRestypeShareCompProperties.CompQuery Comp { get; init; }
-    internal SharenameRestypeShareCompProperties.ShareSetproperties.TimeoutQuery? Timeout { get; init; }
-    internal required SharenameRestypeShareCompProperties.ShareSetproperties.XMsVersionHeader XMsVersion { get; init; }
-    internal SharenameRestypeShareCompProperties.ShareSetproperties.XMsShareQuotaHeader? XMsShareQuota { get; init; }
-    internal SharenameRestypeShareCompProperties.ShareSetproperties.XMsAccessTierHeader? XMsAccessTier { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
+    internal required ShareNameRestypeShareCompProperties.RestypeQuery Restype { get; init; }
+    internal required ShareNameRestypeShareCompProperties.CompQuery Comp { get; init; }
+    internal ShareNameRestypeShareCompProperties.ShareSetProperties.TimeoutQuery? Timeout { get; init; }
+    internal required ShareNameRestypeShareCompProperties.ShareSetProperties.XMsVersionHeader XMsVersion { get; init; }
+    internal ShareNameRestypeShareCompProperties.ShareSetProperties.XMsShareQuotaHeader? XMsShareQuota { get; init; }
+    internal ShareNameRestypeShareCompProperties.ShareSetProperties.XMsAccessTierHeader? XMsAccessTier { get; init; }
     internal Corvus.Json.JsonString? XMsLeaseId { get; init; }
-    internal SharenameRestypeShareCompProperties.ShareSetproperties.XMsRootSquashHeader? XMsRootSquash { get; init; }
+    internal ShareNameRestypeShareCompProperties.ShareSetProperties.XMsRootSquashHeader? XMsRootSquash { get; init; }
     internal Corvus.Json.JsonBoolean? XMsEnableSnapshotVirtualDirectoryAccess { get; init; }
     internal Corvus.Json.JsonBoolean? XMsSharePaidBurstingEnabled { get; init; }
     internal Corvus.Json.JsonInt64? XMsSharePaidBurstingMaxBandwidthMibps { get; init; }
     internal Corvus.Json.JsonInt64? XMsSharePaidBurstingMaxIops { get; init; }
-    internal SharenameRestypeShareCompProperties.ShareSetproperties.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameRestypeShareCompProperties.ShareSetProperties.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
     internal Corvus.Json.JsonInt64? XMsShareProvisionedIops { get; init; }
     internal Corvus.Json.JsonInt64? XMsShareProvisionedBandwidthMibps { get; init; }
 
@@ -25,7 +25,7 @@ internal partial class Request
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -35,7 +35,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Restype = request.Bind<SharenameRestypeShareCompProperties.RestypeQuery>("""
+            Restype = request.Bind<ShareNameRestypeShareCompProperties.RestypeQuery>("""
 {
   "in": "query",
   "name": "restype",
@@ -47,7 +47,7 @@ internal partial class Request
   ]
 }
 """),
-            Comp = request.Bind<SharenameRestypeShareCompProperties.CompQuery>("""
+            Comp = request.Bind<ShareNameRestypeShareCompProperties.CompQuery>("""
 {
   "in": "query",
   "name": "comp",
@@ -59,7 +59,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = request.Bind<SharenameRestypeShareCompProperties.ShareSetproperties.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameRestypeShareCompProperties.ShareSetProperties.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -69,7 +69,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<SharenameRestypeShareCompProperties.ShareSetproperties.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameRestypeShareCompProperties.ShareSetProperties.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -83,7 +83,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsShareQuota = request.Bind<SharenameRestypeShareCompProperties.ShareSetproperties.XMsShareQuotaHeader>("""
+            XMsShareQuota = request.Bind<ShareNameRestypeShareCompProperties.ShareSetProperties.XMsShareQuotaHeader>("""
 {
   "in": "header",
   "name": "x-ms-share-quota",
@@ -94,7 +94,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsAccessTier = request.Bind<SharenameRestypeShareCompProperties.ShareSetproperties.XMsAccessTierHeader>("""
+            XMsAccessTier = request.Bind<ShareNameRestypeShareCompProperties.ShareSetProperties.XMsAccessTierHeader>("""
 {
   "in": "header",
   "name": "x-ms-access-tier",
@@ -127,7 +127,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsRootSquash = request.Bind<SharenameRestypeShareCompProperties.ShareSetproperties.XMsRootSquashHeader>("""
+            XMsRootSquash = request.Bind<ShareNameRestypeShareCompProperties.ShareSetProperties.XMsRootSquashHeader>("""
 {
   "in": "header",
   "name": "x-ms-root-squash",
@@ -187,7 +187,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<SharenameRestypeShareCompProperties.ShareSetproperties.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameRestypeShareCompProperties.ShareSetProperties.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

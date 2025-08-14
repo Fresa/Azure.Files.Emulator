@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace RestypeServiceCompProperties.ServiceGetproperties;
+namespace RestypeServiceCompProperties.ServiceGetProperties;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<RestypeServiceCompProperties.ServiceGetproperties.TimeoutQuery>,
-      IAdditionOperators<RestypeServiceCompProperties.ServiceGetproperties.TimeoutQuery, RestypeServiceCompProperties.ServiceGetproperties.TimeoutQuery, RestypeServiceCompProperties.ServiceGetproperties.TimeoutQuery>,
-      ISubtractionOperators<RestypeServiceCompProperties.ServiceGetproperties.TimeoutQuery, RestypeServiceCompProperties.ServiceGetproperties.TimeoutQuery, RestypeServiceCompProperties.ServiceGetproperties.TimeoutQuery>,
-      IMultiplyOperators<RestypeServiceCompProperties.ServiceGetproperties.TimeoutQuery, RestypeServiceCompProperties.ServiceGetproperties.TimeoutQuery, RestypeServiceCompProperties.ServiceGetproperties.TimeoutQuery>,
-      IDivisionOperators<RestypeServiceCompProperties.ServiceGetproperties.TimeoutQuery, RestypeServiceCompProperties.ServiceGetproperties.TimeoutQuery, RestypeServiceCompProperties.ServiceGetproperties.TimeoutQuery>,
-      IIncrementOperators<RestypeServiceCompProperties.ServiceGetproperties.TimeoutQuery>,
-      IDecrementOperators<RestypeServiceCompProperties.ServiceGetproperties.TimeoutQuery>
+    : IJsonNumber<RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery>,
+      IAdditionOperators<RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery, RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery, RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery>,
+      ISubtractionOperators<RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery, RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery, RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery>,
+      IMultiplyOperators<RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery, RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery, RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery>,
+      IDivisionOperators<RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery, RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery, RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery>,
+      IIncrementOperators<RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery>,
+      IDecrementOperators<RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery>
 #else
-    : IJsonNumber<RestypeServiceCompProperties.ServiceGetproperties.TimeoutQuery>
+    : IJsonNumber<RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery>
 #endif
 {
     /// <summary>

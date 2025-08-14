@@ -15,7 +15,7 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameRestypeShareCompLeaseRelease;
+namespace ShareNameRestypeShareCompLeaseRelease;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -62,7 +62,7 @@ public readonly partial struct XMsLeaseActionHeader
     /// <summary>
     /// Gets the schema location from which this type was generated.
     /// </summary>
-    public static string SchemaLocation { get; } = "SharenameRestypeShareCompLeaseRelease.XMsLeaseActionHeader.json";
+    public static string SchemaLocation { get; } = "ShareNameRestypeShareCompLeaseRelease.XMsLeaseActionHeader.json";
 
     /// <summary>
     /// Gets a Null instance.

@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace CompList.ServiceListsharessegment;
+namespace CompList.ServiceListSharesSegment;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct IncludeQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("CompList.ServiceListsharessegment.IncludeQuery.json");
+            result = result.PushSchemaLocation("CompList.ServiceListSharesSegment.IncludeQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -113,7 +113,7 @@ public readonly partial struct IncludeQuery
             }
 
             int length = 0;
-            using JsonArrayEnumerator<CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity> arrayEnumerator = value.EnumerateArray();
+            using JsonArrayEnumerator<CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity> arrayEnumerator = value.EnumerateArray();
             while (arrayEnumerator.MoveNext())
             {
                 if (level > ValidationLevel.Basic)

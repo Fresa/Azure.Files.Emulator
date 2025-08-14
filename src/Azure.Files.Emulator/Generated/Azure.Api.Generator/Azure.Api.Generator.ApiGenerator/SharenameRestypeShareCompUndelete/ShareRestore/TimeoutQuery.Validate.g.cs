@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameRestypeShareCompUndelete.ShareRestore;
+namespace ShareNameRestypeShareCompUndelete.ShareRestore;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct TimeoutQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameRestypeShareCompUndelete.ShareRestore.TimeoutQuery.json");
+            result = result.PushSchemaLocation("ShareNameRestypeShareCompUndelete.ShareRestore.TimeoutQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;

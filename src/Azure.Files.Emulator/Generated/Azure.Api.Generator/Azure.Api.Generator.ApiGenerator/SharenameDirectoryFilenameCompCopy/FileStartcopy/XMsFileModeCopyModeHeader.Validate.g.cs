@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompCopy.FileStartcopy;
+namespace ShareNameDirectoryFileNameCompCopy.FileStartCopy;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct XMsFileModeCopyModeHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryFilenameCompCopy.FileStartcopy.XMsFileModeCopyModeHeader.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryFileNameCompCopy.FileStartCopy.XMsFileModeCopyModeHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct XMsFileModeCopyModeHeader
     {
         /// <summary>
         /// Gets the string 'source'
-        /// as a <see cref="SharenameDirectoryFilenameCompCopy.FileStartcopy.XMsFileModeCopyModeHeader"/>.
+        /// as a <see cref="ShareNameDirectoryFileNameCompCopy.FileStartCopy.XMsFileModeCopyModeHeader"/>.
         /// </summary>
         public static XMsFileModeCopyModeHeader Source { get; } = CorvusValidation.Enum1.As<XMsFileModeCopyModeHeader>();
 
@@ -81,7 +81,7 @@ public readonly partial struct XMsFileModeCopyModeHeader
 
         /// <summary>
         /// Gets the string 'override'
-        /// as a <see cref="SharenameDirectoryFilenameCompCopy.FileStartcopy.XMsFileModeCopyModeHeader"/>.
+        /// as a <see cref="ShareNameDirectoryFileNameCompCopy.FileStartCopy.XMsFileModeCopyModeHeader"/>.
         /// </summary>
         public static XMsFileModeCopyModeHeader Override { get; } = CorvusValidation.Enum2.As<XMsFileModeCopyModeHeader>();
 

@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameRestypeShareCompLeaseRenew.ShareRenewlease;
+namespace ShareNameRestypeShareCompLeaseRenew.ShareRenewLease;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameRestypeShareCompLeaseRenew.ShareRenewlease.TimeoutQuery>,
-      IAdditionOperators<SharenameRestypeShareCompLeaseRenew.ShareRenewlease.TimeoutQuery, SharenameRestypeShareCompLeaseRenew.ShareRenewlease.TimeoutQuery, SharenameRestypeShareCompLeaseRenew.ShareRenewlease.TimeoutQuery>,
-      ISubtractionOperators<SharenameRestypeShareCompLeaseRenew.ShareRenewlease.TimeoutQuery, SharenameRestypeShareCompLeaseRenew.ShareRenewlease.TimeoutQuery, SharenameRestypeShareCompLeaseRenew.ShareRenewlease.TimeoutQuery>,
-      IMultiplyOperators<SharenameRestypeShareCompLeaseRenew.ShareRenewlease.TimeoutQuery, SharenameRestypeShareCompLeaseRenew.ShareRenewlease.TimeoutQuery, SharenameRestypeShareCompLeaseRenew.ShareRenewlease.TimeoutQuery>,
-      IDivisionOperators<SharenameRestypeShareCompLeaseRenew.ShareRenewlease.TimeoutQuery, SharenameRestypeShareCompLeaseRenew.ShareRenewlease.TimeoutQuery, SharenameRestypeShareCompLeaseRenew.ShareRenewlease.TimeoutQuery>,
-      IIncrementOperators<SharenameRestypeShareCompLeaseRenew.ShareRenewlease.TimeoutQuery>,
-      IDecrementOperators<SharenameRestypeShareCompLeaseRenew.ShareRenewlease.TimeoutQuery>
+    : IJsonNumber<ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.TimeoutQuery>,
+      IAdditionOperators<ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.TimeoutQuery, ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.TimeoutQuery, ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.TimeoutQuery>,
+      ISubtractionOperators<ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.TimeoutQuery, ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.TimeoutQuery, ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.TimeoutQuery>,
+      IMultiplyOperators<ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.TimeoutQuery, ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.TimeoutQuery, ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.TimeoutQuery>,
+      IDivisionOperators<ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.TimeoutQuery, ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.TimeoutQuery, ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.TimeoutQuery>,
+      IIncrementOperators<ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.TimeoutQuery>,
+      IDecrementOperators<ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameRestypeShareCompLeaseRenew.ShareRenewlease.TimeoutQuery>
+    : IJsonNumber<ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.TimeoutQuery>
 #endif
 {
     /// <summary>

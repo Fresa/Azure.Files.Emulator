@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryFilenameCompRename.FileRename
+﻿namespace ShareNameDirectoryFileNameCompRename.FileRename
 {
     internal partial class Operation
     {

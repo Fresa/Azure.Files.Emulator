@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameRestypeShareCompUndelete.ShareRestore;
+namespace ShareNameRestypeShareCompUndelete.ShareRestore;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameRestypeShareCompUndelete.ShareRestore.TimeoutQuery>,
-      IAdditionOperators<SharenameRestypeShareCompUndelete.ShareRestore.TimeoutQuery, SharenameRestypeShareCompUndelete.ShareRestore.TimeoutQuery, SharenameRestypeShareCompUndelete.ShareRestore.TimeoutQuery>,
-      ISubtractionOperators<SharenameRestypeShareCompUndelete.ShareRestore.TimeoutQuery, SharenameRestypeShareCompUndelete.ShareRestore.TimeoutQuery, SharenameRestypeShareCompUndelete.ShareRestore.TimeoutQuery>,
-      IMultiplyOperators<SharenameRestypeShareCompUndelete.ShareRestore.TimeoutQuery, SharenameRestypeShareCompUndelete.ShareRestore.TimeoutQuery, SharenameRestypeShareCompUndelete.ShareRestore.TimeoutQuery>,
-      IDivisionOperators<SharenameRestypeShareCompUndelete.ShareRestore.TimeoutQuery, SharenameRestypeShareCompUndelete.ShareRestore.TimeoutQuery, SharenameRestypeShareCompUndelete.ShareRestore.TimeoutQuery>,
-      IIncrementOperators<SharenameRestypeShareCompUndelete.ShareRestore.TimeoutQuery>,
-      IDecrementOperators<SharenameRestypeShareCompUndelete.ShareRestore.TimeoutQuery>
+    : IJsonNumber<ShareNameRestypeShareCompUndelete.ShareRestore.TimeoutQuery>,
+      IAdditionOperators<ShareNameRestypeShareCompUndelete.ShareRestore.TimeoutQuery, ShareNameRestypeShareCompUndelete.ShareRestore.TimeoutQuery, ShareNameRestypeShareCompUndelete.ShareRestore.TimeoutQuery>,
+      ISubtractionOperators<ShareNameRestypeShareCompUndelete.ShareRestore.TimeoutQuery, ShareNameRestypeShareCompUndelete.ShareRestore.TimeoutQuery, ShareNameRestypeShareCompUndelete.ShareRestore.TimeoutQuery>,
+      IMultiplyOperators<ShareNameRestypeShareCompUndelete.ShareRestore.TimeoutQuery, ShareNameRestypeShareCompUndelete.ShareRestore.TimeoutQuery, ShareNameRestypeShareCompUndelete.ShareRestore.TimeoutQuery>,
+      IDivisionOperators<ShareNameRestypeShareCompUndelete.ShareRestore.TimeoutQuery, ShareNameRestypeShareCompUndelete.ShareRestore.TimeoutQuery, ShareNameRestypeShareCompUndelete.ShareRestore.TimeoutQuery>,
+      IIncrementOperators<ShareNameRestypeShareCompUndelete.ShareRestore.TimeoutQuery>,
+      IDecrementOperators<ShareNameRestypeShareCompUndelete.ShareRestore.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameRestypeShareCompUndelete.ShareRestore.TimeoutQuery>
+    : IJsonNumber<ShareNameRestypeShareCompUndelete.ShareRestore.TimeoutQuery>
 #endif
 {
     /// <summary>

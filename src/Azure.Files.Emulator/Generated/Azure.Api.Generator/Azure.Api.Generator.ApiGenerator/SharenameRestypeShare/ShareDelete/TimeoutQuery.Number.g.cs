@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameRestypeShare.ShareDelete;
+namespace ShareNameRestypeShare.ShareDelete;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameRestypeShare.ShareDelete.TimeoutQuery>,
-      IAdditionOperators<SharenameRestypeShare.ShareDelete.TimeoutQuery, SharenameRestypeShare.ShareDelete.TimeoutQuery, SharenameRestypeShare.ShareDelete.TimeoutQuery>,
-      ISubtractionOperators<SharenameRestypeShare.ShareDelete.TimeoutQuery, SharenameRestypeShare.ShareDelete.TimeoutQuery, SharenameRestypeShare.ShareDelete.TimeoutQuery>,
-      IMultiplyOperators<SharenameRestypeShare.ShareDelete.TimeoutQuery, SharenameRestypeShare.ShareDelete.TimeoutQuery, SharenameRestypeShare.ShareDelete.TimeoutQuery>,
-      IDivisionOperators<SharenameRestypeShare.ShareDelete.TimeoutQuery, SharenameRestypeShare.ShareDelete.TimeoutQuery, SharenameRestypeShare.ShareDelete.TimeoutQuery>,
-      IIncrementOperators<SharenameRestypeShare.ShareDelete.TimeoutQuery>,
-      IDecrementOperators<SharenameRestypeShare.ShareDelete.TimeoutQuery>
+    : IJsonNumber<ShareNameRestypeShare.ShareDelete.TimeoutQuery>,
+      IAdditionOperators<ShareNameRestypeShare.ShareDelete.TimeoutQuery, ShareNameRestypeShare.ShareDelete.TimeoutQuery, ShareNameRestypeShare.ShareDelete.TimeoutQuery>,
+      ISubtractionOperators<ShareNameRestypeShare.ShareDelete.TimeoutQuery, ShareNameRestypeShare.ShareDelete.TimeoutQuery, ShareNameRestypeShare.ShareDelete.TimeoutQuery>,
+      IMultiplyOperators<ShareNameRestypeShare.ShareDelete.TimeoutQuery, ShareNameRestypeShare.ShareDelete.TimeoutQuery, ShareNameRestypeShare.ShareDelete.TimeoutQuery>,
+      IDivisionOperators<ShareNameRestypeShare.ShareDelete.TimeoutQuery, ShareNameRestypeShare.ShareDelete.TimeoutQuery, ShareNameRestypeShare.ShareDelete.TimeoutQuery>,
+      IIncrementOperators<ShareNameRestypeShare.ShareDelete.TimeoutQuery>,
+      IDecrementOperators<ShareNameRestypeShare.ShareDelete.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameRestypeShare.ShareDelete.TimeoutQuery>
+    : IJsonNumber<ShareNameRestypeShare.ShareDelete.TimeoutQuery>
 #endif
 {
     /// <summary>

@@ -15,16 +15,16 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameRestypeShareCompLeaseBreak;
+namespace ShareNameRestypeShareCompLeaseBreak;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct CompQuery
 #if NET8_0_OR_GREATER
-    : IJsonString<SharenameRestypeShareCompLeaseBreak.CompQuery>,
+    : IJsonString<ShareNameRestypeShareCompLeaseBreak.CompQuery>,
       ISpanFormattable
 #else
-    : IJsonString<SharenameRestypeShareCompLeaseBreak.CompQuery>
+    : IJsonString<ShareNameRestypeShareCompLeaseBreak.CompQuery>
 #endif
 {
     /// <summary>

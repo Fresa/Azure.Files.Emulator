@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameRestypeShare.ShareCreate;
+namespace ShareNameRestypeShare.ShareCreate;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameRestypeShare.ShareCreate.TimeoutQuery>,
-      IAdditionOperators<SharenameRestypeShare.ShareCreate.TimeoutQuery, SharenameRestypeShare.ShareCreate.TimeoutQuery, SharenameRestypeShare.ShareCreate.TimeoutQuery>,
-      ISubtractionOperators<SharenameRestypeShare.ShareCreate.TimeoutQuery, SharenameRestypeShare.ShareCreate.TimeoutQuery, SharenameRestypeShare.ShareCreate.TimeoutQuery>,
-      IMultiplyOperators<SharenameRestypeShare.ShareCreate.TimeoutQuery, SharenameRestypeShare.ShareCreate.TimeoutQuery, SharenameRestypeShare.ShareCreate.TimeoutQuery>,
-      IDivisionOperators<SharenameRestypeShare.ShareCreate.TimeoutQuery, SharenameRestypeShare.ShareCreate.TimeoutQuery, SharenameRestypeShare.ShareCreate.TimeoutQuery>,
-      IIncrementOperators<SharenameRestypeShare.ShareCreate.TimeoutQuery>,
-      IDecrementOperators<SharenameRestypeShare.ShareCreate.TimeoutQuery>
+    : IJsonNumber<ShareNameRestypeShare.ShareCreate.TimeoutQuery>,
+      IAdditionOperators<ShareNameRestypeShare.ShareCreate.TimeoutQuery, ShareNameRestypeShare.ShareCreate.TimeoutQuery, ShareNameRestypeShare.ShareCreate.TimeoutQuery>,
+      ISubtractionOperators<ShareNameRestypeShare.ShareCreate.TimeoutQuery, ShareNameRestypeShare.ShareCreate.TimeoutQuery, ShareNameRestypeShare.ShareCreate.TimeoutQuery>,
+      IMultiplyOperators<ShareNameRestypeShare.ShareCreate.TimeoutQuery, ShareNameRestypeShare.ShareCreate.TimeoutQuery, ShareNameRestypeShare.ShareCreate.TimeoutQuery>,
+      IDivisionOperators<ShareNameRestypeShare.ShareCreate.TimeoutQuery, ShareNameRestypeShare.ShareCreate.TimeoutQuery, ShareNameRestypeShare.ShareCreate.TimeoutQuery>,
+      IIncrementOperators<ShareNameRestypeShare.ShareCreate.TimeoutQuery>,
+      IDecrementOperators<ShareNameRestypeShare.ShareCreate.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameRestypeShare.ShareCreate.TimeoutQuery>
+    : IJsonNumber<ShareNameRestypeShare.ShareCreate.TimeoutQuery>
 #endif
 {
     /// <summary>

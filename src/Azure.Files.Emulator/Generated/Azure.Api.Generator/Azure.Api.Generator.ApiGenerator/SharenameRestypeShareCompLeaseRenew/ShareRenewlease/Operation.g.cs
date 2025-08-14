@@ -1,9 +1,9 @@
 ﻿using System.Threading;
 
-namespace SharenameRestypeShareCompLeaseRenew.ShareRenewlease;
+namespace ShareNameRestypeShareCompLeaseRenew.ShareRenewLease;
 internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}?restype=share&comp=lease&renew";
-    internal const string Method = "ShareRenewlease";
+    internal const string Method = "ShareRenewLease";
     internal partial Task<Response> HandleAsync(Request request, CancellationToken cancellationToken);
 }

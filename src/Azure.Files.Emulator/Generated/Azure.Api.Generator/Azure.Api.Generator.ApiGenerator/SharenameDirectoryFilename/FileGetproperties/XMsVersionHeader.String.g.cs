@@ -15,16 +15,16 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilename.FileGetproperties;
+namespace ShareNameDirectoryFileName.FileGetProperties;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct XMsVersionHeader
 #if NET8_0_OR_GREATER
-    : IJsonString<SharenameDirectoryFilename.FileGetproperties.XMsVersionHeader>,
+    : IJsonString<ShareNameDirectoryFileName.FileGetProperties.XMsVersionHeader>,
       ISpanFormattable
 #else
-    : IJsonString<SharenameDirectoryFilename.FileGetproperties.XMsVersionHeader>
+    : IJsonString<ShareNameDirectoryFileName.FileGetProperties.XMsVersionHeader>
 #endif
 {
     /// <summary>

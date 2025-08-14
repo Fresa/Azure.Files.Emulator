@@ -1,20 +1,20 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompCopy.FileStartcopy;
+namespace ShareNameDirectoryFileNameCompCopy.FileStartCopy;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
     internal required Corvus.Json.JsonString Directory { get; init; }
-    internal required Corvus.Json.JsonString Filename { get; init; }
-    internal SharenameDirectoryFilenameCompCopy.FileStartcopy.TimeoutQuery? Timeout { get; init; }
-    internal required SharenameDirectoryFilenameCompCopy.FileStartcopy.XMsVersionHeader XMsVersion { get; init; }
+    internal required Corvus.Json.JsonString FileName { get; init; }
+    internal ShareNameDirectoryFileNameCompCopy.FileStartCopy.TimeoutQuery? Timeout { get; init; }
+    internal required ShareNameDirectoryFileNameCompCopy.FileStartCopy.XMsVersionHeader XMsVersion { get; init; }
     internal Corvus.Json.JsonString? XMsMeta { get; init; }
     internal required Corvus.Json.JsonString XMsCopySource { get; init; }
     internal Corvus.Json.JsonString? XMsFilePermission { get; init; }
-    internal SharenameDirectoryFilenameCompCopy.FileStartcopy.XMsFilePermissionFormatHeader? XMsFilePermissionFormat { get; init; }
+    internal ShareNameDirectoryFileNameCompCopy.FileStartCopy.XMsFilePermissionFormatHeader? XMsFilePermissionFormat { get; init; }
     internal Corvus.Json.JsonString? XMsFilePermissionKey { get; init; }
-    internal SharenameDirectoryFilenameCompCopy.FileStartcopy.XMsFilePermissionCopyModeHeader? XMsFilePermissionCopyMode { get; init; }
+    internal ShareNameDirectoryFileNameCompCopy.FileStartCopy.XMsFilePermissionCopyModeHeader? XMsFilePermissionCopyMode { get; init; }
     internal Corvus.Json.JsonBoolean? XMsFileCopyIgnoreReadonly { get; init; }
     internal Corvus.Json.JsonString? XMsFileAttributes { get; init; }
     internal Corvus.Json.JsonString? XMsFileCreationTime { get; init; }
@@ -24,18 +24,18 @@ internal partial class Request
     internal Corvus.Json.JsonString? XMsLeaseId { get; init; }
     internal Corvus.Json.JsonBoolean? XMsAllowTrailingDot { get; init; }
     internal Corvus.Json.JsonBoolean? XMsSourceAllowTrailingDot { get; init; }
-    internal SharenameDirectoryFilenameCompCopy.FileStartcopy.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameDirectoryFileNameCompCopy.FileStartCopy.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
     internal Corvus.Json.JsonString? XMsOwner { get; init; }
     internal Corvus.Json.JsonString? XMsGroup { get; init; }
     internal Corvus.Json.JsonString? XMsMode { get; init; }
-    internal SharenameDirectoryFilenameCompCopy.FileStartcopy.XMsFileModeCopyModeHeader? XMsFileModeCopyMode { get; init; }
-    internal SharenameDirectoryFilenameCompCopy.FileStartcopy.XMsFileOwnerCopyModeHeader? XMsFileOwnerCopyMode { get; init; }
+    internal ShareNameDirectoryFileNameCompCopy.FileStartCopy.XMsFileModeCopyModeHeader? XMsFileModeCopyMode { get; init; }
+    internal ShareNameDirectoryFileNameCompCopy.FileStartCopy.XMsFileOwnerCopyModeHeader? XMsFileOwnerCopyMode { get; init; }
 
     public static Request Bind(HttpRequest request)
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -56,7 +56,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Filename = request.Bind<Corvus.Json.JsonString>("""
+            FileName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "fileName",
@@ -67,7 +67,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Timeout = request.Bind<SharenameDirectoryFilenameCompCopy.FileStartcopy.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameDirectoryFileNameCompCopy.FileStartCopy.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -77,7 +77,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<SharenameDirectoryFilenameCompCopy.FileStartcopy.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameDirectoryFileNameCompCopy.FileStartCopy.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -123,7 +123,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFilePermissionFormat = request.Bind<SharenameDirectoryFilenameCompCopy.FileStartcopy.XMsFilePermissionFormatHeader>("""
+            XMsFilePermissionFormat = request.Bind<ShareNameDirectoryFileNameCompCopy.FileStartCopy.XMsFilePermissionFormatHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-permission-format",
@@ -151,7 +151,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFilePermissionCopyMode = request.Bind<SharenameDirectoryFilenameCompCopy.FileStartcopy.XMsFilePermissionCopyModeHeader>("""
+            XMsFilePermissionCopyMode = request.Bind<ShareNameDirectoryFileNameCompCopy.FileStartCopy.XMsFilePermissionCopyModeHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-permission-copy-mode",
@@ -281,7 +281,7 @@ internal partial class Request
   "x-ms-client-name": "allowSourceTrailingDot"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<SharenameDirectoryFilenameCompCopy.FileStartcopy.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameDirectoryFileNameCompCopy.FileStartCopy.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",
@@ -327,7 +327,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFileModeCopyMode = request.Bind<SharenameDirectoryFilenameCompCopy.FileStartcopy.XMsFileModeCopyModeHeader>("""
+            XMsFileModeCopyMode = request.Bind<ShareNameDirectoryFileNameCompCopy.FileStartCopy.XMsFileModeCopyModeHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-mode-copy-mode",
@@ -345,7 +345,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFileOwnerCopyMode = request.Bind<SharenameDirectoryFilenameCompCopy.FileStartcopy.XMsFileOwnerCopyModeHeader>("""
+            XMsFileOwnerCopyMode = request.Bind<ShareNameDirectoryFileNameCompCopy.FileStartCopy.XMsFileOwnerCopyModeHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-owner-copy-mode",

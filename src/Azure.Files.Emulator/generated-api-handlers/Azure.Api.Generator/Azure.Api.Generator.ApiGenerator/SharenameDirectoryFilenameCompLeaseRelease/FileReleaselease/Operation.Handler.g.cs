@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryFilenameCompLeaseRelease.FileReleaselease
+﻿namespace ShareNameDirectoryFileNameCompLeaseRelease.FileReleaseLease
 {
     internal partial class Operation
     {

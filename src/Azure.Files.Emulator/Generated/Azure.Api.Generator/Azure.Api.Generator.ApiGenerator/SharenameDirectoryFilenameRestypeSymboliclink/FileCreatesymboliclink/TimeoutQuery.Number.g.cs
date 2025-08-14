@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink;
+namespace ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink.TimeoutQuery>,
-      IAdditionOperators<SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink.TimeoutQuery, SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink.TimeoutQuery, SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink.TimeoutQuery>,
-      ISubtractionOperators<SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink.TimeoutQuery, SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink.TimeoutQuery, SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink.TimeoutQuery>,
-      IMultiplyOperators<SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink.TimeoutQuery, SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink.TimeoutQuery, SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink.TimeoutQuery>,
-      IDivisionOperators<SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink.TimeoutQuery, SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink.TimeoutQuery, SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink.TimeoutQuery>,
-      IIncrementOperators<SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink.TimeoutQuery>,
-      IDecrementOperators<SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.TimeoutQuery>,
+      IAdditionOperators<ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.TimeoutQuery, ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.TimeoutQuery, ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.TimeoutQuery>,
+      ISubtractionOperators<ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.TimeoutQuery, ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.TimeoutQuery, ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.TimeoutQuery>,
+      IMultiplyOperators<ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.TimeoutQuery, ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.TimeoutQuery, ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.TimeoutQuery>,
+      IDivisionOperators<ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.TimeoutQuery, ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.TimeoutQuery, ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.TimeoutQuery>,
+      IIncrementOperators<ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.TimeoutQuery>,
+      IDecrementOperators<ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.TimeoutQuery>
 #endif
 {
     /// <summary>

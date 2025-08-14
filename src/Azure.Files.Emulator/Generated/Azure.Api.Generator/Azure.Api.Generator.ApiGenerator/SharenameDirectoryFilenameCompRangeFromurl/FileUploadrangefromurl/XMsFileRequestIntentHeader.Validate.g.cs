@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl;
+namespace ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct XMsFileRequestIntentHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl.XMsFileRequestIntentHeader.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL.XMsFileRequestIntentHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct XMsFileRequestIntentHeader
     {
         /// <summary>
         /// Gets the string 'backup'
-        /// as a <see cref="SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl.XMsFileRequestIntentHeader"/>.
+        /// as a <see cref="ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL.XMsFileRequestIntentHeader"/>.
         /// </summary>
         public static XMsFileRequestIntentHeader Backup { get; } = CorvusValidation.Enum.As<XMsFileRequestIntentHeader>();
 

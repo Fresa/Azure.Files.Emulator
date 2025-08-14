@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment;
+namespace ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment;
 
 /// <summary>
 /// Generated from JSON Schema.
@@ -75,7 +75,7 @@ public readonly partial struct IncludeQuery
         {
             /// <summary>
             /// Gets the string 'Timestamps'
-            /// as a <see cref="SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity"/>.
+            /// as a <see cref="ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity"/>.
             /// </summary>
             public static ItemsEntity Timestamps { get; } = CorvusValidation.Enum1.As<ItemsEntity>();
 
@@ -87,7 +87,7 @@ public readonly partial struct IncludeQuery
 
             /// <summary>
             /// Gets the string 'Etag'
-            /// as a <see cref="SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity"/>.
+            /// as a <see cref="ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity"/>.
             /// </summary>
             public static ItemsEntity Etag { get; } = CorvusValidation.Enum2.As<ItemsEntity>();
 
@@ -99,7 +99,7 @@ public readonly partial struct IncludeQuery
 
             /// <summary>
             /// Gets the string 'Attributes'
-            /// as a <see cref="SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity"/>.
+            /// as a <see cref="ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity"/>.
             /// </summary>
             public static ItemsEntity Attributes { get; } = CorvusValidation.Enum3.As<ItemsEntity>();
 
@@ -111,7 +111,7 @@ public readonly partial struct IncludeQuery
 
             /// <summary>
             /// Gets the string 'PermissionKey'
-            /// as a <see cref="SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity"/>.
+            /// as a <see cref="ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity"/>.
             /// </summary>
             public static ItemsEntity PermissionKey { get; } = CorvusValidation.Enum4.As<ItemsEntity>();
 

@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameRestypeShareCompFilepermission.ShareCreatepermission;
+namespace ShareNameRestypeShareCompFilepermission.ShareCreatePermission;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameRestypeShareCompFilepermission.ShareCreatepermission.TimeoutQuery>,
-      IAdditionOperators<SharenameRestypeShareCompFilepermission.ShareCreatepermission.TimeoutQuery, SharenameRestypeShareCompFilepermission.ShareCreatepermission.TimeoutQuery, SharenameRestypeShareCompFilepermission.ShareCreatepermission.TimeoutQuery>,
-      ISubtractionOperators<SharenameRestypeShareCompFilepermission.ShareCreatepermission.TimeoutQuery, SharenameRestypeShareCompFilepermission.ShareCreatepermission.TimeoutQuery, SharenameRestypeShareCompFilepermission.ShareCreatepermission.TimeoutQuery>,
-      IMultiplyOperators<SharenameRestypeShareCompFilepermission.ShareCreatepermission.TimeoutQuery, SharenameRestypeShareCompFilepermission.ShareCreatepermission.TimeoutQuery, SharenameRestypeShareCompFilepermission.ShareCreatepermission.TimeoutQuery>,
-      IDivisionOperators<SharenameRestypeShareCompFilepermission.ShareCreatepermission.TimeoutQuery, SharenameRestypeShareCompFilepermission.ShareCreatepermission.TimeoutQuery, SharenameRestypeShareCompFilepermission.ShareCreatepermission.TimeoutQuery>,
-      IIncrementOperators<SharenameRestypeShareCompFilepermission.ShareCreatepermission.TimeoutQuery>,
-      IDecrementOperators<SharenameRestypeShareCompFilepermission.ShareCreatepermission.TimeoutQuery>
+    : IJsonNumber<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.TimeoutQuery>,
+      IAdditionOperators<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.TimeoutQuery, ShareNameRestypeShareCompFilepermission.ShareCreatePermission.TimeoutQuery, ShareNameRestypeShareCompFilepermission.ShareCreatePermission.TimeoutQuery>,
+      ISubtractionOperators<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.TimeoutQuery, ShareNameRestypeShareCompFilepermission.ShareCreatePermission.TimeoutQuery, ShareNameRestypeShareCompFilepermission.ShareCreatePermission.TimeoutQuery>,
+      IMultiplyOperators<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.TimeoutQuery, ShareNameRestypeShareCompFilepermission.ShareCreatePermission.TimeoutQuery, ShareNameRestypeShareCompFilepermission.ShareCreatePermission.TimeoutQuery>,
+      IDivisionOperators<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.TimeoutQuery, ShareNameRestypeShareCompFilepermission.ShareCreatePermission.TimeoutQuery, ShareNameRestypeShareCompFilepermission.ShareCreatePermission.TimeoutQuery>,
+      IIncrementOperators<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.TimeoutQuery>,
+      IDecrementOperators<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameRestypeShareCompFilepermission.ShareCreatepermission.TimeoutQuery>
+    : IJsonNumber<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.TimeoutQuery>
 #endif
 {
     /// <summary>

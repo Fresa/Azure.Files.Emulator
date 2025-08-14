@@ -15,16 +15,16 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameCompRange.FileUploadrange;
+namespace ShareNameDirectoryFileNameCompRange.FileUploadRange;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct XMsFileLastWriteTimeHeader
 #if NET8_0_OR_GREATER
-    : IJsonString<SharenameDirectoryFilenameCompRange.FileUploadrange.XMsFileLastWriteTimeHeader>,
+    : IJsonString<ShareNameDirectoryFileNameCompRange.FileUploadRange.XMsFileLastWriteTimeHeader>,
       ISpanFormattable
 #else
-    : IJsonString<SharenameDirectoryFilenameCompRange.FileUploadrange.XMsFileLastWriteTimeHeader>
+    : IJsonString<ShareNameDirectoryFileNameCompRange.FileUploadRange.XMsFileLastWriteTimeHeader>
 #endif
 {
     /// <summary>

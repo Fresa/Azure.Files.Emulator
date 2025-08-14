@@ -1,24 +1,24 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameRestypeSymboliclink.FileGetsymboliclink;
+namespace ShareNameDirectoryFileNameRestypeSymboliclink.FileGetSymbolicLink;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
     internal required Corvus.Json.JsonString Directory { get; init; }
-    internal required Corvus.Json.JsonString Filename { get; init; }
-    internal required SharenameDirectoryFilenameRestypeSymboliclink.RestypeQuery Restype { get; init; }
-    internal SharenameDirectoryFilenameRestypeSymboliclink.FileGetsymboliclink.TimeoutQuery? Timeout { get; init; }
+    internal required Corvus.Json.JsonString FileName { get; init; }
+    internal required ShareNameDirectoryFileNameRestypeSymboliclink.RestypeQuery Restype { get; init; }
+    internal ShareNameDirectoryFileNameRestypeSymboliclink.FileGetSymbolicLink.TimeoutQuery? Timeout { get; init; }
     internal Corvus.Json.JsonString? Sharesnapshot { get; init; }
-    internal required SharenameDirectoryFilenameRestypeSymboliclink.FileGetsymboliclink.XMsVersionHeader XMsVersion { get; init; }
+    internal required ShareNameDirectoryFileNameRestypeSymboliclink.FileGetSymbolicLink.XMsVersionHeader XMsVersion { get; init; }
     internal Corvus.Json.JsonString? XMsClientRequestId { get; init; }
-    internal SharenameDirectoryFilenameRestypeSymboliclink.FileGetsymboliclink.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameDirectoryFileNameRestypeSymboliclink.FileGetSymbolicLink.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
     public static Request Bind(HttpRequest request)
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -39,7 +39,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Filename = request.Bind<Corvus.Json.JsonString>("""
+            FileName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "fileName",
@@ -50,7 +50,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Restype = request.Bind<SharenameDirectoryFilenameRestypeSymboliclink.RestypeQuery>("""
+            Restype = request.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.RestypeQuery>("""
 {
   "in": "query",
   "name": "restype",
@@ -62,7 +62,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = request.Bind<SharenameDirectoryFilenameRestypeSymboliclink.FileGetsymboliclink.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.FileGetSymbolicLink.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -81,7 +81,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<SharenameDirectoryFilenameRestypeSymboliclink.FileGetsymboliclink.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.FileGetSymbolicLink.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -105,7 +105,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<SharenameDirectoryFilenameRestypeSymboliclink.FileGetsymboliclink.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.FileGetSymbolicLink.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

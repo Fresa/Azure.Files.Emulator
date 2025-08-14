@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameRestypeHardlink;
+namespace ShareNameDirectoryFileNameRestypeHardlink;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct RestypeQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryFilenameRestypeHardlink.RestypeQuery.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryFileNameRestypeHardlink.RestypeQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct RestypeQuery
     {
         /// <summary>
         /// Gets the string 'hardlink'
-        /// as a <see cref="SharenameDirectoryFilenameRestypeHardlink.RestypeQuery"/>.
+        /// as a <see cref="ShareNameDirectoryFileNameRestypeHardlink.RestypeQuery"/>.
         /// </summary>
         public static RestypeQuery Hardlink { get; } = CorvusValidation.Enum.As<RestypeQuery>();
 

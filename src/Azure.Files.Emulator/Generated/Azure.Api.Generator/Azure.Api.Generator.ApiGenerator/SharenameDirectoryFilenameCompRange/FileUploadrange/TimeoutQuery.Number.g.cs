@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameCompRange.FileUploadrange;
+namespace ShareNameDirectoryFileNameCompRange.FileUploadRange;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryFilenameCompRange.FileUploadrange.TimeoutQuery>,
-      IAdditionOperators<SharenameDirectoryFilenameCompRange.FileUploadrange.TimeoutQuery, SharenameDirectoryFilenameCompRange.FileUploadrange.TimeoutQuery, SharenameDirectoryFilenameCompRange.FileUploadrange.TimeoutQuery>,
-      ISubtractionOperators<SharenameDirectoryFilenameCompRange.FileUploadrange.TimeoutQuery, SharenameDirectoryFilenameCompRange.FileUploadrange.TimeoutQuery, SharenameDirectoryFilenameCompRange.FileUploadrange.TimeoutQuery>,
-      IMultiplyOperators<SharenameDirectoryFilenameCompRange.FileUploadrange.TimeoutQuery, SharenameDirectoryFilenameCompRange.FileUploadrange.TimeoutQuery, SharenameDirectoryFilenameCompRange.FileUploadrange.TimeoutQuery>,
-      IDivisionOperators<SharenameDirectoryFilenameCompRange.FileUploadrange.TimeoutQuery, SharenameDirectoryFilenameCompRange.FileUploadrange.TimeoutQuery, SharenameDirectoryFilenameCompRange.FileUploadrange.TimeoutQuery>,
-      IIncrementOperators<SharenameDirectoryFilenameCompRange.FileUploadrange.TimeoutQuery>,
-      IDecrementOperators<SharenameDirectoryFilenameCompRange.FileUploadrange.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompRange.FileUploadRange.TimeoutQuery>,
+      IAdditionOperators<ShareNameDirectoryFileNameCompRange.FileUploadRange.TimeoutQuery, ShareNameDirectoryFileNameCompRange.FileUploadRange.TimeoutQuery, ShareNameDirectoryFileNameCompRange.FileUploadRange.TimeoutQuery>,
+      ISubtractionOperators<ShareNameDirectoryFileNameCompRange.FileUploadRange.TimeoutQuery, ShareNameDirectoryFileNameCompRange.FileUploadRange.TimeoutQuery, ShareNameDirectoryFileNameCompRange.FileUploadRange.TimeoutQuery>,
+      IMultiplyOperators<ShareNameDirectoryFileNameCompRange.FileUploadRange.TimeoutQuery, ShareNameDirectoryFileNameCompRange.FileUploadRange.TimeoutQuery, ShareNameDirectoryFileNameCompRange.FileUploadRange.TimeoutQuery>,
+      IDivisionOperators<ShareNameDirectoryFileNameCompRange.FileUploadRange.TimeoutQuery, ShareNameDirectoryFileNameCompRange.FileUploadRange.TimeoutQuery, ShareNameDirectoryFileNameCompRange.FileUploadRange.TimeoutQuery>,
+      IIncrementOperators<ShareNameDirectoryFileNameCompRange.FileUploadRange.TimeoutQuery>,
+      IDecrementOperators<ShareNameDirectoryFileNameCompRange.FileUploadRange.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameDirectoryFilenameCompRange.FileUploadrange.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompRange.FileUploadRange.TimeoutQuery>
 #endif
 {
     /// <summary>

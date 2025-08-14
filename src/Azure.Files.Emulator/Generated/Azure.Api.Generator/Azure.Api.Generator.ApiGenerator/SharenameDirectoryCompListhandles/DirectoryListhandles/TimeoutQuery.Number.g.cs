@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryCompListhandles.DirectoryListhandles;
+namespace ShareNameDirectoryCompListhandles.DirectoryListHandles;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryCompListhandles.DirectoryListhandles.TimeoutQuery>,
-      IAdditionOperators<SharenameDirectoryCompListhandles.DirectoryListhandles.TimeoutQuery, SharenameDirectoryCompListhandles.DirectoryListhandles.TimeoutQuery, SharenameDirectoryCompListhandles.DirectoryListhandles.TimeoutQuery>,
-      ISubtractionOperators<SharenameDirectoryCompListhandles.DirectoryListhandles.TimeoutQuery, SharenameDirectoryCompListhandles.DirectoryListhandles.TimeoutQuery, SharenameDirectoryCompListhandles.DirectoryListhandles.TimeoutQuery>,
-      IMultiplyOperators<SharenameDirectoryCompListhandles.DirectoryListhandles.TimeoutQuery, SharenameDirectoryCompListhandles.DirectoryListhandles.TimeoutQuery, SharenameDirectoryCompListhandles.DirectoryListhandles.TimeoutQuery>,
-      IDivisionOperators<SharenameDirectoryCompListhandles.DirectoryListhandles.TimeoutQuery, SharenameDirectoryCompListhandles.DirectoryListhandles.TimeoutQuery, SharenameDirectoryCompListhandles.DirectoryListhandles.TimeoutQuery>,
-      IIncrementOperators<SharenameDirectoryCompListhandles.DirectoryListhandles.TimeoutQuery>,
-      IDecrementOperators<SharenameDirectoryCompListhandles.DirectoryListhandles.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryCompListhandles.DirectoryListHandles.TimeoutQuery>,
+      IAdditionOperators<ShareNameDirectoryCompListhandles.DirectoryListHandles.TimeoutQuery, ShareNameDirectoryCompListhandles.DirectoryListHandles.TimeoutQuery, ShareNameDirectoryCompListhandles.DirectoryListHandles.TimeoutQuery>,
+      ISubtractionOperators<ShareNameDirectoryCompListhandles.DirectoryListHandles.TimeoutQuery, ShareNameDirectoryCompListhandles.DirectoryListHandles.TimeoutQuery, ShareNameDirectoryCompListhandles.DirectoryListHandles.TimeoutQuery>,
+      IMultiplyOperators<ShareNameDirectoryCompListhandles.DirectoryListHandles.TimeoutQuery, ShareNameDirectoryCompListhandles.DirectoryListHandles.TimeoutQuery, ShareNameDirectoryCompListhandles.DirectoryListHandles.TimeoutQuery>,
+      IDivisionOperators<ShareNameDirectoryCompListhandles.DirectoryListHandles.TimeoutQuery, ShareNameDirectoryCompListhandles.DirectoryListHandles.TimeoutQuery, ShareNameDirectoryCompListhandles.DirectoryListHandles.TimeoutQuery>,
+      IIncrementOperators<ShareNameDirectoryCompListhandles.DirectoryListHandles.TimeoutQuery>,
+      IDecrementOperators<ShareNameDirectoryCompListhandles.DirectoryListHandles.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameDirectoryCompListhandles.DirectoryListhandles.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryCompListhandles.DirectoryListHandles.TimeoutQuery>
 #endif
 {
     /// <summary>

@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameRestypeShare.ShareGetproperties;
+namespace ShareNameRestypeShare.ShareGetProperties;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct XMsFileRequestIntentHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameRestypeShare.ShareGetproperties.XMsFileRequestIntentHeader.json");
+            result = result.PushSchemaLocation("ShareNameRestypeShare.ShareGetProperties.XMsFileRequestIntentHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct XMsFileRequestIntentHeader
     {
         /// <summary>
         /// Gets the string 'backup'
-        /// as a <see cref="SharenameRestypeShare.ShareGetproperties.XMsFileRequestIntentHeader"/>.
+        /// as a <see cref="ShareNameRestypeShare.ShareGetProperties.XMsFileRequestIntentHeader"/>.
         /// </summary>
         public static XMsFileRequestIntentHeader Backup { get; } = CorvusValidation.Enum.As<XMsFileRequestIntentHeader>();
 

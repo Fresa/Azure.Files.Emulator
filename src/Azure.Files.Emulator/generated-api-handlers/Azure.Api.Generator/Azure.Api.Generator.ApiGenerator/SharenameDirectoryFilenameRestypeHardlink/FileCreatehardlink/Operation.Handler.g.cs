@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink
+﻿namespace ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink
 {
     internal partial class Operation
     {

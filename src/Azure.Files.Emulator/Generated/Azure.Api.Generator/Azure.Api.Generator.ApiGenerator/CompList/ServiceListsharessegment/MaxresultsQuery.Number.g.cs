@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace CompList.ServiceListsharessegment;
+namespace CompList.ServiceListSharesSegment;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct MaxresultsQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<CompList.ServiceListsharessegment.MaxresultsQuery>,
-      IAdditionOperators<CompList.ServiceListsharessegment.MaxresultsQuery, CompList.ServiceListsharessegment.MaxresultsQuery, CompList.ServiceListsharessegment.MaxresultsQuery>,
-      ISubtractionOperators<CompList.ServiceListsharessegment.MaxresultsQuery, CompList.ServiceListsharessegment.MaxresultsQuery, CompList.ServiceListsharessegment.MaxresultsQuery>,
-      IMultiplyOperators<CompList.ServiceListsharessegment.MaxresultsQuery, CompList.ServiceListsharessegment.MaxresultsQuery, CompList.ServiceListsharessegment.MaxresultsQuery>,
-      IDivisionOperators<CompList.ServiceListsharessegment.MaxresultsQuery, CompList.ServiceListsharessegment.MaxresultsQuery, CompList.ServiceListsharessegment.MaxresultsQuery>,
-      IIncrementOperators<CompList.ServiceListsharessegment.MaxresultsQuery>,
-      IDecrementOperators<CompList.ServiceListsharessegment.MaxresultsQuery>
+    : IJsonNumber<CompList.ServiceListSharesSegment.MaxresultsQuery>,
+      IAdditionOperators<CompList.ServiceListSharesSegment.MaxresultsQuery, CompList.ServiceListSharesSegment.MaxresultsQuery, CompList.ServiceListSharesSegment.MaxresultsQuery>,
+      ISubtractionOperators<CompList.ServiceListSharesSegment.MaxresultsQuery, CompList.ServiceListSharesSegment.MaxresultsQuery, CompList.ServiceListSharesSegment.MaxresultsQuery>,
+      IMultiplyOperators<CompList.ServiceListSharesSegment.MaxresultsQuery, CompList.ServiceListSharesSegment.MaxresultsQuery, CompList.ServiceListSharesSegment.MaxresultsQuery>,
+      IDivisionOperators<CompList.ServiceListSharesSegment.MaxresultsQuery, CompList.ServiceListSharesSegment.MaxresultsQuery, CompList.ServiceListSharesSegment.MaxresultsQuery>,
+      IIncrementOperators<CompList.ServiceListSharesSegment.MaxresultsQuery>,
+      IDecrementOperators<CompList.ServiceListSharesSegment.MaxresultsQuery>
 #else
-    : IJsonNumber<CompList.ServiceListsharessegment.MaxresultsQuery>
+    : IJsonNumber<CompList.ServiceListSharesSegment.MaxresultsQuery>
 #endif
 {
     /// <summary>

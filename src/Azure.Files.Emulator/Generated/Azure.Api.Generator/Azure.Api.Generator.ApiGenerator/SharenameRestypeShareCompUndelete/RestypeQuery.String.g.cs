@@ -15,16 +15,16 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameRestypeShareCompUndelete;
+namespace ShareNameRestypeShareCompUndelete;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct RestypeQuery
 #if NET8_0_OR_GREATER
-    : IJsonString<SharenameRestypeShareCompUndelete.RestypeQuery>,
+    : IJsonString<ShareNameRestypeShareCompUndelete.RestypeQuery>,
       ISpanFormattable
 #else
-    : IJsonString<SharenameRestypeShareCompUndelete.RestypeQuery>
+    : IJsonString<ShareNameRestypeShareCompUndelete.RestypeQuery>
 #endif
 {
     /// <summary>

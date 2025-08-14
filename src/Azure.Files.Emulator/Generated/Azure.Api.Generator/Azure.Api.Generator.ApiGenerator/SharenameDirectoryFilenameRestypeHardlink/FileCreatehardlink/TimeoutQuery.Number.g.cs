@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink;
+namespace ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.TimeoutQuery>,
-      IAdditionOperators<SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.TimeoutQuery, SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.TimeoutQuery, SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.TimeoutQuery>,
-      ISubtractionOperators<SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.TimeoutQuery, SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.TimeoutQuery, SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.TimeoutQuery>,
-      IMultiplyOperators<SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.TimeoutQuery, SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.TimeoutQuery, SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.TimeoutQuery>,
-      IDivisionOperators<SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.TimeoutQuery, SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.TimeoutQuery, SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.TimeoutQuery>,
-      IIncrementOperators<SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.TimeoutQuery>,
-      IDecrementOperators<SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.TimeoutQuery>,
+      IAdditionOperators<ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.TimeoutQuery, ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.TimeoutQuery, ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.TimeoutQuery>,
+      ISubtractionOperators<ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.TimeoutQuery, ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.TimeoutQuery, ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.TimeoutQuery>,
+      IMultiplyOperators<ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.TimeoutQuery, ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.TimeoutQuery, ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.TimeoutQuery>,
+      IDivisionOperators<ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.TimeoutQuery, ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.TimeoutQuery, ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.TimeoutQuery>,
+      IIncrementOperators<ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.TimeoutQuery>,
+      IDecrementOperators<ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.TimeoutQuery>
 #endif
 {
     /// <summary>

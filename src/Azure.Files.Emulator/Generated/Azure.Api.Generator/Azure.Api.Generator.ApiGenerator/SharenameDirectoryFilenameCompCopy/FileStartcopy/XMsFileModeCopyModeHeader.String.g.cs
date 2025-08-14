@@ -15,16 +15,16 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameCompCopy.FileStartcopy;
+namespace ShareNameDirectoryFileNameCompCopy.FileStartCopy;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct XMsFileModeCopyModeHeader
 #if NET8_0_OR_GREATER
-    : IJsonString<SharenameDirectoryFilenameCompCopy.FileStartcopy.XMsFileModeCopyModeHeader>,
+    : IJsonString<ShareNameDirectoryFileNameCompCopy.FileStartCopy.XMsFileModeCopyModeHeader>,
       ISpanFormattable
 #else
-    : IJsonString<SharenameDirectoryFilenameCompCopy.FileStartcopy.XMsFileModeCopyModeHeader>
+    : IJsonString<ShareNameDirectoryFileNameCompCopy.FileStartCopy.XMsFileModeCopyModeHeader>
 #endif
 {
     /// <summary>

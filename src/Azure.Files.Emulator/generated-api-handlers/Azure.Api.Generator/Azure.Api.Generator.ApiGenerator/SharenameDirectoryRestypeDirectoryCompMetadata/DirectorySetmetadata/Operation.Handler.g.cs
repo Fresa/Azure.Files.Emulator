@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryRestypeDirectoryCompMetadata.DirectorySetmetadata
+﻿namespace ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata
 {
     internal partial class Operation
     {

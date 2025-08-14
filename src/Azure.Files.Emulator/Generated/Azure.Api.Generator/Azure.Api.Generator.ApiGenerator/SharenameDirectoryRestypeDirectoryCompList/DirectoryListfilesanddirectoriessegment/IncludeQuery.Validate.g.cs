@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment;
+namespace ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct IncludeQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -113,7 +113,7 @@ public readonly partial struct IncludeQuery
             }
 
             int length = 0;
-            using JsonArrayEnumerator<SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity> arrayEnumerator = value.EnumerateArray();
+            using JsonArrayEnumerator<ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity> arrayEnumerator = value.EnumerateArray();
             while (arrayEnumerator.MoveNext())
             {
                 if (level > ValidationLevel.Basic)

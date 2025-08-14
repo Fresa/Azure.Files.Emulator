@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment
+﻿namespace ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment
 {
     internal partial class Operation
     {

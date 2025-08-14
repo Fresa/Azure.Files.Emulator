@@ -1,4 +1,4 @@
-﻿namespace SharenameRestypeShareCompAcl.ShareGetaccesspolicy
+﻿namespace ShareNameRestypeShareCompAcl.ShareGetAccessPolicy
 {
     internal partial class Operation
     {

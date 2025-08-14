@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryFilenameCompRangelist.FileGetrangelist
+﻿namespace ShareNameDirectoryFileNameCompRangelist.FileGetRangeList
 {
     internal partial class Operation
     {

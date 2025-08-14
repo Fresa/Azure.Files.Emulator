@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompRangeFromurl;
+namespace ShareNameDirectoryFileNameCompRangeFromURL;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct CompQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryFilenameCompRangeFromurl.CompQuery.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryFileNameCompRangeFromURL.CompQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct CompQuery
     {
         /// <summary>
         /// Gets the string 'range'
-        /// as a <see cref="SharenameDirectoryFilenameCompRangeFromurl.CompQuery"/>.
+        /// as a <see cref="ShareNameDirectoryFileNameCompRangeFromURL.CompQuery"/>.
         /// </summary>
         public static CompQuery Range { get; } = CorvusValidation.Enum.As<CompQuery>();
 

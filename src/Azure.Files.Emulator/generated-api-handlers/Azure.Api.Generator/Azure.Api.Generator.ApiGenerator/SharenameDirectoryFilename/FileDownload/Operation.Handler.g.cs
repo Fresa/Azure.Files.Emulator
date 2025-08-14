@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryFilename.FileDownload
+﻿namespace ShareNameDirectoryFileName.FileDownload
 {
     internal partial class Operation
     {

@@ -15,7 +15,7 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl;
+namespace ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -72,7 +72,7 @@ public readonly partial struct XMsWriteHeader
     /// <summary>
     /// Gets the schema location from which this type was generated.
     /// </summary>
-    public static string SchemaLocation { get; } = "SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl.XMsWriteHeader.json";
+    public static string SchemaLocation { get; } = "ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL.XMsWriteHeader.json";
 
     /// <summary>
     /// Gets a Null instance.

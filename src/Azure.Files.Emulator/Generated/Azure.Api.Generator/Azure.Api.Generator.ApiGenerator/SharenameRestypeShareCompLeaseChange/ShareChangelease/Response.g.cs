@@ -1,7 +1,7 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameRestypeShareCompLeaseChange.ShareChangelease;
+namespace ShareNameRestypeShareCompLeaseChange.ShareChangeLease;
 internal partial class Response
 {
 }

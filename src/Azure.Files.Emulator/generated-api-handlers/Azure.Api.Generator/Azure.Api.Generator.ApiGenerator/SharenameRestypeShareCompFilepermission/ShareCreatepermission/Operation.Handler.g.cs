@@ -1,4 +1,4 @@
-﻿namespace SharenameRestypeShareCompFilepermission.ShareCreatepermission
+﻿namespace ShareNameRestypeShareCompFilepermission.ShareCreatePermission
 {
     internal partial class Operation
     {

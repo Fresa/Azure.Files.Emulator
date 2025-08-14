@@ -15,7 +15,7 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment;
+namespace ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment;
 
 /// <summary>
 /// Generated from JSON Schema.
@@ -27,10 +27,10 @@ public readonly partial struct IncludeQuery
     /// </summary>
     public readonly partial struct ItemsEntity
 #if NET8_0_OR_GREATER
-        : IJsonString<SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity>,
+        : IJsonString<ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity>,
           ISpanFormattable
 #else
-        : IJsonString<SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity>
+        : IJsonString<ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity>
 #endif
     {
         /// <summary>

@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryFilename.FileCreate
+﻿namespace ShareNameDirectoryFileName.FileCreate
 {
     internal partial class Operation
     {

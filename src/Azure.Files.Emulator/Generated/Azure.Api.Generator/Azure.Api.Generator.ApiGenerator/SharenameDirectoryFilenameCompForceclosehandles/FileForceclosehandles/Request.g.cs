@@ -1,26 +1,26 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles;
+namespace ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
     internal required Corvus.Json.JsonString Directory { get; init; }
-    internal required Corvus.Json.JsonString Filename { get; init; }
-    internal required SharenameDirectoryFilenameCompForceclosehandles.CompQuery Comp { get; init; }
-    internal SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.TimeoutQuery? Timeout { get; init; }
+    internal required Corvus.Json.JsonString FileName { get; init; }
+    internal required ShareNameDirectoryFileNameCompForceclosehandles.CompQuery Comp { get; init; }
+    internal ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.TimeoutQuery? Timeout { get; init; }
     internal Corvus.Json.JsonString? Marker { get; init; }
     internal Corvus.Json.JsonString? Sharesnapshot { get; init; }
     internal required Corvus.Json.JsonString XMsHandleId { get; init; }
-    internal required SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.XMsVersionHeader XMsVersion { get; init; }
+    internal required ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.XMsVersionHeader XMsVersion { get; init; }
     internal Corvus.Json.JsonBoolean? XMsAllowTrailingDot { get; init; }
-    internal SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
     public static Request Bind(HttpRequest request)
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -41,7 +41,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Filename = request.Bind<Corvus.Json.JsonString>("""
+            FileName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "fileName",
@@ -52,7 +52,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Comp = request.Bind<SharenameDirectoryFilenameCompForceclosehandles.CompQuery>("""
+            Comp = request.Bind<ShareNameDirectoryFileNameCompForceclosehandles.CompQuery>("""
 {
   "in": "query",
   "name": "comp",
@@ -64,7 +64,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = request.Bind<SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -103,7 +103,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            XMsVersion = request.Bind<SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -126,7 +126,7 @@ internal partial class Request
   "x-ms-client-name": "allowTrailingDot"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

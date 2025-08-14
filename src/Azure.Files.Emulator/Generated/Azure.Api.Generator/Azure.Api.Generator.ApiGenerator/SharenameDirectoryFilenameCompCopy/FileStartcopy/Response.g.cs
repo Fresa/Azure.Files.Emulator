@@ -1,7 +1,7 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompCopy.FileStartcopy;
+namespace ShareNameDirectoryFileNameCompCopy.FileStartCopy;
 internal partial class Response
 {
 }

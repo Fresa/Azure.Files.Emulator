@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameRestypeShareCompLeaseAcquire;
+namespace ShareNameRestypeShareCompLeaseAcquire;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct XMsLeaseActionHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameRestypeShareCompLeaseAcquire.XMsLeaseActionHeader.json");
+            result = result.PushSchemaLocation("ShareNameRestypeShareCompLeaseAcquire.XMsLeaseActionHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct XMsLeaseActionHeader
     {
         /// <summary>
         /// Gets the string 'acquire'
-        /// as a <see cref="SharenameRestypeShareCompLeaseAcquire.XMsLeaseActionHeader"/>.
+        /// as a <see cref="ShareNameRestypeShareCompLeaseAcquire.XMsLeaseActionHeader"/>.
         /// </summary>
         public static XMsLeaseActionHeader Acquire { get; } = CorvusValidation.Enum.As<XMsLeaseActionHeader>();
 

@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy;
+namespace ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct XMsCopyActionHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.XMsCopyActionHeader.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.XMsCopyActionHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct XMsCopyActionHeader
     {
         /// <summary>
         /// Gets the string 'abort'
-        /// as a <see cref="SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.XMsCopyActionHeader"/>.
+        /// as a <see cref="ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.XMsCopyActionHeader"/>.
         /// </summary>
         public static XMsCopyActionHeader Abort { get; } = CorvusValidation.Enum.As<XMsCopyActionHeader>();
 

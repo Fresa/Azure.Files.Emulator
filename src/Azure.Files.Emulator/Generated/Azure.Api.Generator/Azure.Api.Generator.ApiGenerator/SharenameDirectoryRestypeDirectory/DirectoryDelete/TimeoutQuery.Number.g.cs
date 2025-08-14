@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryRestypeDirectory.DirectoryDelete;
+namespace ShareNameDirectoryRestypeDirectory.DirectoryDelete;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery>,
-      IAdditionOperators<SharenameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery, SharenameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery, SharenameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery>,
-      ISubtractionOperators<SharenameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery, SharenameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery, SharenameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery>,
-      IMultiplyOperators<SharenameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery, SharenameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery, SharenameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery>,
-      IDivisionOperators<SharenameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery, SharenameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery, SharenameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery>,
-      IIncrementOperators<SharenameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery>,
-      IDecrementOperators<SharenameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery>,
+      IAdditionOperators<ShareNameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery, ShareNameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery, ShareNameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery>,
+      ISubtractionOperators<ShareNameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery, ShareNameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery, ShareNameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery>,
+      IMultiplyOperators<ShareNameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery, ShareNameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery, ShareNameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery>,
+      IDivisionOperators<ShareNameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery, ShareNameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery, ShareNameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery>,
+      IIncrementOperators<ShareNameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery>,
+      IDecrementOperators<ShareNameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryRestypeDirectory.DirectoryDelete.TimeoutQuery>
 #endif
 {
     /// <summary>

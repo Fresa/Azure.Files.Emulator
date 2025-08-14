@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompLeaseRelease;
+namespace ShareNameDirectoryFileNameCompLeaseRelease;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct XMsLeaseActionHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryFilenameCompLeaseRelease.XMsLeaseActionHeader.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryFileNameCompLeaseRelease.XMsLeaseActionHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct XMsLeaseActionHeader
     {
         /// <summary>
         /// Gets the string 'release'
-        /// as a <see cref="SharenameDirectoryFilenameCompLeaseRelease.XMsLeaseActionHeader"/>.
+        /// as a <see cref="ShareNameDirectoryFileNameCompLeaseRelease.XMsLeaseActionHeader"/>.
         /// </summary>
         public static XMsLeaseActionHeader Release { get; } = CorvusValidation.Enum.As<XMsLeaseActionHeader>();
 

@@ -1,4 +1,4 @@
-﻿namespace SharenameRestypeShareCompProperties.ShareSetproperties
+﻿namespace ShareNameRestypeShareCompProperties.ShareSetProperties
 {
     internal partial class Operation
     {

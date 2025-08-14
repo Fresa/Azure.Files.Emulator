@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryFilenameRestypeSymboliclink.FileGetsymboliclink
+﻿namespace ShareNameDirectoryFileNameRestypeSymboliclink.FileGetSymbolicLink
 {
     internal partial class Operation
     {

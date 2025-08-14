@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameRestypeShareCompProperties.ShareSetproperties;
+namespace ShareNameRestypeShareCompProperties.ShareSetProperties;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct XMsRootSquashHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameRestypeShareCompProperties.ShareSetproperties.XMsRootSquashHeader.json");
+            result = result.PushSchemaLocation("ShareNameRestypeShareCompProperties.ShareSetProperties.XMsRootSquashHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct XMsRootSquashHeader
     {
         /// <summary>
         /// Gets the string 'NoRootSquash'
-        /// as a <see cref="SharenameRestypeShareCompProperties.ShareSetproperties.XMsRootSquashHeader"/>.
+        /// as a <see cref="ShareNameRestypeShareCompProperties.ShareSetProperties.XMsRootSquashHeader"/>.
         /// </summary>
         public static XMsRootSquashHeader NoRootSquash { get; } = CorvusValidation.Enum1.As<XMsRootSquashHeader>();
 
@@ -81,7 +81,7 @@ public readonly partial struct XMsRootSquashHeader
 
         /// <summary>
         /// Gets the string 'RootSquash'
-        /// as a <see cref="SharenameRestypeShareCompProperties.ShareSetproperties.XMsRootSquashHeader"/>.
+        /// as a <see cref="ShareNameRestypeShareCompProperties.ShareSetProperties.XMsRootSquashHeader"/>.
         /// </summary>
         public static XMsRootSquashHeader RootSquash { get; } = CorvusValidation.Enum2.As<XMsRootSquashHeader>();
 
@@ -93,7 +93,7 @@ public readonly partial struct XMsRootSquashHeader
 
         /// <summary>
         /// Gets the string 'AllSquash'
-        /// as a <see cref="SharenameRestypeShareCompProperties.ShareSetproperties.XMsRootSquashHeader"/>.
+        /// as a <see cref="ShareNameRestypeShareCompProperties.ShareSetProperties.XMsRootSquashHeader"/>.
         /// </summary>
         public static XMsRootSquashHeader AllSquash { get; } = CorvusValidation.Enum3.As<XMsRootSquashHeader>();
 

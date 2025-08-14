@@ -1,7 +1,7 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl;
+namespace ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL;
 internal partial class Response
 {
 }

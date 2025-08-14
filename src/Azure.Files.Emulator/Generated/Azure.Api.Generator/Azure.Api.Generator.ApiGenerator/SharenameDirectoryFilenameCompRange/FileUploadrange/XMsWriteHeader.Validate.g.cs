@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompRange.FileUploadrange;
+namespace ShareNameDirectoryFileNameCompRange.FileUploadRange;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -45,7 +45,7 @@ public readonly partial struct XMsWriteHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryFilenameCompRange.FileUploadrange.XMsWriteHeader.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryFileNameCompRange.FileUploadRange.XMsWriteHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -79,7 +79,7 @@ public readonly partial struct XMsWriteHeader
     {
         /// <summary>
         /// Gets the string 'update'
-        /// as a <see cref="SharenameDirectoryFilenameCompRange.FileUploadrange.XMsWriteHeader"/>.
+        /// as a <see cref="ShareNameDirectoryFileNameCompRange.FileUploadRange.XMsWriteHeader"/>.
         /// </summary>
         public static XMsWriteHeader Update { get; } = CorvusValidation.Enum1.As<XMsWriteHeader>();
 
@@ -91,7 +91,7 @@ public readonly partial struct XMsWriteHeader
 
         /// <summary>
         /// Gets the string 'clear'
-        /// as a <see cref="SharenameDirectoryFilenameCompRange.FileUploadrange.XMsWriteHeader"/>.
+        /// as a <see cref="ShareNameDirectoryFileNameCompRange.FileUploadRange.XMsWriteHeader"/>.
         /// </summary>
         public static XMsWriteHeader Clear { get; } = CorvusValidation.Enum2.As<XMsWriteHeader>();
 

@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilename.FileGetproperties;
+namespace ShareNameDirectoryFileName.FileGetProperties;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryFilename.FileGetproperties.TimeoutQuery>,
-      IAdditionOperators<SharenameDirectoryFilename.FileGetproperties.TimeoutQuery, SharenameDirectoryFilename.FileGetproperties.TimeoutQuery, SharenameDirectoryFilename.FileGetproperties.TimeoutQuery>,
-      ISubtractionOperators<SharenameDirectoryFilename.FileGetproperties.TimeoutQuery, SharenameDirectoryFilename.FileGetproperties.TimeoutQuery, SharenameDirectoryFilename.FileGetproperties.TimeoutQuery>,
-      IMultiplyOperators<SharenameDirectoryFilename.FileGetproperties.TimeoutQuery, SharenameDirectoryFilename.FileGetproperties.TimeoutQuery, SharenameDirectoryFilename.FileGetproperties.TimeoutQuery>,
-      IDivisionOperators<SharenameDirectoryFilename.FileGetproperties.TimeoutQuery, SharenameDirectoryFilename.FileGetproperties.TimeoutQuery, SharenameDirectoryFilename.FileGetproperties.TimeoutQuery>,
-      IIncrementOperators<SharenameDirectoryFilename.FileGetproperties.TimeoutQuery>,
-      IDecrementOperators<SharenameDirectoryFilename.FileGetproperties.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileName.FileGetProperties.TimeoutQuery>,
+      IAdditionOperators<ShareNameDirectoryFileName.FileGetProperties.TimeoutQuery, ShareNameDirectoryFileName.FileGetProperties.TimeoutQuery, ShareNameDirectoryFileName.FileGetProperties.TimeoutQuery>,
+      ISubtractionOperators<ShareNameDirectoryFileName.FileGetProperties.TimeoutQuery, ShareNameDirectoryFileName.FileGetProperties.TimeoutQuery, ShareNameDirectoryFileName.FileGetProperties.TimeoutQuery>,
+      IMultiplyOperators<ShareNameDirectoryFileName.FileGetProperties.TimeoutQuery, ShareNameDirectoryFileName.FileGetProperties.TimeoutQuery, ShareNameDirectoryFileName.FileGetProperties.TimeoutQuery>,
+      IDivisionOperators<ShareNameDirectoryFileName.FileGetProperties.TimeoutQuery, ShareNameDirectoryFileName.FileGetProperties.TimeoutQuery, ShareNameDirectoryFileName.FileGetProperties.TimeoutQuery>,
+      IIncrementOperators<ShareNameDirectoryFileName.FileGetProperties.TimeoutQuery>,
+      IDecrementOperators<ShareNameDirectoryFileName.FileGetProperties.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameDirectoryFilename.FileGetproperties.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileName.FileGetProperties.TimeoutQuery>
 #endif
 {
     /// <summary>

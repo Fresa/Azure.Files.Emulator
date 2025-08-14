@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameCompMetadata.FileSetmetadata;
+namespace ShareNameDirectoryFileNameCompMetadata.FileSetMetadata;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryFilenameCompMetadata.FileSetmetadata.TimeoutQuery>,
-      IAdditionOperators<SharenameDirectoryFilenameCompMetadata.FileSetmetadata.TimeoutQuery, SharenameDirectoryFilenameCompMetadata.FileSetmetadata.TimeoutQuery, SharenameDirectoryFilenameCompMetadata.FileSetmetadata.TimeoutQuery>,
-      ISubtractionOperators<SharenameDirectoryFilenameCompMetadata.FileSetmetadata.TimeoutQuery, SharenameDirectoryFilenameCompMetadata.FileSetmetadata.TimeoutQuery, SharenameDirectoryFilenameCompMetadata.FileSetmetadata.TimeoutQuery>,
-      IMultiplyOperators<SharenameDirectoryFilenameCompMetadata.FileSetmetadata.TimeoutQuery, SharenameDirectoryFilenameCompMetadata.FileSetmetadata.TimeoutQuery, SharenameDirectoryFilenameCompMetadata.FileSetmetadata.TimeoutQuery>,
-      IDivisionOperators<SharenameDirectoryFilenameCompMetadata.FileSetmetadata.TimeoutQuery, SharenameDirectoryFilenameCompMetadata.FileSetmetadata.TimeoutQuery, SharenameDirectoryFilenameCompMetadata.FileSetmetadata.TimeoutQuery>,
-      IIncrementOperators<SharenameDirectoryFilenameCompMetadata.FileSetmetadata.TimeoutQuery>,
-      IDecrementOperators<SharenameDirectoryFilenameCompMetadata.FileSetmetadata.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.TimeoutQuery>,
+      IAdditionOperators<ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.TimeoutQuery, ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.TimeoutQuery, ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.TimeoutQuery>,
+      ISubtractionOperators<ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.TimeoutQuery, ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.TimeoutQuery, ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.TimeoutQuery>,
+      IMultiplyOperators<ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.TimeoutQuery, ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.TimeoutQuery, ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.TimeoutQuery>,
+      IDivisionOperators<ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.TimeoutQuery, ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.TimeoutQuery, ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.TimeoutQuery>,
+      IIncrementOperators<ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.TimeoutQuery>,
+      IDecrementOperators<ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameDirectoryFilenameCompMetadata.FileSetmetadata.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.TimeoutQuery>
 #endif
 {
     /// <summary>

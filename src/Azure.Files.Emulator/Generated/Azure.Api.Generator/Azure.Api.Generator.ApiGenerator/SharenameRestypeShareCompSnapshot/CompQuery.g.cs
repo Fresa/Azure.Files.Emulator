@@ -15,7 +15,7 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameRestypeShareCompSnapshot;
+namespace ShareNameRestypeShareCompSnapshot;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -62,7 +62,7 @@ public readonly partial struct CompQuery
     /// <summary>
     /// Gets the schema location from which this type was generated.
     /// </summary>
-    public static string SchemaLocation { get; } = "SharenameRestypeShareCompSnapshot.CompQuery.json";
+    public static string SchemaLocation { get; } = "ShareNameRestypeShareCompSnapshot.CompQuery.json";
 
     /// <summary>
     /// Gets a Null instance.

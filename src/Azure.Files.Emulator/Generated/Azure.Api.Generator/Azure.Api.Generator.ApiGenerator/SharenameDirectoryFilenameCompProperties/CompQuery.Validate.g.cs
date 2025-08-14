@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompProperties;
+namespace ShareNameDirectoryFileNameCompProperties;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct CompQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryFilenameCompProperties.CompQuery.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryFileNameCompProperties.CompQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct CompQuery
     {
         /// <summary>
         /// Gets the string 'properties'
-        /// as a <see cref="SharenameDirectoryFilenameCompProperties.CompQuery"/>.
+        /// as a <see cref="ShareNameDirectoryFileNameCompProperties.CompQuery"/>.
         /// </summary>
         public static CompQuery Properties { get; } = CorvusValidation.Enum.As<CompQuery>();
 

@@ -1,24 +1,24 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameRestypeShareCompUndelete.ShareRestore;
+namespace ShareNameRestypeShareCompUndelete.ShareRestore;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
-    internal required SharenameRestypeShareCompUndelete.RestypeQuery Restype { get; init; }
-    internal required SharenameRestypeShareCompUndelete.CompQuery Comp { get; init; }
-    internal SharenameRestypeShareCompUndelete.ShareRestore.TimeoutQuery? Timeout { get; init; }
-    internal required SharenameRestypeShareCompUndelete.ShareRestore.XMsVersionHeader XMsVersion { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
+    internal required ShareNameRestypeShareCompUndelete.RestypeQuery Restype { get; init; }
+    internal required ShareNameRestypeShareCompUndelete.CompQuery Comp { get; init; }
+    internal ShareNameRestypeShareCompUndelete.ShareRestore.TimeoutQuery? Timeout { get; init; }
+    internal required ShareNameRestypeShareCompUndelete.ShareRestore.XMsVersionHeader XMsVersion { get; init; }
     internal Corvus.Json.JsonString? XMsClientRequestId { get; init; }
     internal Corvus.Json.JsonString? XMsDeletedShareName { get; init; }
     internal Corvus.Json.JsonString? XMsDeletedShareVersion { get; init; }
-    internal SharenameRestypeShareCompUndelete.ShareRestore.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameRestypeShareCompUndelete.ShareRestore.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
     public static Request Bind(HttpRequest request)
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -28,7 +28,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Restype = request.Bind<SharenameRestypeShareCompUndelete.RestypeQuery>("""
+            Restype = request.Bind<ShareNameRestypeShareCompUndelete.RestypeQuery>("""
 {
   "in": "query",
   "name": "restype",
@@ -40,7 +40,7 @@ internal partial class Request
   ]
 }
 """),
-            Comp = request.Bind<SharenameRestypeShareCompUndelete.CompQuery>("""
+            Comp = request.Bind<ShareNameRestypeShareCompUndelete.CompQuery>("""
 {
   "in": "query",
   "name": "comp",
@@ -52,7 +52,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = request.Bind<SharenameRestypeShareCompUndelete.ShareRestore.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameRestypeShareCompUndelete.ShareRestore.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -62,7 +62,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<SharenameRestypeShareCompUndelete.ShareRestore.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameRestypeShareCompUndelete.ShareRestore.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -106,7 +106,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<SharenameRestypeShareCompUndelete.ShareRestore.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameRestypeShareCompUndelete.ShareRestore.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompCopy.FileStartcopy;
+namespace ShareNameDirectoryFileNameCompCopy.FileStartCopy;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct TimeoutQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryFilenameCompCopy.FileStartcopy.TimeoutQuery.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryFileNameCompCopy.FileStartCopy.TimeoutQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;

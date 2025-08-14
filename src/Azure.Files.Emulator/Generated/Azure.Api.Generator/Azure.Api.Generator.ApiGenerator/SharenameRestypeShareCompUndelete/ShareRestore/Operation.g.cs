@@ -1,6 +1,6 @@
 ﻿using System.Threading;
 
-namespace SharenameRestypeShareCompUndelete.ShareRestore;
+namespace ShareNameRestypeShareCompUndelete.ShareRestore;
 internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}?restype=share&comp=undelete";

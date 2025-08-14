@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryFilename.FileGetproperties
+﻿namespace ShareNameDirectoryFileName.FileGetProperties
 {
     internal partial class Operation
     {

@@ -1,26 +1,26 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompListhandles.FileListhandles;
+namespace ShareNameDirectoryFileNameCompListhandles.FileListHandles;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
     internal required Corvus.Json.JsonString Directory { get; init; }
-    internal required Corvus.Json.JsonString Filename { get; init; }
-    internal required SharenameDirectoryFilenameCompListhandles.CompQuery Comp { get; init; }
+    internal required Corvus.Json.JsonString FileName { get; init; }
+    internal required ShareNameDirectoryFileNameCompListhandles.CompQuery Comp { get; init; }
     internal Corvus.Json.JsonString? Marker { get; init; }
-    internal SharenameDirectoryFilenameCompListhandles.FileListhandles.MaxresultsQuery? Maxresults { get; init; }
-    internal SharenameDirectoryFilenameCompListhandles.FileListhandles.TimeoutQuery? Timeout { get; init; }
+    internal ShareNameDirectoryFileNameCompListhandles.FileListHandles.MaxresultsQuery? Maxresults { get; init; }
+    internal ShareNameDirectoryFileNameCompListhandles.FileListHandles.TimeoutQuery? Timeout { get; init; }
     internal Corvus.Json.JsonString? Sharesnapshot { get; init; }
-    internal required SharenameDirectoryFilenameCompListhandles.FileListhandles.XMsVersionHeader XMsVersion { get; init; }
+    internal required ShareNameDirectoryFileNameCompListhandles.FileListHandles.XMsVersionHeader XMsVersion { get; init; }
     internal Corvus.Json.JsonBoolean? XMsAllowTrailingDot { get; init; }
-    internal SharenameDirectoryFilenameCompListhandles.FileListhandles.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameDirectoryFileNameCompListhandles.FileListHandles.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
     public static Request Bind(HttpRequest request)
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -41,7 +41,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Filename = request.Bind<Corvus.Json.JsonString>("""
+            FileName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "fileName",
@@ -52,7 +52,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Comp = request.Bind<SharenameDirectoryFilenameCompListhandles.CompQuery>("""
+            Comp = request.Bind<ShareNameDirectoryFileNameCompListhandles.CompQuery>("""
 {
   "in": "query",
   "name": "comp",
@@ -73,7 +73,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Maxresults = request.Bind<SharenameDirectoryFilenameCompListhandles.FileListhandles.MaxresultsQuery>("""
+            Maxresults = request.Bind<ShareNameDirectoryFileNameCompListhandles.FileListHandles.MaxresultsQuery>("""
 {
   "in": "query",
   "name": "maxresults",
@@ -83,7 +83,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Timeout = request.Bind<SharenameDirectoryFilenameCompListhandles.FileListhandles.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameDirectoryFileNameCompListhandles.FileListHandles.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -102,7 +102,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<SharenameDirectoryFilenameCompListhandles.FileListhandles.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameDirectoryFileNameCompListhandles.FileListHandles.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -125,7 +125,7 @@ internal partial class Request
   "x-ms-client-name": "allowTrailingDot"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<SharenameDirectoryFilenameCompListhandles.FileListhandles.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameDirectoryFileNameCompListhandles.FileListHandles.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

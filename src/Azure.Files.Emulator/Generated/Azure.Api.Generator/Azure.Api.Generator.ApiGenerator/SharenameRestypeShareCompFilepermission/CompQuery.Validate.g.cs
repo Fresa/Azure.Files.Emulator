@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameRestypeShareCompFilepermission;
+namespace ShareNameRestypeShareCompFilepermission;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct CompQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameRestypeShareCompFilepermission.CompQuery.json");
+            result = result.PushSchemaLocation("ShareNameRestypeShareCompFilepermission.CompQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct CompQuery
     {
         /// <summary>
         /// Gets the string 'filepermission'
-        /// as a <see cref="SharenameRestypeShareCompFilepermission.CompQuery"/>.
+        /// as a <see cref="ShareNameRestypeShareCompFilepermission.CompQuery"/>.
         /// </summary>
         public static CompQuery Filepermission { get; } = CorvusValidation.Enum.As<CompQuery>();
 

@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameRestypeShareCompAcl;
+namespace ShareNameRestypeShareCompAcl;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct CompQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameRestypeShareCompAcl.CompQuery.json");
+            result = result.PushSchemaLocation("ShareNameRestypeShareCompAcl.CompQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct CompQuery
     {
         /// <summary>
         /// Gets the string 'acl'
-        /// as a <see cref="SharenameRestypeShareCompAcl.CompQuery"/>.
+        /// as a <see cref="ShareNameRestypeShareCompAcl.CompQuery"/>.
         /// </summary>
         public static CompQuery Acl { get; } = CorvusValidation.Enum.As<CompQuery>();
 

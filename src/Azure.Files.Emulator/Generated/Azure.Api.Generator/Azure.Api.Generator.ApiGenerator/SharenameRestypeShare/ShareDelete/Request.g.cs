@@ -1,34 +1,34 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameRestypeShare.ShareDelete;
+namespace ShareNameRestypeShare.ShareDelete;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
-    internal required SharenameRestypeShare.RestypeQuery Restype { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
+    internal required ShareNameRestypeShare.RestypeQuery Restype { get; init; }
     internal Corvus.Json.JsonString? Sharesnapshot { get; init; }
-    internal SharenameRestypeShare.ShareDelete.TimeoutQuery? Timeout { get; init; }
-    internal required SharenameRestypeShare.ShareDelete.XMsVersionHeader XMsVersion { get; init; }
+    internal ShareNameRestypeShare.ShareDelete.TimeoutQuery? Timeout { get; init; }
+    internal required ShareNameRestypeShare.ShareDelete.XMsVersionHeader XMsVersion { get; init; }
     internal Corvus.Json.JsonString? XMsLeaseId { get; init; }
-    internal SharenameRestypeShare.ShareDelete.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameRestypeShare.ShareDelete.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
     internal Corvus.Json.JsonString? XMsMeta { get; init; }
-    internal SharenameRestypeShare.ShareCreate.XMsShareQuotaHeader? XMsShareQuota { get; init; }
-    internal SharenameRestypeShare.ShareCreate.XMsAccessTierHeader? XMsAccessTier { get; init; }
+    internal ShareNameRestypeShare.ShareCreate.XMsShareQuotaHeader? XMsShareQuota { get; init; }
+    internal ShareNameRestypeShare.ShareCreate.XMsAccessTierHeader? XMsAccessTier { get; init; }
     internal Corvus.Json.JsonString? XMsEnabledProtocols { get; init; }
-    internal SharenameRestypeShare.ShareCreate.XMsRootSquashHeader? XMsRootSquash { get; init; }
+    internal ShareNameRestypeShare.ShareCreate.XMsRootSquashHeader? XMsRootSquash { get; init; }
     internal Corvus.Json.JsonBoolean? XMsEnableSnapshotVirtualDirectoryAccess { get; init; }
     internal Corvus.Json.JsonBoolean? XMsSharePaidBurstingEnabled { get; init; }
     internal Corvus.Json.JsonInt64? XMsSharePaidBurstingMaxBandwidthMibps { get; init; }
     internal Corvus.Json.JsonInt64? XMsSharePaidBurstingMaxIops { get; init; }
     internal Corvus.Json.JsonInt64? XMsShareProvisionedIops { get; init; }
     internal Corvus.Json.JsonInt64? XMsShareProvisionedBandwidthMibps { get; init; }
-    internal SharenameRestypeShare.ShareDelete.XMsDeleteSnapshotsHeader? XMsDeleteSnapshots { get; init; }
+    internal ShareNameRestypeShare.ShareDelete.XMsDeleteSnapshotsHeader? XMsDeleteSnapshots { get; init; }
 
     public static Request Bind(HttpRequest request)
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -38,7 +38,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Restype = request.Bind<SharenameRestypeShare.RestypeQuery>("""
+            Restype = request.Bind<ShareNameRestypeShare.RestypeQuery>("""
 {
   "in": "query",
   "name": "restype",
@@ -59,7 +59,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Timeout = request.Bind<SharenameRestypeShare.ShareDelete.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameRestypeShare.ShareDelete.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -69,7 +69,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<SharenameRestypeShare.ShareDelete.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameRestypeShare.ShareDelete.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -96,7 +96,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<SharenameRestypeShare.ShareDelete.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameRestypeShare.ShareDelete.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",
@@ -123,7 +123,7 @@ internal partial class Request
   "x-ms-header-collection-prefix": "x-ms-meta-"
 }
 """).AsOptional(),
-            XMsShareQuota = request.Bind<SharenameRestypeShare.ShareCreate.XMsShareQuotaHeader>("""
+            XMsShareQuota = request.Bind<ShareNameRestypeShare.ShareCreate.XMsShareQuotaHeader>("""
 {
   "in": "header",
   "name": "x-ms-share-quota",
@@ -134,7 +134,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsAccessTier = request.Bind<SharenameRestypeShare.ShareCreate.XMsAccessTierHeader>("""
+            XMsAccessTier = request.Bind<ShareNameRestypeShare.ShareCreate.XMsAccessTierHeader>("""
 {
   "in": "header",
   "name": "x-ms-access-tier",
@@ -164,7 +164,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsRootSquash = request.Bind<SharenameRestypeShare.ShareCreate.XMsRootSquashHeader>("""
+            XMsRootSquash = request.Bind<ShareNameRestypeShare.ShareCreate.XMsRootSquashHeader>("""
 {
   "in": "header",
   "name": "x-ms-root-squash",
@@ -246,7 +246,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsDeleteSnapshots = request.Bind<SharenameRestypeShare.ShareDelete.XMsDeleteSnapshotsHeader>("""
+            XMsDeleteSnapshots = request.Bind<ShareNameRestypeShare.ShareDelete.XMsDeleteSnapshotsHeader>("""
 {
   "in": "header",
   "name": "x-ms-delete-snapshots",

@@ -1,22 +1,22 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameRestypeShare.ShareGetproperties;
+namespace ShareNameRestypeShare.ShareGetProperties;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
-    internal required SharenameRestypeShare.RestypeQuery Restype { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
+    internal required ShareNameRestypeShare.RestypeQuery Restype { get; init; }
     internal Corvus.Json.JsonString? Sharesnapshot { get; init; }
-    internal SharenameRestypeShare.ShareGetproperties.TimeoutQuery? Timeout { get; init; }
-    internal required SharenameRestypeShare.ShareGetproperties.XMsVersionHeader XMsVersion { get; init; }
+    internal ShareNameRestypeShare.ShareGetProperties.TimeoutQuery? Timeout { get; init; }
+    internal required ShareNameRestypeShare.ShareGetProperties.XMsVersionHeader XMsVersion { get; init; }
     internal Corvus.Json.JsonString? XMsLeaseId { get; init; }
-    internal SharenameRestypeShare.ShareGetproperties.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameRestypeShare.ShareGetProperties.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
     public static Request Bind(HttpRequest request)
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -26,7 +26,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Restype = request.Bind<SharenameRestypeShare.RestypeQuery>("""
+            Restype = request.Bind<ShareNameRestypeShare.RestypeQuery>("""
 {
   "in": "query",
   "name": "restype",
@@ -47,7 +47,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Timeout = request.Bind<SharenameRestypeShare.ShareGetproperties.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameRestypeShare.ShareGetProperties.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -57,7 +57,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<SharenameRestypeShare.ShareGetproperties.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameRestypeShare.ShareGetProperties.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -84,7 +84,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<SharenameRestypeShare.ShareGetproperties.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameRestypeShare.ShareGetProperties.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

@@ -15,7 +15,7 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameRestypeShareCompLeaseBreak.ShareBreaklease;
+namespace ShareNameRestypeShareCompLeaseBreak.ShareBreakLease;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -62,7 +62,7 @@ public readonly partial struct TimeoutQuery
     /// <summary>
     /// Gets the schema location from which this type was generated.
     /// </summary>
-    public static string SchemaLocation { get; } = "SharenameRestypeShareCompLeaseBreak.ShareBreaklease.TimeoutQuery.json";
+    public static string SchemaLocation { get; } = "ShareNameRestypeShareCompLeaseBreak.ShareBreakLease.TimeoutQuery.json";
 
     /// <summary>
     /// Gets a Null instance.

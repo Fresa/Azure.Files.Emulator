@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameRestypeShareCompLeaseRenew;
+namespace ShareNameRestypeShareCompLeaseRenew;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct CompQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameRestypeShareCompLeaseRenew.CompQuery.json");
+            result = result.PushSchemaLocation("ShareNameRestypeShareCompLeaseRenew.CompQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct CompQuery
     {
         /// <summary>
         /// Gets the string 'lease'
-        /// as a <see cref="SharenameRestypeShareCompLeaseRenew.CompQuery"/>.
+        /// as a <see cref="ShareNameRestypeShareCompLeaseRenew.CompQuery"/>.
         /// </summary>
         public static CompQuery Lease { get; } = CorvusValidation.Enum.As<CompQuery>();
 

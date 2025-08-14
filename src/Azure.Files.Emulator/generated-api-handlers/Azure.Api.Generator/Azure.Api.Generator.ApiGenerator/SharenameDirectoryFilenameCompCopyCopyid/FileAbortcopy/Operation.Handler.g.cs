@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy
+﻿namespace ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy
 {
     internal partial class Operation
     {

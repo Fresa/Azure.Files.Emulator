@@ -1,4 +1,4 @@
-﻿namespace SharenameRestypeShare.ShareGetproperties
+﻿namespace ShareNameRestypeShare.ShareGetProperties
 {
     internal partial class Operation
     {

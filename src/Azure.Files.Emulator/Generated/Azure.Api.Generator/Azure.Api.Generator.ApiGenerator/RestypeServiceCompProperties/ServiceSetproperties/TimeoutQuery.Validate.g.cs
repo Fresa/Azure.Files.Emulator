@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace RestypeServiceCompProperties.ServiceSetproperties;
+namespace RestypeServiceCompProperties.ServiceSetProperties;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct TimeoutQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("RestypeServiceCompProperties.ServiceSetproperties.TimeoutQuery.json");
+            result = result.PushSchemaLocation("RestypeServiceCompProperties.ServiceSetProperties.TimeoutQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;

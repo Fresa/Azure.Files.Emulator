@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompLeaseBreak;
+namespace ShareNameDirectoryFileNameCompLeaseBreak;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct XMsLeaseActionHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryFilenameCompLeaseBreak.XMsLeaseActionHeader.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryFileNameCompLeaseBreak.XMsLeaseActionHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct XMsLeaseActionHeader
     {
         /// <summary>
         /// Gets the string 'break'
-        /// as a <see cref="SharenameDirectoryFilenameCompLeaseBreak.XMsLeaseActionHeader"/>.
+        /// as a <see cref="ShareNameDirectoryFileNameCompLeaseBreak.XMsLeaseActionHeader"/>.
         /// </summary>
         public static XMsLeaseActionHeader Break { get; } = CorvusValidation.Enum.As<XMsLeaseActionHeader>();
 

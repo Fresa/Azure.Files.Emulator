@@ -1,4 +1,4 @@
-﻿namespace SharenameRestypeShareCompSnapshot.ShareCreatesnapshot
+﻿namespace ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot
 {
     internal partial class Operation
     {

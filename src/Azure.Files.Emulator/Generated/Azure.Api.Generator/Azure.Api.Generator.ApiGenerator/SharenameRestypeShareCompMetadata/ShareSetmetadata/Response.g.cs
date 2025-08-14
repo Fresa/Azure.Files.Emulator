@@ -1,7 +1,7 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameRestypeShareCompMetadata.ShareSetmetadata;
+namespace ShareNameRestypeShareCompMetadata.ShareSetMetadata;
 internal partial class Response
 {
 }

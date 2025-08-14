@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompListhandles.FileListhandles;
+namespace ShareNameDirectoryFileNameCompListhandles.FileListHandles;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct MaxresultsQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryFilenameCompListhandles.FileListhandles.MaxresultsQuery.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryFileNameCompListhandles.FileListHandles.MaxresultsQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;

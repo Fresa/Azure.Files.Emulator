@@ -15,7 +15,7 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameRestypeShareCompProperties.ShareSetproperties;
+namespace ShareNameRestypeShareCompProperties.ShareSetProperties;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -62,7 +62,7 @@ public readonly partial struct XMsAccessTierHeader
     /// <summary>
     /// Gets the schema location from which this type was generated.
     /// </summary>
-    public static string SchemaLocation { get; } = "SharenameRestypeShareCompProperties.ShareSetproperties.XMsAccessTierHeader.json";
+    public static string SchemaLocation { get; } = "ShareNameRestypeShareCompProperties.ShareSetProperties.XMsAccessTierHeader.json";
 
     /// <summary>
     /// Gets a Null instance.

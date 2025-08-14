@@ -15,7 +15,7 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilename.FileCreate;
+namespace ShareNameDirectoryFileName.FileCreate;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -62,7 +62,7 @@ public readonly partial struct XMsTypeHeader
     /// <summary>
     /// Gets the schema location from which this type was generated.
     /// </summary>
-    public static string SchemaLocation { get; } = "SharenameDirectoryFilename.FileCreate.XMsTypeHeader.json";
+    public static string SchemaLocation { get; } = "ShareNameDirectoryFileName.FileCreate.XMsTypeHeader.json";
 
     /// <summary>
     /// Gets a Null instance.

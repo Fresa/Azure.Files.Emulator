@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename;
+namespace ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery>,
-      IAdditionOperators<SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery>,
-      ISubtractionOperators<SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery>,
-      IMultiplyOperators<SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery>,
-      IDivisionOperators<SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery>,
-      IIncrementOperators<SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery>,
-      IDecrementOperators<SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery>,
+      IAdditionOperators<ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery>,
+      ISubtractionOperators<ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery>,
+      IMultiplyOperators<ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery>,
+      IDivisionOperators<ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery>,
+      IIncrementOperators<ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery>,
+      IDecrementOperators<ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery>
 #endif
 {
     /// <summary>

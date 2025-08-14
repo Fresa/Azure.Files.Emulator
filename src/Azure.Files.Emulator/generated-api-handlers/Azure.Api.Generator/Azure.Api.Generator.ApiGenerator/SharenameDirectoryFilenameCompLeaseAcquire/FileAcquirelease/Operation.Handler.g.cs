@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryFilenameCompLeaseAcquire.FileAcquirelease
+﻿namespace ShareNameDirectoryFileNameCompLeaseAcquire.FileAcquireLease
 {
     internal partial class Operation
     {

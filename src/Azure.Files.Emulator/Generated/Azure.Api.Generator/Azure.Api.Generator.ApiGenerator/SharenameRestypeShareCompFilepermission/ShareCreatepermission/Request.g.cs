@@ -1,23 +1,23 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameRestypeShareCompFilepermission.ShareCreatepermission;
+namespace ShareNameRestypeShareCompFilepermission.ShareCreatePermission;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
-    internal required SharenameRestypeShareCompFilepermission.RestypeQuery Restype { get; init; }
-    internal required SharenameRestypeShareCompFilepermission.CompQuery Comp { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
+    internal required ShareNameRestypeShareCompFilepermission.RestypeQuery Restype { get; init; }
+    internal required ShareNameRestypeShareCompFilepermission.CompQuery Comp { get; init; }
     internal required Corvus.Json.JsonString XMsFilePermissionKey { get; init; }
-    internal SharenameRestypeShareCompFilepermission.ShareGetpermission.XMsFilePermissionFormatHeader? XMsFilePermissionFormat { get; init; }
-    internal SharenameRestypeShareCompFilepermission.ShareCreatepermission.TimeoutQuery? Timeout { get; init; }
-    internal required SharenameRestypeShareCompFilepermission.ShareCreatepermission.XMsVersionHeader XMsVersion { get; init; }
-    internal SharenameRestypeShareCompFilepermission.ShareCreatepermission.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameRestypeShareCompFilepermission.ShareGetPermission.XMsFilePermissionFormatHeader? XMsFilePermissionFormat { get; init; }
+    internal ShareNameRestypeShareCompFilepermission.ShareCreatePermission.TimeoutQuery? Timeout { get; init; }
+    internal required ShareNameRestypeShareCompFilepermission.ShareCreatePermission.XMsVersionHeader XMsVersion { get; init; }
+    internal ShareNameRestypeShareCompFilepermission.ShareCreatePermission.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
     public static Request Bind(HttpRequest request)
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -27,7 +27,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Restype = request.Bind<SharenameRestypeShareCompFilepermission.RestypeQuery>("""
+            Restype = request.Bind<ShareNameRestypeShareCompFilepermission.RestypeQuery>("""
 {
   "in": "query",
   "name": "restype",
@@ -39,7 +39,7 @@ internal partial class Request
   ]
 }
 """),
-            Comp = request.Bind<SharenameRestypeShareCompFilepermission.CompQuery>("""
+            Comp = request.Bind<ShareNameRestypeShareCompFilepermission.CompQuery>("""
 {
   "in": "query",
   "name": "comp",
@@ -62,7 +62,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            XMsFilePermissionFormat = request.Bind<SharenameRestypeShareCompFilepermission.ShareGetpermission.XMsFilePermissionFormatHeader>("""
+            XMsFilePermissionFormat = request.Bind<ShareNameRestypeShareCompFilepermission.ShareGetPermission.XMsFilePermissionFormatHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-permission-format",
@@ -80,7 +80,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            Timeout = request.Bind<SharenameRestypeShareCompFilepermission.ShareCreatepermission.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -90,7 +90,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<SharenameRestypeShareCompFilepermission.ShareCreatepermission.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -104,7 +104,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsFileRequestIntent = request.Bind<SharenameRestypeShareCompFilepermission.ShareCreatepermission.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

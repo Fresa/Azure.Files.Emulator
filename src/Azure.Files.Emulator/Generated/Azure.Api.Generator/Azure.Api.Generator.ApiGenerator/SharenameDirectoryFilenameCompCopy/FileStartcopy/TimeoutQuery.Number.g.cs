@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameCompCopy.FileStartcopy;
+namespace ShareNameDirectoryFileNameCompCopy.FileStartCopy;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryFilenameCompCopy.FileStartcopy.TimeoutQuery>,
-      IAdditionOperators<SharenameDirectoryFilenameCompCopy.FileStartcopy.TimeoutQuery, SharenameDirectoryFilenameCompCopy.FileStartcopy.TimeoutQuery, SharenameDirectoryFilenameCompCopy.FileStartcopy.TimeoutQuery>,
-      ISubtractionOperators<SharenameDirectoryFilenameCompCopy.FileStartcopy.TimeoutQuery, SharenameDirectoryFilenameCompCopy.FileStartcopy.TimeoutQuery, SharenameDirectoryFilenameCompCopy.FileStartcopy.TimeoutQuery>,
-      IMultiplyOperators<SharenameDirectoryFilenameCompCopy.FileStartcopy.TimeoutQuery, SharenameDirectoryFilenameCompCopy.FileStartcopy.TimeoutQuery, SharenameDirectoryFilenameCompCopy.FileStartcopy.TimeoutQuery>,
-      IDivisionOperators<SharenameDirectoryFilenameCompCopy.FileStartcopy.TimeoutQuery, SharenameDirectoryFilenameCompCopy.FileStartcopy.TimeoutQuery, SharenameDirectoryFilenameCompCopy.FileStartcopy.TimeoutQuery>,
-      IIncrementOperators<SharenameDirectoryFilenameCompCopy.FileStartcopy.TimeoutQuery>,
-      IDecrementOperators<SharenameDirectoryFilenameCompCopy.FileStartcopy.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompCopy.FileStartCopy.TimeoutQuery>,
+      IAdditionOperators<ShareNameDirectoryFileNameCompCopy.FileStartCopy.TimeoutQuery, ShareNameDirectoryFileNameCompCopy.FileStartCopy.TimeoutQuery, ShareNameDirectoryFileNameCompCopy.FileStartCopy.TimeoutQuery>,
+      ISubtractionOperators<ShareNameDirectoryFileNameCompCopy.FileStartCopy.TimeoutQuery, ShareNameDirectoryFileNameCompCopy.FileStartCopy.TimeoutQuery, ShareNameDirectoryFileNameCompCopy.FileStartCopy.TimeoutQuery>,
+      IMultiplyOperators<ShareNameDirectoryFileNameCompCopy.FileStartCopy.TimeoutQuery, ShareNameDirectoryFileNameCompCopy.FileStartCopy.TimeoutQuery, ShareNameDirectoryFileNameCompCopy.FileStartCopy.TimeoutQuery>,
+      IDivisionOperators<ShareNameDirectoryFileNameCompCopy.FileStartCopy.TimeoutQuery, ShareNameDirectoryFileNameCompCopy.FileStartCopy.TimeoutQuery, ShareNameDirectoryFileNameCompCopy.FileStartCopy.TimeoutQuery>,
+      IIncrementOperators<ShareNameDirectoryFileNameCompCopy.FileStartCopy.TimeoutQuery>,
+      IDecrementOperators<ShareNameDirectoryFileNameCompCopy.FileStartCopy.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameDirectoryFilenameCompCopy.FileStartcopy.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompCopy.FileStartCopy.TimeoutQuery>
 #endif
 {
     /// <summary>

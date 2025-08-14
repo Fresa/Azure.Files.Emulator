@@ -15,16 +15,16 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryRestypeDirectoryCompMetadata.DirectorySetmetadata;
+namespace ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct XMsVersionHeader
 #if NET8_0_OR_GREATER
-    : IJsonString<SharenameDirectoryRestypeDirectoryCompMetadata.DirectorySetmetadata.XMsVersionHeader>,
+    : IJsonString<ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.XMsVersionHeader>,
       ISpanFormattable
 #else
-    : IJsonString<SharenameDirectoryRestypeDirectoryCompMetadata.DirectorySetmetadata.XMsVersionHeader>
+    : IJsonString<ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.XMsVersionHeader>
 #endif
 {
     /// <summary>

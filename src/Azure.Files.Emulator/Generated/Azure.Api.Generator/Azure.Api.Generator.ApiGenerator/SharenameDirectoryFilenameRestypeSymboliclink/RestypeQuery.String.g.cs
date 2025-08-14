@@ -15,16 +15,16 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameRestypeSymboliclink;
+namespace ShareNameDirectoryFileNameRestypeSymboliclink;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct RestypeQuery
 #if NET8_0_OR_GREATER
-    : IJsonString<SharenameDirectoryFilenameRestypeSymboliclink.RestypeQuery>,
+    : IJsonString<ShareNameDirectoryFileNameRestypeSymboliclink.RestypeQuery>,
       ISpanFormattable
 #else
-    : IJsonString<SharenameDirectoryFilenameRestypeSymboliclink.RestypeQuery>
+    : IJsonString<ShareNameDirectoryFileNameRestypeSymboliclink.RestypeQuery>
 #endif
 {
     /// <summary>

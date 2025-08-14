@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryFilenameCompLeaseChange.FileChangelease
+﻿namespace ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease
 {
     internal partial class Operation
     {

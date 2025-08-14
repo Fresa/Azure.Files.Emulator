@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryFilenameCompLeaseBreak.FileBreaklease
+﻿namespace ShareNameDirectoryFileNameCompLeaseBreak.FileBreakLease
 {
     internal partial class Operation
     {

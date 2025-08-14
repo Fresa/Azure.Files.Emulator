@@ -15,16 +15,16 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameRestypeShareCompStats.ShareGetstatistics;
+namespace ShareNameRestypeShareCompStats.ShareGetStatistics;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct XMsVersionHeader
 #if NET8_0_OR_GREATER
-    : IJsonString<SharenameRestypeShareCompStats.ShareGetstatistics.XMsVersionHeader>,
+    : IJsonString<ShareNameRestypeShareCompStats.ShareGetStatistics.XMsVersionHeader>,
       ISpanFormattable
 #else
-    : IJsonString<SharenameRestypeShareCompStats.ShareGetstatistics.XMsVersionHeader>
+    : IJsonString<ShareNameRestypeShareCompStats.ShareGetStatistics.XMsVersionHeader>
 #endif
 {
     /// <summary>

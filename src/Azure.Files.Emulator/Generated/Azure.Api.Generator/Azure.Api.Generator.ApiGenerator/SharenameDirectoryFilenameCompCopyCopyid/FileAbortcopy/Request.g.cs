@@ -1,26 +1,26 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy;
+namespace ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
     internal required Corvus.Json.JsonString Directory { get; init; }
-    internal required Corvus.Json.JsonString Filename { get; init; }
-    internal required SharenameDirectoryFilenameCompCopyCopyid.CompQuery Comp { get; init; }
+    internal required Corvus.Json.JsonString FileName { get; init; }
+    internal required ShareNameDirectoryFileNameCompCopyCopyid.CompQuery Comp { get; init; }
     internal required Corvus.Json.JsonString Copyid { get; init; }
-    internal SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.TimeoutQuery? Timeout { get; init; }
-    internal required SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.XMsCopyActionHeader XMsCopyAction { get; init; }
-    internal required SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.XMsVersionHeader XMsVersion { get; init; }
+    internal ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.TimeoutQuery? Timeout { get; init; }
+    internal required ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.XMsCopyActionHeader XMsCopyAction { get; init; }
+    internal required ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.XMsVersionHeader XMsVersion { get; init; }
     internal Corvus.Json.JsonString? XMsLeaseId { get; init; }
     internal Corvus.Json.JsonBoolean? XMsAllowTrailingDot { get; init; }
-    internal SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
     public static Request Bind(HttpRequest request)
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -41,7 +41,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Filename = request.Bind<Corvus.Json.JsonString>("""
+            FileName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "fileName",
@@ -52,7 +52,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Comp = request.Bind<SharenameDirectoryFilenameCompCopyCopyid.CompQuery>("""
+            Comp = request.Bind<ShareNameDirectoryFileNameCompCopyCopyid.CompQuery>("""
 {
   "in": "query",
   "name": "comp",
@@ -75,7 +75,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Timeout = request.Bind<SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -85,7 +85,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsCopyAction = request.Bind<SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.XMsCopyActionHeader>("""
+            XMsCopyAction = request.Bind<ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.XMsCopyActionHeader>("""
 {
   "in": "header",
   "name": "x-ms-copy-action",
@@ -99,7 +99,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            XMsVersion = request.Bind<SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -135,7 +135,7 @@ internal partial class Request
   "x-ms-client-name": "allowTrailingDot"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

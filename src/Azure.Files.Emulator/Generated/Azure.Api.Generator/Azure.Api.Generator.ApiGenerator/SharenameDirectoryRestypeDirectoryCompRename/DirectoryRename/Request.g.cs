@@ -1,15 +1,15 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename;
+namespace ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
     internal required Corvus.Json.JsonString Directory { get; init; }
-    internal required SharenameDirectoryRestypeDirectoryCompRename.RestypeQuery Restype { get; init; }
-    internal required SharenameDirectoryRestypeDirectoryCompRename.CompQuery Comp { get; init; }
-    internal SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery? Timeout { get; init; }
-    internal required SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.XMsVersionHeader XMsVersion { get; init; }
+    internal required ShareNameDirectoryRestypeDirectoryCompRename.RestypeQuery Restype { get; init; }
+    internal required ShareNameDirectoryRestypeDirectoryCompRename.CompQuery Comp { get; init; }
+    internal ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery? Timeout { get; init; }
+    internal required ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.XMsVersionHeader XMsVersion { get; init; }
     internal required Corvus.Json.JsonString XMsFileRenameSource { get; init; }
     internal Corvus.Json.JsonBoolean? XMsFileRenameReplaceIfExists { get; init; }
     internal Corvus.Json.JsonBoolean? XMsFileRenameIgnoreReadonly { get; init; }
@@ -20,18 +20,18 @@ internal partial class Request
     internal Corvus.Json.JsonString? XMsFileLastWriteTime { get; init; }
     internal Corvus.Json.JsonString? XMsFileChangeTime { get; init; }
     internal Corvus.Json.JsonString? XMsFilePermission { get; init; }
-    internal SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.XMsFilePermissionFormatHeader? XMsFilePermissionFormat { get; init; }
+    internal ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.XMsFilePermissionFormatHeader? XMsFilePermissionFormat { get; init; }
     internal Corvus.Json.JsonString? XMsFilePermissionKey { get; init; }
     internal Corvus.Json.JsonString? XMsMeta { get; init; }
     internal Corvus.Json.JsonBoolean? XMsAllowTrailingDot { get; init; }
     internal Corvus.Json.JsonBoolean? XMsSourceAllowTrailingDot { get; init; }
-    internal SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
     public static Request Bind(HttpRequest request)
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -52,7 +52,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Restype = request.Bind<SharenameDirectoryRestypeDirectoryCompRename.RestypeQuery>("""
+            Restype = request.Bind<ShareNameDirectoryRestypeDirectoryCompRename.RestypeQuery>("""
 {
   "in": "query",
   "name": "restype",
@@ -64,7 +64,7 @@ internal partial class Request
   ]
 }
 """),
-            Comp = request.Bind<SharenameDirectoryRestypeDirectoryCompRename.CompQuery>("""
+            Comp = request.Bind<ShareNameDirectoryRestypeDirectoryCompRename.CompQuery>("""
 {
   "in": "query",
   "name": "comp",
@@ -76,7 +76,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = request.Bind<SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -86,7 +86,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -219,7 +219,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFilePermissionFormat = request.Bind<SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.XMsFilePermissionFormatHeader>("""
+            XMsFilePermissionFormat = request.Bind<ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.XMsFilePermissionFormatHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-permission-format",
@@ -276,7 +276,7 @@ internal partial class Request
   "x-ms-client-name": "allowSourceTrailingDot"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<SharenameDirectoryRestypeDirectoryCompRename.DirectoryRename.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

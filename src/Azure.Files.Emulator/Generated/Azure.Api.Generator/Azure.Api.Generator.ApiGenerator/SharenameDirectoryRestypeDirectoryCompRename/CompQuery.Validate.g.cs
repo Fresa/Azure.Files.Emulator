@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryRestypeDirectoryCompRename;
+namespace ShareNameDirectoryRestypeDirectoryCompRename;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct CompQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryRestypeDirectoryCompRename.CompQuery.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryRestypeDirectoryCompRename.CompQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct CompQuery
     {
         /// <summary>
         /// Gets the string 'rename'
-        /// as a <see cref="SharenameDirectoryRestypeDirectoryCompRename.CompQuery"/>.
+        /// as a <see cref="ShareNameDirectoryRestypeDirectoryCompRename.CompQuery"/>.
         /// </summary>
         public static CompQuery Rename { get; } = CorvusValidation.Enum.As<CompQuery>();
 

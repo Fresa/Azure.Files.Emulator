@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryRestypeDirectoryCompMetadata;
+namespace ShareNameDirectoryRestypeDirectoryCompMetadata;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct RestypeQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryRestypeDirectoryCompMetadata.RestypeQuery.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryRestypeDirectoryCompMetadata.RestypeQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct RestypeQuery
     {
         /// <summary>
         /// Gets the string 'directory'
-        /// as a <see cref="SharenameDirectoryRestypeDirectoryCompMetadata.RestypeQuery"/>.
+        /// as a <see cref="ShareNameDirectoryRestypeDirectoryCompMetadata.RestypeQuery"/>.
         /// </summary>
         public static RestypeQuery Directory { get; } = CorvusValidation.Enum.As<RestypeQuery>();
 

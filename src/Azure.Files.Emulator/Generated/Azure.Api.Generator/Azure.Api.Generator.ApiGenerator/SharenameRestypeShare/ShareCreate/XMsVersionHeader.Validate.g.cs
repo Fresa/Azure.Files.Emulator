@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameRestypeShare.ShareCreate;
+namespace ShareNameRestypeShare.ShareCreate;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct XMsVersionHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameRestypeShare.ShareCreate.XMsVersionHeader.json");
+            result = result.PushSchemaLocation("ShareNameRestypeShare.ShareCreate.XMsVersionHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct XMsVersionHeader
     {
         /// <summary>
         /// Gets the string '2025-11-05'
-        /// as a <see cref="SharenameRestypeShare.ShareCreate.XMsVersionHeader"/>.
+        /// as a <see cref="ShareNameRestypeShare.ShareCreate.XMsVersionHeader"/>.
         /// </summary>
         public static XMsVersionHeader Value20251105 { get; } = CorvusValidation.Enum.As<XMsVersionHeader>();
 

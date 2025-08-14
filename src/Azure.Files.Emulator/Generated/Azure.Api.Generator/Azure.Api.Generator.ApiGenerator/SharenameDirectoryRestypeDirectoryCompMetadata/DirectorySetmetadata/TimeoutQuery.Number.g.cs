@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryRestypeDirectoryCompMetadata.DirectorySetmetadata;
+namespace ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryRestypeDirectoryCompMetadata.DirectorySetmetadata.TimeoutQuery>,
-      IAdditionOperators<SharenameDirectoryRestypeDirectoryCompMetadata.DirectorySetmetadata.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompMetadata.DirectorySetmetadata.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompMetadata.DirectorySetmetadata.TimeoutQuery>,
-      ISubtractionOperators<SharenameDirectoryRestypeDirectoryCompMetadata.DirectorySetmetadata.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompMetadata.DirectorySetmetadata.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompMetadata.DirectorySetmetadata.TimeoutQuery>,
-      IMultiplyOperators<SharenameDirectoryRestypeDirectoryCompMetadata.DirectorySetmetadata.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompMetadata.DirectorySetmetadata.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompMetadata.DirectorySetmetadata.TimeoutQuery>,
-      IDivisionOperators<SharenameDirectoryRestypeDirectoryCompMetadata.DirectorySetmetadata.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompMetadata.DirectorySetmetadata.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompMetadata.DirectorySetmetadata.TimeoutQuery>,
-      IIncrementOperators<SharenameDirectoryRestypeDirectoryCompMetadata.DirectorySetmetadata.TimeoutQuery>,
-      IDecrementOperators<SharenameDirectoryRestypeDirectoryCompMetadata.DirectorySetmetadata.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.TimeoutQuery>,
+      IAdditionOperators<ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.TimeoutQuery>,
+      ISubtractionOperators<ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.TimeoutQuery>,
+      IMultiplyOperators<ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.TimeoutQuery>,
+      IDivisionOperators<ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.TimeoutQuery>,
+      IIncrementOperators<ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.TimeoutQuery>,
+      IDecrementOperators<ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameDirectoryRestypeDirectoryCompMetadata.DirectorySetmetadata.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.TimeoutQuery>
 #endif
 {
     /// <summary>

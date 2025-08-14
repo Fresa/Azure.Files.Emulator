@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl
+﻿namespace ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL
 {
     internal partial class Operation
     {

@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryCompListhandles.DirectoryListhandles
+﻿namespace ShareNameDirectoryCompListhandles.DirectoryListHandles
 {
     internal partial class Operation
     {

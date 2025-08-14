@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameRestypeShareCompUndelete;
+namespace ShareNameRestypeShareCompUndelete;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct CompQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameRestypeShareCompUndelete.CompQuery.json");
+            result = result.PushSchemaLocation("ShareNameRestypeShareCompUndelete.CompQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct CompQuery
     {
         /// <summary>
         /// Gets the string 'undelete'
-        /// as a <see cref="SharenameRestypeShareCompUndelete.CompQuery"/>.
+        /// as a <see cref="ShareNameRestypeShareCompUndelete.CompQuery"/>.
         /// </summary>
         public static CompQuery Undelete { get; } = CorvusValidation.Enum.As<CompQuery>();
 

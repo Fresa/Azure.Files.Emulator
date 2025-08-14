@@ -1,4 +1,4 @@
-﻿namespace SharenameRestypeShareCompLeaseRelease.ShareReleaselease
+﻿namespace ShareNameRestypeShareCompLeaseRelease.ShareReleaseLease
 {
     internal partial class Operation
     {

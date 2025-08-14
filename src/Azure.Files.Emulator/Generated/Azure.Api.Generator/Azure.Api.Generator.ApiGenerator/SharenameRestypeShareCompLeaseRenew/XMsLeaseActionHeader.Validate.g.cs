@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameRestypeShareCompLeaseRenew;
+namespace ShareNameRestypeShareCompLeaseRenew;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct XMsLeaseActionHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameRestypeShareCompLeaseRenew.XMsLeaseActionHeader.json");
+            result = result.PushSchemaLocation("ShareNameRestypeShareCompLeaseRenew.XMsLeaseActionHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct XMsLeaseActionHeader
     {
         /// <summary>
         /// Gets the string 'renew'
-        /// as a <see cref="SharenameRestypeShareCompLeaseRenew.XMsLeaseActionHeader"/>.
+        /// as a <see cref="ShareNameRestypeShareCompLeaseRenew.XMsLeaseActionHeader"/>.
         /// </summary>
         public static XMsLeaseActionHeader Renew { get; } = CorvusValidation.Enum.As<XMsLeaseActionHeader>();
 

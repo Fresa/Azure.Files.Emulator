@@ -1,4 +1,4 @@
-﻿namespace SharenameRestypeShareCompLeaseRenew.ShareRenewlease
+﻿namespace ShareNameRestypeShareCompLeaseRenew.ShareRenewLease
 {
     internal partial class Operation
     {

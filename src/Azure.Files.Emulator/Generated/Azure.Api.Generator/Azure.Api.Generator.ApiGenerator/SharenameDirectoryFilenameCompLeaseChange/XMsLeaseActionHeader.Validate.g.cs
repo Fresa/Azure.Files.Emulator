@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompLeaseChange;
+namespace ShareNameDirectoryFileNameCompLeaseChange;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct XMsLeaseActionHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryFilenameCompLeaseChange.XMsLeaseActionHeader.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryFileNameCompLeaseChange.XMsLeaseActionHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct XMsLeaseActionHeader
     {
         /// <summary>
         /// Gets the string 'change'
-        /// as a <see cref="SharenameDirectoryFilenameCompLeaseChange.XMsLeaseActionHeader"/>.
+        /// as a <see cref="ShareNameDirectoryFileNameCompLeaseChange.XMsLeaseActionHeader"/>.
         /// </summary>
         public static XMsLeaseActionHeader Change { get; } = CorvusValidation.Enum.As<XMsLeaseActionHeader>();
 

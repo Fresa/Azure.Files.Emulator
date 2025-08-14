@@ -15,16 +15,16 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameCompLeaseChange.FileChangelease;
+namespace ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct XMsVersionHeader
 #if NET8_0_OR_GREATER
-    : IJsonString<SharenameDirectoryFilenameCompLeaseChange.FileChangelease.XMsVersionHeader>,
+    : IJsonString<ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease.XMsVersionHeader>,
       ISpanFormattable
 #else
-    : IJsonString<SharenameDirectoryFilenameCompLeaseChange.FileChangelease.XMsVersionHeader>
+    : IJsonString<ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease.XMsVersionHeader>
 #endif
 {
     /// <summary>

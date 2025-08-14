@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryCompForceclosehandles.DirectoryForceclosehandles
+﻿namespace ShareNameDirectoryCompForceclosehandles.DirectoryForceCloseHandles
 {
     internal partial class Operation
     {

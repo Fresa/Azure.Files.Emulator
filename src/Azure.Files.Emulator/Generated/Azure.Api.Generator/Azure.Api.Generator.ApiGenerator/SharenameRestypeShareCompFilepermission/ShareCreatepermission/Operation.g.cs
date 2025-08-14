@@ -1,9 +1,9 @@
 ﻿using System.Threading;
 
-namespace SharenameRestypeShareCompFilepermission.ShareCreatepermission;
+namespace ShareNameRestypeShareCompFilepermission.ShareCreatePermission;
 internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}?restype=share&comp=filepermission";
-    internal const string Method = "ShareCreatepermission";
+    internal const string Method = "ShareCreatePermission";
     internal partial Task<Response> HandleAsync(Request request, CancellationToken cancellationToken);
 }

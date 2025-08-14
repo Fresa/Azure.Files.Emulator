@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameRestypeSymboliclink.FileGetsymboliclink;
+namespace ShareNameDirectoryFileNameRestypeSymboliclink.FileGetSymbolicLink;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct TimeoutQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryFilenameRestypeSymboliclink.FileGetsymboliclink.TimeoutQuery.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryFileNameRestypeSymboliclink.FileGetSymbolicLink.TimeoutQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;

@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilename.FileDownload;
+namespace ShareNameDirectoryFileName.FileDownload;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryFilename.FileDownload.TimeoutQuery>,
-      IAdditionOperators<SharenameDirectoryFilename.FileDownload.TimeoutQuery, SharenameDirectoryFilename.FileDownload.TimeoutQuery, SharenameDirectoryFilename.FileDownload.TimeoutQuery>,
-      ISubtractionOperators<SharenameDirectoryFilename.FileDownload.TimeoutQuery, SharenameDirectoryFilename.FileDownload.TimeoutQuery, SharenameDirectoryFilename.FileDownload.TimeoutQuery>,
-      IMultiplyOperators<SharenameDirectoryFilename.FileDownload.TimeoutQuery, SharenameDirectoryFilename.FileDownload.TimeoutQuery, SharenameDirectoryFilename.FileDownload.TimeoutQuery>,
-      IDivisionOperators<SharenameDirectoryFilename.FileDownload.TimeoutQuery, SharenameDirectoryFilename.FileDownload.TimeoutQuery, SharenameDirectoryFilename.FileDownload.TimeoutQuery>,
-      IIncrementOperators<SharenameDirectoryFilename.FileDownload.TimeoutQuery>,
-      IDecrementOperators<SharenameDirectoryFilename.FileDownload.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileName.FileDownload.TimeoutQuery>,
+      IAdditionOperators<ShareNameDirectoryFileName.FileDownload.TimeoutQuery, ShareNameDirectoryFileName.FileDownload.TimeoutQuery, ShareNameDirectoryFileName.FileDownload.TimeoutQuery>,
+      ISubtractionOperators<ShareNameDirectoryFileName.FileDownload.TimeoutQuery, ShareNameDirectoryFileName.FileDownload.TimeoutQuery, ShareNameDirectoryFileName.FileDownload.TimeoutQuery>,
+      IMultiplyOperators<ShareNameDirectoryFileName.FileDownload.TimeoutQuery, ShareNameDirectoryFileName.FileDownload.TimeoutQuery, ShareNameDirectoryFileName.FileDownload.TimeoutQuery>,
+      IDivisionOperators<ShareNameDirectoryFileName.FileDownload.TimeoutQuery, ShareNameDirectoryFileName.FileDownload.TimeoutQuery, ShareNameDirectoryFileName.FileDownload.TimeoutQuery>,
+      IIncrementOperators<ShareNameDirectoryFileName.FileDownload.TimeoutQuery>,
+      IDecrementOperators<ShareNameDirectoryFileName.FileDownload.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameDirectoryFilename.FileDownload.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileName.FileDownload.TimeoutQuery>
 #endif
 {
     /// <summary>

@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameCompListhandles.FileListhandles;
+namespace ShareNameDirectoryFileNameCompListhandles.FileListHandles;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct MaxresultsQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryFilenameCompListhandles.FileListhandles.MaxresultsQuery>,
-      IAdditionOperators<SharenameDirectoryFilenameCompListhandles.FileListhandles.MaxresultsQuery, SharenameDirectoryFilenameCompListhandles.FileListhandles.MaxresultsQuery, SharenameDirectoryFilenameCompListhandles.FileListhandles.MaxresultsQuery>,
-      ISubtractionOperators<SharenameDirectoryFilenameCompListhandles.FileListhandles.MaxresultsQuery, SharenameDirectoryFilenameCompListhandles.FileListhandles.MaxresultsQuery, SharenameDirectoryFilenameCompListhandles.FileListhandles.MaxresultsQuery>,
-      IMultiplyOperators<SharenameDirectoryFilenameCompListhandles.FileListhandles.MaxresultsQuery, SharenameDirectoryFilenameCompListhandles.FileListhandles.MaxresultsQuery, SharenameDirectoryFilenameCompListhandles.FileListhandles.MaxresultsQuery>,
-      IDivisionOperators<SharenameDirectoryFilenameCompListhandles.FileListhandles.MaxresultsQuery, SharenameDirectoryFilenameCompListhandles.FileListhandles.MaxresultsQuery, SharenameDirectoryFilenameCompListhandles.FileListhandles.MaxresultsQuery>,
-      IIncrementOperators<SharenameDirectoryFilenameCompListhandles.FileListhandles.MaxresultsQuery>,
-      IDecrementOperators<SharenameDirectoryFilenameCompListhandles.FileListhandles.MaxresultsQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompListhandles.FileListHandles.MaxresultsQuery>,
+      IAdditionOperators<ShareNameDirectoryFileNameCompListhandles.FileListHandles.MaxresultsQuery, ShareNameDirectoryFileNameCompListhandles.FileListHandles.MaxresultsQuery, ShareNameDirectoryFileNameCompListhandles.FileListHandles.MaxresultsQuery>,
+      ISubtractionOperators<ShareNameDirectoryFileNameCompListhandles.FileListHandles.MaxresultsQuery, ShareNameDirectoryFileNameCompListhandles.FileListHandles.MaxresultsQuery, ShareNameDirectoryFileNameCompListhandles.FileListHandles.MaxresultsQuery>,
+      IMultiplyOperators<ShareNameDirectoryFileNameCompListhandles.FileListHandles.MaxresultsQuery, ShareNameDirectoryFileNameCompListhandles.FileListHandles.MaxresultsQuery, ShareNameDirectoryFileNameCompListhandles.FileListHandles.MaxresultsQuery>,
+      IDivisionOperators<ShareNameDirectoryFileNameCompListhandles.FileListHandles.MaxresultsQuery, ShareNameDirectoryFileNameCompListhandles.FileListHandles.MaxresultsQuery, ShareNameDirectoryFileNameCompListhandles.FileListHandles.MaxresultsQuery>,
+      IIncrementOperators<ShareNameDirectoryFileNameCompListhandles.FileListHandles.MaxresultsQuery>,
+      IDecrementOperators<ShareNameDirectoryFileNameCompListhandles.FileListHandles.MaxresultsQuery>
 #else
-    : IJsonNumber<SharenameDirectoryFilenameCompListhandles.FileListhandles.MaxresultsQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompListhandles.FileListHandles.MaxresultsQuery>
 #endif
 {
     /// <summary>

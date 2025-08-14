@@ -1,26 +1,26 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilename.FileDownload;
+namespace ShareNameDirectoryFileName.FileDownload;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
     internal required Corvus.Json.JsonString Directory { get; init; }
-    internal required Corvus.Json.JsonString Filename { get; init; }
+    internal required Corvus.Json.JsonString FileName { get; init; }
     internal Corvus.Json.JsonBoolean? XMsAllowTrailingDot { get; init; }
-    internal SharenameDirectoryFilename.FileDownload.TimeoutQuery? Timeout { get; init; }
-    internal required SharenameDirectoryFilename.FileDownload.XMsVersionHeader XMsVersion { get; init; }
+    internal ShareNameDirectoryFileName.FileDownload.TimeoutQuery? Timeout { get; init; }
+    internal required ShareNameDirectoryFileName.FileDownload.XMsVersionHeader XMsVersion { get; init; }
     internal Corvus.Json.JsonString? XMsRange { get; init; }
     internal Corvus.Json.JsonBoolean? XMsRangeGetContentMd5 { get; init; }
     internal Corvus.Json.JsonString? XMsStructuredBody { get; init; }
     internal Corvus.Json.JsonString? XMsLeaseId { get; init; }
-    internal SharenameDirectoryFilename.FileDownload.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameDirectoryFileName.FileDownload.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
     public static Request Bind(HttpRequest request)
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -41,7 +41,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Filename = request.Bind<Corvus.Json.JsonString>("""
+            FileName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "fileName",
@@ -61,7 +61,7 @@ internal partial class Request
   "x-ms-client-name": "allowTrailingDot"
 }
 """).AsOptional(),
-            Timeout = request.Bind<SharenameDirectoryFilename.FileDownload.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameDirectoryFileName.FileDownload.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -71,7 +71,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<SharenameDirectoryFilename.FileDownload.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameDirectoryFileName.FileDownload.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -128,7 +128,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<SharenameDirectoryFilename.FileDownload.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameDirectoryFileName.FileDownload.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

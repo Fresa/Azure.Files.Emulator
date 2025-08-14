@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace CompList.ServiceListsharessegment;
+namespace CompList.ServiceListSharesSegment;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct MaxresultsQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("CompList.ServiceListsharessegment.MaxresultsQuery.json");
+            result = result.PushSchemaLocation("CompList.ServiceListSharesSegment.MaxresultsQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;

@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameRestypeShareCompLeaseAcquire;
+namespace ShareNameRestypeShareCompLeaseAcquire;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct RestypeQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameRestypeShareCompLeaseAcquire.RestypeQuery.json");
+            result = result.PushSchemaLocation("ShareNameRestypeShareCompLeaseAcquire.RestypeQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct RestypeQuery
     {
         /// <summary>
         /// Gets the string 'share'
-        /// as a <see cref="SharenameRestypeShareCompLeaseAcquire.RestypeQuery"/>.
+        /// as a <see cref="ShareNameRestypeShareCompLeaseAcquire.RestypeQuery"/>.
         /// </summary>
         public static RestypeQuery Share { get; } = CorvusValidation.Enum.As<RestypeQuery>();
 

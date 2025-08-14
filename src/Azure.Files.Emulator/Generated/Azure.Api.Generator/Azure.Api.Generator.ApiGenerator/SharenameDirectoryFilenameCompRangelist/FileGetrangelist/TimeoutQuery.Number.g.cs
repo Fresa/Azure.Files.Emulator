@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameCompRangelist.FileGetrangelist;
+namespace ShareNameDirectoryFileNameCompRangelist.FileGetRangeList;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryFilenameCompRangelist.FileGetrangelist.TimeoutQuery>,
-      IAdditionOperators<SharenameDirectoryFilenameCompRangelist.FileGetrangelist.TimeoutQuery, SharenameDirectoryFilenameCompRangelist.FileGetrangelist.TimeoutQuery, SharenameDirectoryFilenameCompRangelist.FileGetrangelist.TimeoutQuery>,
-      ISubtractionOperators<SharenameDirectoryFilenameCompRangelist.FileGetrangelist.TimeoutQuery, SharenameDirectoryFilenameCompRangelist.FileGetrangelist.TimeoutQuery, SharenameDirectoryFilenameCompRangelist.FileGetrangelist.TimeoutQuery>,
-      IMultiplyOperators<SharenameDirectoryFilenameCompRangelist.FileGetrangelist.TimeoutQuery, SharenameDirectoryFilenameCompRangelist.FileGetrangelist.TimeoutQuery, SharenameDirectoryFilenameCompRangelist.FileGetrangelist.TimeoutQuery>,
-      IDivisionOperators<SharenameDirectoryFilenameCompRangelist.FileGetrangelist.TimeoutQuery, SharenameDirectoryFilenameCompRangelist.FileGetrangelist.TimeoutQuery, SharenameDirectoryFilenameCompRangelist.FileGetrangelist.TimeoutQuery>,
-      IIncrementOperators<SharenameDirectoryFilenameCompRangelist.FileGetrangelist.TimeoutQuery>,
-      IDecrementOperators<SharenameDirectoryFilenameCompRangelist.FileGetrangelist.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.TimeoutQuery>,
+      IAdditionOperators<ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.TimeoutQuery, ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.TimeoutQuery, ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.TimeoutQuery>,
+      ISubtractionOperators<ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.TimeoutQuery, ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.TimeoutQuery, ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.TimeoutQuery>,
+      IMultiplyOperators<ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.TimeoutQuery, ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.TimeoutQuery, ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.TimeoutQuery>,
+      IDivisionOperators<ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.TimeoutQuery, ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.TimeoutQuery, ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.TimeoutQuery>,
+      IIncrementOperators<ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.TimeoutQuery>,
+      IDecrementOperators<ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameDirectoryFilenameCompRangelist.FileGetrangelist.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.TimeoutQuery>
 #endif
 {
     /// <summary>

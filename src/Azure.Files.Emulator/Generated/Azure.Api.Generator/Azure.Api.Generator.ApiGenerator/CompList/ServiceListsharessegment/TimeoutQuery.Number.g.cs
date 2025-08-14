@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace CompList.ServiceListsharessegment;
+namespace CompList.ServiceListSharesSegment;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<CompList.ServiceListsharessegment.TimeoutQuery>,
-      IAdditionOperators<CompList.ServiceListsharessegment.TimeoutQuery, CompList.ServiceListsharessegment.TimeoutQuery, CompList.ServiceListsharessegment.TimeoutQuery>,
-      ISubtractionOperators<CompList.ServiceListsharessegment.TimeoutQuery, CompList.ServiceListsharessegment.TimeoutQuery, CompList.ServiceListsharessegment.TimeoutQuery>,
-      IMultiplyOperators<CompList.ServiceListsharessegment.TimeoutQuery, CompList.ServiceListsharessegment.TimeoutQuery, CompList.ServiceListsharessegment.TimeoutQuery>,
-      IDivisionOperators<CompList.ServiceListsharessegment.TimeoutQuery, CompList.ServiceListsharessegment.TimeoutQuery, CompList.ServiceListsharessegment.TimeoutQuery>,
-      IIncrementOperators<CompList.ServiceListsharessegment.TimeoutQuery>,
-      IDecrementOperators<CompList.ServiceListsharessegment.TimeoutQuery>
+    : IJsonNumber<CompList.ServiceListSharesSegment.TimeoutQuery>,
+      IAdditionOperators<CompList.ServiceListSharesSegment.TimeoutQuery, CompList.ServiceListSharesSegment.TimeoutQuery, CompList.ServiceListSharesSegment.TimeoutQuery>,
+      ISubtractionOperators<CompList.ServiceListSharesSegment.TimeoutQuery, CompList.ServiceListSharesSegment.TimeoutQuery, CompList.ServiceListSharesSegment.TimeoutQuery>,
+      IMultiplyOperators<CompList.ServiceListSharesSegment.TimeoutQuery, CompList.ServiceListSharesSegment.TimeoutQuery, CompList.ServiceListSharesSegment.TimeoutQuery>,
+      IDivisionOperators<CompList.ServiceListSharesSegment.TimeoutQuery, CompList.ServiceListSharesSegment.TimeoutQuery, CompList.ServiceListSharesSegment.TimeoutQuery>,
+      IIncrementOperators<CompList.ServiceListSharesSegment.TimeoutQuery>,
+      IDecrementOperators<CompList.ServiceListSharesSegment.TimeoutQuery>
 #else
-    : IJsonNumber<CompList.ServiceListsharessegment.TimeoutQuery>
+    : IJsonNumber<CompList.ServiceListSharesSegment.TimeoutQuery>
 #endif
 {
     /// <summary>

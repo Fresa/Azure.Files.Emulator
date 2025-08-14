@@ -15,16 +15,16 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy;
+namespace ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct XMsVersionHeader
 #if NET8_0_OR_GREATER
-    : IJsonString<SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.XMsVersionHeader>,
+    : IJsonString<ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.XMsVersionHeader>,
       ISpanFormattable
 #else
-    : IJsonString<SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.XMsVersionHeader>
+    : IJsonString<ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.XMsVersionHeader>
 #endif
 {
     /// <summary>

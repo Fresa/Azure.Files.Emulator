@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles;
+namespace ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct XMsVersionHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.XMsVersionHeader.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.XMsVersionHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct XMsVersionHeader
     {
         /// <summary>
         /// Gets the string '2025-11-05'
-        /// as a <see cref="SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.XMsVersionHeader"/>.
+        /// as a <see cref="ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.XMsVersionHeader"/>.
         /// </summary>
         public static XMsVersionHeader Value20251105 { get; } = CorvusValidation.Enum.As<XMsVersionHeader>();
 

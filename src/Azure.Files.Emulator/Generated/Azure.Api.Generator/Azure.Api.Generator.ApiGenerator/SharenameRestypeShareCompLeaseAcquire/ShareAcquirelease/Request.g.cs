@@ -1,26 +1,26 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameRestypeShareCompLeaseAcquire.ShareAcquirelease;
+namespace ShareNameRestypeShareCompLeaseAcquire.ShareAcquireLease;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
-    internal required SharenameRestypeShareCompLeaseAcquire.CompQuery Comp { get; init; }
-    internal required SharenameRestypeShareCompLeaseAcquire.XMsLeaseActionHeader XMsLeaseAction { get; init; }
-    internal required SharenameRestypeShareCompLeaseAcquire.RestypeQuery Restype { get; init; }
-    internal SharenameRestypeShareCompLeaseAcquire.ShareAcquirelease.TimeoutQuery? Timeout { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
+    internal required ShareNameRestypeShareCompLeaseAcquire.CompQuery Comp { get; init; }
+    internal required ShareNameRestypeShareCompLeaseAcquire.XMsLeaseActionHeader XMsLeaseAction { get; init; }
+    internal required ShareNameRestypeShareCompLeaseAcquire.RestypeQuery Restype { get; init; }
+    internal ShareNameRestypeShareCompLeaseAcquire.ShareAcquireLease.TimeoutQuery? Timeout { get; init; }
     internal Corvus.Json.JsonInteger? XMsLeaseDuration { get; init; }
     internal Corvus.Json.JsonString? XMsProposedLeaseId { get; init; }
-    internal required SharenameRestypeShareCompLeaseAcquire.ShareAcquirelease.XMsVersionHeader XMsVersion { get; init; }
+    internal required ShareNameRestypeShareCompLeaseAcquire.ShareAcquireLease.XMsVersionHeader XMsVersion { get; init; }
     internal Corvus.Json.JsonString? Sharesnapshot { get; init; }
     internal Corvus.Json.JsonString? XMsClientRequestId { get; init; }
-    internal SharenameRestypeShareCompLeaseAcquire.ShareAcquirelease.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameRestypeShareCompLeaseAcquire.ShareAcquireLease.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
     public static Request Bind(HttpRequest request)
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -30,7 +30,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Comp = request.Bind<SharenameRestypeShareCompLeaseAcquire.CompQuery>("""
+            Comp = request.Bind<ShareNameRestypeShareCompLeaseAcquire.CompQuery>("""
 {
   "in": "query",
   "name": "comp",
@@ -42,7 +42,7 @@ internal partial class Request
   ]
 }
 """),
-            XMsLeaseAction = request.Bind<SharenameRestypeShareCompLeaseAcquire.XMsLeaseActionHeader>("""
+            XMsLeaseAction = request.Bind<ShareNameRestypeShareCompLeaseAcquire.XMsLeaseActionHeader>("""
 {
   "in": "header",
   "name": "x-ms-lease-action",
@@ -60,7 +60,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Restype = request.Bind<SharenameRestypeShareCompLeaseAcquire.RestypeQuery>("""
+            Restype = request.Bind<ShareNameRestypeShareCompLeaseAcquire.RestypeQuery>("""
 {
   "in": "query",
   "name": "restype",
@@ -72,7 +72,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = request.Bind<SharenameRestypeShareCompLeaseAcquire.ShareAcquirelease.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameRestypeShareCompLeaseAcquire.ShareAcquireLease.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -102,7 +102,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<SharenameRestypeShareCompLeaseAcquire.ShareAcquirelease.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameRestypeShareCompLeaseAcquire.ShareAcquireLease.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -135,7 +135,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<SharenameRestypeShareCompLeaseAcquire.ShareAcquirelease.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameRestypeShareCompLeaseAcquire.ShareAcquireLease.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

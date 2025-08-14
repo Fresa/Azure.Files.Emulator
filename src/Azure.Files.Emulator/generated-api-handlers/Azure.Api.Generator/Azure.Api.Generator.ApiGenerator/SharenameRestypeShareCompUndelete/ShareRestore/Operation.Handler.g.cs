@@ -1,4 +1,4 @@
-﻿namespace SharenameRestypeShareCompUndelete.ShareRestore
+﻿namespace ShareNameRestypeShareCompUndelete.ShareRestore
 {
     internal partial class Operation
     {

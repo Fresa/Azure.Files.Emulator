@@ -1,7 +1,7 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace RestypeServiceCompProperties.ServiceSetproperties;
+namespace RestypeServiceCompProperties.ServiceSetProperties;
 internal partial class Response
 {
 }

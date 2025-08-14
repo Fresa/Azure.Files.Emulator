@@ -1,35 +1,35 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl;
+namespace ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
     internal required Corvus.Json.JsonString Directory { get; init; }
-    internal required Corvus.Json.JsonString Filename { get; init; }
-    internal required SharenameDirectoryFilenameCompRangeFromurl.CompQuery Comp { get; init; }
-    internal SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl.TimeoutQuery? Timeout { get; init; }
+    internal required Corvus.Json.JsonString FileName { get; init; }
+    internal required ShareNameDirectoryFileNameCompRangeFromURL.CompQuery Comp { get; init; }
+    internal ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL.TimeoutQuery? Timeout { get; init; }
     internal required Corvus.Json.JsonString XMsRange { get; init; }
     internal required Corvus.Json.JsonString XMsCopySource { get; init; }
     internal Corvus.Json.JsonString? XMsSourceRange { get; init; }
-    internal required SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl.XMsWriteHeader XMsWrite { get; init; }
+    internal required ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL.XMsWriteHeader XMsWrite { get; init; }
     internal required Corvus.Json.JsonInt64 ContentLength { get; init; }
     internal Corvus.Json.JsonString? XMsSourceContentCrc64 { get; init; }
     internal Corvus.Json.JsonString? XMsSourceIfMatchCrc64 { get; init; }
     internal Corvus.Json.JsonString? XMsSourceIfNoneMatchCrc64 { get; init; }
-    internal required SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl.XMsVersionHeader XMsVersion { get; init; }
+    internal required ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL.XMsVersionHeader XMsVersion { get; init; }
     internal Corvus.Json.JsonString? XMsLeaseId { get; init; }
     internal Corvus.Json.JsonString? XMsCopySourceAuthorization { get; init; }
-    internal SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl.XMsFileLastWriteTimeHeader? XMsFileLastWriteTime { get; init; }
+    internal ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL.XMsFileLastWriteTimeHeader? XMsFileLastWriteTime { get; init; }
     internal Corvus.Json.JsonBoolean? XMsAllowTrailingDot { get; init; }
     internal Corvus.Json.JsonBoolean? XMsSourceAllowTrailingDot { get; init; }
-    internal SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
     public static Request Bind(HttpRequest request)
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -50,7 +50,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Filename = request.Bind<Corvus.Json.JsonString>("""
+            FileName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "fileName",
@@ -61,7 +61,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Comp = request.Bind<SharenameDirectoryFilenameCompRangeFromurl.CompQuery>("""
+            Comp = request.Bind<ShareNameDirectoryFileNameCompRangeFromURL.CompQuery>("""
 {
   "in": "query",
   "name": "comp",
@@ -73,7 +73,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = request.Bind<SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -115,7 +115,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsWrite = request.Bind<SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl.XMsWriteHeader>("""
+            XMsWrite = request.Bind<ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL.XMsWriteHeader>("""
 {
   "in": "header",
   "name": "x-ms-write",
@@ -185,7 +185,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -222,7 +222,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFileLastWriteTime = request.Bind<SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl.XMsFileLastWriteTimeHeader>("""
+            XMsFileLastWriteTime = request.Bind<ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL.XMsFileLastWriteTimeHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-last-write-time",
@@ -258,7 +258,7 @@ internal partial class Request
   "x-ms-client-name": "allowSourceTrailingDot"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

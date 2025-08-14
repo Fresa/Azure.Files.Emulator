@@ -1,26 +1,26 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink;
+namespace ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
     internal required Corvus.Json.JsonString Directory { get; init; }
-    internal required Corvus.Json.JsonString Filename { get; init; }
-    internal required SharenameDirectoryFilenameRestypeHardlink.RestypeQuery Restype { get; init; }
-    internal SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.TimeoutQuery? Timeout { get; init; }
-    internal required SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.XMsVersionHeader XMsVersion { get; init; }
-    internal required SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.XMsTypeHeader XMsType { get; init; }
+    internal required Corvus.Json.JsonString FileName { get; init; }
+    internal required ShareNameDirectoryFileNameRestypeHardlink.RestypeQuery Restype { get; init; }
+    internal ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.TimeoutQuery? Timeout { get; init; }
+    internal required ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.XMsVersionHeader XMsVersion { get; init; }
+    internal required ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.XMsTypeHeader XMsType { get; init; }
     internal Corvus.Json.JsonString? XMsClientRequestId { get; init; }
     internal Corvus.Json.JsonString? XMsLeaseId { get; init; }
     internal required Corvus.Json.JsonString XMsFileTargetFile { get; init; }
-    internal SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
     public static Request Bind(HttpRequest request)
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -41,7 +41,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Filename = request.Bind<Corvus.Json.JsonString>("""
+            FileName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "fileName",
@@ -52,7 +52,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Restype = request.Bind<SharenameDirectoryFilenameRestypeHardlink.RestypeQuery>("""
+            Restype = request.Bind<ShareNameDirectoryFileNameRestypeHardlink.RestypeQuery>("""
 {
   "in": "query",
   "name": "restype",
@@ -64,7 +64,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = request.Bind<SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -74,7 +74,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -88,7 +88,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsType = request.Bind<SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.XMsTypeHeader>("""
+            XMsType = request.Bind<ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.XMsTypeHeader>("""
 {
   "in": "header",
   "name": "x-ms-type",
@@ -136,7 +136,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            XMsFileRequestIntent = request.Bind<SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

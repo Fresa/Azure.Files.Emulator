@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl;
+namespace ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -45,7 +45,7 @@ public readonly partial struct XMsWriteHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl.XMsWriteHeader.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL.XMsWriteHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -79,7 +79,7 @@ public readonly partial struct XMsWriteHeader
     {
         /// <summary>
         /// Gets the string 'update'
-        /// as a <see cref="SharenameDirectoryFilenameCompRangeFromurl.FileUploadrangefromurl.XMsWriteHeader"/>.
+        /// as a <see cref="ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL.XMsWriteHeader"/>.
         /// </summary>
         public static XMsWriteHeader Update { get; } = CorvusValidation.Enum.As<XMsWriteHeader>();
 

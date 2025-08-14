@@ -1,26 +1,26 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryCompListhandles.DirectoryListhandles;
+namespace ShareNameDirectoryCompListhandles.DirectoryListHandles;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
     internal required Corvus.Json.JsonString Directory { get; init; }
-    internal required SharenameDirectoryCompListhandles.CompQuery Comp { get; init; }
+    internal required ShareNameDirectoryCompListhandles.CompQuery Comp { get; init; }
     internal Corvus.Json.JsonString? Marker { get; init; }
-    internal SharenameDirectoryCompListhandles.DirectoryListhandles.MaxresultsQuery? Maxresults { get; init; }
-    internal SharenameDirectoryCompListhandles.DirectoryListhandles.TimeoutQuery? Timeout { get; init; }
+    internal ShareNameDirectoryCompListhandles.DirectoryListHandles.MaxresultsQuery? Maxresults { get; init; }
+    internal ShareNameDirectoryCompListhandles.DirectoryListHandles.TimeoutQuery? Timeout { get; init; }
     internal Corvus.Json.JsonString? Sharesnapshot { get; init; }
     internal Corvus.Json.JsonBoolean? XMsRecursive { get; init; }
-    internal required SharenameDirectoryCompListhandles.DirectoryListhandles.XMsVersionHeader XMsVersion { get; init; }
+    internal required ShareNameDirectoryCompListhandles.DirectoryListHandles.XMsVersionHeader XMsVersion { get; init; }
     internal Corvus.Json.JsonBoolean? XMsAllowTrailingDot { get; init; }
-    internal SharenameDirectoryCompListhandles.DirectoryListhandles.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameDirectoryCompListhandles.DirectoryListHandles.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
     public static Request Bind(HttpRequest request)
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -41,7 +41,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Comp = request.Bind<SharenameDirectoryCompListhandles.CompQuery>("""
+            Comp = request.Bind<ShareNameDirectoryCompListhandles.CompQuery>("""
 {
   "in": "query",
   "name": "comp",
@@ -62,7 +62,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Maxresults = request.Bind<SharenameDirectoryCompListhandles.DirectoryListhandles.MaxresultsQuery>("""
+            Maxresults = request.Bind<ShareNameDirectoryCompListhandles.DirectoryListHandles.MaxresultsQuery>("""
 {
   "in": "query",
   "name": "maxresults",
@@ -72,7 +72,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Timeout = request.Bind<SharenameDirectoryCompListhandles.DirectoryListhandles.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameDirectoryCompListhandles.DirectoryListHandles.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -101,7 +101,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<SharenameDirectoryCompListhandles.DirectoryListhandles.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameDirectoryCompListhandles.DirectoryListHandles.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -124,7 +124,7 @@ internal partial class Request
   "x-ms-client-name": "allowTrailingDot"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<SharenameDirectoryCompListhandles.DirectoryListhandles.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameDirectoryCompListhandles.DirectoryListHandles.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

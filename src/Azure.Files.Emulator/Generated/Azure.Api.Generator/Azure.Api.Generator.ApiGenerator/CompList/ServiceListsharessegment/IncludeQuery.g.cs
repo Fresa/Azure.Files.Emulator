@@ -16,7 +16,7 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace CompList.ServiceListsharessegment;
+namespace CompList.ServiceListSharesSegment;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -63,7 +63,7 @@ public readonly partial struct IncludeQuery
     /// <summary>
     /// Gets the schema location from which this type was generated.
     /// </summary>
-    public static string SchemaLocation { get; } = "CompList.ServiceListsharessegment.IncludeQuery.json";
+    public static string SchemaLocation { get; } = "CompList.ServiceListSharesSegment.IncludeQuery.json";
 
     /// <summary>
     /// Gets a Null instance.
@@ -592,8 +592,8 @@ public readonly partial struct IncludeQuery
 
         if (thisKind == JsonValueKind.Array)
         {
-            JsonArrayEnumerator<CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity> lhs = this.EnumerateArray();
-            JsonArrayEnumerator<CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity> rhs = other.EnumerateArray();
+            JsonArrayEnumerator<CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity> lhs = this.EnumerateArray();
+            JsonArrayEnumerator<CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity> rhs = other.EnumerateArray();
             while (lhs.MoveNext())
             {
                 if (!rhs.MoveNext())

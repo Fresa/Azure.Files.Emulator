@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameRestypeShareCompMetadata.ShareSetmetadata;
+namespace ShareNameRestypeShareCompMetadata.ShareSetMetadata;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameRestypeShareCompMetadata.ShareSetmetadata.TimeoutQuery>,
-      IAdditionOperators<SharenameRestypeShareCompMetadata.ShareSetmetadata.TimeoutQuery, SharenameRestypeShareCompMetadata.ShareSetmetadata.TimeoutQuery, SharenameRestypeShareCompMetadata.ShareSetmetadata.TimeoutQuery>,
-      ISubtractionOperators<SharenameRestypeShareCompMetadata.ShareSetmetadata.TimeoutQuery, SharenameRestypeShareCompMetadata.ShareSetmetadata.TimeoutQuery, SharenameRestypeShareCompMetadata.ShareSetmetadata.TimeoutQuery>,
-      IMultiplyOperators<SharenameRestypeShareCompMetadata.ShareSetmetadata.TimeoutQuery, SharenameRestypeShareCompMetadata.ShareSetmetadata.TimeoutQuery, SharenameRestypeShareCompMetadata.ShareSetmetadata.TimeoutQuery>,
-      IDivisionOperators<SharenameRestypeShareCompMetadata.ShareSetmetadata.TimeoutQuery, SharenameRestypeShareCompMetadata.ShareSetmetadata.TimeoutQuery, SharenameRestypeShareCompMetadata.ShareSetmetadata.TimeoutQuery>,
-      IIncrementOperators<SharenameRestypeShareCompMetadata.ShareSetmetadata.TimeoutQuery>,
-      IDecrementOperators<SharenameRestypeShareCompMetadata.ShareSetmetadata.TimeoutQuery>
+    : IJsonNumber<ShareNameRestypeShareCompMetadata.ShareSetMetadata.TimeoutQuery>,
+      IAdditionOperators<ShareNameRestypeShareCompMetadata.ShareSetMetadata.TimeoutQuery, ShareNameRestypeShareCompMetadata.ShareSetMetadata.TimeoutQuery, ShareNameRestypeShareCompMetadata.ShareSetMetadata.TimeoutQuery>,
+      ISubtractionOperators<ShareNameRestypeShareCompMetadata.ShareSetMetadata.TimeoutQuery, ShareNameRestypeShareCompMetadata.ShareSetMetadata.TimeoutQuery, ShareNameRestypeShareCompMetadata.ShareSetMetadata.TimeoutQuery>,
+      IMultiplyOperators<ShareNameRestypeShareCompMetadata.ShareSetMetadata.TimeoutQuery, ShareNameRestypeShareCompMetadata.ShareSetMetadata.TimeoutQuery, ShareNameRestypeShareCompMetadata.ShareSetMetadata.TimeoutQuery>,
+      IDivisionOperators<ShareNameRestypeShareCompMetadata.ShareSetMetadata.TimeoutQuery, ShareNameRestypeShareCompMetadata.ShareSetMetadata.TimeoutQuery, ShareNameRestypeShareCompMetadata.ShareSetMetadata.TimeoutQuery>,
+      IIncrementOperators<ShareNameRestypeShareCompMetadata.ShareSetMetadata.TimeoutQuery>,
+      IDecrementOperators<ShareNameRestypeShareCompMetadata.ShareSetMetadata.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameRestypeShareCompMetadata.ShareSetmetadata.TimeoutQuery>
+    : IJsonNumber<ShareNameRestypeShareCompMetadata.ShareSetMetadata.TimeoutQuery>
 #endif
 {
     /// <summary>

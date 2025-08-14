@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace RestypeServiceCompProperties.ServiceGetproperties;
+namespace RestypeServiceCompProperties.ServiceGetProperties;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct XMsVersionHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("RestypeServiceCompProperties.ServiceGetproperties.XMsVersionHeader.json");
+            result = result.PushSchemaLocation("RestypeServiceCompProperties.ServiceGetProperties.XMsVersionHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct XMsVersionHeader
     {
         /// <summary>
         /// Gets the string '2025-11-05'
-        /// as a <see cref="RestypeServiceCompProperties.ServiceGetproperties.XMsVersionHeader"/>.
+        /// as a <see cref="RestypeServiceCompProperties.ServiceGetProperties.XMsVersionHeader"/>.
         /// </summary>
         public static XMsVersionHeader Value20251105 { get; } = CorvusValidation.Enum.As<XMsVersionHeader>();
 

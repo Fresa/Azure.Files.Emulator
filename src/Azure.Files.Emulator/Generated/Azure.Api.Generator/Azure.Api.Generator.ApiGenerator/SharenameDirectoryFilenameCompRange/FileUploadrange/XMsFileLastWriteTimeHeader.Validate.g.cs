@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompRange.FileUploadrange;
+namespace ShareNameDirectoryFileNameCompRange.FileUploadRange;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct XMsFileLastWriteTimeHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryFilenameCompRange.FileUploadrange.XMsFileLastWriteTimeHeader.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryFileNameCompRange.FileUploadRange.XMsFileLastWriteTimeHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct XMsFileLastWriteTimeHeader
     {
         /// <summary>
         /// Gets the string 'Now'
-        /// as a <see cref="SharenameDirectoryFilenameCompRange.FileUploadrange.XMsFileLastWriteTimeHeader"/>.
+        /// as a <see cref="ShareNameDirectoryFileNameCompRange.FileUploadRange.XMsFileLastWriteTimeHeader"/>.
         /// </summary>
         public static XMsFileLastWriteTimeHeader Now { get; } = CorvusValidation.Enum1.As<XMsFileLastWriteTimeHeader>();
 
@@ -81,7 +81,7 @@ public readonly partial struct XMsFileLastWriteTimeHeader
 
         /// <summary>
         /// Gets the string 'Preserve'
-        /// as a <see cref="SharenameDirectoryFilenameCompRange.FileUploadrange.XMsFileLastWriteTimeHeader"/>.
+        /// as a <see cref="ShareNameDirectoryFileNameCompRange.FileUploadRange.XMsFileLastWriteTimeHeader"/>.
         /// </summary>
         public static XMsFileLastWriteTimeHeader Preserve { get; } = CorvusValidation.Enum2.As<XMsFileLastWriteTimeHeader>();
 

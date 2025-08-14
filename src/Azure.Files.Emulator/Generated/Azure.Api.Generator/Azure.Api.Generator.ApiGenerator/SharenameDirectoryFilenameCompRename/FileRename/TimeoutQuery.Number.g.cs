@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameCompRename.FileRename;
+namespace ShareNameDirectoryFileNameCompRename.FileRename;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryFilenameCompRename.FileRename.TimeoutQuery>,
-      IAdditionOperators<SharenameDirectoryFilenameCompRename.FileRename.TimeoutQuery, SharenameDirectoryFilenameCompRename.FileRename.TimeoutQuery, SharenameDirectoryFilenameCompRename.FileRename.TimeoutQuery>,
-      ISubtractionOperators<SharenameDirectoryFilenameCompRename.FileRename.TimeoutQuery, SharenameDirectoryFilenameCompRename.FileRename.TimeoutQuery, SharenameDirectoryFilenameCompRename.FileRename.TimeoutQuery>,
-      IMultiplyOperators<SharenameDirectoryFilenameCompRename.FileRename.TimeoutQuery, SharenameDirectoryFilenameCompRename.FileRename.TimeoutQuery, SharenameDirectoryFilenameCompRename.FileRename.TimeoutQuery>,
-      IDivisionOperators<SharenameDirectoryFilenameCompRename.FileRename.TimeoutQuery, SharenameDirectoryFilenameCompRename.FileRename.TimeoutQuery, SharenameDirectoryFilenameCompRename.FileRename.TimeoutQuery>,
-      IIncrementOperators<SharenameDirectoryFilenameCompRename.FileRename.TimeoutQuery>,
-      IDecrementOperators<SharenameDirectoryFilenameCompRename.FileRename.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompRename.FileRename.TimeoutQuery>,
+      IAdditionOperators<ShareNameDirectoryFileNameCompRename.FileRename.TimeoutQuery, ShareNameDirectoryFileNameCompRename.FileRename.TimeoutQuery, ShareNameDirectoryFileNameCompRename.FileRename.TimeoutQuery>,
+      ISubtractionOperators<ShareNameDirectoryFileNameCompRename.FileRename.TimeoutQuery, ShareNameDirectoryFileNameCompRename.FileRename.TimeoutQuery, ShareNameDirectoryFileNameCompRename.FileRename.TimeoutQuery>,
+      IMultiplyOperators<ShareNameDirectoryFileNameCompRename.FileRename.TimeoutQuery, ShareNameDirectoryFileNameCompRename.FileRename.TimeoutQuery, ShareNameDirectoryFileNameCompRename.FileRename.TimeoutQuery>,
+      IDivisionOperators<ShareNameDirectoryFileNameCompRename.FileRename.TimeoutQuery, ShareNameDirectoryFileNameCompRename.FileRename.TimeoutQuery, ShareNameDirectoryFileNameCompRename.FileRename.TimeoutQuery>,
+      IIncrementOperators<ShareNameDirectoryFileNameCompRename.FileRename.TimeoutQuery>,
+      IDecrementOperators<ShareNameDirectoryFileNameCompRename.FileRename.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameDirectoryFilenameCompRename.FileRename.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompRename.FileRename.TimeoutQuery>
 #endif
 {
     /// <summary>

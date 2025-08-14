@@ -1,9 +1,9 @@
 ﻿using System.Threading;
 
-namespace SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles;
+namespace ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles;
 internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}/{directory}/{fileName}?comp=forceclosehandles";
-    internal const string Method = "FileForceclosehandles";
+    internal const string Method = "FileForceCloseHandles";
     internal partial Task<Response> HandleAsync(Request request, CancellationToken cancellationToken);
 }

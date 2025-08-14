@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryFilename.FileDelete
+﻿namespace ShareNameDirectoryFileName.FileDelete
 {
     internal partial class Operation
     {

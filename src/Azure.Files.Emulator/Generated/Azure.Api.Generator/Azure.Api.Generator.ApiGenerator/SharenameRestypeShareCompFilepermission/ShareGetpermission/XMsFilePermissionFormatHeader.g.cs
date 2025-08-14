@@ -15,7 +15,7 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameRestypeShareCompFilepermission.ShareGetpermission;
+namespace ShareNameRestypeShareCompFilepermission.ShareGetPermission;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -62,7 +62,7 @@ public readonly partial struct XMsFilePermissionFormatHeader
     /// <summary>
     /// Gets the schema location from which this type was generated.
     /// </summary>
-    public static string SchemaLocation { get; } = "SharenameRestypeShareCompFilepermission.ShareGetpermission.XMsFilePermissionFormatHeader.json";
+    public static string SchemaLocation { get; } = "ShareNameRestypeShareCompFilepermission.ShareGetPermission.XMsFilePermissionFormatHeader.json";
 
     /// <summary>
     /// Gets a Null instance.

@@ -19,7 +19,7 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace CompList.ServiceListsharessegment;
+namespace CompList.ServiceListSharesSegment;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -27,8 +27,8 @@ namespace CompList.ServiceListsharessegment;
 [CollectionBuilder(typeof(IncludeQuery), "Create")]
 #endif
 public readonly partial struct IncludeQuery
-    : IJsonArray<CompList.ServiceListsharessegment.IncludeQuery>,
-      IReadOnlyCollection<CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity>
+    : IJsonArray<CompList.ServiceListSharesSegment.IncludeQuery>,
+      IReadOnlyCollection<CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity>
 {
     /// <summary>
     /// Gets an empty array.
@@ -88,7 +88,7 @@ public readonly partial struct IncludeQuery
     /// <returns>The item at the given index.</returns>
     /// <exception cref="IndexOutOfRangeException">The index was outside the bounds of the array.</exception>
     /// <exception cref="InvalidOperationException">The value is not an array.</exception>
-    public CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity this[int index]
+    public CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity this[int index]
     {
         get
         {
@@ -116,7 +116,7 @@ public readonly partial struct IncludeQuery
             {
                 try
                 {
-                    return this.arrayBacking[index].As<CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity>();
+                    return this.arrayBacking[index].As<CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity>();
                 }
                 catch (ArgumentOutOfRangeException ex)
                 {
@@ -188,7 +188,7 @@ public readonly partial struct IncludeQuery
     /// </summary>
     /// <param name="items">The span of items from which to construct the array.</param>
     /// <returns>An instance of the array constructed from the span.</returns>
-    public static IncludeQuery Create(ReadOnlySpan<CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity> items)
+    public static IncludeQuery Create(ReadOnlySpan<CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity> items)
     {
         return new([..items]);
     }
@@ -198,7 +198,7 @@ public readonly partial struct IncludeQuery
     /// </summary>
     /// <param name="items">The value from which to construct the instance.</param>
     /// <returns>An instance of the array constructed from the value.</returns>
-    public static IncludeQuery FromItems(params CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity[] items)
+    public static IncludeQuery FromItems(params CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity[] items)
     {
         return new([..items]);
     }
@@ -208,7 +208,7 @@ public readonly partial struct IncludeQuery
     /// </summary>
     /// <param name="item1">The 1st item in the array.</param>
     /// <returns>An instance of the array constructed from the values.</returns>
-    public static IncludeQuery FromItems(in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item1)
+    public static IncludeQuery FromItems(in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item1)
     {
         return new([item1.AsAny]);
     }
@@ -219,7 +219,7 @@ public readonly partial struct IncludeQuery
     /// <param name="item1">The 1st item in the array.</param>
     /// <param name="item2">The 2nd item in the array.</param>
     /// <returns>An instance of the array constructed from the values.</returns>
-    public static IncludeQuery FromItems(in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item1, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item2)
+    public static IncludeQuery FromItems(in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item1, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item2)
     {
         return new([item1.AsAny, item2.AsAny]);
     }
@@ -231,7 +231,7 @@ public readonly partial struct IncludeQuery
     /// <param name="item2">The 2nd item in the array.</param>
     /// <param name="item3">The 3rd item in the array.</param>
     /// <returns>An instance of the array constructed from the values.</returns>
-    public static IncludeQuery FromItems(in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item1, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item2, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item3)
+    public static IncludeQuery FromItems(in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item1, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item2, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item3)
     {
         return new([item1.AsAny, item2.AsAny, item3.AsAny]);
     }
@@ -244,7 +244,7 @@ public readonly partial struct IncludeQuery
     /// <param name="item3">The 3rd item in the array.</param>
     /// <param name="item4">The 4th item in the array.</param>
     /// <returns>An instance of the array constructed from the values.</returns>
-    public static IncludeQuery FromItems(in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item1, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item2, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item3, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item4)
+    public static IncludeQuery FromItems(in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item1, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item2, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item3, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item4)
     {
         return new([item1.AsAny, item2.AsAny, item3.AsAny, item4.AsAny]);
     }
@@ -258,7 +258,7 @@ public readonly partial struct IncludeQuery
     /// <param name="item4">The 4th item in the array.</param>
     /// <param name="item5">The 5th item in the array.</param>
     /// <returns>An instance of the array constructed from the values.</returns>
-    public static IncludeQuery FromItems(in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item1, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item2, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item3, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item4, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item5)
+    public static IncludeQuery FromItems(in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item1, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item2, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item3, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item4, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item5)
     {
         return new([item1.AsAny, item2.AsAny, item3.AsAny, item4.AsAny, item5.AsAny]);
     }
@@ -273,7 +273,7 @@ public readonly partial struct IncludeQuery
     /// <param name="item5">The 5th item in the array.</param>
     /// <param name="item6">The 6th item in the array.</param>
     /// <returns>An instance of the array constructed from the values.</returns>
-    public static IncludeQuery FromItems(in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item1, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item2, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item3, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item4, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item5, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item6)
+    public static IncludeQuery FromItems(in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item1, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item2, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item3, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item4, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item5, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item6)
     {
         return new([item1.AsAny, item2.AsAny, item3.AsAny, item4.AsAny, item5.AsAny, item6.AsAny]);
     }
@@ -289,7 +289,7 @@ public readonly partial struct IncludeQuery
     /// <param name="item6">The 6th item in the array.</param>
     /// <param name="item7">The 7th item in the array.</param>
     /// <returns>An instance of the array constructed from the values.</returns>
-    public static IncludeQuery FromItems(in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item1, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item2, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item3, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item4, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item5, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item6, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item7)
+    public static IncludeQuery FromItems(in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item1, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item2, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item3, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item4, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item5, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item6, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item7)
     {
         return new([item1.AsAny, item2.AsAny, item3.AsAny, item4.AsAny, item5.AsAny, item6.AsAny, item7.AsAny]);
     }
@@ -299,7 +299,7 @@ public readonly partial struct IncludeQuery
     /// </summary>
     /// <param name="items">The items from which to construct the instance.</param>
     /// <returns>An instance of the array constructed from the items.</returns>
-    public static IncludeQuery FromRange(IEnumerable<CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity> items)
+    public static IncludeQuery FromRange(IEnumerable<CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity> items)
     {
         return new([..items]);
     }
@@ -328,13 +328,13 @@ public readonly partial struct IncludeQuery
 #endif
 
     /// <inheritdoc/>
-    IEnumerator<CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity> IEnumerable<CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity>.GetEnumerator() => this.EnumerateArray();
+    IEnumerator<CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity> IEnumerable<CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity>.GetEnumerator() => this.EnumerateArray();
 
     /// <inheritdoc/>
     IEnumerator IEnumerable.GetEnumerator() => this.EnumerateArray();
 
     /// <inheritdoc/>
-    int IReadOnlyCollection<CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity>.Count => this.GetArrayLength();
+    int IReadOnlyCollection<CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity>.Count => this.GetArrayLength();
 
     /// <inheritdoc/>
     public ImmutableList<JsonAny> AsImmutableList()
@@ -365,7 +365,7 @@ public readonly partial struct IncludeQuery
     }
 
     /// <inheritdoc/>
-    public JsonArrayEnumerator<CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity> EnumerateArray()
+    public JsonArrayEnumerator<CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity> EnumerateArray()
     {
         if ((this.backing & Backing.JsonElement) != 0)
         {
@@ -501,7 +501,7 @@ public readonly partial struct IncludeQuery
     }
 
     /// <inheritdoc/>
-    public IncludeQuery Add(in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item1)
+    public IncludeQuery Add(in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item1)
     {
         ImmutableList<JsonAny>.Builder builder = __CorvusArrayHelpers.GetImmutableListBuilder(this);
         builder.Add(item1.AsAny);
@@ -509,10 +509,10 @@ public readonly partial struct IncludeQuery
     }
 
     /// <inheritdoc/>
-    public IncludeQuery Add(params CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity[] items)
+    public IncludeQuery Add(params CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity[] items)
     {
         ImmutableList<JsonAny>.Builder builder = __CorvusArrayHelpers.GetImmutableListBuilder(this);
-        foreach (CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item in items)
+        foreach (CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item in items)
         {
             builder.Add(item.AsAny);
         }
@@ -521,10 +521,10 @@ public readonly partial struct IncludeQuery
     }
 
     /// <inheritdoc/>
-    public IncludeQuery AddRange(IEnumerable<CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity> items)
+    public IncludeQuery AddRange(IEnumerable<CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity> items)
     {
         ImmutableList<JsonAny>.Builder builder = __CorvusArrayHelpers.GetImmutableListBuilder(this);
-        foreach (CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item in items)
+        foreach (CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item in items)
         {
             builder.Add(item.AsAny);
         }
@@ -533,25 +533,25 @@ public readonly partial struct IncludeQuery
     }
 
     /// <inheritdoc/>
-    public IncludeQuery Insert(int index, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity item1)
+    public IncludeQuery Insert(int index, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity item1)
     {
         return new(__CorvusArrayHelpers.GetImmutableListWith(this, index, item1));
     }
 
     /// <inheritdoc/>
-    public IncludeQuery InsertRange(int index, IEnumerable<CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity> items)
+    public IncludeQuery InsertRange(int index, IEnumerable<CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity> items)
     {
         return new(__CorvusArrayHelpers.GetImmutableListWith(this, index, items.Select(item => item.AsAny)));
     }
 
     /// <inheritdoc/>
-    public IncludeQuery Replace(in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity oldValue, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity newValue)
+    public IncludeQuery Replace(in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity oldValue, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity newValue)
     {
         return new(__CorvusArrayHelpers.GetImmutableListReplacing(this, oldValue, newValue));
     }
 
     /// <inheritdoc/>
-    public IncludeQuery SetItem(int index, in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity value)
+    public IncludeQuery SetItem(int index, in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity value)
     {
         return new(__CorvusArrayHelpers.GetImmutableListSetting(this, index, value));
     }
@@ -575,7 +575,7 @@ public readonly partial struct IncludeQuery
     }
 
     /// <inheritdoc/>
-    public IncludeQuery Remove(in CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity oldValue)
+    public IncludeQuery Remove(in CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity oldValue)
     {
         return new(__CorvusArrayHelpers.GetImmutableListWithout(this, oldValue));
     }

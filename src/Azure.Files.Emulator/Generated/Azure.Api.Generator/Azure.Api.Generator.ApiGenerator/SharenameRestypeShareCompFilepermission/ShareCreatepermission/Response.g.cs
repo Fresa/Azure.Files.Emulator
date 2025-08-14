@@ -1,7 +1,7 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameRestypeShareCompFilepermission.ShareCreatepermission;
+namespace ShareNameRestypeShareCompFilepermission.ShareCreatePermission;
 internal partial class Response
 {
 }

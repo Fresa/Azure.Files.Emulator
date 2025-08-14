@@ -15,7 +15,7 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryRestypeDirectoryCompList;
+namespace ShareNameDirectoryRestypeDirectoryCompList;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -62,7 +62,7 @@ public readonly partial struct CompQuery
     /// <summary>
     /// Gets the schema location from which this type was generated.
     /// </summary>
-    public static string SchemaLocation { get; } = "SharenameDirectoryRestypeDirectoryCompList.CompQuery.json";
+    public static string SchemaLocation { get; } = "ShareNameDirectoryRestypeDirectoryCompList.CompQuery.json";
 
     /// <summary>
     /// Gets a Null instance.

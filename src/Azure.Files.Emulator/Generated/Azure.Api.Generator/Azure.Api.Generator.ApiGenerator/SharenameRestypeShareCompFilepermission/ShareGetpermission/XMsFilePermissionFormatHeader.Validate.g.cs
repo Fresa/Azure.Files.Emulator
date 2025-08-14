@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameRestypeShareCompFilepermission.ShareGetpermission;
+namespace ShareNameRestypeShareCompFilepermission.ShareGetPermission;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct XMsFilePermissionFormatHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameRestypeShareCompFilepermission.ShareGetpermission.XMsFilePermissionFormatHeader.json");
+            result = result.PushSchemaLocation("ShareNameRestypeShareCompFilepermission.ShareGetPermission.XMsFilePermissionFormatHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct XMsFilePermissionFormatHeader
     {
         /// <summary>
         /// Gets the string 'Sddl'
-        /// as a <see cref="SharenameRestypeShareCompFilepermission.ShareGetpermission.XMsFilePermissionFormatHeader"/>.
+        /// as a <see cref="ShareNameRestypeShareCompFilepermission.ShareGetPermission.XMsFilePermissionFormatHeader"/>.
         /// </summary>
         public static XMsFilePermissionFormatHeader Sddl { get; } = CorvusValidation.Enum1.As<XMsFilePermissionFormatHeader>();
 
@@ -81,7 +81,7 @@ public readonly partial struct XMsFilePermissionFormatHeader
 
         /// <summary>
         /// Gets the string 'Binary'
-        /// as a <see cref="SharenameRestypeShareCompFilepermission.ShareGetpermission.XMsFilePermissionFormatHeader"/>.
+        /// as a <see cref="ShareNameRestypeShareCompFilepermission.ShareGetPermission.XMsFilePermissionFormatHeader"/>.
         /// </summary>
         public static XMsFilePermissionFormatHeader Binary { get; } = CorvusValidation.Enum2.As<XMsFilePermissionFormatHeader>();
 

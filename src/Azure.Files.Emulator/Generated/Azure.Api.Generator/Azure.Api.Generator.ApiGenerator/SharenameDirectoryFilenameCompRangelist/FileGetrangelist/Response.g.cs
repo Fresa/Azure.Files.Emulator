@@ -1,7 +1,7 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompRangelist.FileGetrangelist;
+namespace ShareNameDirectoryFileNameCompRangelist.FileGetRangeList;
 internal partial class Response
 {
 }

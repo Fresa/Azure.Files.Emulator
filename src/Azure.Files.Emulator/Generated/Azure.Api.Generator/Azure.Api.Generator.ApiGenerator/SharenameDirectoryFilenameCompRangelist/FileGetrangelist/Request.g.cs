@@ -1,28 +1,28 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompRangelist.FileGetrangelist;
+namespace ShareNameDirectoryFileNameCompRangelist.FileGetRangeList;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
     internal required Corvus.Json.JsonString Directory { get; init; }
-    internal required Corvus.Json.JsonString Filename { get; init; }
-    internal required SharenameDirectoryFilenameCompRangelist.CompQuery Comp { get; init; }
+    internal required Corvus.Json.JsonString FileName { get; init; }
+    internal required ShareNameDirectoryFileNameCompRangelist.CompQuery Comp { get; init; }
     internal Corvus.Json.JsonString? Sharesnapshot { get; init; }
     internal Corvus.Json.JsonString? Prevsharesnapshot { get; init; }
-    internal SharenameDirectoryFilenameCompRangelist.FileGetrangelist.TimeoutQuery? Timeout { get; init; }
-    internal required SharenameDirectoryFilenameCompRangelist.FileGetrangelist.XMsVersionHeader XMsVersion { get; init; }
+    internal ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.TimeoutQuery? Timeout { get; init; }
+    internal required ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.XMsVersionHeader XMsVersion { get; init; }
     internal Corvus.Json.JsonString? XMsRange { get; init; }
     internal Corvus.Json.JsonString? XMsLeaseId { get; init; }
     internal Corvus.Json.JsonBoolean? XMsAllowTrailingDot { get; init; }
-    internal SharenameDirectoryFilenameCompRangelist.FileGetrangelist.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
     internal Corvus.Json.JsonBoolean? XMsFileSupportRename { get; init; }
 
     public static Request Bind(HttpRequest request)
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -43,7 +43,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Filename = request.Bind<Corvus.Json.JsonString>("""
+            FileName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "fileName",
@@ -54,7 +54,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Comp = request.Bind<SharenameDirectoryFilenameCompRangelist.CompQuery>("""
+            Comp = request.Bind<ShareNameDirectoryFileNameCompRangelist.CompQuery>("""
 {
   "in": "query",
   "name": "comp",
@@ -84,7 +84,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Timeout = request.Bind<SharenameDirectoryFilenameCompRangelist.FileGetrangelist.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -94,7 +94,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<SharenameDirectoryFilenameCompRangelist.FileGetrangelist.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -139,7 +139,7 @@ internal partial class Request
   "x-ms-client-name": "allowTrailingDot"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<SharenameDirectoryFilenameCompRangelist.FileGetrangelist.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

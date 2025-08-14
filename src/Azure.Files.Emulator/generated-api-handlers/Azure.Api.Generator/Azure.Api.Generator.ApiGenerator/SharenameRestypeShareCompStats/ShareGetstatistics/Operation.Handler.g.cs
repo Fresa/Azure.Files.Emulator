@@ -1,4 +1,4 @@
-﻿namespace SharenameRestypeShareCompStats.ShareGetstatistics
+﻿namespace ShareNameRestypeShareCompStats.ShareGetStatistics
 {
     internal partial class Operation
     {

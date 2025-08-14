@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink;
+namespace ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct XMsTypeHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.XMsTypeHeader.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.XMsTypeHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct XMsTypeHeader
     {
         /// <summary>
         /// Gets the string 'file'
-        /// as a <see cref="SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.XMsTypeHeader"/>.
+        /// as a <see cref="ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.XMsTypeHeader"/>.
         /// </summary>
         public static XMsTypeHeader File { get; } = CorvusValidation.Enum.As<XMsTypeHeader>();
 

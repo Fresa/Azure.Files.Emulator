@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace RestypeServiceCompProperties.ServiceGetproperties;
+namespace RestypeServiceCompProperties.ServiceGetProperties;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct XMsFileRequestIntentHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("RestypeServiceCompProperties.ServiceGetproperties.XMsFileRequestIntentHeader.json");
+            result = result.PushSchemaLocation("RestypeServiceCompProperties.ServiceGetProperties.XMsFileRequestIntentHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct XMsFileRequestIntentHeader
     {
         /// <summary>
         /// Gets the string 'backup'
-        /// as a <see cref="RestypeServiceCompProperties.ServiceGetproperties.XMsFileRequestIntentHeader"/>.
+        /// as a <see cref="RestypeServiceCompProperties.ServiceGetProperties.XMsFileRequestIntentHeader"/>.
         /// </summary>
         public static XMsFileRequestIntentHeader Backup { get; } = CorvusValidation.Enum.As<XMsFileRequestIntentHeader>();
 

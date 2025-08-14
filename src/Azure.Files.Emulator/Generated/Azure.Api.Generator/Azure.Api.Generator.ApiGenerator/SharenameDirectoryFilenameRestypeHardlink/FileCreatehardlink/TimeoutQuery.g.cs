@@ -15,7 +15,7 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink;
+namespace ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -62,7 +62,7 @@ public readonly partial struct TimeoutQuery
     /// <summary>
     /// Gets the schema location from which this type was generated.
     /// </summary>
-    public static string SchemaLocation { get; } = "SharenameDirectoryFilenameRestypeHardlink.FileCreatehardlink.TimeoutQuery.json";
+    public static string SchemaLocation { get; } = "ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.TimeoutQuery.json";
 
     /// <summary>
     /// Gets a Null instance.

@@ -19,7 +19,7 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment;
+namespace ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -27,8 +27,8 @@ namespace SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirect
 [CollectionBuilder(typeof(IncludeQuery), "Create")]
 #endif
 public readonly partial struct IncludeQuery
-    : IJsonArray<SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery>,
-      IReadOnlyCollection<SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity>
+    : IJsonArray<ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery>,
+      IReadOnlyCollection<ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity>
 {
     /// <summary>
     /// Gets an empty array.
@@ -88,7 +88,7 @@ public readonly partial struct IncludeQuery
     /// <returns>The item at the given index.</returns>
     /// <exception cref="IndexOutOfRangeException">The index was outside the bounds of the array.</exception>
     /// <exception cref="InvalidOperationException">The value is not an array.</exception>
-    public SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity this[int index]
+    public ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity this[int index]
     {
         get
         {
@@ -116,7 +116,7 @@ public readonly partial struct IncludeQuery
             {
                 try
                 {
-                    return this.arrayBacking[index].As<SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity>();
+                    return this.arrayBacking[index].As<ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity>();
                 }
                 catch (ArgumentOutOfRangeException ex)
                 {
@@ -188,7 +188,7 @@ public readonly partial struct IncludeQuery
     /// </summary>
     /// <param name="items">The span of items from which to construct the array.</param>
     /// <returns>An instance of the array constructed from the span.</returns>
-    public static IncludeQuery Create(ReadOnlySpan<SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity> items)
+    public static IncludeQuery Create(ReadOnlySpan<ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity> items)
     {
         return new([..items]);
     }
@@ -198,7 +198,7 @@ public readonly partial struct IncludeQuery
     /// </summary>
     /// <param name="items">The value from which to construct the instance.</param>
     /// <returns>An instance of the array constructed from the value.</returns>
-    public static IncludeQuery FromItems(params SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity[] items)
+    public static IncludeQuery FromItems(params ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity[] items)
     {
         return new([..items]);
     }
@@ -208,7 +208,7 @@ public readonly partial struct IncludeQuery
     /// </summary>
     /// <param name="item1">The 1st item in the array.</param>
     /// <returns>An instance of the array constructed from the values.</returns>
-    public static IncludeQuery FromItems(in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item1)
+    public static IncludeQuery FromItems(in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item1)
     {
         return new([item1.AsAny]);
     }
@@ -219,7 +219,7 @@ public readonly partial struct IncludeQuery
     /// <param name="item1">The 1st item in the array.</param>
     /// <param name="item2">The 2nd item in the array.</param>
     /// <returns>An instance of the array constructed from the values.</returns>
-    public static IncludeQuery FromItems(in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item1, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item2)
+    public static IncludeQuery FromItems(in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item1, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item2)
     {
         return new([item1.AsAny, item2.AsAny]);
     }
@@ -231,7 +231,7 @@ public readonly partial struct IncludeQuery
     /// <param name="item2">The 2nd item in the array.</param>
     /// <param name="item3">The 3rd item in the array.</param>
     /// <returns>An instance of the array constructed from the values.</returns>
-    public static IncludeQuery FromItems(in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item1, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item2, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item3)
+    public static IncludeQuery FromItems(in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item1, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item2, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item3)
     {
         return new([item1.AsAny, item2.AsAny, item3.AsAny]);
     }
@@ -244,7 +244,7 @@ public readonly partial struct IncludeQuery
     /// <param name="item3">The 3rd item in the array.</param>
     /// <param name="item4">The 4th item in the array.</param>
     /// <returns>An instance of the array constructed from the values.</returns>
-    public static IncludeQuery FromItems(in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item1, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item2, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item3, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item4)
+    public static IncludeQuery FromItems(in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item1, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item2, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item3, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item4)
     {
         return new([item1.AsAny, item2.AsAny, item3.AsAny, item4.AsAny]);
     }
@@ -258,7 +258,7 @@ public readonly partial struct IncludeQuery
     /// <param name="item4">The 4th item in the array.</param>
     /// <param name="item5">The 5th item in the array.</param>
     /// <returns>An instance of the array constructed from the values.</returns>
-    public static IncludeQuery FromItems(in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item1, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item2, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item3, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item4, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item5)
+    public static IncludeQuery FromItems(in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item1, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item2, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item3, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item4, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item5)
     {
         return new([item1.AsAny, item2.AsAny, item3.AsAny, item4.AsAny, item5.AsAny]);
     }
@@ -273,7 +273,7 @@ public readonly partial struct IncludeQuery
     /// <param name="item5">The 5th item in the array.</param>
     /// <param name="item6">The 6th item in the array.</param>
     /// <returns>An instance of the array constructed from the values.</returns>
-    public static IncludeQuery FromItems(in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item1, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item2, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item3, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item4, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item5, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item6)
+    public static IncludeQuery FromItems(in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item1, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item2, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item3, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item4, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item5, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item6)
     {
         return new([item1.AsAny, item2.AsAny, item3.AsAny, item4.AsAny, item5.AsAny, item6.AsAny]);
     }
@@ -289,7 +289,7 @@ public readonly partial struct IncludeQuery
     /// <param name="item6">The 6th item in the array.</param>
     /// <param name="item7">The 7th item in the array.</param>
     /// <returns>An instance of the array constructed from the values.</returns>
-    public static IncludeQuery FromItems(in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item1, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item2, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item3, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item4, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item5, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item6, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item7)
+    public static IncludeQuery FromItems(in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item1, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item2, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item3, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item4, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item5, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item6, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item7)
     {
         return new([item1.AsAny, item2.AsAny, item3.AsAny, item4.AsAny, item5.AsAny, item6.AsAny, item7.AsAny]);
     }
@@ -299,7 +299,7 @@ public readonly partial struct IncludeQuery
     /// </summary>
     /// <param name="items">The items from which to construct the instance.</param>
     /// <returns>An instance of the array constructed from the items.</returns>
-    public static IncludeQuery FromRange(IEnumerable<SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity> items)
+    public static IncludeQuery FromRange(IEnumerable<ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity> items)
     {
         return new([..items]);
     }
@@ -328,13 +328,13 @@ public readonly partial struct IncludeQuery
 #endif
 
     /// <inheritdoc/>
-    IEnumerator<SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity> IEnumerable<SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity>.GetEnumerator() => this.EnumerateArray();
+    IEnumerator<ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity> IEnumerable<ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity>.GetEnumerator() => this.EnumerateArray();
 
     /// <inheritdoc/>
     IEnumerator IEnumerable.GetEnumerator() => this.EnumerateArray();
 
     /// <inheritdoc/>
-    int IReadOnlyCollection<SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity>.Count => this.GetArrayLength();
+    int IReadOnlyCollection<ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity>.Count => this.GetArrayLength();
 
     /// <inheritdoc/>
     public ImmutableList<JsonAny> AsImmutableList()
@@ -365,7 +365,7 @@ public readonly partial struct IncludeQuery
     }
 
     /// <inheritdoc/>
-    public JsonArrayEnumerator<SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity> EnumerateArray()
+    public JsonArrayEnumerator<ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity> EnumerateArray()
     {
         if ((this.backing & Backing.JsonElement) != 0)
         {
@@ -501,7 +501,7 @@ public readonly partial struct IncludeQuery
     }
 
     /// <inheritdoc/>
-    public IncludeQuery Add(in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item1)
+    public IncludeQuery Add(in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item1)
     {
         ImmutableList<JsonAny>.Builder builder = __CorvusArrayHelpers.GetImmutableListBuilder(this);
         builder.Add(item1.AsAny);
@@ -509,10 +509,10 @@ public readonly partial struct IncludeQuery
     }
 
     /// <inheritdoc/>
-    public IncludeQuery Add(params SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity[] items)
+    public IncludeQuery Add(params ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity[] items)
     {
         ImmutableList<JsonAny>.Builder builder = __CorvusArrayHelpers.GetImmutableListBuilder(this);
-        foreach (SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item in items)
+        foreach (ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item in items)
         {
             builder.Add(item.AsAny);
         }
@@ -521,10 +521,10 @@ public readonly partial struct IncludeQuery
     }
 
     /// <inheritdoc/>
-    public IncludeQuery AddRange(IEnumerable<SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity> items)
+    public IncludeQuery AddRange(IEnumerable<ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity> items)
     {
         ImmutableList<JsonAny>.Builder builder = __CorvusArrayHelpers.GetImmutableListBuilder(this);
-        foreach (SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item in items)
+        foreach (ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item in items)
         {
             builder.Add(item.AsAny);
         }
@@ -533,25 +533,25 @@ public readonly partial struct IncludeQuery
     }
 
     /// <inheritdoc/>
-    public IncludeQuery Insert(int index, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity item1)
+    public IncludeQuery Insert(int index, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity item1)
     {
         return new(__CorvusArrayHelpers.GetImmutableListWith(this, index, item1));
     }
 
     /// <inheritdoc/>
-    public IncludeQuery InsertRange(int index, IEnumerable<SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity> items)
+    public IncludeQuery InsertRange(int index, IEnumerable<ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity> items)
     {
         return new(__CorvusArrayHelpers.GetImmutableListWith(this, index, items.Select(item => item.AsAny)));
     }
 
     /// <inheritdoc/>
-    public IncludeQuery Replace(in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity oldValue, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity newValue)
+    public IncludeQuery Replace(in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity oldValue, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity newValue)
     {
         return new(__CorvusArrayHelpers.GetImmutableListReplacing(this, oldValue, newValue));
     }
 
     /// <inheritdoc/>
-    public IncludeQuery SetItem(int index, in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity value)
+    public IncludeQuery SetItem(int index, in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity value)
     {
         return new(__CorvusArrayHelpers.GetImmutableListSetting(this, index, value));
     }
@@ -575,7 +575,7 @@ public readonly partial struct IncludeQuery
     }
 
     /// <inheritdoc/>
-    public IncludeQuery Remove(in SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery.ItemsEntity oldValue)
+    public IncludeQuery Remove(in ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery.ItemsEntity oldValue)
     {
         return new(__CorvusArrayHelpers.GetImmutableListWithout(this, oldValue));
     }

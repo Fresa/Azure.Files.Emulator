@@ -1,7 +1,7 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryRestypeDirectory.DirectoryGetproperties;
+namespace ShareNameDirectoryRestypeDirectory.DirectoryGetProperties;
 internal partial class Response
 {
 }

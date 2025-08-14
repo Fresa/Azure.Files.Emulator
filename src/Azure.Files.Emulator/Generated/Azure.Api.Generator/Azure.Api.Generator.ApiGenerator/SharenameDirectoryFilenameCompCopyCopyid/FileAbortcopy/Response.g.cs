@@ -1,7 +1,7 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy;
+namespace ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy;
 internal partial class Response
 {
 }

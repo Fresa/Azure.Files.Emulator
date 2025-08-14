@@ -1,18 +1,18 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink;
+namespace ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
     internal required Corvus.Json.JsonString Directory { get; init; }
-    internal required Corvus.Json.JsonString Filename { get; init; }
-    internal required SharenameDirectoryFilenameRestypeSymboliclink.RestypeQuery Restype { get; init; }
-    internal SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink.TimeoutQuery? Timeout { get; init; }
+    internal required Corvus.Json.JsonString FileName { get; init; }
+    internal required ShareNameDirectoryFileNameRestypeSymboliclink.RestypeQuery Restype { get; init; }
+    internal ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.TimeoutQuery? Timeout { get; init; }
     internal Corvus.Json.JsonString? Sharesnapshot { get; init; }
-    internal required SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink.XMsVersionHeader XMsVersion { get; init; }
+    internal required ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.XMsVersionHeader XMsVersion { get; init; }
     internal Corvus.Json.JsonString? XMsClientRequestId { get; init; }
-    internal SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
     internal Corvus.Json.JsonString? XMsMeta { get; init; }
     internal Corvus.Json.JsonString? XMsFileCreationTime { get; init; }
     internal Corvus.Json.JsonString? XMsFileLastWriteTime { get; init; }
@@ -25,7 +25,7 @@ internal partial class Request
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -46,7 +46,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Filename = request.Bind<Corvus.Json.JsonString>("""
+            FileName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "fileName",
@@ -57,7 +57,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Restype = request.Bind<SharenameDirectoryFilenameRestypeSymboliclink.RestypeQuery>("""
+            Restype = request.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.RestypeQuery>("""
 {
   "in": "query",
   "name": "restype",
@@ -69,7 +69,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = request.Bind<SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -88,7 +88,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -112,7 +112,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<SharenameDirectoryFilenameRestypeSymboliclink.FileCreatesymboliclink.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

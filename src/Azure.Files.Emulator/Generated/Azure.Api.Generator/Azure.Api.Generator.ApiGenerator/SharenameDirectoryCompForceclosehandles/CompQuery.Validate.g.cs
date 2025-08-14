@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryCompForceclosehandles;
+namespace ShareNameDirectoryCompForceclosehandles;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct CompQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryCompForceclosehandles.CompQuery.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryCompForceclosehandles.CompQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct CompQuery
     {
         /// <summary>
         /// Gets the string 'forceclosehandles'
-        /// as a <see cref="SharenameDirectoryCompForceclosehandles.CompQuery"/>.
+        /// as a <see cref="ShareNameDirectoryCompForceclosehandles.CompQuery"/>.
         /// </summary>
         public static CompQuery Forceclosehandles { get; } = CorvusValidation.Enum.As<CompQuery>();
 

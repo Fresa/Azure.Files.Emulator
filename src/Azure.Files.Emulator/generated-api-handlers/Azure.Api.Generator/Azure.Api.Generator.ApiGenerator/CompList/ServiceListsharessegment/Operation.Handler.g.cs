@@ -1,4 +1,4 @@
-﻿namespace CompList.ServiceListsharessegment
+﻿namespace CompList.ServiceListSharesSegment
 {
     internal partial class Operation
     {

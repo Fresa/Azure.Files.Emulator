@@ -1,7 +1,7 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompRename.FileRename;
+namespace ShareNameDirectoryFileNameCompRename.FileRename;
 internal partial class Response
 {
 }

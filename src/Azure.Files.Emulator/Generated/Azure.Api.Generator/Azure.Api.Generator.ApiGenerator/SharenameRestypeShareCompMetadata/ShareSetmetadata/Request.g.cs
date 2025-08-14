@@ -1,23 +1,23 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameRestypeShareCompMetadata.ShareSetmetadata;
+namespace ShareNameRestypeShareCompMetadata.ShareSetMetadata;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
-    internal required SharenameRestypeShareCompMetadata.RestypeQuery Restype { get; init; }
-    internal required SharenameRestypeShareCompMetadata.CompQuery Comp { get; init; }
-    internal SharenameRestypeShareCompMetadata.ShareSetmetadata.TimeoutQuery? Timeout { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
+    internal required ShareNameRestypeShareCompMetadata.RestypeQuery Restype { get; init; }
+    internal required ShareNameRestypeShareCompMetadata.CompQuery Comp { get; init; }
+    internal ShareNameRestypeShareCompMetadata.ShareSetMetadata.TimeoutQuery? Timeout { get; init; }
     internal Corvus.Json.JsonString? XMsMeta { get; init; }
-    internal required SharenameRestypeShareCompMetadata.ShareSetmetadata.XMsVersionHeader XMsVersion { get; init; }
+    internal required ShareNameRestypeShareCompMetadata.ShareSetMetadata.XMsVersionHeader XMsVersion { get; init; }
     internal Corvus.Json.JsonString? XMsLeaseId { get; init; }
-    internal SharenameRestypeShareCompMetadata.ShareSetmetadata.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameRestypeShareCompMetadata.ShareSetMetadata.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
     public static Request Bind(HttpRequest request)
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -27,7 +27,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Restype = request.Bind<SharenameRestypeShareCompMetadata.RestypeQuery>("""
+            Restype = request.Bind<ShareNameRestypeShareCompMetadata.RestypeQuery>("""
 {
   "in": "query",
   "name": "restype",
@@ -39,7 +39,7 @@ internal partial class Request
   ]
 }
 """),
-            Comp = request.Bind<SharenameRestypeShareCompMetadata.CompQuery>("""
+            Comp = request.Bind<ShareNameRestypeShareCompMetadata.CompQuery>("""
 {
   "in": "query",
   "name": "comp",
@@ -51,7 +51,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = request.Bind<SharenameRestypeShareCompMetadata.ShareSetmetadata.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameRestypeShareCompMetadata.ShareSetMetadata.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -72,7 +72,7 @@ internal partial class Request
   "x-ms-header-collection-prefix": "x-ms-meta-"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<SharenameRestypeShareCompMetadata.ShareSetmetadata.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameRestypeShareCompMetadata.ShareSetMetadata.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -99,7 +99,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<SharenameRestypeShareCompMetadata.ShareSetmetadata.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameRestypeShareCompMetadata.ShareSetMetadata.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

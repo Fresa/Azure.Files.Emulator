@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameRestypeShare.ShareCreate;
+namespace ShareNameRestypeShare.ShareCreate;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct XMsRootSquashHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameRestypeShare.ShareCreate.XMsRootSquashHeader.json");
+            result = result.PushSchemaLocation("ShareNameRestypeShare.ShareCreate.XMsRootSquashHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct XMsRootSquashHeader
     {
         /// <summary>
         /// Gets the string 'NoRootSquash'
-        /// as a <see cref="SharenameRestypeShare.ShareCreate.XMsRootSquashHeader"/>.
+        /// as a <see cref="ShareNameRestypeShare.ShareCreate.XMsRootSquashHeader"/>.
         /// </summary>
         public static XMsRootSquashHeader NoRootSquash { get; } = CorvusValidation.Enum1.As<XMsRootSquashHeader>();
 
@@ -81,7 +81,7 @@ public readonly partial struct XMsRootSquashHeader
 
         /// <summary>
         /// Gets the string 'RootSquash'
-        /// as a <see cref="SharenameRestypeShare.ShareCreate.XMsRootSquashHeader"/>.
+        /// as a <see cref="ShareNameRestypeShare.ShareCreate.XMsRootSquashHeader"/>.
         /// </summary>
         public static XMsRootSquashHeader RootSquash { get; } = CorvusValidation.Enum2.As<XMsRootSquashHeader>();
 
@@ -93,7 +93,7 @@ public readonly partial struct XMsRootSquashHeader
 
         /// <summary>
         /// Gets the string 'AllSquash'
-        /// as a <see cref="SharenameRestypeShare.ShareCreate.XMsRootSquashHeader"/>.
+        /// as a <see cref="ShareNameRestypeShare.ShareCreate.XMsRootSquashHeader"/>.
         /// </summary>
         public static XMsRootSquashHeader AllSquash { get; } = CorvusValidation.Enum3.As<XMsRootSquashHeader>();
 

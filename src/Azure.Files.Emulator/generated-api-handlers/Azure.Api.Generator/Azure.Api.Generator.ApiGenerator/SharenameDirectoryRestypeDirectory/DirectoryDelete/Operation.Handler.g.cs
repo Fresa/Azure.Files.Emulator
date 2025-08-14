@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryRestypeDirectory.DirectoryDelete
+﻿namespace ShareNameDirectoryRestypeDirectory.DirectoryDelete
 {
     internal partial class Operation
     {

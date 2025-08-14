@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameRestypeShareCompStats.ShareGetstatistics;
+namespace ShareNameRestypeShareCompStats.ShareGetStatistics;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameRestypeShareCompStats.ShareGetstatistics.TimeoutQuery>,
-      IAdditionOperators<SharenameRestypeShareCompStats.ShareGetstatistics.TimeoutQuery, SharenameRestypeShareCompStats.ShareGetstatistics.TimeoutQuery, SharenameRestypeShareCompStats.ShareGetstatistics.TimeoutQuery>,
-      ISubtractionOperators<SharenameRestypeShareCompStats.ShareGetstatistics.TimeoutQuery, SharenameRestypeShareCompStats.ShareGetstatistics.TimeoutQuery, SharenameRestypeShareCompStats.ShareGetstatistics.TimeoutQuery>,
-      IMultiplyOperators<SharenameRestypeShareCompStats.ShareGetstatistics.TimeoutQuery, SharenameRestypeShareCompStats.ShareGetstatistics.TimeoutQuery, SharenameRestypeShareCompStats.ShareGetstatistics.TimeoutQuery>,
-      IDivisionOperators<SharenameRestypeShareCompStats.ShareGetstatistics.TimeoutQuery, SharenameRestypeShareCompStats.ShareGetstatistics.TimeoutQuery, SharenameRestypeShareCompStats.ShareGetstatistics.TimeoutQuery>,
-      IIncrementOperators<SharenameRestypeShareCompStats.ShareGetstatistics.TimeoutQuery>,
-      IDecrementOperators<SharenameRestypeShareCompStats.ShareGetstatistics.TimeoutQuery>
+    : IJsonNumber<ShareNameRestypeShareCompStats.ShareGetStatistics.TimeoutQuery>,
+      IAdditionOperators<ShareNameRestypeShareCompStats.ShareGetStatistics.TimeoutQuery, ShareNameRestypeShareCompStats.ShareGetStatistics.TimeoutQuery, ShareNameRestypeShareCompStats.ShareGetStatistics.TimeoutQuery>,
+      ISubtractionOperators<ShareNameRestypeShareCompStats.ShareGetStatistics.TimeoutQuery, ShareNameRestypeShareCompStats.ShareGetStatistics.TimeoutQuery, ShareNameRestypeShareCompStats.ShareGetStatistics.TimeoutQuery>,
+      IMultiplyOperators<ShareNameRestypeShareCompStats.ShareGetStatistics.TimeoutQuery, ShareNameRestypeShareCompStats.ShareGetStatistics.TimeoutQuery, ShareNameRestypeShareCompStats.ShareGetStatistics.TimeoutQuery>,
+      IDivisionOperators<ShareNameRestypeShareCompStats.ShareGetStatistics.TimeoutQuery, ShareNameRestypeShareCompStats.ShareGetStatistics.TimeoutQuery, ShareNameRestypeShareCompStats.ShareGetStatistics.TimeoutQuery>,
+      IIncrementOperators<ShareNameRestypeShareCompStats.ShareGetStatistics.TimeoutQuery>,
+      IDecrementOperators<ShareNameRestypeShareCompStats.ShareGetStatistics.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameRestypeShareCompStats.ShareGetstatistics.TimeoutQuery>
+    : IJsonNumber<ShareNameRestypeShareCompStats.ShareGetStatistics.TimeoutQuery>
 #endif
 {
     /// <summary>

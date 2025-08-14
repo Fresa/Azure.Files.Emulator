@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameRestypeShare.ShareCreate;
+namespace ShareNameRestypeShare.ShareCreate;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct XMsShareQuotaHeader
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameRestypeShare.ShareCreate.XMsShareQuotaHeader>,
-      IAdditionOperators<SharenameRestypeShare.ShareCreate.XMsShareQuotaHeader, SharenameRestypeShare.ShareCreate.XMsShareQuotaHeader, SharenameRestypeShare.ShareCreate.XMsShareQuotaHeader>,
-      ISubtractionOperators<SharenameRestypeShare.ShareCreate.XMsShareQuotaHeader, SharenameRestypeShare.ShareCreate.XMsShareQuotaHeader, SharenameRestypeShare.ShareCreate.XMsShareQuotaHeader>,
-      IMultiplyOperators<SharenameRestypeShare.ShareCreate.XMsShareQuotaHeader, SharenameRestypeShare.ShareCreate.XMsShareQuotaHeader, SharenameRestypeShare.ShareCreate.XMsShareQuotaHeader>,
-      IDivisionOperators<SharenameRestypeShare.ShareCreate.XMsShareQuotaHeader, SharenameRestypeShare.ShareCreate.XMsShareQuotaHeader, SharenameRestypeShare.ShareCreate.XMsShareQuotaHeader>,
-      IIncrementOperators<SharenameRestypeShare.ShareCreate.XMsShareQuotaHeader>,
-      IDecrementOperators<SharenameRestypeShare.ShareCreate.XMsShareQuotaHeader>
+    : IJsonNumber<ShareNameRestypeShare.ShareCreate.XMsShareQuotaHeader>,
+      IAdditionOperators<ShareNameRestypeShare.ShareCreate.XMsShareQuotaHeader, ShareNameRestypeShare.ShareCreate.XMsShareQuotaHeader, ShareNameRestypeShare.ShareCreate.XMsShareQuotaHeader>,
+      ISubtractionOperators<ShareNameRestypeShare.ShareCreate.XMsShareQuotaHeader, ShareNameRestypeShare.ShareCreate.XMsShareQuotaHeader, ShareNameRestypeShare.ShareCreate.XMsShareQuotaHeader>,
+      IMultiplyOperators<ShareNameRestypeShare.ShareCreate.XMsShareQuotaHeader, ShareNameRestypeShare.ShareCreate.XMsShareQuotaHeader, ShareNameRestypeShare.ShareCreate.XMsShareQuotaHeader>,
+      IDivisionOperators<ShareNameRestypeShare.ShareCreate.XMsShareQuotaHeader, ShareNameRestypeShare.ShareCreate.XMsShareQuotaHeader, ShareNameRestypeShare.ShareCreate.XMsShareQuotaHeader>,
+      IIncrementOperators<ShareNameRestypeShare.ShareCreate.XMsShareQuotaHeader>,
+      IDecrementOperators<ShareNameRestypeShare.ShareCreate.XMsShareQuotaHeader>
 #else
-    : IJsonNumber<SharenameRestypeShare.ShareCreate.XMsShareQuotaHeader>
+    : IJsonNumber<ShareNameRestypeShare.ShareCreate.XMsShareQuotaHeader>
 #endif
 {
     /// <summary>

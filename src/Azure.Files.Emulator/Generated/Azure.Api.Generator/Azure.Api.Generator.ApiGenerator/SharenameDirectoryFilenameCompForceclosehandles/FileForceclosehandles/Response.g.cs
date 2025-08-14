@@ -1,7 +1,7 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles;
+namespace ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles;
 internal partial class Response
 {
 }

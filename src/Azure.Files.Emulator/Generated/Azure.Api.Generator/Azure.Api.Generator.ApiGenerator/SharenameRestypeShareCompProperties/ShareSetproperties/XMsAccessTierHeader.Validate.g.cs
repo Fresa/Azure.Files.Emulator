@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameRestypeShareCompProperties.ShareSetproperties;
+namespace ShareNameRestypeShareCompProperties.ShareSetProperties;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct XMsAccessTierHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameRestypeShareCompProperties.ShareSetproperties.XMsAccessTierHeader.json");
+            result = result.PushSchemaLocation("ShareNameRestypeShareCompProperties.ShareSetProperties.XMsAccessTierHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct XMsAccessTierHeader
     {
         /// <summary>
         /// Gets the string 'TransactionOptimized'
-        /// as a <see cref="SharenameRestypeShareCompProperties.ShareSetproperties.XMsAccessTierHeader"/>.
+        /// as a <see cref="ShareNameRestypeShareCompProperties.ShareSetProperties.XMsAccessTierHeader"/>.
         /// </summary>
         public static XMsAccessTierHeader TransactionOptimized { get; } = CorvusValidation.Enum1.As<XMsAccessTierHeader>();
 
@@ -81,7 +81,7 @@ public readonly partial struct XMsAccessTierHeader
 
         /// <summary>
         /// Gets the string 'Hot'
-        /// as a <see cref="SharenameRestypeShareCompProperties.ShareSetproperties.XMsAccessTierHeader"/>.
+        /// as a <see cref="ShareNameRestypeShareCompProperties.ShareSetProperties.XMsAccessTierHeader"/>.
         /// </summary>
         public static XMsAccessTierHeader Hot { get; } = CorvusValidation.Enum2.As<XMsAccessTierHeader>();
 
@@ -93,7 +93,7 @@ public readonly partial struct XMsAccessTierHeader
 
         /// <summary>
         /// Gets the string 'Cool'
-        /// as a <see cref="SharenameRestypeShareCompProperties.ShareSetproperties.XMsAccessTierHeader"/>.
+        /// as a <see cref="ShareNameRestypeShareCompProperties.ShareSetProperties.XMsAccessTierHeader"/>.
         /// </summary>
         public static XMsAccessTierHeader Cool { get; } = CorvusValidation.Enum3.As<XMsAccessTierHeader>();
 
@@ -105,7 +105,7 @@ public readonly partial struct XMsAccessTierHeader
 
         /// <summary>
         /// Gets the string 'Premium'
-        /// as a <see cref="SharenameRestypeShareCompProperties.ShareSetproperties.XMsAccessTierHeader"/>.
+        /// as a <see cref="ShareNameRestypeShareCompProperties.ShareSetProperties.XMsAccessTierHeader"/>.
         /// </summary>
         public static XMsAccessTierHeader Premium { get; } = CorvusValidation.Enum4.As<XMsAccessTierHeader>();
 

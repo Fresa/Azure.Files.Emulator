@@ -1,7 +1,7 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameRestypeSymboliclink.FileGetsymboliclink;
+namespace ShareNameDirectoryFileNameRestypeSymboliclink.FileGetSymbolicLink;
 internal partial class Response
 {
 }

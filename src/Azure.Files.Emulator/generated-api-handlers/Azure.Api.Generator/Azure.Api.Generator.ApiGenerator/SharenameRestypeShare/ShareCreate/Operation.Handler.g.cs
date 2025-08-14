@@ -1,4 +1,4 @@
-﻿namespace SharenameRestypeShare.ShareCreate
+﻿namespace ShareNameRestypeShare.ShareCreate
 {
     internal partial class Operation
     {

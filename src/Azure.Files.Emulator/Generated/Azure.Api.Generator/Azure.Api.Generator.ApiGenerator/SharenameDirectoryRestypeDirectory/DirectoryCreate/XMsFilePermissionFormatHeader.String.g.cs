@@ -15,16 +15,16 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryRestypeDirectory.DirectoryCreate;
+namespace ShareNameDirectoryRestypeDirectory.DirectoryCreate;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct XMsFilePermissionFormatHeader
 #if NET8_0_OR_GREATER
-    : IJsonString<SharenameDirectoryRestypeDirectory.DirectoryCreate.XMsFilePermissionFormatHeader>,
+    : IJsonString<ShareNameDirectoryRestypeDirectory.DirectoryCreate.XMsFilePermissionFormatHeader>,
       ISpanFormattable
 #else
-    : IJsonString<SharenameDirectoryRestypeDirectory.DirectoryCreate.XMsFilePermissionFormatHeader>
+    : IJsonString<ShareNameDirectoryRestypeDirectory.DirectoryCreate.XMsFilePermissionFormatHeader>
 #endif
 {
     /// <summary>

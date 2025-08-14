@@ -1,7 +1,7 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilename.FileDelete;
+namespace ShareNameDirectoryFileName.FileDelete;
 internal partial class Response
 {
 }

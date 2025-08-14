@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameRestypeShareCompSnapshot.ShareCreatesnapshot;
+namespace ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameRestypeShareCompSnapshot.ShareCreatesnapshot.TimeoutQuery>,
-      IAdditionOperators<SharenameRestypeShareCompSnapshot.ShareCreatesnapshot.TimeoutQuery, SharenameRestypeShareCompSnapshot.ShareCreatesnapshot.TimeoutQuery, SharenameRestypeShareCompSnapshot.ShareCreatesnapshot.TimeoutQuery>,
-      ISubtractionOperators<SharenameRestypeShareCompSnapshot.ShareCreatesnapshot.TimeoutQuery, SharenameRestypeShareCompSnapshot.ShareCreatesnapshot.TimeoutQuery, SharenameRestypeShareCompSnapshot.ShareCreatesnapshot.TimeoutQuery>,
-      IMultiplyOperators<SharenameRestypeShareCompSnapshot.ShareCreatesnapshot.TimeoutQuery, SharenameRestypeShareCompSnapshot.ShareCreatesnapshot.TimeoutQuery, SharenameRestypeShareCompSnapshot.ShareCreatesnapshot.TimeoutQuery>,
-      IDivisionOperators<SharenameRestypeShareCompSnapshot.ShareCreatesnapshot.TimeoutQuery, SharenameRestypeShareCompSnapshot.ShareCreatesnapshot.TimeoutQuery, SharenameRestypeShareCompSnapshot.ShareCreatesnapshot.TimeoutQuery>,
-      IIncrementOperators<SharenameRestypeShareCompSnapshot.ShareCreatesnapshot.TimeoutQuery>,
-      IDecrementOperators<SharenameRestypeShareCompSnapshot.ShareCreatesnapshot.TimeoutQuery>
+    : IJsonNumber<ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.TimeoutQuery>,
+      IAdditionOperators<ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.TimeoutQuery, ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.TimeoutQuery, ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.TimeoutQuery>,
+      ISubtractionOperators<ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.TimeoutQuery, ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.TimeoutQuery, ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.TimeoutQuery>,
+      IMultiplyOperators<ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.TimeoutQuery, ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.TimeoutQuery, ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.TimeoutQuery>,
+      IDivisionOperators<ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.TimeoutQuery, ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.TimeoutQuery, ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.TimeoutQuery>,
+      IIncrementOperators<ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.TimeoutQuery>,
+      IDecrementOperators<ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameRestypeShareCompSnapshot.ShareCreatesnapshot.TimeoutQuery>
+    : IJsonNumber<ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.TimeoutQuery>
 #endif
 {
     /// <summary>

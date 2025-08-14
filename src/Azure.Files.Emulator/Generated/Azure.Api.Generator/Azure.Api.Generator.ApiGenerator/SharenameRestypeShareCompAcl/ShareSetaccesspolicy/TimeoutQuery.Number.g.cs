@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameRestypeShareCompAcl.ShareSetaccesspolicy;
+namespace ShareNameRestypeShareCompAcl.ShareSetAccessPolicy;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameRestypeShareCompAcl.ShareSetaccesspolicy.TimeoutQuery>,
-      IAdditionOperators<SharenameRestypeShareCompAcl.ShareSetaccesspolicy.TimeoutQuery, SharenameRestypeShareCompAcl.ShareSetaccesspolicy.TimeoutQuery, SharenameRestypeShareCompAcl.ShareSetaccesspolicy.TimeoutQuery>,
-      ISubtractionOperators<SharenameRestypeShareCompAcl.ShareSetaccesspolicy.TimeoutQuery, SharenameRestypeShareCompAcl.ShareSetaccesspolicy.TimeoutQuery, SharenameRestypeShareCompAcl.ShareSetaccesspolicy.TimeoutQuery>,
-      IMultiplyOperators<SharenameRestypeShareCompAcl.ShareSetaccesspolicy.TimeoutQuery, SharenameRestypeShareCompAcl.ShareSetaccesspolicy.TimeoutQuery, SharenameRestypeShareCompAcl.ShareSetaccesspolicy.TimeoutQuery>,
-      IDivisionOperators<SharenameRestypeShareCompAcl.ShareSetaccesspolicy.TimeoutQuery, SharenameRestypeShareCompAcl.ShareSetaccesspolicy.TimeoutQuery, SharenameRestypeShareCompAcl.ShareSetaccesspolicy.TimeoutQuery>,
-      IIncrementOperators<SharenameRestypeShareCompAcl.ShareSetaccesspolicy.TimeoutQuery>,
-      IDecrementOperators<SharenameRestypeShareCompAcl.ShareSetaccesspolicy.TimeoutQuery>
+    : IJsonNumber<ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.TimeoutQuery>,
+      IAdditionOperators<ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.TimeoutQuery, ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.TimeoutQuery, ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.TimeoutQuery>,
+      ISubtractionOperators<ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.TimeoutQuery, ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.TimeoutQuery, ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.TimeoutQuery>,
+      IMultiplyOperators<ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.TimeoutQuery, ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.TimeoutQuery, ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.TimeoutQuery>,
+      IDivisionOperators<ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.TimeoutQuery, ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.TimeoutQuery, ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.TimeoutQuery>,
+      IIncrementOperators<ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.TimeoutQuery>,
+      IDecrementOperators<ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameRestypeShareCompAcl.ShareSetaccesspolicy.TimeoutQuery>
+    : IJsonNumber<ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.TimeoutQuery>
 #endif
 {
     /// <summary>

@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameRestypeShareCompProperties.ShareSetproperties;
+namespace ShareNameRestypeShareCompProperties.ShareSetProperties;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct XMsShareQuotaHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameRestypeShareCompProperties.ShareSetproperties.XMsShareQuotaHeader.json");
+            result = result.PushSchemaLocation("ShareNameRestypeShareCompProperties.ShareSetProperties.XMsShareQuotaHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;

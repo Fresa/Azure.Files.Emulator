@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryRestypeDirectory.DirectoryGetproperties
+﻿namespace ShareNameDirectoryRestypeDirectory.DirectoryGetProperties
 {
     internal partial class Operation
     {

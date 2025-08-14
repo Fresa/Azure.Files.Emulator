@@ -1,23 +1,23 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryRestypeDirectory.DirectoryGetproperties;
+namespace ShareNameDirectoryRestypeDirectory.DirectoryGetProperties;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
     internal required Corvus.Json.JsonString Directory { get; init; }
-    internal required SharenameDirectoryRestypeDirectory.RestypeQuery Restype { get; init; }
+    internal required ShareNameDirectoryRestypeDirectory.RestypeQuery Restype { get; init; }
     internal Corvus.Json.JsonBoolean? XMsAllowTrailingDot { get; init; }
     internal Corvus.Json.JsonString? Sharesnapshot { get; init; }
-    internal SharenameDirectoryRestypeDirectory.DirectoryGetproperties.TimeoutQuery? Timeout { get; init; }
-    internal required SharenameDirectoryRestypeDirectory.DirectoryGetproperties.XMsVersionHeader XMsVersion { get; init; }
-    internal SharenameDirectoryRestypeDirectory.DirectoryGetproperties.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameDirectoryRestypeDirectory.DirectoryGetProperties.TimeoutQuery? Timeout { get; init; }
+    internal required ShareNameDirectoryRestypeDirectory.DirectoryGetProperties.XMsVersionHeader XMsVersion { get; init; }
+    internal ShareNameDirectoryRestypeDirectory.DirectoryGetProperties.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
     public static Request Bind(HttpRequest request)
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -38,7 +38,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Restype = request.Bind<SharenameDirectoryRestypeDirectory.RestypeQuery>("""
+            Restype = request.Bind<ShareNameDirectoryRestypeDirectory.RestypeQuery>("""
 {
   "in": "query",
   "name": "restype",
@@ -68,7 +68,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Timeout = request.Bind<SharenameDirectoryRestypeDirectory.DirectoryGetproperties.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameDirectoryRestypeDirectory.DirectoryGetProperties.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -78,7 +78,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<SharenameDirectoryRestypeDirectory.DirectoryGetproperties.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameDirectoryRestypeDirectory.DirectoryGetProperties.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -92,7 +92,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsFileRequestIntent = request.Bind<SharenameDirectoryRestypeDirectory.DirectoryGetproperties.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameDirectoryRestypeDirectory.DirectoryGetProperties.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

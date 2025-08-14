@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy;
+namespace ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.TimeoutQuery>,
-      IAdditionOperators<SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.TimeoutQuery, SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.TimeoutQuery, SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.TimeoutQuery>,
-      ISubtractionOperators<SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.TimeoutQuery, SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.TimeoutQuery, SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.TimeoutQuery>,
-      IMultiplyOperators<SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.TimeoutQuery, SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.TimeoutQuery, SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.TimeoutQuery>,
-      IDivisionOperators<SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.TimeoutQuery, SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.TimeoutQuery, SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.TimeoutQuery>,
-      IIncrementOperators<SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.TimeoutQuery>,
-      IDecrementOperators<SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.TimeoutQuery>,
+      IAdditionOperators<ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.TimeoutQuery, ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.TimeoutQuery, ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.TimeoutQuery>,
+      ISubtractionOperators<ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.TimeoutQuery, ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.TimeoutQuery, ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.TimeoutQuery>,
+      IMultiplyOperators<ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.TimeoutQuery, ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.TimeoutQuery, ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.TimeoutQuery>,
+      IDivisionOperators<ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.TimeoutQuery, ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.TimeoutQuery, ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.TimeoutQuery>,
+      IIncrementOperators<ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.TimeoutQuery>,
+      IDecrementOperators<ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameDirectoryFilenameCompCopyCopyid.FileAbortcopy.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.TimeoutQuery>
 #endif
 {
     /// <summary>

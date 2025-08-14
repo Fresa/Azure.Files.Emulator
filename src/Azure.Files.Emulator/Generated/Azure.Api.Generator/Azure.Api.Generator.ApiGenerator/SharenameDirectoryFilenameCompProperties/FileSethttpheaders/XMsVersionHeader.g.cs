@@ -15,7 +15,7 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameCompProperties.FileSethttpheaders;
+namespace ShareNameDirectoryFileNameCompProperties.FileSetHTTPHeaders;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -62,7 +62,7 @@ public readonly partial struct XMsVersionHeader
     /// <summary>
     /// Gets the schema location from which this type was generated.
     /// </summary>
-    public static string SchemaLocation { get; } = "SharenameDirectoryFilenameCompProperties.FileSethttpheaders.XMsVersionHeader.json";
+    public static string SchemaLocation { get; } = "ShareNameDirectoryFileNameCompProperties.FileSetHTTPHeaders.XMsVersionHeader.json";
 
     /// <summary>
     /// Gets a Null instance.

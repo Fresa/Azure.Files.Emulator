@@ -1,26 +1,26 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompLeaseBreak.FileBreaklease;
+namespace ShareNameDirectoryFileNameCompLeaseBreak.FileBreakLease;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
     internal required Corvus.Json.JsonString Directory { get; init; }
-    internal required Corvus.Json.JsonString Filename { get; init; }
-    internal required SharenameDirectoryFilenameCompLeaseBreak.CompQuery Comp { get; init; }
-    internal required SharenameDirectoryFilenameCompLeaseBreak.XMsLeaseActionHeader XMsLeaseAction { get; init; }
-    internal SharenameDirectoryFilenameCompLeaseBreak.FileBreaklease.TimeoutQuery? Timeout { get; init; }
+    internal required Corvus.Json.JsonString FileName { get; init; }
+    internal required ShareNameDirectoryFileNameCompLeaseBreak.CompQuery Comp { get; init; }
+    internal required ShareNameDirectoryFileNameCompLeaseBreak.XMsLeaseActionHeader XMsLeaseAction { get; init; }
+    internal ShareNameDirectoryFileNameCompLeaseBreak.FileBreakLease.TimeoutQuery? Timeout { get; init; }
     internal Corvus.Json.JsonString? XMsLeaseId { get; init; }
-    internal required SharenameDirectoryFilenameCompLeaseBreak.FileBreaklease.XMsVersionHeader XMsVersion { get; init; }
+    internal required ShareNameDirectoryFileNameCompLeaseBreak.FileBreakLease.XMsVersionHeader XMsVersion { get; init; }
     internal Corvus.Json.JsonString? XMsClientRequestId { get; init; }
     internal Corvus.Json.JsonBoolean? XMsAllowTrailingDot { get; init; }
-    internal SharenameDirectoryFilenameCompLeaseBreak.FileBreaklease.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameDirectoryFileNameCompLeaseBreak.FileBreakLease.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
     public static Request Bind(HttpRequest request)
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -41,7 +41,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Filename = request.Bind<Corvus.Json.JsonString>("""
+            FileName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "fileName",
@@ -52,7 +52,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Comp = request.Bind<SharenameDirectoryFilenameCompLeaseBreak.CompQuery>("""
+            Comp = request.Bind<ShareNameDirectoryFileNameCompLeaseBreak.CompQuery>("""
 {
   "in": "query",
   "name": "comp",
@@ -64,7 +64,7 @@ internal partial class Request
   ]
 }
 """),
-            XMsLeaseAction = request.Bind<SharenameDirectoryFilenameCompLeaseBreak.XMsLeaseActionHeader>("""
+            XMsLeaseAction = request.Bind<ShareNameDirectoryFileNameCompLeaseBreak.XMsLeaseActionHeader>("""
 {
   "in": "header",
   "name": "x-ms-lease-action",
@@ -82,7 +82,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Timeout = request.Bind<SharenameDirectoryFilenameCompLeaseBreak.FileBreaklease.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameDirectoryFileNameCompLeaseBreak.FileBreakLease.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -105,7 +105,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<SharenameDirectoryFilenameCompLeaseBreak.FileBreaklease.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameDirectoryFileNameCompLeaseBreak.FileBreakLease.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -138,7 +138,7 @@ internal partial class Request
   "x-ms-client-name": "allowTrailingDot"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<SharenameDirectoryFilenameCompLeaseBreak.FileBreaklease.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameDirectoryFileNameCompLeaseBreak.FileBreakLease.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

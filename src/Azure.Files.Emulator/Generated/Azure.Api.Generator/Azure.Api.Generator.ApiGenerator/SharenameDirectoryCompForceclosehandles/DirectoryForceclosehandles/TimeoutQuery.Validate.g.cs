@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryCompForceclosehandles.DirectoryForceclosehandles;
+namespace ShareNameDirectoryCompForceclosehandles.DirectoryForceCloseHandles;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct TimeoutQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryCompForceclosehandles.DirectoryForceclosehandles.TimeoutQuery.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryCompForceclosehandles.DirectoryForceCloseHandles.TimeoutQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;

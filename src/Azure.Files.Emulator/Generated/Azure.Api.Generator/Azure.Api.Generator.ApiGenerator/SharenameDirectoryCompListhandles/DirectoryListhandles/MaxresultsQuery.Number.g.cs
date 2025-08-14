@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryCompListhandles.DirectoryListhandles;
+namespace ShareNameDirectoryCompListhandles.DirectoryListHandles;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct MaxresultsQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryCompListhandles.DirectoryListhandles.MaxresultsQuery>,
-      IAdditionOperators<SharenameDirectoryCompListhandles.DirectoryListhandles.MaxresultsQuery, SharenameDirectoryCompListhandles.DirectoryListhandles.MaxresultsQuery, SharenameDirectoryCompListhandles.DirectoryListhandles.MaxresultsQuery>,
-      ISubtractionOperators<SharenameDirectoryCompListhandles.DirectoryListhandles.MaxresultsQuery, SharenameDirectoryCompListhandles.DirectoryListhandles.MaxresultsQuery, SharenameDirectoryCompListhandles.DirectoryListhandles.MaxresultsQuery>,
-      IMultiplyOperators<SharenameDirectoryCompListhandles.DirectoryListhandles.MaxresultsQuery, SharenameDirectoryCompListhandles.DirectoryListhandles.MaxresultsQuery, SharenameDirectoryCompListhandles.DirectoryListhandles.MaxresultsQuery>,
-      IDivisionOperators<SharenameDirectoryCompListhandles.DirectoryListhandles.MaxresultsQuery, SharenameDirectoryCompListhandles.DirectoryListhandles.MaxresultsQuery, SharenameDirectoryCompListhandles.DirectoryListhandles.MaxresultsQuery>,
-      IIncrementOperators<SharenameDirectoryCompListhandles.DirectoryListhandles.MaxresultsQuery>,
-      IDecrementOperators<SharenameDirectoryCompListhandles.DirectoryListhandles.MaxresultsQuery>
+    : IJsonNumber<ShareNameDirectoryCompListhandles.DirectoryListHandles.MaxresultsQuery>,
+      IAdditionOperators<ShareNameDirectoryCompListhandles.DirectoryListHandles.MaxresultsQuery, ShareNameDirectoryCompListhandles.DirectoryListHandles.MaxresultsQuery, ShareNameDirectoryCompListhandles.DirectoryListHandles.MaxresultsQuery>,
+      ISubtractionOperators<ShareNameDirectoryCompListhandles.DirectoryListHandles.MaxresultsQuery, ShareNameDirectoryCompListhandles.DirectoryListHandles.MaxresultsQuery, ShareNameDirectoryCompListhandles.DirectoryListHandles.MaxresultsQuery>,
+      IMultiplyOperators<ShareNameDirectoryCompListhandles.DirectoryListHandles.MaxresultsQuery, ShareNameDirectoryCompListhandles.DirectoryListHandles.MaxresultsQuery, ShareNameDirectoryCompListhandles.DirectoryListHandles.MaxresultsQuery>,
+      IDivisionOperators<ShareNameDirectoryCompListhandles.DirectoryListHandles.MaxresultsQuery, ShareNameDirectoryCompListhandles.DirectoryListHandles.MaxresultsQuery, ShareNameDirectoryCompListhandles.DirectoryListHandles.MaxresultsQuery>,
+      IIncrementOperators<ShareNameDirectoryCompListhandles.DirectoryListHandles.MaxresultsQuery>,
+      IDecrementOperators<ShareNameDirectoryCompListhandles.DirectoryListHandles.MaxresultsQuery>
 #else
-    : IJsonNumber<SharenameDirectoryCompListhandles.DirectoryListhandles.MaxresultsQuery>
+    : IJsonNumber<ShareNameDirectoryCompListhandles.DirectoryListHandles.MaxresultsQuery>
 #endif
 {
     /// <summary>

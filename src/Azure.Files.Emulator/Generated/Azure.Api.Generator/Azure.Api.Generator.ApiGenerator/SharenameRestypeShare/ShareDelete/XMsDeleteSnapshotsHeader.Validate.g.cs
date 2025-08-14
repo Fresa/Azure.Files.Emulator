@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameRestypeShare.ShareDelete;
+namespace ShareNameRestypeShare.ShareDelete;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct XMsDeleteSnapshotsHeader
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameRestypeShare.ShareDelete.XMsDeleteSnapshotsHeader.json");
+            result = result.PushSchemaLocation("ShareNameRestypeShare.ShareDelete.XMsDeleteSnapshotsHeader.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct XMsDeleteSnapshotsHeader
     {
         /// <summary>
         /// Gets the string 'include'
-        /// as a <see cref="SharenameRestypeShare.ShareDelete.XMsDeleteSnapshotsHeader"/>.
+        /// as a <see cref="ShareNameRestypeShare.ShareDelete.XMsDeleteSnapshotsHeader"/>.
         /// </summary>
         public static XMsDeleteSnapshotsHeader Include { get; } = CorvusValidation.Enum1.As<XMsDeleteSnapshotsHeader>();
 
@@ -81,7 +81,7 @@ public readonly partial struct XMsDeleteSnapshotsHeader
 
         /// <summary>
         /// Gets the string 'include-leased'
-        /// as a <see cref="SharenameRestypeShare.ShareDelete.XMsDeleteSnapshotsHeader"/>.
+        /// as a <see cref="ShareNameRestypeShare.ShareDelete.XMsDeleteSnapshotsHeader"/>.
         /// </summary>
         public static XMsDeleteSnapshotsHeader IncludeLeased { get; } = CorvusValidation.Enum2.As<XMsDeleteSnapshotsHeader>();
 

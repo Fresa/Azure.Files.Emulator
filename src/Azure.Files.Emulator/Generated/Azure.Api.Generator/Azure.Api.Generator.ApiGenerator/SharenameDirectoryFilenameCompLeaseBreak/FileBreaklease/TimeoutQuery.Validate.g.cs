@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilenameCompLeaseBreak.FileBreaklease;
+namespace ShareNameDirectoryFileNameCompLeaseBreak.FileBreakLease;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct TimeoutQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryFilenameCompLeaseBreak.FileBreaklease.TimeoutQuery.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryFileNameCompLeaseBreak.FileBreakLease.TimeoutQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;

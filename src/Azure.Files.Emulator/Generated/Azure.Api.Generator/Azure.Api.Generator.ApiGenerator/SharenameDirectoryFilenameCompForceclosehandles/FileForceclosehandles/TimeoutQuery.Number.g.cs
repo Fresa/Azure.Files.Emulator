@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles;
+namespace ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.TimeoutQuery>,
-      IAdditionOperators<SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.TimeoutQuery, SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.TimeoutQuery, SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.TimeoutQuery>,
-      ISubtractionOperators<SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.TimeoutQuery, SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.TimeoutQuery, SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.TimeoutQuery>,
-      IMultiplyOperators<SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.TimeoutQuery, SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.TimeoutQuery, SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.TimeoutQuery>,
-      IDivisionOperators<SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.TimeoutQuery, SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.TimeoutQuery, SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.TimeoutQuery>,
-      IIncrementOperators<SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.TimeoutQuery>,
-      IDecrementOperators<SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.TimeoutQuery>,
+      IAdditionOperators<ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.TimeoutQuery, ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.TimeoutQuery, ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.TimeoutQuery>,
+      ISubtractionOperators<ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.TimeoutQuery, ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.TimeoutQuery, ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.TimeoutQuery>,
+      IMultiplyOperators<ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.TimeoutQuery, ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.TimeoutQuery, ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.TimeoutQuery>,
+      IDivisionOperators<ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.TimeoutQuery, ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.TimeoutQuery, ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.TimeoutQuery>,
+      IIncrementOperators<ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.TimeoutQuery>,
+      IDecrementOperators<ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameDirectoryFilenameCompForceclosehandles.FileForceclosehandles.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.TimeoutQuery>
 #endif
 {
     /// <summary>

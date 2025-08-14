@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryRestypeDirectory.DirectoryCreate
+﻿namespace ShareNameDirectoryRestypeDirectory.DirectoryCreate
 {
     internal partial class Operation
     {

@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryRestypeDirectoryCompProperties.DirectorySetproperties;
+namespace ShareNameDirectoryRestypeDirectoryCompProperties.DirectorySetProperties;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryRestypeDirectoryCompProperties.DirectorySetproperties.TimeoutQuery>,
-      IAdditionOperators<SharenameDirectoryRestypeDirectoryCompProperties.DirectorySetproperties.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompProperties.DirectorySetproperties.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompProperties.DirectorySetproperties.TimeoutQuery>,
-      ISubtractionOperators<SharenameDirectoryRestypeDirectoryCompProperties.DirectorySetproperties.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompProperties.DirectorySetproperties.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompProperties.DirectorySetproperties.TimeoutQuery>,
-      IMultiplyOperators<SharenameDirectoryRestypeDirectoryCompProperties.DirectorySetproperties.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompProperties.DirectorySetproperties.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompProperties.DirectorySetproperties.TimeoutQuery>,
-      IDivisionOperators<SharenameDirectoryRestypeDirectoryCompProperties.DirectorySetproperties.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompProperties.DirectorySetproperties.TimeoutQuery, SharenameDirectoryRestypeDirectoryCompProperties.DirectorySetproperties.TimeoutQuery>,
-      IIncrementOperators<SharenameDirectoryRestypeDirectoryCompProperties.DirectorySetproperties.TimeoutQuery>,
-      IDecrementOperators<SharenameDirectoryRestypeDirectoryCompProperties.DirectorySetproperties.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryRestypeDirectoryCompProperties.DirectorySetProperties.TimeoutQuery>,
+      IAdditionOperators<ShareNameDirectoryRestypeDirectoryCompProperties.DirectorySetProperties.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompProperties.DirectorySetProperties.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompProperties.DirectorySetProperties.TimeoutQuery>,
+      ISubtractionOperators<ShareNameDirectoryRestypeDirectoryCompProperties.DirectorySetProperties.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompProperties.DirectorySetProperties.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompProperties.DirectorySetProperties.TimeoutQuery>,
+      IMultiplyOperators<ShareNameDirectoryRestypeDirectoryCompProperties.DirectorySetProperties.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompProperties.DirectorySetProperties.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompProperties.DirectorySetProperties.TimeoutQuery>,
+      IDivisionOperators<ShareNameDirectoryRestypeDirectoryCompProperties.DirectorySetProperties.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompProperties.DirectorySetProperties.TimeoutQuery, ShareNameDirectoryRestypeDirectoryCompProperties.DirectorySetProperties.TimeoutQuery>,
+      IIncrementOperators<ShareNameDirectoryRestypeDirectoryCompProperties.DirectorySetProperties.TimeoutQuery>,
+      IDecrementOperators<ShareNameDirectoryRestypeDirectoryCompProperties.DirectorySetProperties.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameDirectoryRestypeDirectoryCompProperties.DirectorySetproperties.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryRestypeDirectoryCompProperties.DirectorySetProperties.TimeoutQuery>
 #endif
 {
     /// <summary>

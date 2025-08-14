@@ -1,4 +1,4 @@
-﻿namespace SharenameRestypeShareCompMetadata.ShareSetmetadata
+﻿namespace ShareNameRestypeShareCompMetadata.ShareSetMetadata
 {
     internal partial class Operation
     {

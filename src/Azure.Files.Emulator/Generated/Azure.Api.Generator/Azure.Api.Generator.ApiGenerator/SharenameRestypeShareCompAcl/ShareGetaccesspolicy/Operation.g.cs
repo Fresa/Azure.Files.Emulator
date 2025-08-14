@@ -1,9 +1,9 @@
 ﻿using System.Threading;
 
-namespace SharenameRestypeShareCompAcl.ShareGetaccesspolicy;
+namespace ShareNameRestypeShareCompAcl.ShareGetAccessPolicy;
 internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}?restype=share&comp=acl";
-    internal const string Method = "ShareGetaccesspolicy";
+    internal const string Method = "ShareGetAccessPolicy";
     internal partial Task<Response> HandleAsync(Request request, CancellationToken cancellationToken);
 }

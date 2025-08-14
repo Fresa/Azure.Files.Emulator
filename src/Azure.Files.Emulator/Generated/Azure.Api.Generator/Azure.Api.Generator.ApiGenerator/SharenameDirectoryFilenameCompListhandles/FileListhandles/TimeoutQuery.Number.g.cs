@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameCompListhandles.FileListhandles;
+namespace ShareNameDirectoryFileNameCompListhandles.FileListHandles;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryFilenameCompListhandles.FileListhandles.TimeoutQuery>,
-      IAdditionOperators<SharenameDirectoryFilenameCompListhandles.FileListhandles.TimeoutQuery, SharenameDirectoryFilenameCompListhandles.FileListhandles.TimeoutQuery, SharenameDirectoryFilenameCompListhandles.FileListhandles.TimeoutQuery>,
-      ISubtractionOperators<SharenameDirectoryFilenameCompListhandles.FileListhandles.TimeoutQuery, SharenameDirectoryFilenameCompListhandles.FileListhandles.TimeoutQuery, SharenameDirectoryFilenameCompListhandles.FileListhandles.TimeoutQuery>,
-      IMultiplyOperators<SharenameDirectoryFilenameCompListhandles.FileListhandles.TimeoutQuery, SharenameDirectoryFilenameCompListhandles.FileListhandles.TimeoutQuery, SharenameDirectoryFilenameCompListhandles.FileListhandles.TimeoutQuery>,
-      IDivisionOperators<SharenameDirectoryFilenameCompListhandles.FileListhandles.TimeoutQuery, SharenameDirectoryFilenameCompListhandles.FileListhandles.TimeoutQuery, SharenameDirectoryFilenameCompListhandles.FileListhandles.TimeoutQuery>,
-      IIncrementOperators<SharenameDirectoryFilenameCompListhandles.FileListhandles.TimeoutQuery>,
-      IDecrementOperators<SharenameDirectoryFilenameCompListhandles.FileListhandles.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompListhandles.FileListHandles.TimeoutQuery>,
+      IAdditionOperators<ShareNameDirectoryFileNameCompListhandles.FileListHandles.TimeoutQuery, ShareNameDirectoryFileNameCompListhandles.FileListHandles.TimeoutQuery, ShareNameDirectoryFileNameCompListhandles.FileListHandles.TimeoutQuery>,
+      ISubtractionOperators<ShareNameDirectoryFileNameCompListhandles.FileListHandles.TimeoutQuery, ShareNameDirectoryFileNameCompListhandles.FileListHandles.TimeoutQuery, ShareNameDirectoryFileNameCompListhandles.FileListHandles.TimeoutQuery>,
+      IMultiplyOperators<ShareNameDirectoryFileNameCompListhandles.FileListHandles.TimeoutQuery, ShareNameDirectoryFileNameCompListhandles.FileListHandles.TimeoutQuery, ShareNameDirectoryFileNameCompListhandles.FileListHandles.TimeoutQuery>,
+      IDivisionOperators<ShareNameDirectoryFileNameCompListhandles.FileListHandles.TimeoutQuery, ShareNameDirectoryFileNameCompListhandles.FileListHandles.TimeoutQuery, ShareNameDirectoryFileNameCompListhandles.FileListHandles.TimeoutQuery>,
+      IIncrementOperators<ShareNameDirectoryFileNameCompListhandles.FileListHandles.TimeoutQuery>,
+      IDecrementOperators<ShareNameDirectoryFileNameCompListhandles.FileListHandles.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameDirectoryFilenameCompListhandles.FileListhandles.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompListhandles.FileListHandles.TimeoutQuery>
 #endif
 {
     /// <summary>

@@ -15,16 +15,16 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameRestypeShare.ShareDelete;
+namespace ShareNameRestypeShare.ShareDelete;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct XMsDeleteSnapshotsHeader
 #if NET8_0_OR_GREATER
-    : IJsonString<SharenameRestypeShare.ShareDelete.XMsDeleteSnapshotsHeader>,
+    : IJsonString<ShareNameRestypeShare.ShareDelete.XMsDeleteSnapshotsHeader>,
       ISpanFormattable
 #else
-    : IJsonString<SharenameRestypeShare.ShareDelete.XMsDeleteSnapshotsHeader>
+    : IJsonString<ShareNameRestypeShare.ShareDelete.XMsDeleteSnapshotsHeader>
 #endif
 {
     /// <summary>

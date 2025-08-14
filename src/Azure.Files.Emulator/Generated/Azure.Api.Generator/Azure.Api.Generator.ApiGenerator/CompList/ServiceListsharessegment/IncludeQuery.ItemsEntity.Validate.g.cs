@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace CompList.ServiceListsharessegment;
+namespace CompList.ServiceListSharesSegment;
 
 /// <summary>
 /// Generated from JSON Schema.
@@ -75,7 +75,7 @@ public readonly partial struct IncludeQuery
         {
             /// <summary>
             /// Gets the string 'snapshots'
-            /// as a <see cref="CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity"/>.
+            /// as a <see cref="CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity"/>.
             /// </summary>
             public static ItemsEntity Snapshots { get; } = CorvusValidation.Enum1.As<ItemsEntity>();
 
@@ -87,7 +87,7 @@ public readonly partial struct IncludeQuery
 
             /// <summary>
             /// Gets the string 'metadata'
-            /// as a <see cref="CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity"/>.
+            /// as a <see cref="CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity"/>.
             /// </summary>
             public static ItemsEntity Metadata { get; } = CorvusValidation.Enum2.As<ItemsEntity>();
 
@@ -99,7 +99,7 @@ public readonly partial struct IncludeQuery
 
             /// <summary>
             /// Gets the string 'deleted'
-            /// as a <see cref="CompList.ServiceListsharessegment.IncludeQuery.ItemsEntity"/>.
+            /// as a <see cref="CompList.ServiceListSharesSegment.IncludeQuery.ItemsEntity"/>.
             /// </summary>
             public static ItemsEntity Deleted { get; } = CorvusValidation.Enum3.As<ItemsEntity>();
 

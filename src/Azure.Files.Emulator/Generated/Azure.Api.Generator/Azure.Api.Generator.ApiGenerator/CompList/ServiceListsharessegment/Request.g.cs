@@ -1,17 +1,17 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace CompList.ServiceListsharessegment;
+namespace CompList.ServiceListSharesSegment;
 internal partial class Request
 {
     internal required CompList.CompQuery Comp { get; init; }
     internal Corvus.Json.JsonString? Prefix { get; init; }
     internal Corvus.Json.JsonString? Marker { get; init; }
-    internal CompList.ServiceListsharessegment.MaxresultsQuery? Maxresults { get; init; }
-    internal CompList.ServiceListsharessegment.IncludeQuery? Include { get; init; }
-    internal CompList.ServiceListsharessegment.TimeoutQuery? Timeout { get; init; }
-    internal required CompList.ServiceListsharessegment.XMsVersionHeader XMsVersion { get; init; }
-    internal CompList.ServiceListsharessegment.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal CompList.ServiceListSharesSegment.MaxresultsQuery? Maxresults { get; init; }
+    internal CompList.ServiceListSharesSegment.IncludeQuery? Include { get; init; }
+    internal CompList.ServiceListSharesSegment.TimeoutQuery? Timeout { get; init; }
+    internal required CompList.ServiceListSharesSegment.XMsVersionHeader XMsVersion { get; init; }
+    internal CompList.ServiceListSharesSegment.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
     public static Request Bind(HttpRequest request)
     {
@@ -47,7 +47,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Maxresults = request.Bind<CompList.ServiceListsharessegment.MaxresultsQuery>("""
+            Maxresults = request.Bind<CompList.ServiceListSharesSegment.MaxresultsQuery>("""
 {
   "in": "query",
   "name": "maxresults",
@@ -57,7 +57,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Include = request.Bind<CompList.ServiceListsharessegment.IncludeQuery>("""
+            Include = request.Bind<CompList.ServiceListSharesSegment.IncludeQuery>("""
 {
   "in": "query",
   "name": "include",
@@ -79,7 +79,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Timeout = request.Bind<CompList.ServiceListsharessegment.TimeoutQuery>("""
+            Timeout = request.Bind<CompList.ServiceListSharesSegment.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -89,7 +89,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<CompList.ServiceListsharessegment.XMsVersionHeader>("""
+            XMsVersion = request.Bind<CompList.ServiceListSharesSegment.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -103,7 +103,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsFileRequestIntent = request.Bind<CompList.ServiceListsharessegment.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<CompList.ServiceListSharesSegment.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

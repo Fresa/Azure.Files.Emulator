@@ -1,22 +1,22 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryFilename.FileDelete;
+namespace ShareNameDirectoryFileName.FileDelete;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
     internal required Corvus.Json.JsonString Directory { get; init; }
-    internal required Corvus.Json.JsonString Filename { get; init; }
+    internal required Corvus.Json.JsonString FileName { get; init; }
     internal Corvus.Json.JsonBoolean? XMsAllowTrailingDot { get; init; }
-    internal SharenameDirectoryFilename.FileDelete.TimeoutQuery? Timeout { get; init; }
-    internal required SharenameDirectoryFilename.FileDelete.XMsVersionHeader XMsVersion { get; init; }
+    internal ShareNameDirectoryFileName.FileDelete.TimeoutQuery? Timeout { get; init; }
+    internal required ShareNameDirectoryFileName.FileDelete.XMsVersionHeader XMsVersion { get; init; }
     internal Corvus.Json.JsonString? XMsRange { get; init; }
     internal Corvus.Json.JsonBoolean? XMsRangeGetContentMd5 { get; init; }
     internal Corvus.Json.JsonString? XMsStructuredBody { get; init; }
     internal Corvus.Json.JsonString? XMsLeaseId { get; init; }
-    internal SharenameDirectoryFilename.FileDelete.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameDirectoryFileName.FileDelete.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
     internal required Corvus.Json.JsonInt64 XMsContentLength { get; init; }
-    internal required SharenameDirectoryFilename.FileCreate.XMsTypeHeader XMsType { get; init; }
+    internal required ShareNameDirectoryFileName.FileCreate.XMsTypeHeader XMsType { get; init; }
     internal Corvus.Json.JsonString? XMsContentType { get; init; }
     internal Corvus.Json.JsonString? XMsContentEncoding { get; init; }
     internal Corvus.Json.JsonString? XMsContentLanguage { get; init; }
@@ -25,7 +25,7 @@ internal partial class Request
     internal Corvus.Json.JsonString? XMsContentDisposition { get; init; }
     internal Corvus.Json.JsonString? XMsMeta { get; init; }
     internal Corvus.Json.JsonString? XMsFilePermission { get; init; }
-    internal SharenameDirectoryFilename.FileCreate.XMsFilePermissionFormatHeader? XMsFilePermissionFormat { get; init; }
+    internal ShareNameDirectoryFileName.FileCreate.XMsFilePermissionFormatHeader? XMsFilePermissionFormat { get; init; }
     internal Corvus.Json.JsonString? XMsFilePermissionKey { get; init; }
     internal Corvus.Json.JsonString? XMsFileAttributes { get; init; }
     internal Corvus.Json.JsonString? XMsFileCreationTime { get; init; }
@@ -34,13 +34,13 @@ internal partial class Request
     internal Corvus.Json.JsonString? XMsOwner { get; init; }
     internal Corvus.Json.JsonString? XMsGroup { get; init; }
     internal Corvus.Json.JsonString? XMsMode { get; init; }
-    internal SharenameDirectoryFilename.FileCreate.XMsFileFileTypeHeader? XMsFileFileType { get; init; }
+    internal ShareNameDirectoryFileName.FileCreate.XMsFileFileTypeHeader? XMsFileFileType { get; init; }
 
     public static Request Bind(HttpRequest request)
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -61,7 +61,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Filename = request.Bind<Corvus.Json.JsonString>("""
+            FileName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "fileName",
@@ -81,7 +81,7 @@ internal partial class Request
   "x-ms-client-name": "allowTrailingDot"
 }
 """).AsOptional(),
-            Timeout = request.Bind<SharenameDirectoryFilename.FileDelete.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameDirectoryFileName.FileDelete.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -91,7 +91,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<SharenameDirectoryFilename.FileDelete.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameDirectoryFileName.FileDelete.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -148,7 +148,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<SharenameDirectoryFilename.FileDelete.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameDirectoryFileName.FileDelete.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",
@@ -175,7 +175,7 @@ internal partial class Request
   "x-ms-client-name": "fileContentLength"
 }
 """),
-            XMsType = request.Bind<SharenameDirectoryFilename.FileCreate.XMsTypeHeader>("""
+            XMsType = request.Bind<ShareNameDirectoryFileName.FileCreate.XMsTypeHeader>("""
 {
   "in": "header",
   "name": "x-ms-type",
@@ -289,7 +289,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFilePermissionFormat = request.Bind<SharenameDirectoryFilename.FileCreate.XMsFilePermissionFormatHeader>("""
+            XMsFilePermissionFormat = request.Bind<ShareNameDirectoryFileName.FileCreate.XMsFilePermissionFormatHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-permission-format",
@@ -390,7 +390,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFileFileType = request.Bind<SharenameDirectoryFilename.FileCreate.XMsFileFileTypeHeader>("""
+            XMsFileFileType = request.Bind<ShareNameDirectoryFileName.FileCreate.XMsFileFileTypeHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-file-type",

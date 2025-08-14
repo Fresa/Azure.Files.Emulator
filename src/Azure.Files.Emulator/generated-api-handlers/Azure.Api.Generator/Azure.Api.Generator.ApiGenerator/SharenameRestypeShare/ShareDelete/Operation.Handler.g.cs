@@ -1,4 +1,4 @@
-﻿namespace SharenameRestypeShare.ShareDelete
+﻿namespace ShareNameRestypeShare.ShareDelete
 {
     internal partial class Operation
     {

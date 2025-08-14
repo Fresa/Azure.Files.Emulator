@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameRestypeShareCompLeaseChange.ShareChangelease;
+namespace ShareNameRestypeShareCompLeaseChange.ShareChangeLease;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameRestypeShareCompLeaseChange.ShareChangelease.TimeoutQuery>,
-      IAdditionOperators<SharenameRestypeShareCompLeaseChange.ShareChangelease.TimeoutQuery, SharenameRestypeShareCompLeaseChange.ShareChangelease.TimeoutQuery, SharenameRestypeShareCompLeaseChange.ShareChangelease.TimeoutQuery>,
-      ISubtractionOperators<SharenameRestypeShareCompLeaseChange.ShareChangelease.TimeoutQuery, SharenameRestypeShareCompLeaseChange.ShareChangelease.TimeoutQuery, SharenameRestypeShareCompLeaseChange.ShareChangelease.TimeoutQuery>,
-      IMultiplyOperators<SharenameRestypeShareCompLeaseChange.ShareChangelease.TimeoutQuery, SharenameRestypeShareCompLeaseChange.ShareChangelease.TimeoutQuery, SharenameRestypeShareCompLeaseChange.ShareChangelease.TimeoutQuery>,
-      IDivisionOperators<SharenameRestypeShareCompLeaseChange.ShareChangelease.TimeoutQuery, SharenameRestypeShareCompLeaseChange.ShareChangelease.TimeoutQuery, SharenameRestypeShareCompLeaseChange.ShareChangelease.TimeoutQuery>,
-      IIncrementOperators<SharenameRestypeShareCompLeaseChange.ShareChangelease.TimeoutQuery>,
-      IDecrementOperators<SharenameRestypeShareCompLeaseChange.ShareChangelease.TimeoutQuery>
+    : IJsonNumber<ShareNameRestypeShareCompLeaseChange.ShareChangeLease.TimeoutQuery>,
+      IAdditionOperators<ShareNameRestypeShareCompLeaseChange.ShareChangeLease.TimeoutQuery, ShareNameRestypeShareCompLeaseChange.ShareChangeLease.TimeoutQuery, ShareNameRestypeShareCompLeaseChange.ShareChangeLease.TimeoutQuery>,
+      ISubtractionOperators<ShareNameRestypeShareCompLeaseChange.ShareChangeLease.TimeoutQuery, ShareNameRestypeShareCompLeaseChange.ShareChangeLease.TimeoutQuery, ShareNameRestypeShareCompLeaseChange.ShareChangeLease.TimeoutQuery>,
+      IMultiplyOperators<ShareNameRestypeShareCompLeaseChange.ShareChangeLease.TimeoutQuery, ShareNameRestypeShareCompLeaseChange.ShareChangeLease.TimeoutQuery, ShareNameRestypeShareCompLeaseChange.ShareChangeLease.TimeoutQuery>,
+      IDivisionOperators<ShareNameRestypeShareCompLeaseChange.ShareChangeLease.TimeoutQuery, ShareNameRestypeShareCompLeaseChange.ShareChangeLease.TimeoutQuery, ShareNameRestypeShareCompLeaseChange.ShareChangeLease.TimeoutQuery>,
+      IIncrementOperators<ShareNameRestypeShareCompLeaseChange.ShareChangeLease.TimeoutQuery>,
+      IDecrementOperators<ShareNameRestypeShareCompLeaseChange.ShareChangeLease.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameRestypeShareCompLeaseChange.ShareChangelease.TimeoutQuery>
+    : IJsonNumber<ShareNameRestypeShareCompLeaseChange.ShareChangeLease.TimeoutQuery>
 #endif
 {
     /// <summary>

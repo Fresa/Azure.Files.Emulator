@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameCompLeaseChange.FileChangelease;
+namespace ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryFilenameCompLeaseChange.FileChangelease.TimeoutQuery>,
-      IAdditionOperators<SharenameDirectoryFilenameCompLeaseChange.FileChangelease.TimeoutQuery, SharenameDirectoryFilenameCompLeaseChange.FileChangelease.TimeoutQuery, SharenameDirectoryFilenameCompLeaseChange.FileChangelease.TimeoutQuery>,
-      ISubtractionOperators<SharenameDirectoryFilenameCompLeaseChange.FileChangelease.TimeoutQuery, SharenameDirectoryFilenameCompLeaseChange.FileChangelease.TimeoutQuery, SharenameDirectoryFilenameCompLeaseChange.FileChangelease.TimeoutQuery>,
-      IMultiplyOperators<SharenameDirectoryFilenameCompLeaseChange.FileChangelease.TimeoutQuery, SharenameDirectoryFilenameCompLeaseChange.FileChangelease.TimeoutQuery, SharenameDirectoryFilenameCompLeaseChange.FileChangelease.TimeoutQuery>,
-      IDivisionOperators<SharenameDirectoryFilenameCompLeaseChange.FileChangelease.TimeoutQuery, SharenameDirectoryFilenameCompLeaseChange.FileChangelease.TimeoutQuery, SharenameDirectoryFilenameCompLeaseChange.FileChangelease.TimeoutQuery>,
-      IIncrementOperators<SharenameDirectoryFilenameCompLeaseChange.FileChangelease.TimeoutQuery>,
-      IDecrementOperators<SharenameDirectoryFilenameCompLeaseChange.FileChangelease.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease.TimeoutQuery>,
+      IAdditionOperators<ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease.TimeoutQuery, ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease.TimeoutQuery, ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease.TimeoutQuery>,
+      ISubtractionOperators<ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease.TimeoutQuery, ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease.TimeoutQuery, ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease.TimeoutQuery>,
+      IMultiplyOperators<ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease.TimeoutQuery, ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease.TimeoutQuery, ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease.TimeoutQuery>,
+      IDivisionOperators<ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease.TimeoutQuery, ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease.TimeoutQuery, ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease.TimeoutQuery>,
+      IIncrementOperators<ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease.TimeoutQuery>,
+      IDecrementOperators<ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameDirectoryFilenameCompLeaseChange.FileChangelease.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease.TimeoutQuery>
 #endif
 {
     /// <summary>

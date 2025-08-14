@@ -15,16 +15,16 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameCompRange;
+namespace ShareNameDirectoryFileNameCompRange;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct CompQuery
 #if NET8_0_OR_GREATER
-    : IJsonString<SharenameDirectoryFilenameCompRange.CompQuery>,
+    : IJsonString<ShareNameDirectoryFileNameCompRange.CompQuery>,
       ISpanFormattable
 #else
-    : IJsonString<SharenameDirectoryFilenameCompRange.CompQuery>
+    : IJsonString<ShareNameDirectoryFileNameCompRange.CompQuery>
 #endif
 {
     /// <summary>

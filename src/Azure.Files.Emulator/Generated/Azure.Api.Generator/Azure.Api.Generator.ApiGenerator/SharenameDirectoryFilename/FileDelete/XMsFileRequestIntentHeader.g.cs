@@ -15,7 +15,7 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilename.FileDelete;
+namespace ShareNameDirectoryFileName.FileDelete;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -62,7 +62,7 @@ public readonly partial struct XMsFileRequestIntentHeader
     /// <summary>
     /// Gets the schema location from which this type was generated.
     /// </summary>
-    public static string SchemaLocation { get; } = "SharenameDirectoryFilename.FileDelete.XMsFileRequestIntentHeader.json";
+    public static string SchemaLocation { get; } = "ShareNameDirectoryFileName.FileDelete.XMsFileRequestIntentHeader.json";
 
     /// <summary>
     /// Gets a Null instance.

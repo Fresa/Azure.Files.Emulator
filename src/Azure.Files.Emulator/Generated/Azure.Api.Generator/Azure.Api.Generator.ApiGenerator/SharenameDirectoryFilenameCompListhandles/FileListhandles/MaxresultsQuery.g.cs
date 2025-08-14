@@ -15,7 +15,7 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameCompListhandles.FileListhandles;
+namespace ShareNameDirectoryFileNameCompListhandles.FileListHandles;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -62,7 +62,7 @@ public readonly partial struct MaxresultsQuery
     /// <summary>
     /// Gets the schema location from which this type was generated.
     /// </summary>
-    public static string SchemaLocation { get; } = "SharenameDirectoryFilenameCompListhandles.FileListhandles.MaxresultsQuery.json";
+    public static string SchemaLocation { get; } = "ShareNameDirectoryFileNameCompListhandles.FileListHandles.MaxresultsQuery.json";
 
     /// <summary>
     /// Gets a Null instance.

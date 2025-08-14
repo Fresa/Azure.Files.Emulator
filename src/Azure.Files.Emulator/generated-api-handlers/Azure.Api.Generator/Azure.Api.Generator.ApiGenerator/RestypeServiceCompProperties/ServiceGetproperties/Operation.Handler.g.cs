@@ -1,4 +1,4 @@
-﻿namespace RestypeServiceCompProperties.ServiceGetproperties
+﻿namespace RestypeServiceCompProperties.ServiceGetProperties
 {
     internal partial class Operation
     {

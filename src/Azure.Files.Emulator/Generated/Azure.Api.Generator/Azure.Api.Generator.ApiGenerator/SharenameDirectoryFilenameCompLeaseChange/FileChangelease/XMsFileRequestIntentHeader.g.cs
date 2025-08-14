@@ -15,7 +15,7 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameCompLeaseChange.FileChangelease;
+namespace ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -62,7 +62,7 @@ public readonly partial struct XMsFileRequestIntentHeader
     /// <summary>
     /// Gets the schema location from which this type was generated.
     /// </summary>
-    public static string SchemaLocation { get; } = "SharenameDirectoryFilenameCompLeaseChange.FileChangelease.XMsFileRequestIntentHeader.json";
+    public static string SchemaLocation { get; } = "ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease.XMsFileRequestIntentHeader.json";
 
     /// <summary>
     /// Gets a Null instance.

@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameRestypeShareCompProperties.ShareSetproperties;
+namespace ShareNameRestypeShareCompProperties.ShareSetProperties;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct XMsShareQuotaHeader
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameRestypeShareCompProperties.ShareSetproperties.XMsShareQuotaHeader>,
-      IAdditionOperators<SharenameRestypeShareCompProperties.ShareSetproperties.XMsShareQuotaHeader, SharenameRestypeShareCompProperties.ShareSetproperties.XMsShareQuotaHeader, SharenameRestypeShareCompProperties.ShareSetproperties.XMsShareQuotaHeader>,
-      ISubtractionOperators<SharenameRestypeShareCompProperties.ShareSetproperties.XMsShareQuotaHeader, SharenameRestypeShareCompProperties.ShareSetproperties.XMsShareQuotaHeader, SharenameRestypeShareCompProperties.ShareSetproperties.XMsShareQuotaHeader>,
-      IMultiplyOperators<SharenameRestypeShareCompProperties.ShareSetproperties.XMsShareQuotaHeader, SharenameRestypeShareCompProperties.ShareSetproperties.XMsShareQuotaHeader, SharenameRestypeShareCompProperties.ShareSetproperties.XMsShareQuotaHeader>,
-      IDivisionOperators<SharenameRestypeShareCompProperties.ShareSetproperties.XMsShareQuotaHeader, SharenameRestypeShareCompProperties.ShareSetproperties.XMsShareQuotaHeader, SharenameRestypeShareCompProperties.ShareSetproperties.XMsShareQuotaHeader>,
-      IIncrementOperators<SharenameRestypeShareCompProperties.ShareSetproperties.XMsShareQuotaHeader>,
-      IDecrementOperators<SharenameRestypeShareCompProperties.ShareSetproperties.XMsShareQuotaHeader>
+    : IJsonNumber<ShareNameRestypeShareCompProperties.ShareSetProperties.XMsShareQuotaHeader>,
+      IAdditionOperators<ShareNameRestypeShareCompProperties.ShareSetProperties.XMsShareQuotaHeader, ShareNameRestypeShareCompProperties.ShareSetProperties.XMsShareQuotaHeader, ShareNameRestypeShareCompProperties.ShareSetProperties.XMsShareQuotaHeader>,
+      ISubtractionOperators<ShareNameRestypeShareCompProperties.ShareSetProperties.XMsShareQuotaHeader, ShareNameRestypeShareCompProperties.ShareSetProperties.XMsShareQuotaHeader, ShareNameRestypeShareCompProperties.ShareSetProperties.XMsShareQuotaHeader>,
+      IMultiplyOperators<ShareNameRestypeShareCompProperties.ShareSetProperties.XMsShareQuotaHeader, ShareNameRestypeShareCompProperties.ShareSetProperties.XMsShareQuotaHeader, ShareNameRestypeShareCompProperties.ShareSetProperties.XMsShareQuotaHeader>,
+      IDivisionOperators<ShareNameRestypeShareCompProperties.ShareSetProperties.XMsShareQuotaHeader, ShareNameRestypeShareCompProperties.ShareSetProperties.XMsShareQuotaHeader, ShareNameRestypeShareCompProperties.ShareSetProperties.XMsShareQuotaHeader>,
+      IIncrementOperators<ShareNameRestypeShareCompProperties.ShareSetProperties.XMsShareQuotaHeader>,
+      IDecrementOperators<ShareNameRestypeShareCompProperties.ShareSetProperties.XMsShareQuotaHeader>
 #else
-    : IJsonNumber<SharenameRestypeShareCompProperties.ShareSetproperties.XMsShareQuotaHeader>
+    : IJsonNumber<ShareNameRestypeShareCompProperties.ShareSetProperties.XMsShareQuotaHeader>
 #endif
 {
     /// <summary>

@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameDirectoryRestypeDirectoryCompList;
+namespace ShareNameDirectoryRestypeDirectoryCompList;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct CompQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameDirectoryRestypeDirectoryCompList.CompQuery.json");
+            result = result.PushSchemaLocation("ShareNameDirectoryRestypeDirectoryCompList.CompQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;
@@ -69,7 +69,7 @@ public readonly partial struct CompQuery
     {
         /// <summary>
         /// Gets the string 'list'
-        /// as a <see cref="SharenameDirectoryRestypeDirectoryCompList.CompQuery"/>.
+        /// as a <see cref="ShareNameDirectoryRestypeDirectoryCompList.CompQuery"/>.
         /// </summary>
         public static CompQuery List { get; } = CorvusValidation.Enum.As<CompQuery>();
 

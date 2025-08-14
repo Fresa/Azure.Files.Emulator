@@ -1,29 +1,29 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment;
+namespace ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
     internal required Corvus.Json.JsonString Directory { get; init; }
-    internal required SharenameDirectoryRestypeDirectoryCompList.RestypeQuery Restype { get; init; }
-    internal required SharenameDirectoryRestypeDirectoryCompList.CompQuery Comp { get; init; }
+    internal required ShareNameDirectoryRestypeDirectoryCompList.RestypeQuery Restype { get; init; }
+    internal required ShareNameDirectoryRestypeDirectoryCompList.CompQuery Comp { get; init; }
     internal Corvus.Json.JsonString? Prefix { get; init; }
     internal Corvus.Json.JsonString? Sharesnapshot { get; init; }
     internal Corvus.Json.JsonString? Marker { get; init; }
-    internal SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.MaxresultsQuery? Maxresults { get; init; }
-    internal SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.TimeoutQuery? Timeout { get; init; }
-    internal required SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.XMsVersionHeader XMsVersion { get; init; }
-    internal SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery? Include { get; init; }
+    internal ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.MaxresultsQuery? Maxresults { get; init; }
+    internal ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.TimeoutQuery? Timeout { get; init; }
+    internal required ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.XMsVersionHeader XMsVersion { get; init; }
+    internal ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery? Include { get; init; }
     internal Corvus.Json.JsonBoolean? XMsFileExtendedInfo { get; init; }
     internal Corvus.Json.JsonBoolean? XMsAllowTrailingDot { get; init; }
-    internal SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
     public static Request Bind(HttpRequest request)
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -44,7 +44,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Restype = request.Bind<SharenameDirectoryRestypeDirectoryCompList.RestypeQuery>("""
+            Restype = request.Bind<ShareNameDirectoryRestypeDirectoryCompList.RestypeQuery>("""
 {
   "in": "query",
   "name": "restype",
@@ -56,7 +56,7 @@ internal partial class Request
   ]
 }
 """),
-            Comp = request.Bind<SharenameDirectoryRestypeDirectoryCompList.CompQuery>("""
+            Comp = request.Bind<ShareNameDirectoryRestypeDirectoryCompList.CompQuery>("""
 {
   "in": "query",
   "name": "comp",
@@ -95,7 +95,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Maxresults = request.Bind<SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.MaxresultsQuery>("""
+            Maxresults = request.Bind<ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.MaxresultsQuery>("""
 {
   "in": "query",
   "name": "maxresults",
@@ -105,7 +105,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Timeout = request.Bind<SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -115,7 +115,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -129,7 +129,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            Include = request.Bind<SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.IncludeQuery>("""
+            Include = request.Bind<ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.IncludeQuery>("""
 {
   "in": "query",
   "name": "include",
@@ -171,7 +171,7 @@ internal partial class Request
   "x-ms-client-name": "allowTrailingDot"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<SharenameDirectoryRestypeDirectoryCompList.DirectoryListfilesanddirectoriessegment.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

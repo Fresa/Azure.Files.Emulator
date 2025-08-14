@@ -1,14 +1,14 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace RestypeServiceCompProperties.ServiceGetproperties;
+namespace RestypeServiceCompProperties.ServiceGetProperties;
 internal partial class Request
 {
     internal required RestypeServiceCompProperties.RestypeQuery Restype { get; init; }
     internal required RestypeServiceCompProperties.CompQuery Comp { get; init; }
-    internal RestypeServiceCompProperties.ServiceGetproperties.TimeoutQuery? Timeout { get; init; }
-    internal required RestypeServiceCompProperties.ServiceGetproperties.XMsVersionHeader XMsVersion { get; init; }
-    internal RestypeServiceCompProperties.ServiceGetproperties.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery? Timeout { get; init; }
+    internal required RestypeServiceCompProperties.ServiceGetProperties.XMsVersionHeader XMsVersion { get; init; }
+    internal RestypeServiceCompProperties.ServiceGetProperties.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
     public static Request Bind(HttpRequest request)
     {
@@ -38,7 +38,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = request.Bind<RestypeServiceCompProperties.ServiceGetproperties.TimeoutQuery>("""
+            Timeout = request.Bind<RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -48,7 +48,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<RestypeServiceCompProperties.ServiceGetproperties.XMsVersionHeader>("""
+            XMsVersion = request.Bind<RestypeServiceCompProperties.ServiceGetProperties.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -62,7 +62,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsFileRequestIntent = request.Bind<RestypeServiceCompProperties.ServiceGetproperties.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<RestypeServiceCompProperties.ServiceGetProperties.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

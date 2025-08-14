@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
 
-namespace SharenameRestypeShareCompProperties.ShareSetproperties;
+namespace ShareNameRestypeShareCompProperties.ShareSetProperties;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
@@ -35,7 +35,7 @@ public readonly partial struct TimeoutQuery
                 result = result.UsingStack();
             }
 
-            result = result.PushSchemaLocation("SharenameRestypeShareCompProperties.ShareSetproperties.TimeoutQuery.json");
+            result = result.PushSchemaLocation("ShareNameRestypeShareCompProperties.ShareSetProperties.TimeoutQuery.json");
         }
 
         JsonValueKind valueKind = this.ValueKind;

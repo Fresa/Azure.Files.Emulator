@@ -1,4 +1,4 @@
-﻿namespace SharenameDirectoryFilenameCompCopy.FileStartcopy
+﻿namespace ShareNameDirectoryFileNameCompCopy.FileStartCopy
 {
     internal partial class Operation
     {

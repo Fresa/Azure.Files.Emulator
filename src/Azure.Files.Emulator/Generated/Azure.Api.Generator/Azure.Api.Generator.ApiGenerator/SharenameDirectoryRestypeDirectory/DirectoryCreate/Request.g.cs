@@ -1,20 +1,20 @@
 ﻿using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
-namespace SharenameDirectoryRestypeDirectory.DirectoryCreate;
+namespace ShareNameDirectoryRestypeDirectory.DirectoryCreate;
 internal partial class Request
 {
-    internal required Corvus.Json.JsonString Sharename { get; init; }
+    internal required Corvus.Json.JsonString ShareName { get; init; }
     internal required Corvus.Json.JsonString Directory { get; init; }
-    internal required SharenameDirectoryRestypeDirectory.RestypeQuery Restype { get; init; }
+    internal required ShareNameDirectoryRestypeDirectory.RestypeQuery Restype { get; init; }
     internal Corvus.Json.JsonBoolean? XMsAllowTrailingDot { get; init; }
     internal Corvus.Json.JsonString? Sharesnapshot { get; init; }
-    internal SharenameDirectoryRestypeDirectory.DirectoryCreate.TimeoutQuery? Timeout { get; init; }
-    internal required SharenameDirectoryRestypeDirectory.DirectoryCreate.XMsVersionHeader XMsVersion { get; init; }
-    internal SharenameDirectoryRestypeDirectory.DirectoryCreate.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal ShareNameDirectoryRestypeDirectory.DirectoryCreate.TimeoutQuery? Timeout { get; init; }
+    internal required ShareNameDirectoryRestypeDirectory.DirectoryCreate.XMsVersionHeader XMsVersion { get; init; }
+    internal ShareNameDirectoryRestypeDirectory.DirectoryCreate.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
     internal Corvus.Json.JsonString? XMsMeta { get; init; }
     internal Corvus.Json.JsonString? XMsFilePermission { get; init; }
-    internal SharenameDirectoryRestypeDirectory.DirectoryCreate.XMsFilePermissionFormatHeader? XMsFilePermissionFormat { get; init; }
+    internal ShareNameDirectoryRestypeDirectory.DirectoryCreate.XMsFilePermissionFormatHeader? XMsFilePermissionFormat { get; init; }
     internal Corvus.Json.JsonString? XMsFilePermissionKey { get; init; }
     internal Corvus.Json.JsonString? XMsFileAttributes { get; init; }
     internal Corvus.Json.JsonString? XMsFileCreationTime { get; init; }
@@ -28,7 +28,7 @@ internal partial class Request
     {
         return new Request
         {
-            Sharename = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = request.Bind<Corvus.Json.JsonString>("""
 {
   "in": "path",
   "name": "shareName",
@@ -49,7 +49,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Restype = request.Bind<SharenameDirectoryRestypeDirectory.RestypeQuery>("""
+            Restype = request.Bind<ShareNameDirectoryRestypeDirectory.RestypeQuery>("""
 {
   "in": "query",
   "name": "restype",
@@ -79,7 +79,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Timeout = request.Bind<SharenameDirectoryRestypeDirectory.DirectoryCreate.TimeoutQuery>("""
+            Timeout = request.Bind<ShareNameDirectoryRestypeDirectory.DirectoryCreate.TimeoutQuery>("""
 {
   "in": "query",
   "name": "timeout",
@@ -89,7 +89,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<SharenameDirectoryRestypeDirectory.DirectoryCreate.XMsVersionHeader>("""
+            XMsVersion = request.Bind<ShareNameDirectoryRestypeDirectory.DirectoryCreate.XMsVersionHeader>("""
 {
   "in": "header",
   "name": "x-ms-version",
@@ -103,7 +103,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsFileRequestIntent = request.Bind<SharenameDirectoryRestypeDirectory.DirectoryCreate.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = request.Bind<ShareNameDirectoryRestypeDirectory.DirectoryCreate.XMsFileRequestIntentHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-request-intent",
@@ -140,7 +140,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFilePermissionFormat = request.Bind<SharenameDirectoryRestypeDirectory.DirectoryCreate.XMsFilePermissionFormatHeader>("""
+            XMsFilePermissionFormat = request.Bind<ShareNameDirectoryRestypeDirectory.DirectoryCreate.XMsFilePermissionFormatHeader>("""
 {
   "in": "header",
   "name": "x-ms-file-permission-format",

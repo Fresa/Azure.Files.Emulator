@@ -15,16 +15,16 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameRestypeShare.ShareCreate;
+namespace ShareNameRestypeShare.ShareCreate;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct XMsFileRequestIntentHeader
 #if NET8_0_OR_GREATER
-    : IJsonString<SharenameRestypeShare.ShareCreate.XMsFileRequestIntentHeader>,
+    : IJsonString<ShareNameRestypeShare.ShareCreate.XMsFileRequestIntentHeader>,
       ISpanFormattable
 #else
-    : IJsonString<SharenameRestypeShare.ShareCreate.XMsFileRequestIntentHeader>
+    : IJsonString<ShareNameRestypeShare.ShareCreate.XMsFileRequestIntentHeader>
 #endif
 {
     /// <summary>

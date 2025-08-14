@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilename.FileCreate;
+namespace ShareNameDirectoryFileName.FileCreate;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryFilename.FileCreate.TimeoutQuery>,
-      IAdditionOperators<SharenameDirectoryFilename.FileCreate.TimeoutQuery, SharenameDirectoryFilename.FileCreate.TimeoutQuery, SharenameDirectoryFilename.FileCreate.TimeoutQuery>,
-      ISubtractionOperators<SharenameDirectoryFilename.FileCreate.TimeoutQuery, SharenameDirectoryFilename.FileCreate.TimeoutQuery, SharenameDirectoryFilename.FileCreate.TimeoutQuery>,
-      IMultiplyOperators<SharenameDirectoryFilename.FileCreate.TimeoutQuery, SharenameDirectoryFilename.FileCreate.TimeoutQuery, SharenameDirectoryFilename.FileCreate.TimeoutQuery>,
-      IDivisionOperators<SharenameDirectoryFilename.FileCreate.TimeoutQuery, SharenameDirectoryFilename.FileCreate.TimeoutQuery, SharenameDirectoryFilename.FileCreate.TimeoutQuery>,
-      IIncrementOperators<SharenameDirectoryFilename.FileCreate.TimeoutQuery>,
-      IDecrementOperators<SharenameDirectoryFilename.FileCreate.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileName.FileCreate.TimeoutQuery>,
+      IAdditionOperators<ShareNameDirectoryFileName.FileCreate.TimeoutQuery, ShareNameDirectoryFileName.FileCreate.TimeoutQuery, ShareNameDirectoryFileName.FileCreate.TimeoutQuery>,
+      ISubtractionOperators<ShareNameDirectoryFileName.FileCreate.TimeoutQuery, ShareNameDirectoryFileName.FileCreate.TimeoutQuery, ShareNameDirectoryFileName.FileCreate.TimeoutQuery>,
+      IMultiplyOperators<ShareNameDirectoryFileName.FileCreate.TimeoutQuery, ShareNameDirectoryFileName.FileCreate.TimeoutQuery, ShareNameDirectoryFileName.FileCreate.TimeoutQuery>,
+      IDivisionOperators<ShareNameDirectoryFileName.FileCreate.TimeoutQuery, ShareNameDirectoryFileName.FileCreate.TimeoutQuery, ShareNameDirectoryFileName.FileCreate.TimeoutQuery>,
+      IIncrementOperators<ShareNameDirectoryFileName.FileCreate.TimeoutQuery>,
+      IDecrementOperators<ShareNameDirectoryFileName.FileCreate.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameDirectoryFilename.FileCreate.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileName.FileCreate.TimeoutQuery>
 #endif
 {
     /// <summary>

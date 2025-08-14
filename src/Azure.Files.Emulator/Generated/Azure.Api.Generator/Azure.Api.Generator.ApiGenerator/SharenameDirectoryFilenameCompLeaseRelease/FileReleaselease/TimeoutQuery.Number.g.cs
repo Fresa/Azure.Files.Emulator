@@ -18,21 +18,21 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace SharenameDirectoryFilenameCompLeaseRelease.FileReleaselease;
+namespace ShareNameDirectoryFileNameCompLeaseRelease.FileReleaseLease;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
 public readonly partial struct TimeoutQuery
 #if NET8_0_OR_GREATER
-    : IJsonNumber<SharenameDirectoryFilenameCompLeaseRelease.FileReleaselease.TimeoutQuery>,
-      IAdditionOperators<SharenameDirectoryFilenameCompLeaseRelease.FileReleaselease.TimeoutQuery, SharenameDirectoryFilenameCompLeaseRelease.FileReleaselease.TimeoutQuery, SharenameDirectoryFilenameCompLeaseRelease.FileReleaselease.TimeoutQuery>,
-      ISubtractionOperators<SharenameDirectoryFilenameCompLeaseRelease.FileReleaselease.TimeoutQuery, SharenameDirectoryFilenameCompLeaseRelease.FileReleaselease.TimeoutQuery, SharenameDirectoryFilenameCompLeaseRelease.FileReleaselease.TimeoutQuery>,
-      IMultiplyOperators<SharenameDirectoryFilenameCompLeaseRelease.FileReleaselease.TimeoutQuery, SharenameDirectoryFilenameCompLeaseRelease.FileReleaselease.TimeoutQuery, SharenameDirectoryFilenameCompLeaseRelease.FileReleaselease.TimeoutQuery>,
-      IDivisionOperators<SharenameDirectoryFilenameCompLeaseRelease.FileReleaselease.TimeoutQuery, SharenameDirectoryFilenameCompLeaseRelease.FileReleaselease.TimeoutQuery, SharenameDirectoryFilenameCompLeaseRelease.FileReleaselease.TimeoutQuery>,
-      IIncrementOperators<SharenameDirectoryFilenameCompLeaseRelease.FileReleaselease.TimeoutQuery>,
-      IDecrementOperators<SharenameDirectoryFilenameCompLeaseRelease.FileReleaselease.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompLeaseRelease.FileReleaseLease.TimeoutQuery>,
+      IAdditionOperators<ShareNameDirectoryFileNameCompLeaseRelease.FileReleaseLease.TimeoutQuery, ShareNameDirectoryFileNameCompLeaseRelease.FileReleaseLease.TimeoutQuery, ShareNameDirectoryFileNameCompLeaseRelease.FileReleaseLease.TimeoutQuery>,
+      ISubtractionOperators<ShareNameDirectoryFileNameCompLeaseRelease.FileReleaseLease.TimeoutQuery, ShareNameDirectoryFileNameCompLeaseRelease.FileReleaseLease.TimeoutQuery, ShareNameDirectoryFileNameCompLeaseRelease.FileReleaseLease.TimeoutQuery>,
+      IMultiplyOperators<ShareNameDirectoryFileNameCompLeaseRelease.FileReleaseLease.TimeoutQuery, ShareNameDirectoryFileNameCompLeaseRelease.FileReleaseLease.TimeoutQuery, ShareNameDirectoryFileNameCompLeaseRelease.FileReleaseLease.TimeoutQuery>,
+      IDivisionOperators<ShareNameDirectoryFileNameCompLeaseRelease.FileReleaseLease.TimeoutQuery, ShareNameDirectoryFileNameCompLeaseRelease.FileReleaseLease.TimeoutQuery, ShareNameDirectoryFileNameCompLeaseRelease.FileReleaseLease.TimeoutQuery>,
+      IIncrementOperators<ShareNameDirectoryFileNameCompLeaseRelease.FileReleaseLease.TimeoutQuery>,
+      IDecrementOperators<ShareNameDirectoryFileNameCompLeaseRelease.FileReleaseLease.TimeoutQuery>
 #else
-    : IJsonNumber<SharenameDirectoryFilenameCompLeaseRelease.FileReleaselease.TimeoutQuery>
+    : IJsonNumber<ShareNameDirectoryFileNameCompLeaseRelease.FileReleaseLease.TimeoutQuery>
 #endif
 {
     /// <summary>
