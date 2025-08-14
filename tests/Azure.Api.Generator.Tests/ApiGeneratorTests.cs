@@ -26,7 +26,13 @@ public class ApiGeneratorTests
         var compilation = CSharpCompilation.Create(nameof(ApiGeneratorTests));
         driver.RunGeneratorsAndUpdateCompilation(compilation, out var newCompilation, out var diagnostics, TestContext.Current.CancellationToken);
 
-        diagnostics.Should().BeEmpty();
+        // Operation handler stubs should be generated with a warning
+        diagnostics.Should().AllSatisfy(diagnostic =>
+        {
+            diagnostic.Severity.Should().Be(DiagnosticSeverity.Warning);
+            diagnostic.Id.Should().Be("AF1001");
+        }); 
+
         var generatedFiles = newCompilation.SyntaxTrees
             .Select(t => Path.GetFileName(t.FilePath))
             .ToArray();
