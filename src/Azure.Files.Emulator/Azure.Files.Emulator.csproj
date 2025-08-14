@@ -10,10 +10,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.g.cs" />
+        <Compile Remove="Generated/**/*.g.cs" />
     </ItemGroup>
 
-    <Target Name="CleanSourceGeneratedFiles" BeforeTargets="BeforeBuild" DependsOnTargets="$(BeforeBuildDependsOn)">
+    <Target Name="CleanSourceGeneratedFiles" 
+            BeforeTargets="BeforeBuild" 
+            DependsOnTargets="$(BeforeBuildDependsOn)" 
+            Condition="'$(EmitCompilerGeneratedFiles)'=='true'">
         <RemoveDir Directories="$(CompilerGeneratedFilesOutputPath)" />
     </Target>
     
@@ -30,7 +33,9 @@
         <AdditionalFiles Include="..\..\Microsoft.FileStorage.ApiSpecs\stable\2025-11-05\file.json"/>
     </ItemGroup>
 
-    <Target Name="CopyMissingOperationHandlers" AfterTargets="Build">
+    <Target Name="CopyMissingOperationHandlers" 
+            AfterTargets="Build" 
+            Condition="'$(EmitCompilerGeneratedFiles)'=='true'">
         <ItemGroup>
             <TextFiles Include="$(CompilerGeneratedFilesOutputPath)\**\Operation.Handler.g.cs" />
         </ItemGroup>
