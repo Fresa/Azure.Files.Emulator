@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
 
 namespace Azure.Api.Generator;
@@ -28,11 +27,11 @@ internal sealed class EndpointGenerator(Compilation compilation)
               """;
         
         var path = @namespace.Replace('.', '/');
-        var found = compilation.GetSymbolsWithName("Operation", SymbolFilter.Type)
+        var hasImplementedHandleMethod = compilation.GetSymbolsWithName("Operation", SymbolFilter.Type)
             .OfType<INamedTypeSymbol>()
             .Where(symbol => symbol.ContainingNamespace.ToDisplayString() == @namespace)
-            .Any(HasHandleMethod);
-        if (!found)
+            .Any(HasImplementedHandleMethod);
+        if (!hasImplementedHandleMethod)
         {
             _missingHandlers.Add((@namespace, path));
         }
@@ -44,19 +43,18 @@ internal sealed class EndpointGenerator(Compilation compilation)
 
     private const string HandleMethodSignature =
         "internal partial Task<Response> HandleAsync(Request request, CancellationToken cancellationToken)";
-    private static bool HasHandleMethod(INamedTypeSymbol? typeSymbol) =>
-        typeSymbol?.GetMembers("HandleAsync")
-            .OfType<IMethodSymbol>()
+
+    private static bool HasImplementedHandleMethod(INamedTypeSymbol typeSymbol)
+    {
+        var members = typeSymbol.GetMembers("HandleAsync");
+        return members.OfType<IMethodSymbol>()
             .Any(method =>
-                method.Parameters.Length == 2 &&
-                //method.PartialImplementationPart != null &&
-                method.DeclaringSyntaxReferences.Any(reference =>
-                {
-                    var syntax = reference.GetSyntax() as MethodDeclarationSyntax;
-                    return syntax?.Body != null || syntax?.ExpressionBody != null;
-                }) &&
-                method.Parameters[0].Type.ToDisplayString() == "Request" &&
-                method.Parameters[1].Type.ToDisplayString() == "CancellationToken") ?? false;
+                HasImplementation(method) &&
+                method.Parameters is [{ Type.Name: "Request" }, { Type.Name: "CancellationToken" }]);
+    }
+
+    private static bool HasImplementation(IMethodSymbol method) =>
+        !method.IsPartialDefinition || method.PartialImplementationPart != null;
 
     internal bool TryGenerateMissingHandlers(
         out (SourceCode SourceCode, Diagnostic Diagnostic)[] missingHandlers)
