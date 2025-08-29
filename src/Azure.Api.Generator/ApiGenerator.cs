@@ -13,11 +13,7 @@ using Corvus.Json.CodeGeneration;
 using Corvus.Json.CodeGeneration.CSharp;
 using Corvus.Json.SourceGeneratorTools;
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
-using Microsoft.OpenApi.Models;
-using Microsoft.OpenApi.Readers;
 
 namespace Azure.Api.Generator;
 
@@ -33,7 +29,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
 
         var provider = context.AdditionalTextsProvider
             .Where(additionalText => Path.GetFileName(additionalText.Path).EndsWith(".json"))
-            .Select((text, token) => new OpenApiStreamReader().Read(text.AsStream(), out _))
+            .Select((text, token) => Microsoft.OpenApi.OpenApiDocument.Load(text.AsStream(), "json").Document ?? throw new InvalidOperationException($"Could not load OpenAPI document {text.Path}"))
             .Collect();
         
         var openapiDocumentProvider = provider.Select((array, _) => array.First());
@@ -66,10 +62,10 @@ public sealed class ApiGenerator : IIncrementalGenerator
             ));
 
         context.RegisterSourceOutput(openApiProvider,
-            WithExceptionReporting<(SourceGeneratorHelpers.GlobalOptions, OpenApiDocument, Compilation, string?)>(GenerateCode));
+            WithExceptionReporting<(SourceGeneratorHelpers.GlobalOptions, Microsoft.OpenApi.OpenApiDocument, Compilation, string?)>(GenerateCode));
     }
 
-    private static void GenerateCode(SourceProductionContext context, (SourceGeneratorHelpers.GlobalOptions Options, OpenApiDocument OpenApiDocument, Compilation Compilation, string? ProjectDir) generatorContext)
+    private static void GenerateCode(SourceProductionContext context, (SourceGeneratorHelpers.GlobalOptions Options, Microsoft.OpenApi.OpenApiDocument OpenApiDocument, Compilation Compilation, string? ProjectDir) generatorContext)
     {
         var openApi = generatorContext.OpenApiDocument;
         var globalOptions = generatorContext.Options;
@@ -82,7 +78,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
             var pathItem = path.Value;
             var entityType = pathExpression.ToPascalCase();
             var parameterGenerators = new Dictionary<string, ParameterGenerator>();
-            foreach (var parameter in pathItem.Parameters)
+            foreach (var parameter in pathItem.Parameters ?? [])
             {
                 var schema = new InMemoryAdditionalText(
                     $"/{entityType}.{parameter.GetTypeDeclarationIdentifier()}.json",
@@ -184,7 +180,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
         new(
             id: "CRV1001",
             title: "JSON Schema Type Generator Error",
-            messageFormat: "Error generating C# code: {0}",
+            messageFormat: "Error generating C# code: {0}: {1}",
             category: "JsonSchemaCodeGenerator",
             DiagnosticSeverity.Error,
             isEnabledByDefault: true);

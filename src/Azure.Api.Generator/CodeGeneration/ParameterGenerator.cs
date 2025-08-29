@@ -2,12 +2,11 @@
 using Azure.Api.Generator.Extensions;
 using Corvus.Json.CodeGeneration;
 using Corvus.Json.CodeGeneration.CSharp;
-using Microsoft.OpenApi.Models;
-using Microsoft.OpenApi.Writers;
+using Microsoft.OpenApi;
 
 namespace Azure.Api.Generator.CodeGeneration;
 
-internal sealed class ParameterGenerator(TypeDeclaration typeDeclaration, OpenApiParameter parameter)
+internal sealed class ParameterGenerator(TypeDeclaration typeDeclaration, IOpenApiParameter parameter)
 {
     private string FullyQualifiedTypeName =>
         $"{FullyQualifiedTypeDeclarationIdentifier}{(parameter.Required ? "" : "?")}";
@@ -26,8 +25,11 @@ internal sealed class ParameterGenerator(TypeDeclaration typeDeclaration, OpenAp
     internal string GenerateRequestBindingDirective()
     {
         using var textWriter = new StringWriter();
-        var jsonWriter = new OpenApiJsonWriter(textWriter);
-        parameter.SerializeAsV2WithoutReference(jsonWriter);
+        var jsonWriter = new OpenApiJsonWriter(textWriter, new OpenApiJsonWriterSettings()
+        {
+            InlineLocalReferences = true
+        });
+        parameter.SerializeAsV2(jsonWriter);
         textWriter.Flush();
 
         return $""""

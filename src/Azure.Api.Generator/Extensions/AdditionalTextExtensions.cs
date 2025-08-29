@@ -6,14 +6,14 @@ namespace Azure.Api.Generator.Extensions;
 
 internal static class AdditionalTextExtensions
 {
-    internal static Stream AsStream(this AdditionalText text)
+    internal static MemoryStream AsStream(this AdditionalText text)
     {
         var content = text.GetText();
+        var stream = new MemoryStream();
         if (content is null)
         {
-            return Stream.Null;
+            return stream;
         }
-        var stream = new MemoryStream();
 
         using (var writer = new StreamWriter(stream, Encoding.UTF8, 1024, true))
         {
