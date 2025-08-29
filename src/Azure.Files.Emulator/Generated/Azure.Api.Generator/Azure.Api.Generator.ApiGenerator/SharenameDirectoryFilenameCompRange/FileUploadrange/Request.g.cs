@@ -20,6 +20,28 @@ internal partial class Request
     internal ShareNameDirectoryFileNameCompRange.FileUploadRange.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
     internal Corvus.Json.JsonString? XMsStructuredBody { get; init; }
     internal Corvus.Json.JsonInt64? XMsStructuredContentLength { get; init; }
+    internal RequestContent Body { get; init; }
+
+    internal sealed class RequestContent
+    {
+        internal ShareNameDirectoryFileNameCompRange.FileUploadRange.RequestBodies.ApplicationXml? ApplicationXml { get; private set; }
+
+        internal static RequestContent? Bind(HttpRequest request)
+        {
+            var content = new RequestContent();
+            var contentType = request.ContentType;
+            switch (contentType)
+            {
+                case "application/xml":
+                    content.ApplicationXml = request.BindBody<ShareNameDirectoryFileNameCompRange.FileUploadRange.RequestBodies.ApplicationXml>().AsOptional();
+                    break;
+                default:
+                    throw new BadHttpRequestException($"Request body does not support content type {contentType}");
+            }
+
+            return content;
+        }
+    }
 
     public static Request Bind(HttpRequest request)
     {
@@ -222,6 +244,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
+            Body = RequestContent.Bind(request)
         };
     }
 }

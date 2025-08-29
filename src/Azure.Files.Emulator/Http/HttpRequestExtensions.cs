@@ -33,7 +33,20 @@ internal static class HttpRequestExtensions
                 Parse<T>(parameter, stringValue),
             _ => T.Undefined
         };
-        
+
+        return Validate(value);
+    }
+
+    internal static T BindBody<T>(this HttpRequest request)
+        where T : struct, IJsonValue<T>
+    {
+        var value = T.Parse(request.Body);
+
+        return Validate(value);
+    }
+
+    private static T Validate<T>(T value) where T : struct, IJsonValue<T>
+    {
         var validationContext = ValidationContext.ValidContext;
         value.Validate(validationContext);
         if (validationContext.IsValid)
@@ -49,7 +62,7 @@ internal static class HttpRequestExtensions
             });
 
         throw new BadHttpRequestException($$"""
-                                            Object of type {{typeof(T)}} could not be parsed from parameter '{{parameter?.Name}}'.
+                                            Object of type {{typeof(T)}} could not be parsed'.
                                             "Validation results: {{validationResults}}
                                             """);
     }

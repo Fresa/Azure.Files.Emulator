@@ -136,13 +136,13 @@ internal partial class Request
   "description": "Include this parameter to specify one or more datasets to include in the response.",
   "type": "array",
   "items": {
+    "type": "string",
     "enum": [
       "Timestamps",
       "Etag",
       "Attributes",
       "PermissionKey"
     ],
-    "type": "string",
     "x-ms-enum": {
       "name": "ListFilesIncludeType",
       "modelAsString": false

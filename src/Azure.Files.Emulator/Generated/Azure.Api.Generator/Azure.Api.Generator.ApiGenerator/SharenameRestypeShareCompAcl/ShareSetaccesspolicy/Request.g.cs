@@ -11,6 +11,28 @@ internal partial class Request
     internal required ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.XMsVersionHeader XMsVersion { get; init; }
     internal Corvus.Json.JsonString? XMsLeaseId { get; init; }
     internal ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal RequestContent Body { get; init; }
+
+    internal sealed class RequestContent
+    {
+        internal ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.RequestBodies.ApplicationXml? ApplicationXml { get; private set; }
+
+        internal static RequestContent? Bind(HttpRequest request)
+        {
+            var content = new RequestContent();
+            var contentType = request.ContentType;
+            switch (contentType)
+            {
+                case "application/xml":
+                    content.ApplicationXml = request.BindBody<ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.RequestBodies.ApplicationXml>().AsOptional();
+                    break;
+                default:
+                    throw new BadHttpRequestException($"Request body does not support content type {contentType}");
+            }
+
+            return content;
+        }
+    }
 
     public static Request Bind(HttpRequest request)
     {
@@ -103,6 +125,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
+            Body = RequestContent.Bind(request)
         };
     }
 }

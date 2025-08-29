@@ -12,6 +12,28 @@ internal partial class Request
     internal ShareNameRestypeShareCompFilepermission.ShareCreatePermission.TimeoutQuery? Timeout { get; init; }
     internal required ShareNameRestypeShareCompFilepermission.ShareCreatePermission.XMsVersionHeader XMsVersion { get; init; }
     internal ShareNameRestypeShareCompFilepermission.ShareCreatePermission.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
+    internal required RequestContent? Body { get; init; }
+
+    internal sealed class RequestContent
+    {
+        internal ShareNameRestypeShareCompFilepermission.ShareCreatePermission.RequestBodies.ApplicationXml? ApplicationXml { get; private set; }
+
+        internal static RequestContent? Bind(HttpRequest request)
+        {
+            var content = new RequestContent();
+            var contentType = request.ContentType;
+            switch (contentType)
+            {
+                case "application/xml":
+                    content.ApplicationXml = request.BindBody<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.RequestBodies.ApplicationXml>().AsOptional();
+                    break;
+                default:
+                    throw new BadHttpRequestException($"Request body does not support content type {contentType}");
+            }
+
+            return content;
+        }
+    }
 
     public static Request Bind(HttpRequest request)
     {
@@ -120,6 +142,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
+            Body = RequestContent.Bind(request)
         };
     }
 }

@@ -117,8 +117,37 @@ public sealed class ApiGenerator : IIncrementalGenerator
                     parameterGenerators[parameter.Name] = new ParameterGenerator(typeDeclaration, parameter);
                 }
 
+                var requestBodyNamespace = @namespace + ".RequestBodies";
+                var body = operation.RequestBody;
+                var requestBodyGenerator = RequestBodyGenerator.Empty;
+                if (body is not null)
+                {
+                    var contentGenerators = body.Content.Select(pair =>
+                    {
+                        var requestBodyContent = pair.Value;
+                        var bodyTypeDeclarationIdentifier = pair.Key.ToPascalCase();
+
+                        var schema = new InMemoryAdditionalText(
+                            $"/{requestBodyNamespace}.{bodyTypeDeclarationIdentifier}.json",
+                            requestBodyContent.Schema.SerializeToJson());
+
+                        var contentSpecification = new SourceGeneratorHelpers.GenerationSpecification(
+                            ns: requestBodyNamespace,
+                            typeName: bodyTypeDeclarationIdentifier,
+                            location: schema.Path,
+                            rebaseToRootPath: false);
+
+                        var typeDeclaration = GenerateCode(context, contentSpecification, schema, globalOptions);
+                        return new RequestBodyContentGenerator(pair.Key, typeDeclaration);
+                    }).ToList();
+                    requestBodyGenerator = new RequestBodyGenerator(
+                        body,
+                        contentGenerators);
+                }
+
                 var requestSource =
                     $$"""
+                        #nullable enable
                         using Azure.Files.Emulator.Http;
                         using Corvus.Json;
                         
@@ -129,15 +158,20 @@ public sealed class ApiGenerator : IIncrementalGenerator
                             {{parameterGenerators.Values.Aggregate(new StringBuilder(),(builder, generator) => 
                                 builder.AppendLine(generator.GenerateRequestProperty()))}}
 
+                            {{requestBodyGenerator.GenerateRequestProperty("Body")}}
+                                                      
                             public static Request Bind(HttpRequest request)
                             {
                                 return new Request
                                 {
                                     {{parameterGenerators.Values.Aggregate(new StringBuilder(),(builder, generator) => 
                                         builder.AppendLine(generator.GenerateRequestBindingDirective()))}}
+                                        
+                                    {{requestBodyGenerator.GenerateRequestBindingDirective("Body")}}
                                 };
                             }
                         }
+                        #nullable restore
                       """;
                 var requestSourceCode = new SourceCode(
                     $"{directory}/Request.g.cs",

@@ -64,12 +64,12 @@ internal partial class Request
   "description": "Include this parameter to specify one or more datasets to include in the response.",
   "type": "array",
   "items": {
+    "type": "string",
     "enum": [
       "snapshots",
       "metadata",
       "deleted"
     ],
-    "type": "string",
     "x-ms-enum": {
       "name": "ListSharesIncludeType",
       "modelAsString": false
