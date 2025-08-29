@@ -1,4 +1,5 @@
-﻿using Azure.Files.Emulator.Http;
+﻿#nullable enable
+using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
 namespace RestypeServiceCompProperties.ServiceSetProperties;
@@ -9,21 +10,23 @@ internal partial class Request
     internal RestypeServiceCompProperties.ServiceSetProperties.TimeoutQuery? Timeout { get; init; }
     internal required RestypeServiceCompProperties.ServiceSetProperties.XMsVersionHeader XMsVersion { get; init; }
     internal RestypeServiceCompProperties.ServiceSetProperties.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
-    internal required RequestContent? Body { get; init; }
+    internal required RequestContent Body { get; init; }
 
     internal sealed class RequestContent
     {
         internal RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml? ApplicationXml { get; private set; }
 
-        internal static RequestContent? Bind(HttpRequest request)
+        internal static RequestContent Bind(HttpRequest request)
         {
             var content = new RequestContent();
             var contentType = request.ContentType;
             switch (contentType)
             {
                 case "application/xml":
-                    content.ApplicationXml = request.BindBody<RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml>().AsOptional();
-                    break;
+                    return new RequestContent
+                    {
+                        ApplicationXml = request.BindBody<RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml>().AsOptional()
+                    };
                 default:
                     throw new BadHttpRequestException($"Request body does not support content type {contentType}");
             }
@@ -104,3 +107,5 @@ internal partial class Request
         };
     }
 }
+#nullable restore
+

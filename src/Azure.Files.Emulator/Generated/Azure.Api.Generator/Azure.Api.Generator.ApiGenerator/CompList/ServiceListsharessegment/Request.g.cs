@@ -1,4 +1,5 @@
-﻿using Azure.Files.Emulator.Http;
+﻿#nullable enable
+using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
 namespace CompList.ServiceListSharesSegment;
@@ -122,3 +123,5 @@ internal partial class Request
         };
     }
 }
+#nullable restore
+

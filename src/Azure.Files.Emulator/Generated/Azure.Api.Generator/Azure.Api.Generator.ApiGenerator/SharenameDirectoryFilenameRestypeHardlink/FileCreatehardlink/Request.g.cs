@@ -1,4 +1,5 @@
-﻿using Azure.Files.Emulator.Http;
+﻿#nullable enable
+using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
 namespace ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink;
@@ -155,3 +156,5 @@ internal partial class Request
         };
     }
 }
+#nullable restore
+

@@ -1,4 +1,5 @@
-﻿using Azure.Files.Emulator.Http;
+﻿#nullable enable
+using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
 namespace ShareNameDirectoryFileNameRestypeSymboliclink.FileGetSymbolicLink;
@@ -124,3 +125,5 @@ internal partial class Request
         };
     }
 }
+#nullable restore
+

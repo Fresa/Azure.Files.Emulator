@@ -1,4 +1,5 @@
-﻿using Azure.Files.Emulator.Http;
+﻿#nullable enable
+using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
 namespace ShareNameRestypeShareCompAcl.ShareSetAccessPolicy;
@@ -11,7 +12,7 @@ internal partial class Request
     internal required ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.XMsVersionHeader XMsVersion { get; init; }
     internal Corvus.Json.JsonString? XMsLeaseId { get; init; }
     internal ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
-    internal RequestContent Body { get; init; }
+    internal RequestContent? Body { get; init; }
 
     internal sealed class RequestContent
     {
@@ -24,8 +25,12 @@ internal partial class Request
             switch (contentType)
             {
                 case "application/xml":
-                    content.ApplicationXml = request.BindBody<ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.RequestBodies.ApplicationXml>().AsOptional();
-                    break;
+                    return new RequestContent
+                    {
+                        ApplicationXml = request.BindBody<ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.RequestBodies.ApplicationXml>().AsOptional()
+                    };
+                case "":
+                    return null;
                 default:
                     throw new BadHttpRequestException($"Request body does not support content type {contentType}");
             }
@@ -129,3 +134,5 @@ internal partial class Request
         };
     }
 }
+#nullable restore
+

@@ -1,4 +1,5 @@
-﻿using Azure.Files.Emulator.Http;
+﻿#nullable enable
+using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
 namespace ShareNameDirectoryFileNameCompRange.FileUploadRange;
@@ -20,7 +21,7 @@ internal partial class Request
     internal ShareNameDirectoryFileNameCompRange.FileUploadRange.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
     internal Corvus.Json.JsonString? XMsStructuredBody { get; init; }
     internal Corvus.Json.JsonInt64? XMsStructuredContentLength { get; init; }
-    internal RequestContent Body { get; init; }
+    internal RequestContent? Body { get; init; }
 
     internal sealed class RequestContent
     {
@@ -33,8 +34,12 @@ internal partial class Request
             switch (contentType)
             {
                 case "application/xml":
-                    content.ApplicationXml = request.BindBody<ShareNameDirectoryFileNameCompRange.FileUploadRange.RequestBodies.ApplicationXml>().AsOptional();
-                    break;
+                    return new RequestContent
+                    {
+                        ApplicationXml = request.BindBody<ShareNameDirectoryFileNameCompRange.FileUploadRange.RequestBodies.ApplicationXml>().AsOptional()
+                    };
+                case "":
+                    return null;
                 default:
                     throw new BadHttpRequestException($"Request body does not support content type {contentType}");
             }
@@ -248,3 +253,5 @@ internal partial class Request
         };
     }
 }
+#nullable restore
+

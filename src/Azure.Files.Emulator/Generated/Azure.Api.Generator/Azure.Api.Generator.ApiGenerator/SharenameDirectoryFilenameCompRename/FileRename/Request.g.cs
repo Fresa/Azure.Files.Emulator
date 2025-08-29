@@ -1,4 +1,5 @@
-﻿using Azure.Files.Emulator.Http;
+﻿#nullable enable
+using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
 namespace ShareNameDirectoryFileNameCompRename.FileRename;
@@ -308,3 +309,5 @@ internal partial class Request
         };
     }
 }
+#nullable restore
+

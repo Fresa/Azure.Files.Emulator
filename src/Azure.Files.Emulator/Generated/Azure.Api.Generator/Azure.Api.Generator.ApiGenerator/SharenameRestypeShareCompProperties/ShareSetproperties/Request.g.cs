@@ -1,4 +1,5 @@
-﻿using Azure.Files.Emulator.Http;
+﻿#nullable enable
+using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
 namespace ShareNameRestypeShareCompProperties.ShareSetProperties;
@@ -228,3 +229,5 @@ internal partial class Request
         };
     }
 }
+#nullable restore
+

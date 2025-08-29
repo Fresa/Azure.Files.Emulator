@@ -1,4 +1,5 @@
-﻿using Azure.Files.Emulator.Http;
+﻿#nullable enable
+using Azure.Files.Emulator.Http;
 using Corvus.Json;
 
 namespace ShareNameRestypeShareCompUndelete.ShareRestore;
@@ -125,3 +126,5 @@ internal partial class Request
         };
     }
 }
+#nullable restore
+

@@ -19,7 +19,7 @@ internal sealed class RequestBodyContentGenerator(string contentType, TypeDeclar
     {
         return $"""
                  {_propertyName} = 
-                    request.BindBody<{FullyQualifiedTypeDeclarationIdentifier}>().AsOptional();
+                    request.BindBody<{FullyQualifiedTypeDeclarationIdentifier}>().AsOptional()
                 """;
     }
                  
