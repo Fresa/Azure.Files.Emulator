@@ -57,7 +57,8 @@ internal sealed class RequestBodyGenerator
                     
                     internal static RequestContent{{(_body.Required ? "" : "?")}} Bind(HttpRequest request)
                     {
-                        switch (request.ContentType) 
+                        var requestContentType = request.ContentType;
+                        switch (requestContentType) 
                         {
                             {{_contentGenerators.Aggregate(new StringBuilder(), (builder, content) => builder.AppendLine(
                                 $$"""
@@ -74,7 +75,7 @@ internal sealed class RequestBodyGenerator
                                     return null;
                                 """)}}
                                 default:
-                                    throw new BadHttpRequestException($"Request body does not support content type {contentType}");
+                                    throw new BadHttpRequestException($"Request body does not support content type {requestContentType}");
                         }
                     }
                  }

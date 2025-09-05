@@ -18,9 +18,8 @@ internal partial class Request
 
         internal static RequestContent Bind(HttpRequest request)
         {
-            var content = new RequestContent();
-            var contentType = request.ContentType;
-            switch (contentType)
+            var requestContentType = request.ContentType;
+            switch (requestContentType)
             {
                 case "application/xml":
                     return new RequestContent
@@ -28,10 +27,8 @@ internal partial class Request
                         ApplicationXml = request.BindBody<RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml>().AsOptional()
                     };
                 default:
-                    throw new BadHttpRequestException($"Request body does not support content type {contentType}");
+                    throw new BadHttpRequestException($"Request body does not support content type {requestContentType}");
             }
-
-            return content;
         }
     }
 
