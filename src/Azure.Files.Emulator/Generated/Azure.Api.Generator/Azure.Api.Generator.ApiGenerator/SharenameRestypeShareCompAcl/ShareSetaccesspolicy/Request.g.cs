@@ -21,8 +21,8 @@ internal partial class Request
         internal static RequestContent? Bind(HttpRequest request)
         {
             var requestContentType = request.ContentType;
-            var requestContentMediaType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse(requestContentType);
-            switch (requestContentMediaType.MediaType?.ToLower())
+            var requestContentMediaType = requestContentType == null ? null : System.Net.Http.Headers.MediaTypeHeaderValue.Parse(requestContentType);
+            switch (requestContentMediaType?.MediaType?.ToLower())
             {
                 case "application/xml":
                     return new RequestContent
