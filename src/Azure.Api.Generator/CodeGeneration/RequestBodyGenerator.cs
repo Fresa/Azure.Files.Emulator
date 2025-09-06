@@ -58,11 +58,13 @@ internal sealed class RequestBodyGenerator
                     internal static RequestContent{{(_body.Required ? "" : "?")}} Bind(HttpRequest request)
                     {
                         var requestContentType = request.ContentType;
-                        switch (requestContentType) 
+                        var requestContentMediaType = requestContentType == null ? null : System.Net.Http.Headers.MediaTypeHeaderValue.Parse(requestContentType);
+                 
+                        switch (requestContentMediaType?.MediaType?.ToLower()) 
                         {
                             {{_contentGenerators.Aggregate(new StringBuilder(), (builder, content) => builder.AppendLine(
                                 $$"""
-                                  case "{{content.ContentType}}":
+                                  case "{{content.ContentType.ToLower()}}":
                                       return new RequestContent
                                       {
                                           {{content.GenerateRequestBindingDirective()}}
