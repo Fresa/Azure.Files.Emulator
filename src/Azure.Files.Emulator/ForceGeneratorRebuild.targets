@@ -1,0 +1,5 @@
+<Project>
+  <Target Name="ForceGeneratorRebuild" BeforeTargets="CoreCompile">
+    <Touch Files="@(Compile)" AlwaysCreate="true" />
+  </Target>
+</Project>
