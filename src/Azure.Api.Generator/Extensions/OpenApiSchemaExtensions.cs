@@ -5,8 +5,11 @@ namespace Azure.Api.Generator.Extensions;
 
 internal static class OpenApiSchemaExtensions
 {
-    internal static string SerializeToJson(this IOpenApiSchema schema)
+    internal static string SerializeToJson(this IOpenApiSchema? schema)
     {
+        if (schema is null)
+            return string.Empty;
+        
         using var schemaWriter = new StringWriter();
         var openApiSchemaWriter = new OpenApiJsonWriter(schemaWriter, new OpenApiWriterSettings
         {
