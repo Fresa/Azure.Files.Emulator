@@ -176,10 +176,10 @@ public sealed class ApiGenerator : IIncrementalGenerator
                     $"{directory}/Request.g.cs",
                     requestSource);
                 requestSourceCode.AddTo(context);
-                var responseBodyNamespace = @namespace + ".ResponseBodies";
+                var responseContentNamespace = @namespace + ".Content";
 
                 var responses = operation.Responses;
-                var responseGenerator = ResponseGenerator.Empty;
+                var responseGenerator = ResponseGenerator.Any;
                 if (responses is not null)
                 {
                     var responseBodyGenerators = responses.Select(pair =>
@@ -192,11 +192,11 @@ public sealed class ApiGenerator : IIncrementalGenerator
                             var content = valuePair.Value;
                             var contentType = valuePair.Key.ToPascalCase();
                             var schema = new InMemoryAdditionalText(
-                                $"C:/{responseBodyNamespace}.{responseStatusCodePattern}.{contentType}.json",
+                                $"/{responseContentNamespace}.{responseStatusCodePattern}.{contentType}.json",
                                 content.Schema.SerializeToJson());
 
                             var contentSpecification = new SourceGeneratorHelpers.GenerationSpecification(
-                                ns: $"{responseBodyNamespace}._{responseStatusCodePattern}",
+                                ns: $"{responseContentNamespace}._{responseStatusCodePattern}",
                                 typeName: contentType,
                                 location: schema.Path,
                                 rebaseToRootPath: false);
@@ -206,9 +206,9 @@ public sealed class ApiGenerator : IIncrementalGenerator
                         }).ToList();
                         if (responseBodies is null)
                         {
-                            return ResponseBodyGenerator.Any(responseStatusCodePattern);
+                            return ResponseContentGenerator.Any(responseStatusCodePattern);
                         }
-                        return new ResponseBodyGenerator(
+                        return new ResponseContentGenerator(
                             responseStatusCodePattern,
                             responseBodies);
                     }).ToList();
@@ -216,17 +216,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
                         responseBodyGenerators);
                 }
                 var responseSource =
-                    $$"""
-                        using Azure.Files.Emulator.Http;
-                        using Corvus.Json;
-                        
-                        namespace {{@namespace}};
-                        
-                        internal partial class Response
-                        {
-                            {{responseGenerator.GenerateResponseMethods()}}
-                        }
-                      """;
+                    responseGenerator.GenerateResponseClass(@namespace);
                 var responseSourceCode = new SourceCode(
                     $"{directory}/Response.g.cs",
                     responseSource);

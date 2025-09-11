@@ -1,39 +1,26 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using Azure.Api.Generator.Extensions;
 
 namespace Azure.Api.Generator.CodeGeneration;
 
-internal sealed class ResponseGenerator
+internal sealed class ResponseGenerator(List<ResponseContentGenerator> responseBodyGenerators)
 {
-    private readonly List<ResponseBodyGenerator>? _responseBodyGenerators;
+    public static readonly ResponseGenerator Any = new([ResponseContentGenerator.Any()]);
 
-    
-    private ResponseGenerator()
+    public string GenerateResponseClass(string @namespace)
     {
-        
-    }
-    public ResponseGenerator(
-        List<ResponseBodyGenerator> responseBodyGenerators)
-    {
-        _responseBodyGenerators = responseBodyGenerators;
-    }
-
-    public static ResponseGenerator Empty = new();
-
-    public string GenerateResponseMethods()
-    {
-        if (_responseBodyGenerators is null)
-        {
-            return
-                """
-                internal static Response Any() => new AnyResponse();
+        return
+            $$"""
+                using Azure.Files.Emulator.Http;
+                using Corvus.Json;
                 
-                internal sealed class AnyResponse : Response
+                namespace {{@namespace}};
+                
+                internal abstract partial class Response
                 {
+                    {{responseBodyGenerators.AggregateToString(generator => generator.GenerateResponseContent())}}
                 }
-                """;
-        }
-        return $$"""
-                 internal static Response NotImplemented => throw new NotImplementedException();
-                 """;
+              """;
     }
 }

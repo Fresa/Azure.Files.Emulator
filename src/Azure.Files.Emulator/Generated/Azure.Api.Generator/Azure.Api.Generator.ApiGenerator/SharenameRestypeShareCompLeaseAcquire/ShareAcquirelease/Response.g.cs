@@ -2,7 +2,13 @@
 using Corvus.Json;
 
 namespace ShareNameRestypeShareCompLeaseAcquire.ShareAcquireLease;
-internal partial class Response
+internal abstract partial class Response
 {
-    internal static Response NotImplemented => throw new NotImplementedException();
+    internal sealed class Content201 : Response
+    {
+    }
+
+    internal sealed class ContentDefault : Response
+    {
+    }
 }

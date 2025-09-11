@@ -2,7 +2,17 @@
 using Corvus.Json;
 
 namespace ShareNameDirectoryFileName.FileDownload;
-internal partial class Response
+internal abstract partial class Response
 {
-    internal static Response NotImplemented => throw new NotImplementedException();
+    internal sealed class Content200 : Response
+    {
+    }
+
+    internal sealed class Content206 : Response
+    {
+    }
+
+    internal sealed class ContentDefault : Response
+    {
+    }
 }
