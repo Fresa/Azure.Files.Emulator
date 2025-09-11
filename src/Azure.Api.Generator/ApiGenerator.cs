@@ -101,7 +101,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
                 var @namespace = $"{entityType}.{operationId}";
                 var directory = @namespace.Replace('.', '/');
                 
-                foreach (var parameter in operation.Parameters)
+                foreach (var parameter in operation.GetParameters())
                 {
                     var schema = new InMemoryAdditionalText(
                         $"/{@namespace}.{parameter.GetTypeDeclarationIdentifier()}.json",
