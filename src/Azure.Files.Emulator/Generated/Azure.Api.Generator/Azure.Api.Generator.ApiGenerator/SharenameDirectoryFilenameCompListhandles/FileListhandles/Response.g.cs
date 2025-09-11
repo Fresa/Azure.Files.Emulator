@@ -4,11 +4,11 @@ using Corvus.Json;
 namespace ShareNameDirectoryFileNameCompListhandles.FileListHandles;
 internal abstract partial class Response
 {
-    internal sealed class Content200 : Response
+    internal sealed class Response200 : Response
     {
     }
 
-    internal sealed class ContentDefault : Response
+    internal sealed class ResponseDefault : Response
     {
     }
 }

@@ -4,11 +4,11 @@ using Corvus.Json;
 namespace ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy;
 internal abstract partial class Response
 {
-    internal sealed class Content204 : Response
+    internal sealed class Response204 : Response
     {
     }
 
-    internal sealed class ContentDefault : Response
+    internal sealed class ResponseDefault : Response
     {
     }
 }
