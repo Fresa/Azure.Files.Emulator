@@ -122,7 +122,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
                 var requestBodyGenerator = RequestBodyGenerator.Empty;
                 if (body is not null)
                 {
-                    var contentGenerators = body.Content.Select(pair =>
+                    var contentGenerators = body.GetContent().Select(pair =>
                     {
                         var requestBodyContent = pair.Value;
                         var bodyTypeDeclarationIdentifier = pair.Key.ToPascalCase();
