@@ -82,7 +82,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
             {
                 var schema = new InMemoryAdditionalText(
                     $"/{entityType}.{parameter.GetTypeDeclarationIdentifier()}.json",
-                        parameter.Schema.SerializeToJson());
+                        parameter.GetSchema().SerializeToJson());
                 
                 var generationSpecification = new SourceGeneratorHelpers.GenerationSpecification(
                     ns: entityType,
@@ -105,7 +105,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
                 {
                     var schema = new InMemoryAdditionalText(
                         $"/{@namespace}.{parameter.GetTypeDeclarationIdentifier()}.json",
-                        parameter.Schema.SerializeToJson());
+                        parameter.GetSchema().SerializeToJson());
                     
                     var generationSpecification = new SourceGeneratorHelpers.GenerationSpecification(
                         ns: @namespace,
