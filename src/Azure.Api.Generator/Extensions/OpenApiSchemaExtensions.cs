@@ -8,7 +8,7 @@ internal static class OpenApiSchemaExtensions
     internal static string SerializeToJson(this IOpenApiSchema? schema)
     {
         if (schema is null)
-            return string.Empty;
+            return "{}";
         
         using var schemaWriter = new StringWriter();
         var openApiSchemaWriter = new OpenApiJsonWriter(schemaWriter, new OpenApiWriterSettings

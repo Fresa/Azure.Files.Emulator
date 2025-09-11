@@ -18,7 +18,7 @@ using System.Text.Json;
 using Corvus.Json;
 using Corvus.Json.Internal;
 
-namespace RestypeServiceCompProperties.ServiceSetProperties.RequestBodies;
+namespace RestypeServiceCompProperties.ServiceGetProperties.ResponseBodies._200;
 
 /// <summary>
 /// Generated from JSON Schema.
@@ -35,47 +35,47 @@ public readonly partial struct ApplicationXml
     /// </summary>
     /// <remarks>
     /// <para>
-    /// The set of CORS rules.
+    /// Storage Analytics metrics for file service.
     /// </para>
     /// </remarks>
-    public readonly partial struct CorsEntityArray
+    public readonly partial struct ApplicationXmlStorageAnalyticsMetricsForFileService
     {
         /// <summary>
         /// Generated from JSON Schema.
         /// </summary>
         /// <remarks>
         /// <para>
-        /// CORS is an HTTP feature that enables a web application running under one domain to access resources in another domain. Web browsers implement a security restriction known as same-origin policy that prevents a web page from calling APIs in a different domain; CORS provides a secure way to allow one domain (the origin domain) to call APIs in another domain.
+        /// The retention policy.
         /// </para>
         /// </remarks>
-        public readonly partial struct CorsEntity
+        public readonly partial struct TheRetentionPolicy
         {
             /// <summary>
             /// Generated from JSON Schema.
             /// </summary>
             /// <remarks>
             /// <para>
-            /// The maximum amount time that a browser should cache the preflight OPTIONS request.
+            /// Indicates the number of days that metrics data should be retained. All data older than this value will be deleted. Metrics data is deleted on a best-effort basis after the retention period expires.
             /// </para>
             /// </remarks>
-            public readonly partial struct MaxAgeInSecondsEntity
+            public readonly partial struct DaysEntity
 #if NET8_0_OR_GREATER
-                : IJsonNumber<RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml.CorsEntityArray.CorsEntity.MaxAgeInSecondsEntity>,
-                  IAdditionOperators<RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml.CorsEntityArray.CorsEntity.MaxAgeInSecondsEntity, RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml.CorsEntityArray.CorsEntity.MaxAgeInSecondsEntity, RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml.CorsEntityArray.CorsEntity.MaxAgeInSecondsEntity>,
-                  ISubtractionOperators<RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml.CorsEntityArray.CorsEntity.MaxAgeInSecondsEntity, RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml.CorsEntityArray.CorsEntity.MaxAgeInSecondsEntity, RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml.CorsEntityArray.CorsEntity.MaxAgeInSecondsEntity>,
-                  IMultiplyOperators<RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml.CorsEntityArray.CorsEntity.MaxAgeInSecondsEntity, RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml.CorsEntityArray.CorsEntity.MaxAgeInSecondsEntity, RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml.CorsEntityArray.CorsEntity.MaxAgeInSecondsEntity>,
-                  IDivisionOperators<RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml.CorsEntityArray.CorsEntity.MaxAgeInSecondsEntity, RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml.CorsEntityArray.CorsEntity.MaxAgeInSecondsEntity, RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml.CorsEntityArray.CorsEntity.MaxAgeInSecondsEntity>,
-                  IIncrementOperators<RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml.CorsEntityArray.CorsEntity.MaxAgeInSecondsEntity>,
-                  IDecrementOperators<RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml.CorsEntityArray.CorsEntity.MaxAgeInSecondsEntity>
+                : IJsonNumber<RestypeServiceCompProperties.ServiceGetProperties.ResponseBodies._200.ApplicationXml.ApplicationXmlStorageAnalyticsMetricsForFileService.TheRetentionPolicy.DaysEntity>,
+                  IAdditionOperators<RestypeServiceCompProperties.ServiceGetProperties.ResponseBodies._200.ApplicationXml.ApplicationXmlStorageAnalyticsMetricsForFileService.TheRetentionPolicy.DaysEntity, RestypeServiceCompProperties.ServiceGetProperties.ResponseBodies._200.ApplicationXml.ApplicationXmlStorageAnalyticsMetricsForFileService.TheRetentionPolicy.DaysEntity, RestypeServiceCompProperties.ServiceGetProperties.ResponseBodies._200.ApplicationXml.ApplicationXmlStorageAnalyticsMetricsForFileService.TheRetentionPolicy.DaysEntity>,
+                  ISubtractionOperators<RestypeServiceCompProperties.ServiceGetProperties.ResponseBodies._200.ApplicationXml.ApplicationXmlStorageAnalyticsMetricsForFileService.TheRetentionPolicy.DaysEntity, RestypeServiceCompProperties.ServiceGetProperties.ResponseBodies._200.ApplicationXml.ApplicationXmlStorageAnalyticsMetricsForFileService.TheRetentionPolicy.DaysEntity, RestypeServiceCompProperties.ServiceGetProperties.ResponseBodies._200.ApplicationXml.ApplicationXmlStorageAnalyticsMetricsForFileService.TheRetentionPolicy.DaysEntity>,
+                  IMultiplyOperators<RestypeServiceCompProperties.ServiceGetProperties.ResponseBodies._200.ApplicationXml.ApplicationXmlStorageAnalyticsMetricsForFileService.TheRetentionPolicy.DaysEntity, RestypeServiceCompProperties.ServiceGetProperties.ResponseBodies._200.ApplicationXml.ApplicationXmlStorageAnalyticsMetricsForFileService.TheRetentionPolicy.DaysEntity, RestypeServiceCompProperties.ServiceGetProperties.ResponseBodies._200.ApplicationXml.ApplicationXmlStorageAnalyticsMetricsForFileService.TheRetentionPolicy.DaysEntity>,
+                  IDivisionOperators<RestypeServiceCompProperties.ServiceGetProperties.ResponseBodies._200.ApplicationXml.ApplicationXmlStorageAnalyticsMetricsForFileService.TheRetentionPolicy.DaysEntity, RestypeServiceCompProperties.ServiceGetProperties.ResponseBodies._200.ApplicationXml.ApplicationXmlStorageAnalyticsMetricsForFileService.TheRetentionPolicy.DaysEntity, RestypeServiceCompProperties.ServiceGetProperties.ResponseBodies._200.ApplicationXml.ApplicationXmlStorageAnalyticsMetricsForFileService.TheRetentionPolicy.DaysEntity>,
+                  IIncrementOperators<RestypeServiceCompProperties.ServiceGetProperties.ResponseBodies._200.ApplicationXml.ApplicationXmlStorageAnalyticsMetricsForFileService.TheRetentionPolicy.DaysEntity>,
+                  IDecrementOperators<RestypeServiceCompProperties.ServiceGetProperties.ResponseBodies._200.ApplicationXml.ApplicationXmlStorageAnalyticsMetricsForFileService.TheRetentionPolicy.DaysEntity>
 #else
-                : IJsonNumber<RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml.CorsEntityArray.CorsEntity.MaxAgeInSecondsEntity>
+                : IJsonNumber<RestypeServiceCompProperties.ServiceGetProperties.ResponseBodies._200.ApplicationXml.ApplicationXmlStorageAnalyticsMetricsForFileService.TheRetentionPolicy.DaysEntity>
 #endif
             {
                 /// <summary>
-                /// Initializes a new instance of the <see cref = "MaxAgeInSecondsEntity"/> struct.
+                /// Initializes a new instance of the <see cref = "DaysEntity"/> struct.
                 /// </summary>
                 /// <param name="value">The value from which to construct the instance.</param>
-                public MaxAgeInSecondsEntity(long value)
+                public DaysEntity(long value)
                     : this(new BinaryJsonNumber(value))
                 {
                 }
@@ -84,7 +84,7 @@ public readonly partial struct ApplicationXml
                 /// Conversion from JsonNumber.
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
-                public static implicit operator MaxAgeInSecondsEntity(JsonNumber value)
+                public static implicit operator DaysEntity(JsonNumber value)
                 {
                     if (value.HasDotnetBacking && value.ValueKind == JsonValueKind.Number)
                     {
@@ -99,7 +99,7 @@ public readonly partial struct ApplicationXml
                 /// Conversion to JsonNumber.
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
-                public static implicit operator JsonNumber(MaxAgeInSecondsEntity value)
+                public static implicit operator JsonNumber(DaysEntity value)
                 {
                     return
                         value.AsNumber;
@@ -109,7 +109,7 @@ public readonly partial struct ApplicationXml
                 /// Conversion to JsonInteger.
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
-                public static implicit operator JsonInteger(MaxAgeInSecondsEntity value)
+                public static implicit operator JsonInteger(DaysEntity value)
                 {
                     return
                         value.As<JsonInteger>();
@@ -120,7 +120,7 @@ public readonly partial struct ApplicationXml
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
                 /// <returns>An instance of the byte.</returns>
-                public static explicit operator byte(MaxAgeInSecondsEntity value)
+                public static explicit operator byte(DaysEntity value)
                 {
                     if ((value.backing & Backing.JsonElement) != 0)
                     {
@@ -139,8 +139,8 @@ public readonly partial struct ApplicationXml
                 /// Conversion from byte.
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
-                /// <returns>An instance of the <see cref="MaxAgeInSecondsEntity"/>.</returns>
-                public static explicit operator MaxAgeInSecondsEntity(byte value)
+                /// <returns>An instance of the <see cref="DaysEntity"/>.</returns>
+                public static explicit operator DaysEntity(byte value)
                 {
                     return new(new BinaryJsonNumber(value));
                 }
@@ -150,7 +150,7 @@ public readonly partial struct ApplicationXml
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
                 /// <returns>An instance of the decimal.</returns>
-                public static explicit operator decimal(MaxAgeInSecondsEntity value)
+                public static explicit operator decimal(DaysEntity value)
                 {
                     if ((value.backing & Backing.JsonElement) != 0)
                     {
@@ -169,8 +169,8 @@ public readonly partial struct ApplicationXml
                 /// Conversion from decimal.
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
-                /// <returns>An instance of the <see cref="MaxAgeInSecondsEntity"/>.</returns>
-                public static explicit operator MaxAgeInSecondsEntity(decimal value)
+                /// <returns>An instance of the <see cref="DaysEntity"/>.</returns>
+                public static explicit operator DaysEntity(decimal value)
                 {
                     return new(new BinaryJsonNumber(value));
                 }
@@ -180,7 +180,7 @@ public readonly partial struct ApplicationXml
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
                 /// <returns>An instance of the double.</returns>
-                public static explicit operator double(MaxAgeInSecondsEntity value)
+                public static explicit operator double(DaysEntity value)
                 {
                     if ((value.backing & Backing.JsonElement) != 0)
                     {
@@ -199,8 +199,8 @@ public readonly partial struct ApplicationXml
                 /// Conversion from double.
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
-                /// <returns>An instance of the <see cref="MaxAgeInSecondsEntity"/>.</returns>
-                public static explicit operator MaxAgeInSecondsEntity(double value)
+                /// <returns>An instance of the <see cref="DaysEntity"/>.</returns>
+                public static explicit operator DaysEntity(double value)
                 {
                     return new(new BinaryJsonNumber(value));
                 }
@@ -210,7 +210,7 @@ public readonly partial struct ApplicationXml
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
                 /// <returns>An instance of the short.</returns>
-                public static explicit operator short(MaxAgeInSecondsEntity value)
+                public static explicit operator short(DaysEntity value)
                 {
                     if ((value.backing & Backing.JsonElement) != 0)
                     {
@@ -229,8 +229,8 @@ public readonly partial struct ApplicationXml
                 /// Conversion from short.
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
-                /// <returns>An instance of the <see cref="MaxAgeInSecondsEntity"/>.</returns>
-                public static explicit operator MaxAgeInSecondsEntity(short value)
+                /// <returns>An instance of the <see cref="DaysEntity"/>.</returns>
+                public static explicit operator DaysEntity(short value)
                 {
                     return new(new BinaryJsonNumber(value));
                 }
@@ -240,7 +240,7 @@ public readonly partial struct ApplicationXml
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
                 /// <returns>An instance of the int.</returns>
-                public static explicit operator int(MaxAgeInSecondsEntity value)
+                public static explicit operator int(DaysEntity value)
                 {
                     if ((value.backing & Backing.JsonElement) != 0)
                     {
@@ -259,8 +259,8 @@ public readonly partial struct ApplicationXml
                 /// Conversion from int.
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
-                /// <returns>An instance of the <see cref="MaxAgeInSecondsEntity"/>.</returns>
-                public static explicit operator MaxAgeInSecondsEntity(int value)
+                /// <returns>An instance of the <see cref="DaysEntity"/>.</returns>
+                public static explicit operator DaysEntity(int value)
                 {
                     return new(new BinaryJsonNumber(value));
                 }
@@ -270,7 +270,7 @@ public readonly partial struct ApplicationXml
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
                 /// <returns>An instance of the long.</returns>
-                public static implicit operator long(MaxAgeInSecondsEntity value)
+                public static implicit operator long(DaysEntity value)
                 {
                     if ((value.backing & Backing.JsonElement) != 0)
                     {
@@ -289,8 +289,8 @@ public readonly partial struct ApplicationXml
                 /// Conversion from long.
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
-                /// <returns>An instance of the <see cref="MaxAgeInSecondsEntity"/>.</returns>
-                public static implicit operator MaxAgeInSecondsEntity(long value)
+                /// <returns>An instance of the <see cref="DaysEntity"/>.</returns>
+                public static implicit operator DaysEntity(long value)
                 {
                     return new(new BinaryJsonNumber(value));
                 }
@@ -301,7 +301,7 @@ public readonly partial struct ApplicationXml
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
                 /// <returns>An instance of the Int128.</returns>
-                public static explicit operator Int128(MaxAgeInSecondsEntity value)
+                public static explicit operator Int128(DaysEntity value)
                 {
                     if ((value.backing & Backing.JsonElement) != 0)
                     {
@@ -320,8 +320,8 @@ public readonly partial struct ApplicationXml
                 /// Conversion from Int128.
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
-                /// <returns>An instance of the <see cref="MaxAgeInSecondsEntity"/>.</returns>
-                public static explicit operator MaxAgeInSecondsEntity(Int128 value)
+                /// <returns>An instance of the <see cref="DaysEntity"/>.</returns>
+                public static explicit operator DaysEntity(Int128 value)
                 {
                     return new(new BinaryJsonNumber(value));
                 }
@@ -332,7 +332,7 @@ public readonly partial struct ApplicationXml
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
                 /// <returns>An instance of the sbyte.</returns>
-                public static explicit operator sbyte(MaxAgeInSecondsEntity value)
+                public static explicit operator sbyte(DaysEntity value)
                 {
                     if ((value.backing & Backing.JsonElement) != 0)
                     {
@@ -351,8 +351,8 @@ public readonly partial struct ApplicationXml
                 /// Conversion from sbyte.
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
-                /// <returns>An instance of the <see cref="MaxAgeInSecondsEntity"/>.</returns>
-                public static explicit operator MaxAgeInSecondsEntity(sbyte value)
+                /// <returns>An instance of the <see cref="DaysEntity"/>.</returns>
+                public static explicit operator DaysEntity(sbyte value)
                 {
                     return new(new BinaryJsonNumber(value));
                 }
@@ -363,7 +363,7 @@ public readonly partial struct ApplicationXml
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
                 /// <returns>An instance of the Half.</returns>
-                public static explicit operator Half(MaxAgeInSecondsEntity value)
+                public static explicit operator Half(DaysEntity value)
                 {
                     if ((value.backing & Backing.JsonElement) != 0)
                     {
@@ -382,8 +382,8 @@ public readonly partial struct ApplicationXml
                 /// Conversion from Half.
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
-                /// <returns>An instance of the <see cref="MaxAgeInSecondsEntity"/>.</returns>
-                public static explicit operator MaxAgeInSecondsEntity(Half value)
+                /// <returns>An instance of the <see cref="DaysEntity"/>.</returns>
+                public static explicit operator DaysEntity(Half value)
                 {
                     return new(new BinaryJsonNumber(value));
                 }
@@ -394,7 +394,7 @@ public readonly partial struct ApplicationXml
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
                 /// <returns>An instance of the float.</returns>
-                public static explicit operator float(MaxAgeInSecondsEntity value)
+                public static explicit operator float(DaysEntity value)
                 {
                     if ((value.backing & Backing.JsonElement) != 0)
                     {
@@ -413,8 +413,8 @@ public readonly partial struct ApplicationXml
                 /// Conversion from float.
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
-                /// <returns>An instance of the <see cref="MaxAgeInSecondsEntity"/>.</returns>
-                public static explicit operator MaxAgeInSecondsEntity(float value)
+                /// <returns>An instance of the <see cref="DaysEntity"/>.</returns>
+                public static explicit operator DaysEntity(float value)
                 {
                     return new(new BinaryJsonNumber(value));
                 }
@@ -424,7 +424,7 @@ public readonly partial struct ApplicationXml
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
                 /// <returns>An instance of the ushort.</returns>
-                public static explicit operator ushort(MaxAgeInSecondsEntity value)
+                public static explicit operator ushort(DaysEntity value)
                 {
                     if ((value.backing & Backing.JsonElement) != 0)
                     {
@@ -443,8 +443,8 @@ public readonly partial struct ApplicationXml
                 /// Conversion from ushort.
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
-                /// <returns>An instance of the <see cref="MaxAgeInSecondsEntity"/>.</returns>
-                public static explicit operator MaxAgeInSecondsEntity(ushort value)
+                /// <returns>An instance of the <see cref="DaysEntity"/>.</returns>
+                public static explicit operator DaysEntity(ushort value)
                 {
                     return new(new BinaryJsonNumber(value));
                 }
@@ -454,7 +454,7 @@ public readonly partial struct ApplicationXml
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
                 /// <returns>An instance of the uint.</returns>
-                public static explicit operator uint(MaxAgeInSecondsEntity value)
+                public static explicit operator uint(DaysEntity value)
                 {
                     if ((value.backing & Backing.JsonElement) != 0)
                     {
@@ -473,8 +473,8 @@ public readonly partial struct ApplicationXml
                 /// Conversion from uint.
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
-                /// <returns>An instance of the <see cref="MaxAgeInSecondsEntity"/>.</returns>
-                public static explicit operator MaxAgeInSecondsEntity(uint value)
+                /// <returns>An instance of the <see cref="DaysEntity"/>.</returns>
+                public static explicit operator DaysEntity(uint value)
                 {
                     return new(new BinaryJsonNumber(value));
                 }
@@ -484,7 +484,7 @@ public readonly partial struct ApplicationXml
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
                 /// <returns>An instance of the ulong.</returns>
-                public static explicit operator ulong(MaxAgeInSecondsEntity value)
+                public static explicit operator ulong(DaysEntity value)
                 {
                     if ((value.backing & Backing.JsonElement) != 0)
                     {
@@ -503,8 +503,8 @@ public readonly partial struct ApplicationXml
                 /// Conversion from ulong.
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
-                /// <returns>An instance of the <see cref="MaxAgeInSecondsEntity"/>.</returns>
-                public static explicit operator MaxAgeInSecondsEntity(ulong value)
+                /// <returns>An instance of the <see cref="DaysEntity"/>.</returns>
+                public static explicit operator DaysEntity(ulong value)
                 {
                     return new(new BinaryJsonNumber(value));
                 }
@@ -515,7 +515,7 @@ public readonly partial struct ApplicationXml
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
                 /// <returns>An instance of the UInt128.</returns>
-                public static explicit operator UInt128(MaxAgeInSecondsEntity value)
+                public static explicit operator UInt128(DaysEntity value)
                 {
                     if ((value.backing & Backing.JsonElement) != 0)
                     {
@@ -534,8 +534,8 @@ public readonly partial struct ApplicationXml
                 /// Conversion from UInt128.
                 /// </summary>
                 /// <param name="value">The value from which to convert.</param>
-                /// <returns>An instance of the <see cref="MaxAgeInSecondsEntity"/>.</returns>
-                public static explicit operator MaxAgeInSecondsEntity(UInt128 value)
+                /// <returns>An instance of the <see cref="DaysEntity"/>.</returns>
+                public static explicit operator DaysEntity(UInt128 value)
                 {
                     return new(new BinaryJsonNumber(value));
                 }
@@ -549,7 +549,7 @@ public readonly partial struct ApplicationXml
                 /// <returns>
                 /// <see langword="true"/> if the left is less than the right, otherwise <see langword="false"/>.
                 /// </returns>
-                public static bool operator <(MaxAgeInSecondsEntity left, MaxAgeInSecondsEntity right)
+                public static bool operator <(DaysEntity left, DaysEntity right)
                 {
                     return left.IsNotNullOrUndefined() && right.IsNotNullOrUndefined() && Compare(left, right) < 0;
                 }
@@ -562,7 +562,7 @@ public readonly partial struct ApplicationXml
                 /// <returns>
                 /// <see langword="true"/> if the left is less than or equal to the right, otherwise <see langword="false"/>.
                 /// </returns>
-                public static bool operator <=(MaxAgeInSecondsEntity left, MaxAgeInSecondsEntity right)
+                public static bool operator <=(DaysEntity left, DaysEntity right)
                 {
                     return left.IsNotNullOrUndefined() && right.IsNotNullOrUndefined() && Compare(left, right) <= 0;
                 }
@@ -575,7 +575,7 @@ public readonly partial struct ApplicationXml
                 /// <returns>
                 /// <see langword="true"/> if the left is greater than the right, otherwise <see langword="false"/>.
                 /// </returns>
-                public static bool operator >(MaxAgeInSecondsEntity left, MaxAgeInSecondsEntity right)
+                public static bool operator >(DaysEntity left, DaysEntity right)
                 {
                     return left.IsNotNullOrUndefined() && right.IsNotNullOrUndefined() && Compare(left, right) > 0;
                 }
@@ -588,7 +588,7 @@ public readonly partial struct ApplicationXml
                 /// <returns>
                 /// <see langword="true"/> if the left is greater than or equal to the right, otherwise <see langword="false"/>.
                 /// </returns>
-                public static bool operator >=(MaxAgeInSecondsEntity left, MaxAgeInSecondsEntity right)
+                public static bool operator >=(DaysEntity left, DaysEntity right)
                 {
                     return left.IsNotNullOrUndefined() && right.IsNotNullOrUndefined() && Compare(left, right) >= 0;
                 }
@@ -599,7 +599,7 @@ public readonly partial struct ApplicationXml
                 /// <param name="left">The left hand side of the binary operator.</param>
                 /// <param name="right">The right hand side of the binary operator.</param>
                 /// <returns>The result of the operation.</returns>
-                public static MaxAgeInSecondsEntity operator +(MaxAgeInSecondsEntity left, MaxAgeInSecondsEntity right)
+                public static DaysEntity operator +(DaysEntity left, DaysEntity right)
                 {
                     return new(left.AsBinaryJsonNumber + right.AsBinaryJsonNumber);
                 }
@@ -610,7 +610,7 @@ public readonly partial struct ApplicationXml
                 /// <param name="left">The left hand side of the binary operator.</param>
                 /// <param name="right">The right hand side of the binary operator.</param>
                 /// <returns>The result of the operation.</returns>
-                public static MaxAgeInSecondsEntity operator -(MaxAgeInSecondsEntity left, MaxAgeInSecondsEntity right)
+                public static DaysEntity operator -(DaysEntity left, DaysEntity right)
                 {
                     return new(left.AsBinaryJsonNumber - right.AsBinaryJsonNumber);
                 }
@@ -621,7 +621,7 @@ public readonly partial struct ApplicationXml
                 /// <param name="left">The left hand side of the binary operator.</param>
                 /// <param name="right">The right hand side of the binary operator.</param>
                 /// <returns>The result of the operation.</returns>
-                public static MaxAgeInSecondsEntity operator *(MaxAgeInSecondsEntity left, MaxAgeInSecondsEntity right)
+                public static DaysEntity operator *(DaysEntity left, DaysEntity right)
                 {
                     return new(left.AsBinaryJsonNumber * right.AsBinaryJsonNumber);
                 }
@@ -632,7 +632,7 @@ public readonly partial struct ApplicationXml
                 /// <param name="left">The left hand side of the binary operator.</param>
                 /// <param name="right">The right hand side of the binary operator.</param>
                 /// <returns>The result of the operation.</returns>
-                public static MaxAgeInSecondsEntity operator /(MaxAgeInSecondsEntity left, MaxAgeInSecondsEntity right)
+                public static DaysEntity operator /(DaysEntity left, DaysEntity right)
                 {
                     return new(left.AsBinaryJsonNumber / right.AsBinaryJsonNumber);
                 }
@@ -642,7 +642,7 @@ public readonly partial struct ApplicationXml
                 /// </summary>
                 /// <param name="value">The value on which to operate.</param>
                 /// <returns>The result of the operation.</returns>
-                public static MaxAgeInSecondsEntity operator ++(MaxAgeInSecondsEntity value)
+                public static DaysEntity operator ++(DaysEntity value)
                 {
                     BinaryJsonNumber num = value.AsBinaryJsonNumber;                    return new(num++);
                 }
@@ -652,7 +652,7 @@ public readonly partial struct ApplicationXml
                 /// </summary>
                 /// <param name="value">The value on which to operate.</param>
                 /// <returns>The result of the operation.</returns>
-                public static MaxAgeInSecondsEntity operator --(MaxAgeInSecondsEntity value)
+                public static DaysEntity operator --(DaysEntity value)
                 {
                     BinaryJsonNumber num = value.AsBinaryJsonNumber;                    return new(num--);
                 }
@@ -666,7 +666,7 @@ public readonly partial struct ApplicationXml
                 /// 0 if the numbers are equal, -1 if <paramref name="lhs"/> is less than <paramref name="rhs"/>,
                 /// and 1 if <paramref name="lhs"/> is greater than <paramref name="rhs"/>.
                 /// </returns>
-                public static int Compare(in MaxAgeInSecondsEntity lhs, in MaxAgeInSecondsEntity rhs)
+                public static int Compare(in DaysEntity lhs, in DaysEntity rhs)
                 {
                     if (lhs.ValueKind != rhs.ValueKind)
                     {

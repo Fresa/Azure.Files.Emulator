@@ -4,4 +4,5 @@ using Corvus.Json;
 namespace ShareNameDirectoryCompForceclosehandles.DirectoryForceCloseHandles;
 internal partial class Response
 {
+    internal static Response NotImplemented => throw new NotImplementedException();
 }

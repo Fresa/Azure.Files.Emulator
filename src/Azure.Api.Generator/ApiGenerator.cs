@@ -70,7 +70,6 @@ public sealed class ApiGenerator : IIncrementalGenerator
         var openApi = generatorContext.OpenApiDocument;
         var globalOptions = generatorContext.Options;
         var compilation = generatorContext.Compilation;
-        var projectDir = generatorContext.ProjectDir;
         var endpointGenerator = new EndpointGenerator(compilation);
         foreach (var path in openApi.Paths)
         {
@@ -177,7 +176,45 @@ public sealed class ApiGenerator : IIncrementalGenerator
                     $"{directory}/Request.g.cs",
                     requestSource);
                 requestSourceCode.AddTo(context);
-                
+                var responseBodyNamespace = @namespace + ".ResponseBodies";
+
+                var responses = operation.Responses;
+                var responseGenerator = ResponseGenerator.Empty;
+                if (responses is not null)
+                {
+                    var responseBodyGenerators = responses.Select(pair =>
+                    {
+                        var response = pair.Value;
+                        var responseStatusCodePattern = pair.Key.ToPascalCase();
+
+                        var responseBodies = response.Content?.Select(valuePair =>
+                        {
+                            var content = valuePair.Value;
+                            var contentType = valuePair.Key.ToPascalCase();
+                            var schema = new InMemoryAdditionalText(
+                                $"C:/{responseBodyNamespace}.{responseStatusCodePattern}.{contentType}.json",
+                                content.Schema.SerializeToJson());
+
+                            var contentSpecification = new SourceGeneratorHelpers.GenerationSpecification(
+                                ns: $"{responseBodyNamespace}._{responseStatusCodePattern}",
+                                typeName: contentType,
+                                location: schema.Path,
+                                rebaseToRootPath: false);
+
+                            var typeDeclaration = GenerateCode(context, contentSpecification, schema, globalOptions);
+                            return new ResponseBodyContentGenerator(valuePair.Key, typeDeclaration);
+                        }).ToList();
+                        if (responseBodies is null)
+                        {
+                            return ResponseBodyGenerator.Any(responseStatusCodePattern);
+                        }
+                        return new ResponseBodyGenerator(
+                            responseStatusCodePattern,
+                            responseBodies);
+                    }).ToList();
+                    responseGenerator = new ResponseGenerator(
+                        responseBodyGenerators);
+                }
                 var responseSource =
                     $$"""
                         using Azure.Files.Emulator.Http;
@@ -187,6 +224,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
                         
                         internal partial class Response
                         {
+                            {{responseGenerator.GenerateResponseMethods()}}
                         }
                       """;
                 var responseSourceCode = new SourceCode(

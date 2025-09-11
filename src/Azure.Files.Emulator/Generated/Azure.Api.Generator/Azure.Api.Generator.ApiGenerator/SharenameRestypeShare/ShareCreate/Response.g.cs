@@ -4,4 +4,5 @@ using Corvus.Json;
 namespace ShareNameRestypeShare.ShareCreate;
 internal partial class Response
 {
+    internal static Response NotImplemented => throw new NotImplementedException();
 }

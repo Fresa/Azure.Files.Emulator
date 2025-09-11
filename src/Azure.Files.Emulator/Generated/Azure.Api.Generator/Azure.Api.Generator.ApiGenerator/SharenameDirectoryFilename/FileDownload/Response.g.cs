@@ -4,4 +4,5 @@ using Corvus.Json;
 namespace ShareNameDirectoryFileName.FileDownload;
 internal partial class Response
 {
+    internal static Response NotImplemented => throw new NotImplementedException();
 }
