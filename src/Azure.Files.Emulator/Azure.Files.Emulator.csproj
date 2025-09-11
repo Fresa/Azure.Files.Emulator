@@ -7,9 +7,6 @@
         
         <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
         <CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
-        <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
-        <UseCommonOutputDirectory>false</UseCommonOutputDirectory>
-        <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
     </PropertyGroup>
 
     <ItemGroup>
