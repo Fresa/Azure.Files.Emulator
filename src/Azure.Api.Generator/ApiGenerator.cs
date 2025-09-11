@@ -93,7 +93,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
                 parameterGenerators[parameter.GetName()] = new ParameterGenerator(typeDeclaration, parameter);
             }
 
-            foreach (var openApiOperation in path.Value.Operations)
+            foreach (var openApiOperation in path.Value.GetOperations())
             {
                 var operationType = openApiOperation.Key;
                 var operation = openApiOperation.Value;
