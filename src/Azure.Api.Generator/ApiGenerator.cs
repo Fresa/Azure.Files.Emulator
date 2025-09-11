@@ -90,7 +90,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
                     location: schema.Path,
                     rebaseToRootPath: false);
                 var typeDeclaration = GenerateCode(context, generationSpecification, schema, globalOptions);
-                parameterGenerators[parameter.Name] = new ParameterGenerator(typeDeclaration, parameter);
+                parameterGenerators[parameter.GetName()] = new ParameterGenerator(typeDeclaration, parameter);
             }
 
             foreach (var openApiOperation in path.Value.Operations)
@@ -114,7 +114,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
                         rebaseToRootPath: false);
 
                     var typeDeclaration = GenerateCode(context, generationSpecification, schema, globalOptions);
-                    parameterGenerators[parameter.Name] = new ParameterGenerator(typeDeclaration, parameter);
+                    parameterGenerators[parameter.GetName()] = new ParameterGenerator(typeDeclaration, parameter);
                 }
 
                 var requestBodyNamespace = @namespace + ".RequestBodies";

@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using Azure.Api.Generator.Extensions;
+using Azure.Api.Generator.OpenApi;
 using Corvus.Json.CodeGeneration;
 using Corvus.Json.CodeGeneration.CSharp;
 using Microsoft.OpenApi;
@@ -13,7 +14,7 @@ internal sealed class ParameterGenerator(TypeDeclaration typeDeclaration, IOpenA
 
     private string FullyQualifiedTypeDeclarationIdentifier => typeDeclaration.FullyQualifiedDotnetTypeName();
     
-    private readonly string _propertyName = parameter.Name.ToPascalCase();
+    private readonly string _propertyName = parameter.GetName().ToPascalCase();
     
     internal string GenerateRequestProperty()
     {
