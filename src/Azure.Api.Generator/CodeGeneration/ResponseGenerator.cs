@@ -19,7 +19,7 @@ internal sealed class ResponseGenerator(List<ResponseContentGenerator> responseB
                 
                 internal abstract partial class Response
                 {
-                    {{responseBodyGenerators.AggregateToString(generator => generator.GenerateResponseContent())}}
+                    {{responseBodyGenerators.AggregateToString(generator => generator.GenerateResponseContentClass())}}
                 }
               """;
     }
