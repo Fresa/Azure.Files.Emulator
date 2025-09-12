@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
@@ -14,6 +15,7 @@ using Corvus.Json.CodeGeneration.CSharp;
 using Corvus.Json.SourceGeneratorTools;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Text;
+using Microsoft.OpenApi;
 
 namespace Azure.Api.Generator;
 
@@ -178,43 +180,43 @@ public sealed class ApiGenerator : IIncrementalGenerator
                 requestSourceCode.AddTo(context);
                 var responseContentNamespace = @namespace + ".Content";
 
-                var responses = operation.Responses;
-                var responseGenerator = ResponseGenerator.Any;
-                if (responses is not null)
+                var responses = operation.Responses ?? new OpenApiResponses
                 {
-                    var responseBodyGenerators = responses.Select(pair =>
+                    ["default"] = new OpenApiResponse()
+                };
+                var responseBodyGenerators = responses.Select(pair =>
+                {
+                    var response = pair.Value;
+                    var responseStatusCodePattern = pair.Key.ToPascalCase();
+
+                    var responseContent = response.Content ?? new Dictionary<string, OpenApiMediaType>
                     {
-                        var response = pair.Value;
-                        var responseStatusCodePattern = pair.Key.ToPascalCase();
+                        // Any content
+                        ["*/*"] = new()
+                    };
+                    var responseBodies = responseContent.Select(valuePair =>
+                    {
+                        var content = valuePair.Value;
+                        var contentType = valuePair.Key.ToPascalCase();
+                        var schema = new InMemoryAdditionalText(
+                            $"/{responseContentNamespace}.{responseStatusCodePattern}.{contentType}.json",
+                            content.Schema.SerializeToJson());
 
-                        var responseBodies = response.Content?.Select(valuePair =>
-                        {
-                            var content = valuePair.Value;
-                            var contentType = valuePair.Key.ToPascalCase();
-                            var schema = new InMemoryAdditionalText(
-                                $"/{responseContentNamespace}.{responseStatusCodePattern}.{contentType}.json",
-                                content.Schema.SerializeToJson());
+                        var contentSpecification = new SourceGeneratorHelpers.GenerationSpecification(
+                            ns: $"{responseContentNamespace}._{responseStatusCodePattern}",
+                            typeName: contentType,
+                            location: schema.Path,
+                            rebaseToRootPath: false);
 
-                            var contentSpecification = new SourceGeneratorHelpers.GenerationSpecification(
-                                ns: $"{responseContentNamespace}._{responseStatusCodePattern}",
-                                typeName: contentType,
-                                location: schema.Path,
-                                rebaseToRootPath: false);
-
-                            var typeDeclaration = GenerateCode(context, contentSpecification, schema, globalOptions);
-                            return new ResponseBodyContentGenerator(valuePair.Key, typeDeclaration);
-                        }).ToList();
-                        if (responseBodies is null)
-                        {
-                            return ResponseContentGenerator.Any(responseStatusCodePattern);
-                        }
-                        return new ResponseContentGenerator(
-                            responseStatusCodePattern,
-                            responseBodies);
+                        var typeDeclaration = GenerateCode(context, contentSpecification, schema, globalOptions);
+                        return new ResponseBodyContentGenerator(valuePair.Key, typeDeclaration);
                     }).ToList();
-                    responseGenerator = new ResponseGenerator(
-                        responseBodyGenerators);
-                }
+                    return new ResponseContentGenerator(
+                        responseStatusCodePattern,
+                        responseBodies);
+                }).ToList();
+                var responseGenerator = new ResponseGenerator(
+                    responseBodyGenerators);
                 var responseSource =
                     responseGenerator.GenerateResponseClass(@namespace);
                 var responseSourceCode = new SourceCode(

@@ -1,15 +1,16 @@
-﻿using System;
+﻿using Azure.Api.Generator.Extensions;
 using Corvus.Json.CodeGeneration;
+using Corvus.Json.CodeGeneration.CSharp;
 
 namespace Azure.Api.Generator.CodeGeneration;
 
 internal sealed class ResponseBodyContentGenerator(string contentType, TypeDeclaration typeDeclaration)
 {
-    private readonly TypeDeclaration _typeDeclaration = typeDeclaration;
-    internal string ContentType => contentType;
-    
-    public string GenerateMethod()
+    public string GenerateContentProperty()
     {
-        throw new NotImplementedException();
+        return
+            $$"""
+                internal {{typeDeclaration.FullyQualifiedDotnetTypeName()}} {{contentType.ToPascalCase()}} { get; set; }          
+              """; 
     }
 }

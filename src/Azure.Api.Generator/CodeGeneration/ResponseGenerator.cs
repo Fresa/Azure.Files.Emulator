@@ -6,8 +6,6 @@ namespace Azure.Api.Generator.CodeGeneration;
 
 internal sealed class ResponseGenerator(List<ResponseContentGenerator> responseBodyGenerators)
 {
-    public static readonly ResponseGenerator Any = new([ResponseContentGenerator.Any()]);
-
     public string GenerateResponseClass(string @namespace)
     {
         return

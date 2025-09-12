@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using Azure.Api.Generator.Extensions;
 
 namespace Azure.Api.Generator.CodeGeneration;
 
 internal sealed class ResponseContentGenerator
 {
     private readonly string _statusCodePattern;
-    private readonly List<ResponseBodyContentGenerator>? _contentGenerators = [];
+    private readonly List<ResponseBodyContentGenerator> _contentGenerators = [];
     private readonly string _responseClassName;
 
     private ResponseContentGenerator(string statusCodePattern)
@@ -34,9 +35,6 @@ internal sealed class ResponseContentGenerator
     {
         _contentGenerators = contentGenerators;
     }
-
-    internal static ResponseContentGenerator Any(string statusCodePattern = "default") => new(statusCodePattern);
-    
     
     public string GenerateResponseContentClass()
     {
@@ -44,7 +42,7 @@ internal sealed class ResponseContentGenerator
             $$"""
             internal sealed class {{_responseClassName}} : Response
             {
-                
+                {{_contentGenerators.AggregateToString(generator => generator.GenerateContentProperty())}}
             }
             """;
     }
