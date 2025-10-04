@@ -353,7 +353,11 @@ public sealed class ApiGenerator : IIncrementalGenerator
         {
             if (!context.CancellationToken.IsCancellationRequested)
             {
-                context.AddSource(codeFile.TypeDeclaration.DotnetNamespace().Replace('.', '/') + $"/{codeFile.FileName}", SourceText.From(codeFile.FileContent, Encoding.UTF8));
+                var sourceCode = new SourceCode(
+                    codeFile.TypeDeclaration.DotnetNamespace().Replace('.', '/') + $"/{codeFile.FileName}",
+                    codeFile.FileContent
+                );
+                sourceCode.AddTo(context);
             }
         }
 
