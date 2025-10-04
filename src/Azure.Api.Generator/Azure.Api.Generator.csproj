@@ -30,6 +30,7 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
         </PackageReference>
         <PackageReference Include="SharpYaml" Version="2.1.1" OutputItemType="Analyzer" PrivateAssets="all" GeneratePathProperty="true" />
+        <PackageReference Include="NodaTime" Version="3.2.1" OutputItemType="Analyzer" PrivateAssets="all" GeneratePathProperty="true" />
     </ItemGroup>
 
     <Target Name="GetDependencyTargetPaths">
@@ -39,6 +40,7 @@
             <TargetPathWithTargetPlatformMoniker Include="$(PkgMicrosoft_OpenApi_Readers)\lib\netstandard2.0\*.dll" IncludeRuntimeDependency="false" />
             <TargetPathWithTargetPlatformMoniker Include="$(PkgSharpYaml)\lib\netstandard2.0\*.dll" IncludeRuntimeDependency="false" />
             <TargetPathWithTargetPlatformMoniker Include="$(PkgMicrosoft_Bcl_HashCode)\lib\netstandard2.0\*.dll" IncludeRuntimeDependency="false" />
+            <TargetPathWithTargetPlatformMoniker Include="$(PkgNodaTime)\lib\netstandard2.0\*.dll" IncludeRuntimeDependency="false" />
         </ItemGroup>
     </Target>
 
