@@ -6,9 +6,7 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
 #nullable enable
-
 using System.Runtime.CompilerServices;
 using System.Text.Json;
 using Corvus.Json;
@@ -39,16 +37,13 @@ public readonly partial struct RestypeQuery
         }
 
         JsonValueKind valueKind = this.ValueKind;
-
         result = CorvusValidation.TypeValidationHandler(valueKind, result, level);
-
         if (level == ValidationLevel.Flag && !result.IsValid)
         {
             return result;
         }
 
         result = CorvusValidation.CompositionAnyOfValidationHandler(this, result, level);
-
         if (level == ValidationLevel.Flag && !result.IsValid)
         {
             return result;
@@ -69,10 +64,9 @@ public readonly partial struct RestypeQuery
     {
         /// <summary>
         /// Gets the string 'service'
-        /// as a <see cref="RestypeServiceCompProperties.RestypeQuery"/>.
+        /// as a <see cref = "RestypeServiceCompProperties.RestypeQuery"/>.
         /// </summary>
         public static RestypeQuery Service { get; } = CorvusValidation.Enum.As<RestypeQuery>();
-
         /// <summary>
         /// Gets the string 'service'
         /// as a UTF8 byte array.
@@ -89,7 +83,6 @@ public readonly partial struct RestypeQuery
         /// A constant for the <c>enum</c> keyword.
         /// </summary>
         public static readonly JsonString Enum = JsonString.ParseValue("\"service\"");
-
         /// <summary>
         /// A constant for the <c>enum</c> keyword.
         /// </summary>
@@ -98,15 +91,12 @@ public readonly partial struct RestypeQuery
         /// <summary>
         /// Core type validation.
         /// </summary>
-        /// <param name="valueKind">The <see cref="JsonValueKind" /> of the value to validate.</param>
-        /// <param name="validationContext">The current validation context.</param>
-        /// <param name="level">The current validation level.</param>
+        /// <param name = "valueKind">The <see cref = "JsonValueKind"/> of the value to validate.</param>
+        /// <param name = "validationContext">The current validation context.</param>
+        /// <param name = "level">The current validation level.</param>
         /// <returns>The resulting validation context after validation.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal static ValidationContext TypeValidationHandler(
-            JsonValueKind valueKind,
-            in ValidationContext validationContext,
-            ValidationLevel level = ValidationLevel.Flag)
+        internal static ValidationContext TypeValidationHandler(JsonValueKind valueKind, in ValidationContext validationContext, ValidationLevel level = ValidationLevel.Flag)
         {
             return Corvus.Json.ValidateWithoutCoreType.TypeString(valueKind, validationContext, level, "type");
         }
@@ -114,18 +104,14 @@ public readonly partial struct RestypeQuery
         /// <summary>
         /// Composition validation (any-of).
         /// </summary>
-        /// <param name="value">The value to validate.</param>
-        /// <param name="validationContext">The current validation context.</param>
-        /// <param name="level">The current validation level.</param>
+        /// <param name = "value">The value to validate.</param>
+        /// <param name = "validationContext">The current validation context.</param>
+        /// <param name = "level">The current validation level.</param>
         /// <returns>The resulting validation context after validation.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal static ValidationContext CompositionAnyOfValidationHandler(
-            in RestypeQuery value,
-            in ValidationContext validationContext,
-            ValidationLevel level = ValidationLevel.Flag)
+        internal static ValidationContext CompositionAnyOfValidationHandler(in RestypeQuery value, in ValidationContext validationContext, ValidationLevel level = ValidationLevel.Flag)
         {
             ValidationContext result = validationContext;
-
             result = ValidateEnum(value, result, level);
             if (!result.IsValid && level == ValidationLevel.Flag)
             {
@@ -137,9 +123,7 @@ public readonly partial struct RestypeQuery
             {
                 ValidationContext result = validationContext;
                 bool enumFoundValid = false;
-
                 enumFoundValid = value.Equals(CorvusValidation.Enum);
-
                 if (enumFoundValid)
                 {
                     if (level >= ValidationLevel.Verbose)

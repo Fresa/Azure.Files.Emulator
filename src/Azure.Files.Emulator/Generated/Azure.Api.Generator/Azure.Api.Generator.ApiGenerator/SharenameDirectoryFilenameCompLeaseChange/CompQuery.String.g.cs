@@ -6,9 +6,7 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
 #nullable enable
-
 using System.Buffers;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
@@ -19,18 +17,18 @@ namespace ShareNameDirectoryFileNameCompLeaseChange;
 /// <summary>
 /// Generated from JSON Schema.
 /// </summary>
-public readonly partial struct CompQuery
+public readonly partial struct CompQuery 
 #if NET8_0_OR_GREATER
     : IJsonString<ShareNameDirectoryFileNameCompLeaseChange.CompQuery>,
       ISpanFormattable
 #else
-    : IJsonString<ShareNameDirectoryFileNameCompLeaseChange.CompQuery>
+: IJsonString<ShareNameDirectoryFileNameCompLeaseChange.CompQuery>
 #endif
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="CompQuery"/> struct.
+    /// Initializes a new instance of the <see cref = "CompQuery"/> struct.
     /// </summary>
-    /// <param name="value">The value from which to construct the instance.</param>
+    /// <param name = "value">The value from which to construct the instance.</param>
     public CompQuery(in ReadOnlySpan<char> value)
     {
         this.backing = Backing.String;
@@ -39,14 +37,13 @@ public readonly partial struct CompQuery
     }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="CompQuery"/> struct.
+    /// Initializes a new instance of the <see cref = "CompQuery"/> struct.
     /// </summary>
-    /// <param name="value">The value from which to construct the instance.</param>
+    /// <param name = "value">The value from which to construct the instance.</param>
     public CompQuery(in ReadOnlySpan<byte> value)
     {
         this.backing = Backing.String;
         this.jsonElementBacking = default;
-
 #if NET8_0_OR_GREATER
         this.stringBacking = System.Text.Encoding.UTF8.GetString(value);
 #else
@@ -64,9 +61,9 @@ public readonly partial struct CompQuery
     }
 
     /// <summary>
-    /// Conversion from <see cref="string"/>.
+    /// Conversion from <see cref = "string "/>.
     /// </summary>
-    /// <param name="value">The value from which to convert.</param>
+    /// <param name = "value">The value from which to convert.</param>
     public static implicit operator CompQuery(string value)
     {
         return new(value);
@@ -75,13 +72,12 @@ public readonly partial struct CompQuery
     /// <summary>
     /// Conversion from JsonString.
     /// </summary>
-    /// <param name="value">The value from which to convert.</param>
+    /// <param name = "value">The value from which to convert.</param>
     public static implicit operator CompQuery(JsonString value)
     {
         if (value.HasDotnetBacking && value.ValueKind == JsonValueKind.String)
         {
-            return new(
-                (string)value);
+            return new((string)value);
         }
 
         return new(value.AsJsonElement);
@@ -90,23 +86,22 @@ public readonly partial struct CompQuery
     /// <summary>
     /// Conversion to JsonString.
     /// </summary>
-    /// <param name="value">The value from which to convert.</param>
+    /// <param name = "value">The value from which to convert.</param>
     public static implicit operator JsonString(CompQuery value)
     {
-        return
-            value.AsString;
+        return value.AsString;
     }
 
     /// <summary>
     /// Conversion to string.
     /// </summary>
-    /// <param name="value">The value from which to convert.</param>
-    /// <exception cref="InvalidOperationException">The value was not a string.</exception>
-    public static explicit operator string(CompQuery value)
+    /// <param name = "value">The value from which to convert.</param>
+    /// <exception cref = "InvalidOperationException">The value was not a string.</exception>
+    public static explicit operator string (CompQuery value)
     {
         if ((value.backing & Backing.JsonElement) != 0)
         {
-            if (value.jsonElementBacking.GetString() is string result)
+            if (value.jsonElementBacking.GetString()is string result)
             {
                 return result;
             }
@@ -125,15 +120,14 @@ public readonly partial struct CompQuery
     /// <summary>
     /// Concatenate 2 JSON values, producing an instance of the string type CompQuery.
     /// </summary>
-    /// <typeparam name="T1">The type of the 1st value.</typeparam>
-    /// <typeparam name="T2">The type of the 2nd value.</typeparam>
-    /// <param name="buffer">The buffer into which to concatenate the values.</param>
-    /// <param name="value1">The 1st value.</param>
-    /// <param name="value2">The 2nd value.</param>
+    /// <typeparam name = "T1">The type of the 1st value.</typeparam>
+    /// <typeparam name = "T2">The type of the 2nd value.</typeparam>
+    /// <param name = "buffer">The buffer into which to concatenate the values.</param>
+    /// <param name = "value1">The 1st value.</param>
+    /// <param name = "value2">The 2nd value.</param>
     /// <returns>An instance of this string type.</returns>
     public static CompQuery Concatenate<T1, T2>(Span<byte> buffer, in T1 value1, in T2 value2)
-        where T1 : struct, IJsonValue<T1>
-        where T2 : struct, IJsonValue<T2>
+        where T1 : struct, IJsonValue<T1> where T2 : struct, IJsonValue<T2>
     {
         int written = LowAllocJsonUtils.ConcatenateAsUtf8JsonString(buffer, value1, value2);
         return ParseValue(buffer[..written]);
@@ -142,18 +136,16 @@ public readonly partial struct CompQuery
     /// <summary>
     /// Concatenate 3 JSON values, producing an instance of the string type CompQuery.
     /// </summary>
-    /// <typeparam name="T1">The type of the 1st value.</typeparam>
-    /// <typeparam name="T2">The type of the 2nd value.</typeparam>
-    /// <typeparam name="T3">The type of the 3rd value.</typeparam>
-    /// <param name="buffer">The buffer into which to concatenate the values.</param>
-    /// <param name="value1">The 1st value.</param>
-    /// <param name="value2">The 2nd value.</param>
-    /// <param name="value3">The 3rd value.</param>
+    /// <typeparam name = "T1">The type of the 1st value.</typeparam>
+    /// <typeparam name = "T2">The type of the 2nd value.</typeparam>
+    /// <typeparam name = "T3">The type of the 3rd value.</typeparam>
+    /// <param name = "buffer">The buffer into which to concatenate the values.</param>
+    /// <param name = "value1">The 1st value.</param>
+    /// <param name = "value2">The 2nd value.</param>
+    /// <param name = "value3">The 3rd value.</param>
     /// <returns>An instance of this string type.</returns>
     public static CompQuery Concatenate<T1, T2, T3>(Span<byte> buffer, in T1 value1, in T2 value2, in T3 value3)
-        where T1 : struct, IJsonValue<T1>
-        where T2 : struct, IJsonValue<T2>
-        where T3 : struct, IJsonValue<T3>
+        where T1 : struct, IJsonValue<T1> where T2 : struct, IJsonValue<T2> where T3 : struct, IJsonValue<T3>
     {
         int written = LowAllocJsonUtils.ConcatenateAsUtf8JsonString(buffer, value1, value2, value3);
         return ParseValue(buffer[..written]);
@@ -162,21 +154,18 @@ public readonly partial struct CompQuery
     /// <summary>
     /// Concatenate 4 JSON values, producing an instance of the string type CompQuery.
     /// </summary>
-    /// <typeparam name="T1">The type of the 1st value.</typeparam>
-    /// <typeparam name="T2">The type of the 2nd value.</typeparam>
-    /// <typeparam name="T3">The type of the 3rd value.</typeparam>
-    /// <typeparam name="T4">The type of the 4th value.</typeparam>
-    /// <param name="buffer">The buffer into which to concatenate the values.</param>
-    /// <param name="value1">The 1st value.</param>
-    /// <param name="value2">The 2nd value.</param>
-    /// <param name="value3">The 3rd value.</param>
-    /// <param name="value4">The 4th value.</param>
+    /// <typeparam name = "T1">The type of the 1st value.</typeparam>
+    /// <typeparam name = "T2">The type of the 2nd value.</typeparam>
+    /// <typeparam name = "T3">The type of the 3rd value.</typeparam>
+    /// <typeparam name = "T4">The type of the 4th value.</typeparam>
+    /// <param name = "buffer">The buffer into which to concatenate the values.</param>
+    /// <param name = "value1">The 1st value.</param>
+    /// <param name = "value2">The 2nd value.</param>
+    /// <param name = "value3">The 3rd value.</param>
+    /// <param name = "value4">The 4th value.</param>
     /// <returns>An instance of this string type.</returns>
     public static CompQuery Concatenate<T1, T2, T3, T4>(Span<byte> buffer, in T1 value1, in T2 value2, in T3 value3, in T4 value4)
-        where T1 : struct, IJsonValue<T1>
-        where T2 : struct, IJsonValue<T2>
-        where T3 : struct, IJsonValue<T3>
-        where T4 : struct, IJsonValue<T4>
+        where T1 : struct, IJsonValue<T1> where T2 : struct, IJsonValue<T2> where T3 : struct, IJsonValue<T3> where T4 : struct, IJsonValue<T4>
     {
         int written = LowAllocJsonUtils.ConcatenateAsUtf8JsonString(buffer, value1, value2, value3, value4);
         return ParseValue(buffer[..written]);
@@ -185,24 +174,20 @@ public readonly partial struct CompQuery
     /// <summary>
     /// Concatenate 5 JSON values, producing an instance of the string type CompQuery.
     /// </summary>
-    /// <typeparam name="T1">The type of the 1st value.</typeparam>
-    /// <typeparam name="T2">The type of the 2nd value.</typeparam>
-    /// <typeparam name="T3">The type of the 3rd value.</typeparam>
-    /// <typeparam name="T4">The type of the 4th value.</typeparam>
-    /// <typeparam name="T5">The type of the 5th value.</typeparam>
-    /// <param name="buffer">The buffer into which to concatenate the values.</param>
-    /// <param name="value1">The 1st value.</param>
-    /// <param name="value2">The 2nd value.</param>
-    /// <param name="value3">The 3rd value.</param>
-    /// <param name="value4">The 4th value.</param>
-    /// <param name="value5">The 5th value.</param>
+    /// <typeparam name = "T1">The type of the 1st value.</typeparam>
+    /// <typeparam name = "T2">The type of the 2nd value.</typeparam>
+    /// <typeparam name = "T3">The type of the 3rd value.</typeparam>
+    /// <typeparam name = "T4">The type of the 4th value.</typeparam>
+    /// <typeparam name = "T5">The type of the 5th value.</typeparam>
+    /// <param name = "buffer">The buffer into which to concatenate the values.</param>
+    /// <param name = "value1">The 1st value.</param>
+    /// <param name = "value2">The 2nd value.</param>
+    /// <param name = "value3">The 3rd value.</param>
+    /// <param name = "value4">The 4th value.</param>
+    /// <param name = "value5">The 5th value.</param>
     /// <returns>An instance of this string type.</returns>
     public static CompQuery Concatenate<T1, T2, T3, T4, T5>(Span<byte> buffer, in T1 value1, in T2 value2, in T3 value3, in T4 value4, in T5 value5)
-        where T1 : struct, IJsonValue<T1>
-        where T2 : struct, IJsonValue<T2>
-        where T3 : struct, IJsonValue<T3>
-        where T4 : struct, IJsonValue<T4>
-        where T5 : struct, IJsonValue<T5>
+        where T1 : struct, IJsonValue<T1> where T2 : struct, IJsonValue<T2> where T3 : struct, IJsonValue<T3> where T4 : struct, IJsonValue<T4> where T5 : struct, IJsonValue<T5>
     {
         int written = LowAllocJsonUtils.ConcatenateAsUtf8JsonString(buffer, value1, value2, value3, value4, value5);
         return ParseValue(buffer[..written]);
@@ -211,27 +196,22 @@ public readonly partial struct CompQuery
     /// <summary>
     /// Concatenate 6 JSON values, producing an instance of the string type CompQuery.
     /// </summary>
-    /// <typeparam name="T1">The type of the 1st value.</typeparam>
-    /// <typeparam name="T2">The type of the 2nd value.</typeparam>
-    /// <typeparam name="T3">The type of the 3rd value.</typeparam>
-    /// <typeparam name="T4">The type of the 4th value.</typeparam>
-    /// <typeparam name="T5">The type of the 5th value.</typeparam>
-    /// <typeparam name="T6">The type of the 6th value.</typeparam>
-    /// <param name="buffer">The buffer into which to concatenate the values.</param>
-    /// <param name="value1">The 1st value.</param>
-    /// <param name="value2">The 2nd value.</param>
-    /// <param name="value3">The 3rd value.</param>
-    /// <param name="value4">The 4th value.</param>
-    /// <param name="value5">The 5th value.</param>
-    /// <param name="value6">The 6th value.</param>
+    /// <typeparam name = "T1">The type of the 1st value.</typeparam>
+    /// <typeparam name = "T2">The type of the 2nd value.</typeparam>
+    /// <typeparam name = "T3">The type of the 3rd value.</typeparam>
+    /// <typeparam name = "T4">The type of the 4th value.</typeparam>
+    /// <typeparam name = "T5">The type of the 5th value.</typeparam>
+    /// <typeparam name = "T6">The type of the 6th value.</typeparam>
+    /// <param name = "buffer">The buffer into which to concatenate the values.</param>
+    /// <param name = "value1">The 1st value.</param>
+    /// <param name = "value2">The 2nd value.</param>
+    /// <param name = "value3">The 3rd value.</param>
+    /// <param name = "value4">The 4th value.</param>
+    /// <param name = "value5">The 5th value.</param>
+    /// <param name = "value6">The 6th value.</param>
     /// <returns>An instance of this string type.</returns>
     public static CompQuery Concatenate<T1, T2, T3, T4, T5, T6>(Span<byte> buffer, in T1 value1, in T2 value2, in T3 value3, in T4 value4, in T5 value5, in T6 value6)
-        where T1 : struct, IJsonValue<T1>
-        where T2 : struct, IJsonValue<T2>
-        where T3 : struct, IJsonValue<T3>
-        where T4 : struct, IJsonValue<T4>
-        where T5 : struct, IJsonValue<T5>
-        where T6 : struct, IJsonValue<T6>
+        where T1 : struct, IJsonValue<T1> where T2 : struct, IJsonValue<T2> where T3 : struct, IJsonValue<T3> where T4 : struct, IJsonValue<T4> where T5 : struct, IJsonValue<T5> where T6 : struct, IJsonValue<T6>
     {
         int written = LowAllocJsonUtils.ConcatenateAsUtf8JsonString(buffer, value1, value2, value3, value4, value5, value6);
         return ParseValue(buffer[..written]);
@@ -240,30 +220,24 @@ public readonly partial struct CompQuery
     /// <summary>
     /// Concatenate 7 JSON values, producing an instance of the string type CompQuery.
     /// </summary>
-    /// <typeparam name="T1">The type of the 1st value.</typeparam>
-    /// <typeparam name="T2">The type of the 2nd value.</typeparam>
-    /// <typeparam name="T3">The type of the 3rd value.</typeparam>
-    /// <typeparam name="T4">The type of the 4th value.</typeparam>
-    /// <typeparam name="T5">The type of the 5th value.</typeparam>
-    /// <typeparam name="T6">The type of the 6th value.</typeparam>
-    /// <typeparam name="T7">The type of the 7th value.</typeparam>
-    /// <param name="buffer">The buffer into which to concatenate the values.</param>
-    /// <param name="value1">The 1st value.</param>
-    /// <param name="value2">The 2nd value.</param>
-    /// <param name="value3">The 3rd value.</param>
-    /// <param name="value4">The 4th value.</param>
-    /// <param name="value5">The 5th value.</param>
-    /// <param name="value6">The 6th value.</param>
-    /// <param name="value7">The 7th value.</param>
+    /// <typeparam name = "T1">The type of the 1st value.</typeparam>
+    /// <typeparam name = "T2">The type of the 2nd value.</typeparam>
+    /// <typeparam name = "T3">The type of the 3rd value.</typeparam>
+    /// <typeparam name = "T4">The type of the 4th value.</typeparam>
+    /// <typeparam name = "T5">The type of the 5th value.</typeparam>
+    /// <typeparam name = "T6">The type of the 6th value.</typeparam>
+    /// <typeparam name = "T7">The type of the 7th value.</typeparam>
+    /// <param name = "buffer">The buffer into which to concatenate the values.</param>
+    /// <param name = "value1">The 1st value.</param>
+    /// <param name = "value2">The 2nd value.</param>
+    /// <param name = "value3">The 3rd value.</param>
+    /// <param name = "value4">The 4th value.</param>
+    /// <param name = "value5">The 5th value.</param>
+    /// <param name = "value6">The 6th value.</param>
+    /// <param name = "value7">The 7th value.</param>
     /// <returns>An instance of this string type.</returns>
     public static CompQuery Concatenate<T1, T2, T3, T4, T5, T6, T7>(Span<byte> buffer, in T1 value1, in T2 value2, in T3 value3, in T4 value4, in T5 value5, in T6 value6, in T7 value7)
-        where T1 : struct, IJsonValue<T1>
-        where T2 : struct, IJsonValue<T2>
-        where T3 : struct, IJsonValue<T3>
-        where T4 : struct, IJsonValue<T4>
-        where T5 : struct, IJsonValue<T5>
-        where T6 : struct, IJsonValue<T6>
-        where T7 : struct, IJsonValue<T7>
+        where T1 : struct, IJsonValue<T1> where T2 : struct, IJsonValue<T2> where T3 : struct, IJsonValue<T3> where T4 : struct, IJsonValue<T4> where T5 : struct, IJsonValue<T5> where T6 : struct, IJsonValue<T6> where T7 : struct, IJsonValue<T7>
     {
         int written = LowAllocJsonUtils.ConcatenateAsUtf8JsonString(buffer, value1, value2, value3, value4, value5, value6, value7);
         return ParseValue(buffer[..written]);
@@ -272,33 +246,26 @@ public readonly partial struct CompQuery
     /// <summary>
     /// Concatenate 8 JSON values, producing an instance of the string type CompQuery.
     /// </summary>
-    /// <typeparam name="T1">The type of the 1st value.</typeparam>
-    /// <typeparam name="T2">The type of the 2nd value.</typeparam>
-    /// <typeparam name="T3">The type of the 3rd value.</typeparam>
-    /// <typeparam name="T4">The type of the 4th value.</typeparam>
-    /// <typeparam name="T5">The type of the 5th value.</typeparam>
-    /// <typeparam name="T6">The type of the 6th value.</typeparam>
-    /// <typeparam name="T7">The type of the 7th value.</typeparam>
-    /// <typeparam name="T8">The type of the 8th value.</typeparam>
-    /// <param name="buffer">The buffer into which to concatenate the values.</param>
-    /// <param name="value1">The 1st value.</param>
-    /// <param name="value2">The 2nd value.</param>
-    /// <param name="value3">The 3rd value.</param>
-    /// <param name="value4">The 4th value.</param>
-    /// <param name="value5">The 5th value.</param>
-    /// <param name="value6">The 6th value.</param>
-    /// <param name="value7">The 7th value.</param>
-    /// <param name="value8">The 8th value.</param>
+    /// <typeparam name = "T1">The type of the 1st value.</typeparam>
+    /// <typeparam name = "T2">The type of the 2nd value.</typeparam>
+    /// <typeparam name = "T3">The type of the 3rd value.</typeparam>
+    /// <typeparam name = "T4">The type of the 4th value.</typeparam>
+    /// <typeparam name = "T5">The type of the 5th value.</typeparam>
+    /// <typeparam name = "T6">The type of the 6th value.</typeparam>
+    /// <typeparam name = "T7">The type of the 7th value.</typeparam>
+    /// <typeparam name = "T8">The type of the 8th value.</typeparam>
+    /// <param name = "buffer">The buffer into which to concatenate the values.</param>
+    /// <param name = "value1">The 1st value.</param>
+    /// <param name = "value2">The 2nd value.</param>
+    /// <param name = "value3">The 3rd value.</param>
+    /// <param name = "value4">The 4th value.</param>
+    /// <param name = "value5">The 5th value.</param>
+    /// <param name = "value6">The 6th value.</param>
+    /// <param name = "value7">The 7th value.</param>
+    /// <param name = "value8">The 8th value.</param>
     /// <returns>An instance of this string type.</returns>
     public static CompQuery Concatenate<T1, T2, T3, T4, T5, T6, T7, T8>(Span<byte> buffer, in T1 value1, in T2 value2, in T3 value3, in T4 value4, in T5 value5, in T6 value6, in T7 value7, in T8 value8)
-        where T1 : struct, IJsonValue<T1>
-        where T2 : struct, IJsonValue<T2>
-        where T3 : struct, IJsonValue<T3>
-        where T4 : struct, IJsonValue<T4>
-        where T5 : struct, IJsonValue<T5>
-        where T6 : struct, IJsonValue<T6>
-        where T7 : struct, IJsonValue<T7>
-        where T8 : struct, IJsonValue<T8>
+        where T1 : struct, IJsonValue<T1> where T2 : struct, IJsonValue<T2> where T3 : struct, IJsonValue<T3> where T4 : struct, IJsonValue<T4> where T5 : struct, IJsonValue<T5> where T6 : struct, IJsonValue<T6> where T7 : struct, IJsonValue<T7> where T8 : struct, IJsonValue<T8>
     {
         int written = LowAllocJsonUtils.ConcatenateAsUtf8JsonString(buffer, value1, value2, value3, value4, value5, value6, value7, value8);
         return ParseValue(buffer[..written]);
@@ -313,8 +280,7 @@ public readonly partial struct CompQuery
             return true;
         }
 
-        if ((this.backing & Backing.JsonElement) != 0 &&
-            this.jsonElementBacking.ValueKind == JsonValueKind.String)
+        if ((this.backing & Backing.JsonElement) != 0 && this.jsonElementBacking.ValueKind == JsonValueKind.String)
         {
             value = this.jsonElementBacking.GetString();
             return value is not null;
@@ -341,7 +307,7 @@ public readonly partial struct CompQuery
     /// <summary>
     /// Compare to a sequence of characters.
     /// </summary>
-    /// <param name="utf8Bytes">The UTF8-encoded character sequence to compare.</param>
+    /// <param name = "utf8Bytes">The UTF8-encoded character sequence to compare.</param>
     /// <returns><c>True</c> if the sequences match.</returns>
     public bool EqualsUtf8Bytes(ReadOnlySpan<byte> utf8Bytes)
     {
@@ -379,7 +345,6 @@ public readonly partial struct CompQuery
             char[] chars = ArrayPool<char>.Shared.Rent(maxCharCount);
             byte[] bytes = ArrayPool<byte>.Shared.Rent(utf8Bytes.Length);
             utf8Bytes.CopyTo(bytes);
-
             try
             {
                 int written = System.Text.Encoding.UTF8.GetChars(bytes, 0, utf8Bytes.Length, chars, 0);
@@ -399,7 +364,7 @@ public readonly partial struct CompQuery
     /// <summary>
     /// Compare to a sequence of characters.
     /// </summary>
-    /// <param name="chars">The character sequence to compare.</param>
+    /// <param name = "chars">The character sequence to compare.</param>
     /// <returns><c>True</c> if the sequences match.</returns>
     public bool EqualsString(string chars)
     {
@@ -424,7 +389,7 @@ public readonly partial struct CompQuery
     /// <summary>
     /// Compare to a sequence of characters.
     /// </summary>
-    /// <param name="chars">The character sequence to compare.</param>
+    /// <param name = "chars">The character sequence to compare.</param>
     /// <returns><c>True</c> if the sequences match.</returns>
     public bool EqualsString(ReadOnlySpan<char> chars)
     {
@@ -449,7 +414,6 @@ public readonly partial struct CompQuery
 
         return false;
     }
-
 #if NET8_0_OR_GREATER
     /// <inheritdoc/>
     public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format, IFormatProvider? provider)
