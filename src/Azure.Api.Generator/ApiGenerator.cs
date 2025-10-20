@@ -146,40 +146,14 @@ public sealed class ApiGenerator : IIncrementalGenerator
                         contentGenerators);
                 }
 
-                var requestSource =
-                    $$"""
-                        #nullable enable
-                        using Azure.Files.Emulator.Http;
-                        using Corvus.Json;
-                        
-                        namespace {{@namespace}};
-                        
-                        internal partial class Request
-                        {
-                            {{parameterGenerators.Values.Aggregate(new StringBuilder(),(builder, generator) => 
-                                builder.AppendLine(generator.GenerateRequestProperty()))}}
-
-                            {{requestBodyGenerator.GenerateRequestProperty("Body")}}
-                                                      
-                            public static Request Bind(HttpRequest request)
-                            {
-                                return new Request
-                                {
-                                    {{parameterGenerators.Values.Aggregate(new StringBuilder(),(builder, generator) => 
-                                        builder.AppendLine(generator.GenerateRequestBindingDirective()))}}
-                                        
-                                    {{requestBodyGenerator.GenerateRequestBindingDirective("Body")}}
-                                };
-                            }
-                        }
-                        #nullable restore
-                      """;
+                var requestGenerator = new RequestGenerator(parameterGenerators.Values.ToList(), requestBodyGenerator);
+                var requestSource = requestGenerator.GenerateRequestClass(@namespace);
                 var requestSourceCode = new SourceCode(
                     $"{directory}/Request.g.cs",
                     requestSource);
                 requestSourceCode.AddTo(context);
+                
                 var responseContentNamespace = @namespace + ".Content";
-
                 var responses = operation.Responses ?? new OpenApiResponses
                 {
                     ["default"] = new OpenApiResponse()
