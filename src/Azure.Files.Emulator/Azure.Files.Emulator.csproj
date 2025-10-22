@@ -12,7 +12,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Remove="Generated/**/*.g.cs" />
+        <Compile Remove="Generated/**" />
     </ItemGroup>
 
     <Target Name="CleanSourceGeneratedFiles" 
