@@ -1,4 +1,5 @@
-﻿using System.Collections.Concurrent;
+﻿#nullable enable
+using System.Collections.Concurrent;
 using System.Text.Json;
 using Corvus.Json;
 using Microsoft.AspNetCore.Http;
@@ -122,3 +123,5 @@ internal static class HttpRequestExtensions
         return true;
     }
 }
+#nullable restore
+

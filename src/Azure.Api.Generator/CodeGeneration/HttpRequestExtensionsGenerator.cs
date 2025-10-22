@@ -5,8 +5,9 @@ internal sealed class HttpRequestExtensionsGenerator
     private const string HttpRequestExtensionsClassName = "HttpRequestExtensions";
     
     internal SourceCode GenerateHttpRequestExtensionsClass(string @namespace) =>
-        new(@$"{@namespace}/{HttpRequestExtensionsClassName}.cs",
+        new(@$"{@namespace}/{HttpRequestExtensionsClassName}.g.cs",
         $$$""""
+        #nullable enable
         using System.Collections.Concurrent;
         using System.Text.Json;
         using Corvus.Json;
@@ -150,5 +151,6 @@ internal sealed class HttpRequestExtensionsGenerator
                 return true;
             }
         }
+        #nullable restore
         """");
 }
