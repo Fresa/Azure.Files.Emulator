@@ -18,7 +18,7 @@ internal partial class Request
     {
         return new Request
         {
-            ShareName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            ShareName = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "shareName",
@@ -28,7 +28,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Restype = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompUndelete.RestypeQuery>(request, """
+            Restype = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompUndelete.RestypeQuery>(request, """
 {
   "in": "query",
   "name": "restype",
@@ -40,7 +40,7 @@ internal partial class Request
   ]
 }
 """),
-            Comp = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompUndelete.CompQuery>(request, """
+            Comp = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompUndelete.CompQuery>(request, """
 {
   "in": "query",
   "name": "comp",
@@ -52,7 +52,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompUndelete.ShareRestore.TimeoutQuery>(request, """
+            Timeout = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompUndelete.ShareRestore.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -62,7 +62,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompUndelete.ShareRestore.XMsVersionHeader>(request, """
+            XMsVersion = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompUndelete.ShareRestore.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -76,7 +76,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsClientRequestId = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            XMsClientRequestId = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-client-request-id",
@@ -86,7 +86,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsDeletedShareName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            XMsDeletedShareName = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-deleted-share-name",
@@ -96,7 +96,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsDeletedShareVersion = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            XMsDeletedShareVersion = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-deleted-share-version",
@@ -106,7 +106,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompUndelete.ShareRestore.XMsFileRequestIntentHeader>(request, """
+            XMsFileRequestIntent = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompUndelete.ShareRestore.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

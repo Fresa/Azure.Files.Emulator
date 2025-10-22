@@ -25,7 +25,7 @@ internal partial class Request
     {
         return new Request
         {
-            ShareName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            ShareName = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "shareName",
@@ -35,7 +35,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Directory = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            Directory = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "directory",
@@ -46,7 +46,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            FileName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            FileName = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "fileName",
@@ -57,7 +57,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Restype = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.RestypeQuery>(request, """
+            Restype = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.RestypeQuery>(request, """
 {
   "in": "query",
   "name": "restype",
@@ -69,7 +69,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.TimeoutQuery>(request, """
+            Timeout = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -79,7 +79,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Sharesnapshot = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            Sharesnapshot = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "query",
   "name": "sharesnapshot",
@@ -88,7 +88,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.XMsVersionHeader>(request, """
+            XMsVersion = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -102,7 +102,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsClientRequestId = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            XMsClientRequestId = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-client-request-id",
@@ -112,7 +112,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.XMsFileRequestIntentHeader>(request, """
+            XMsFileRequestIntent = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",
@@ -128,7 +128,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsMeta = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            XMsMeta = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-meta",
@@ -139,7 +139,7 @@ internal partial class Request
   "x-ms-header-collection-prefix": "x-ms-meta-"
 }
 """).AsOptional(),
-            XMsFileCreationTime = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            XMsFileCreationTime = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-file-creation-time",
@@ -150,7 +150,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFileLastWriteTime = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            XMsFileLastWriteTime = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-file-last-write-time",
@@ -161,7 +161,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsLeaseId = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            XMsLeaseId = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-lease-id",
@@ -174,7 +174,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsOwner = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            XMsOwner = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-owner",
@@ -184,7 +184,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsGroup = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            XMsGroup = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-group",
@@ -194,7 +194,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsLinkText = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            XMsLinkText = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-link-text",

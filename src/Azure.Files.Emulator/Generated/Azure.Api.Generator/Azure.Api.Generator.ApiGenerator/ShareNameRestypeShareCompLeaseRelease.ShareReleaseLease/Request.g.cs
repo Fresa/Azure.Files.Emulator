@@ -19,7 +19,7 @@ internal partial class Request
     {
         return new Request
         {
-            ShareName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            ShareName = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "shareName",
@@ -29,7 +29,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Comp = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseRelease.CompQuery>(request, """
+            Comp = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseRelease.CompQuery>(request, """
 {
   "in": "query",
   "name": "comp",
@@ -41,7 +41,7 @@ internal partial class Request
   ]
 }
 """),
-            XMsLeaseAction = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseRelease.XMsLeaseActionHeader>(request, """
+            XMsLeaseAction = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseRelease.XMsLeaseActionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-lease-action",
@@ -59,7 +59,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Restype = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseRelease.RestypeQuery>(request, """
+            Restype = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseRelease.RestypeQuery>(request, """
 {
   "in": "query",
   "name": "restype",
@@ -71,7 +71,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseRelease.ShareReleaseLease.TimeoutQuery>(request, """
+            Timeout = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseRelease.ShareReleaseLease.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -81,7 +81,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsLeaseId = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            XMsLeaseId = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-lease-id",
@@ -92,7 +92,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseRelease.ShareReleaseLease.XMsVersionHeader>(request, """
+            XMsVersion = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseRelease.ShareReleaseLease.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -106,7 +106,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            Sharesnapshot = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            Sharesnapshot = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "query",
   "name": "sharesnapshot",
@@ -115,7 +115,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsClientRequestId = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            XMsClientRequestId = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-client-request-id",
@@ -125,7 +125,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseRelease.ShareReleaseLease.XMsFileRequestIntentHeader>(request, """
+            XMsFileRequestIntent = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseRelease.ShareReleaseLease.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

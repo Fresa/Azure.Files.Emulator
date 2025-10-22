@@ -17,7 +17,7 @@ internal partial class Request
     {
         return new Request
         {
-            Comp = OpenApiGenerator.HttpRequestExtensions.Bind<CompList.CompQuery>(request, """
+            Comp = Azure.Files.Emulator.HttpRequestExtensions.Bind<CompList.CompQuery>(request, """
 {
   "in": "query",
   "name": "comp",
@@ -29,7 +29,7 @@ internal partial class Request
   ]
 }
 """),
-            Prefix = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            Prefix = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "query",
   "name": "prefix",
@@ -38,7 +38,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Marker = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            Marker = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "query",
   "name": "marker",
@@ -47,7 +47,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Maxresults = OpenApiGenerator.HttpRequestExtensions.Bind<CompList.ServiceListSharesSegment.MaxresultsQuery>(request, """
+            Maxresults = Azure.Files.Emulator.HttpRequestExtensions.Bind<CompList.ServiceListSharesSegment.MaxresultsQuery>(request, """
 {
   "in": "query",
   "name": "maxresults",
@@ -57,7 +57,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Include = OpenApiGenerator.HttpRequestExtensions.Bind<CompList.ServiceListSharesSegment.IncludeQuery>(request, """
+            Include = Azure.Files.Emulator.HttpRequestExtensions.Bind<CompList.ServiceListSharesSegment.IncludeQuery>(request, """
 {
   "in": "query",
   "name": "include",
@@ -79,7 +79,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<CompList.ServiceListSharesSegment.TimeoutQuery>(request, """
+            Timeout = Azure.Files.Emulator.HttpRequestExtensions.Bind<CompList.ServiceListSharesSegment.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -89,7 +89,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<CompList.ServiceListSharesSegment.XMsVersionHeader>(request, """
+            XMsVersion = Azure.Files.Emulator.HttpRequestExtensions.Bind<CompList.ServiceListSharesSegment.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -103,7 +103,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<CompList.ServiceListSharesSegment.XMsFileRequestIntentHeader>(request, """
+            XMsFileRequestIntent = Azure.Files.Emulator.HttpRequestExtensions.Bind<CompList.ServiceListSharesSegment.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

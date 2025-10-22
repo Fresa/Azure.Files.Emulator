@@ -16,7 +16,7 @@ internal partial class Request
     {
         return new Request
         {
-            ShareName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            ShareName = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "shareName",
@@ -26,7 +26,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Restype = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompSnapshot.RestypeQuery>(request, """
+            Restype = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompSnapshot.RestypeQuery>(request, """
 {
   "in": "query",
   "name": "restype",
@@ -38,7 +38,7 @@ internal partial class Request
   ]
 }
 """),
-            Comp = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompSnapshot.CompQuery>(request, """
+            Comp = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompSnapshot.CompQuery>(request, """
 {
   "in": "query",
   "name": "comp",
@@ -50,7 +50,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.TimeoutQuery>(request, """
+            Timeout = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -60,7 +60,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsMeta = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            XMsMeta = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-meta",
@@ -71,7 +71,7 @@ internal partial class Request
   "x-ms-header-collection-prefix": "x-ms-meta-"
 }
 """).AsOptional(),
-            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.XMsVersionHeader>(request, """
+            XMsVersion = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -85,7 +85,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.XMsFileRequestIntentHeader>(request, """
+            XMsFileRequestIntent = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

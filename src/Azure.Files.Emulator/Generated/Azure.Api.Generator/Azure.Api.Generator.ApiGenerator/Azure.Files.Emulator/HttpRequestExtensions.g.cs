@@ -8,7 +8,7 @@ using Microsoft.Extensions.Primitives;
 using OpenAPI.ParameterStyleParsers.OpenApi20;
 using OpenAPI.ParameterStyleParsers.OpenApi20.ParameterParsers;
 
-namespace OpenApiGenerator;
+namespace Azure.Files.Emulator;
 internal static class HttpRequestExtensions
 {
     private static readonly ConcurrentDictionary<Parameter, ParameterValueParser> ParserCache = new();

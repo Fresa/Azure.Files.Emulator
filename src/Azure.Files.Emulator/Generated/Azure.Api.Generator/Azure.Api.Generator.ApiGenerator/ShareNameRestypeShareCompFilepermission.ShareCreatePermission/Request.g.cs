@@ -27,7 +27,7 @@ internal partial class Request
                 case "application/xml":
                     return new RequestContent
                     {
-                        ApplicationXml = OpenApiGenerator.HttpRequestExtensions.BindBody<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.RequestBodies.ApplicationXml>(request).AsOptional()
+                        ApplicationXml = Azure.Files.Emulator.HttpRequestExtensions.BindBody<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.RequestBodies.ApplicationXml>(request).AsOptional()
                     };
                 default:
                     throw new BadHttpRequestException($"Request body does not support content type {requestContentType}");
@@ -39,7 +39,7 @@ internal partial class Request
     {
         return new Request
         {
-            ShareName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            ShareName = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "shareName",
@@ -49,7 +49,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Restype = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompFilepermission.RestypeQuery>(request, """
+            Restype = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompFilepermission.RestypeQuery>(request, """
 {
   "in": "query",
   "name": "restype",
@@ -61,7 +61,7 @@ internal partial class Request
   ]
 }
 """),
-            Comp = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompFilepermission.CompQuery>(request, """
+            Comp = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompFilepermission.CompQuery>(request, """
 {
   "in": "query",
   "name": "comp",
@@ -73,7 +73,7 @@ internal partial class Request
   ]
 }
 """),
-            XMsFilePermissionKey = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            XMsFilePermissionKey = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-file-permission-key",
@@ -84,7 +84,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            XMsFilePermissionFormat = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompFilepermission.ShareGetPermission.XMsFilePermissionFormatHeader>(request, """
+            XMsFilePermissionFormat = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompFilepermission.ShareGetPermission.XMsFilePermissionFormatHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-permission-format",
@@ -102,7 +102,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.TimeoutQuery>(request, """
+            Timeout = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -112,7 +112,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.XMsVersionHeader>(request, """
+            XMsVersion = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -126,7 +126,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.XMsFileRequestIntentHeader>(request, """
+            XMsFileRequestIntent = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

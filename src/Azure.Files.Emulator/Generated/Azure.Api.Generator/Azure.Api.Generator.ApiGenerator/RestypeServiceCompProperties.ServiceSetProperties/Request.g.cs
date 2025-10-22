@@ -24,7 +24,7 @@ internal partial class Request
                 case "application/xml":
                     return new RequestContent
                     {
-                        ApplicationXml = OpenApiGenerator.HttpRequestExtensions.BindBody<RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml>(request).AsOptional()
+                        ApplicationXml = Azure.Files.Emulator.HttpRequestExtensions.BindBody<RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml>(request).AsOptional()
                     };
                 default:
                     throw new BadHttpRequestException($"Request body does not support content type {requestContentType}");
@@ -36,7 +36,7 @@ internal partial class Request
     {
         return new Request
         {
-            Restype = OpenApiGenerator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.RestypeQuery>(request, """
+            Restype = Azure.Files.Emulator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.RestypeQuery>(request, """
 {
   "in": "query",
   "name": "restype",
@@ -48,7 +48,7 @@ internal partial class Request
   ]
 }
 """),
-            Comp = OpenApiGenerator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.CompQuery>(request, """
+            Comp = Azure.Files.Emulator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.CompQuery>(request, """
 {
   "in": "query",
   "name": "comp",
@@ -60,7 +60,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.ServiceSetProperties.TimeoutQuery>(request, """
+            Timeout = Azure.Files.Emulator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.ServiceSetProperties.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -70,7 +70,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.ServiceSetProperties.XMsVersionHeader>(request, """
+            XMsVersion = Azure.Files.Emulator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.ServiceSetProperties.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -84,7 +84,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.ServiceSetProperties.XMsFileRequestIntentHeader>(request, """
+            XMsFileRequestIntent = Azure.Files.Emulator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.ServiceSetProperties.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

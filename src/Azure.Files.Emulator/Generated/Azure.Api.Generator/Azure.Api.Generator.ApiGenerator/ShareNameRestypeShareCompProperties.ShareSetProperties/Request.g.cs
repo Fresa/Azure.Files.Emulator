@@ -25,7 +25,7 @@ internal partial class Request
     {
         return new Request
         {
-            ShareName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            ShareName = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "shareName",
@@ -35,7 +35,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Restype = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompProperties.RestypeQuery>(request, """
+            Restype = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompProperties.RestypeQuery>(request, """
 {
   "in": "query",
   "name": "restype",
@@ -47,7 +47,7 @@ internal partial class Request
   ]
 }
 """),
-            Comp = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompProperties.CompQuery>(request, """
+            Comp = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompProperties.CompQuery>(request, """
 {
   "in": "query",
   "name": "comp",
@@ -59,7 +59,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompProperties.ShareSetProperties.TimeoutQuery>(request, """
+            Timeout = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompProperties.ShareSetProperties.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -69,7 +69,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompProperties.ShareSetProperties.XMsVersionHeader>(request, """
+            XMsVersion = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompProperties.ShareSetProperties.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -83,7 +83,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsShareQuota = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompProperties.ShareSetProperties.XMsShareQuotaHeader>(request, """
+            XMsShareQuota = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompProperties.ShareSetProperties.XMsShareQuotaHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-share-quota",
@@ -94,7 +94,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsAccessTier = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompProperties.ShareSetProperties.XMsAccessTierHeader>(request, """
+            XMsAccessTier = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompProperties.ShareSetProperties.XMsAccessTierHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-access-tier",
@@ -114,7 +114,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsLeaseId = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            XMsLeaseId = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-lease-id",
@@ -127,7 +127,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsRootSquash = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompProperties.ShareSetProperties.XMsRootSquashHeader>(request, """
+            XMsRootSquash = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompProperties.ShareSetProperties.XMsRootSquashHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-root-squash",
@@ -146,7 +146,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsEnableSnapshotVirtualDirectoryAccess = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonBoolean>(request, """
+            XMsEnableSnapshotVirtualDirectoryAccess = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonBoolean>(request, """
 {
   "in": "header",
   "name": "x-ms-enable-snapshot-virtual-directory-access",
@@ -155,7 +155,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsSharePaidBurstingEnabled = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonBoolean>(request, """
+            XMsSharePaidBurstingEnabled = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonBoolean>(request, """
 {
   "in": "header",
   "name": "x-ms-share-paid-bursting-enabled",
@@ -165,7 +165,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsSharePaidBurstingMaxBandwidthMibps = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonInt64>(request, """
+            XMsSharePaidBurstingMaxBandwidthMibps = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonInt64>(request, """
 {
   "in": "header",
   "name": "x-ms-share-paid-bursting-max-bandwidth-mibps",
@@ -176,7 +176,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsSharePaidBurstingMaxIops = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonInt64>(request, """
+            XMsSharePaidBurstingMaxIops = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonInt64>(request, """
 {
   "in": "header",
   "name": "x-ms-share-paid-bursting-max-iops",
@@ -187,7 +187,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompProperties.ShareSetProperties.XMsFileRequestIntentHeader>(request, """
+            XMsFileRequestIntent = Azure.Files.Emulator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompProperties.ShareSetProperties.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",
@@ -203,7 +203,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsShareProvisionedIops = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonInt64>(request, """
+            XMsShareProvisionedIops = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonInt64>(request, """
 {
   "in": "header",
   "name": "x-ms-share-provisioned-iops",
@@ -214,7 +214,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsShareProvisionedBandwidthMibps = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonInt64>(request, """
+            XMsShareProvisionedBandwidthMibps = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonInt64>(request, """
 {
   "in": "header",
   "name": "x-ms-share-provisioned-bandwidth-mibps",

@@ -14,7 +14,7 @@ internal partial class Request
     {
         return new Request
         {
-            Restype = OpenApiGenerator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.RestypeQuery>(request, """
+            Restype = Azure.Files.Emulator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.RestypeQuery>(request, """
 {
   "in": "query",
   "name": "restype",
@@ -26,7 +26,7 @@ internal partial class Request
   ]
 }
 """),
-            Comp = OpenApiGenerator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.CompQuery>(request, """
+            Comp = Azure.Files.Emulator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.CompQuery>(request, """
 {
   "in": "query",
   "name": "comp",
@@ -38,7 +38,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery>(request, """
+            Timeout = Azure.Files.Emulator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -48,7 +48,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.ServiceGetProperties.XMsVersionHeader>(request, """
+            XMsVersion = Azure.Files.Emulator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.ServiceGetProperties.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -62,7 +62,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.ServiceGetProperties.XMsFileRequestIntentHeader>(request, """
+            XMsFileRequestIntent = Azure.Files.Emulator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.ServiceGetProperties.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",
