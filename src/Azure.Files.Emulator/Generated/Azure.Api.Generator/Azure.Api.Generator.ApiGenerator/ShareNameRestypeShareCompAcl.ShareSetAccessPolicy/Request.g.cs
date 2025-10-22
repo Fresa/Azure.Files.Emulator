@@ -1,5 +1,4 @@
 ﻿#nullable enable
-using OpenApiGenerator;
 using Corvus.Json;
 
 namespace ShareNameRestypeShareCompAcl.ShareSetAccessPolicy;
@@ -27,7 +26,7 @@ internal partial class Request
                 case "application/xml":
                     return new RequestContent
                     {
-                        ApplicationXml = request.BindBody<ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.RequestBodies.ApplicationXml>().AsOptional()
+                        ApplicationXml = OpenApiGenerator.HttpRequestExtensions.BindBody<ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.RequestBodies.ApplicationXml>(request).AsOptional()
                     };
                 case "":
                     return null;
@@ -41,7 +40,7 @@ internal partial class Request
     {
         return new Request
         {
-            ShareName = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "shareName",
@@ -51,7 +50,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Restype = request.Bind<ShareNameRestypeShareCompAcl.RestypeQuery>("""
+            Restype = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompAcl.RestypeQuery>(request, """
 {
   "in": "query",
   "name": "restype",
@@ -63,7 +62,7 @@ internal partial class Request
   ]
 }
 """),
-            Comp = request.Bind<ShareNameRestypeShareCompAcl.CompQuery>("""
+            Comp = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompAcl.CompQuery>(request, """
 {
   "in": "query",
   "name": "comp",
@@ -75,7 +74,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = request.Bind<ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.TimeoutQuery>("""
+            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -85,7 +84,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.XMsVersionHeader>("""
+            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -99,7 +98,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsLeaseId = request.Bind<Corvus.Json.JsonString>("""
+            XMsLeaseId = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-lease-id",
@@ -112,7 +111,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

@@ -1,5 +1,4 @@
 ﻿#nullable enable
-using OpenApiGenerator;
 using Corvus.Json;
 
 namespace ShareNameDirectoryFileNameCompRename.FileRename;
@@ -33,7 +32,7 @@ internal partial class Request
     {
         return new Request
         {
-            ShareName = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "shareName",
@@ -43,7 +42,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Directory = request.Bind<Corvus.Json.JsonString>("""
+            Directory = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "directory",
@@ -54,7 +53,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            FileName = request.Bind<Corvus.Json.JsonString>("""
+            FileName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "fileName",
@@ -65,7 +64,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Comp = request.Bind<ShareNameDirectoryFileNameCompRename.CompQuery>("""
+            Comp = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameCompRename.CompQuery>(request, """
 {
   "in": "query",
   "name": "comp",
@@ -77,7 +76,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = request.Bind<ShareNameDirectoryFileNameCompRename.FileRename.TimeoutQuery>("""
+            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameCompRename.FileRename.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -87,7 +86,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<ShareNameDirectoryFileNameCompRename.FileRename.XMsVersionHeader>("""
+            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameCompRename.FileRename.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -101,7 +100,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsFileRenameSource = request.Bind<Corvus.Json.JsonString>("""
+            XMsFileRenameSource = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-file-rename-source",
@@ -112,7 +111,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            XMsFileRenameReplaceIfExists = request.Bind<Corvus.Json.JsonBoolean>("""
+            XMsFileRenameReplaceIfExists = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonBoolean>(request, """
 {
   "in": "header",
   "name": "x-ms-file-rename-replace-if-exists",
@@ -122,7 +121,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFileRenameIgnoreReadonly = request.Bind<Corvus.Json.JsonBoolean>("""
+            XMsFileRenameIgnoreReadonly = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonBoolean>(request, """
 {
   "in": "header",
   "name": "x-ms-file-rename-ignore-readonly",
@@ -132,7 +131,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsSourceLeaseId = request.Bind<Corvus.Json.JsonString>("""
+            XMsSourceLeaseId = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-source-lease-id",
@@ -145,7 +144,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsDestinationLeaseId = request.Bind<Corvus.Json.JsonString>("""
+            XMsDestinationLeaseId = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-destination-lease-id",
@@ -158,7 +157,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsFileAttributes = request.Bind<Corvus.Json.JsonString>("""
+            XMsFileAttributes = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-file-attributes",
@@ -171,7 +170,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsFileCreationTime = request.Bind<Corvus.Json.JsonString>("""
+            XMsFileCreationTime = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-file-creation-time",
@@ -184,7 +183,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsFileLastWriteTime = request.Bind<Corvus.Json.JsonString>("""
+            XMsFileLastWriteTime = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-file-last-write-time",
@@ -197,7 +196,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsFileChangeTime = request.Bind<Corvus.Json.JsonString>("""
+            XMsFileChangeTime = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-file-change-time",
@@ -210,7 +209,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsFilePermission = request.Bind<Corvus.Json.JsonString>("""
+            XMsFilePermission = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-file-permission",
@@ -220,7 +219,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFilePermissionFormat = request.Bind<ShareNameDirectoryFileNameCompRename.FileRename.XMsFilePermissionFormatHeader>("""
+            XMsFilePermissionFormat = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameCompRename.FileRename.XMsFilePermissionFormatHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-permission-format",
@@ -238,7 +237,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsFilePermissionKey = request.Bind<Corvus.Json.JsonString>("""
+            XMsFilePermissionKey = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-file-permission-key",
@@ -248,7 +247,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsMeta = request.Bind<Corvus.Json.JsonString>("""
+            XMsMeta = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-meta",
@@ -259,7 +258,7 @@ internal partial class Request
   "x-ms-header-collection-prefix": "x-ms-meta-"
 }
 """).AsOptional(),
-            XMsContentType = request.Bind<Corvus.Json.JsonString>("""
+            XMsContentType = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-content-type",
@@ -272,7 +271,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsAllowTrailingDot = request.Bind<Corvus.Json.JsonBoolean>("""
+            XMsAllowTrailingDot = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonBoolean>(request, """
 {
   "in": "header",
   "name": "x-ms-allow-trailing-dot",
@@ -281,7 +280,7 @@ internal partial class Request
   "x-ms-client-name": "allowTrailingDot"
 }
 """).AsOptional(),
-            XMsSourceAllowTrailingDot = request.Bind<Corvus.Json.JsonBoolean>("""
+            XMsSourceAllowTrailingDot = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonBoolean>(request, """
 {
   "in": "header",
   "name": "x-ms-source-allow-trailing-dot",
@@ -290,7 +289,7 @@ internal partial class Request
   "x-ms-client-name": "allowSourceTrailingDot"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<ShareNameDirectoryFileNameCompRename.FileRename.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameCompRename.FileRename.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

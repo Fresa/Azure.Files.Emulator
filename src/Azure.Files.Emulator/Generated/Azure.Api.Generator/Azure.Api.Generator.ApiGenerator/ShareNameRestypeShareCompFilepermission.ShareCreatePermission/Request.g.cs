@@ -1,5 +1,4 @@
 ﻿#nullable enable
-using OpenApiGenerator;
 using Corvus.Json;
 
 namespace ShareNameRestypeShareCompFilepermission.ShareCreatePermission;
@@ -28,7 +27,7 @@ internal partial class Request
                 case "application/xml":
                     return new RequestContent
                     {
-                        ApplicationXml = request.BindBody<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.RequestBodies.ApplicationXml>().AsOptional()
+                        ApplicationXml = OpenApiGenerator.HttpRequestExtensions.BindBody<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.RequestBodies.ApplicationXml>(request).AsOptional()
                     };
                 default:
                     throw new BadHttpRequestException($"Request body does not support content type {requestContentType}");
@@ -40,7 +39,7 @@ internal partial class Request
     {
         return new Request
         {
-            ShareName = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "shareName",
@@ -50,7 +49,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Restype = request.Bind<ShareNameRestypeShareCompFilepermission.RestypeQuery>("""
+            Restype = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompFilepermission.RestypeQuery>(request, """
 {
   "in": "query",
   "name": "restype",
@@ -62,7 +61,7 @@ internal partial class Request
   ]
 }
 """),
-            Comp = request.Bind<ShareNameRestypeShareCompFilepermission.CompQuery>("""
+            Comp = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompFilepermission.CompQuery>(request, """
 {
   "in": "query",
   "name": "comp",
@@ -74,7 +73,7 @@ internal partial class Request
   ]
 }
 """),
-            XMsFilePermissionKey = request.Bind<Corvus.Json.JsonString>("""
+            XMsFilePermissionKey = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-file-permission-key",
@@ -85,7 +84,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            XMsFilePermissionFormat = request.Bind<ShareNameRestypeShareCompFilepermission.ShareGetPermission.XMsFilePermissionFormatHeader>("""
+            XMsFilePermissionFormat = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompFilepermission.ShareGetPermission.XMsFilePermissionFormatHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-permission-format",
@@ -103,7 +102,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            Timeout = request.Bind<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.TimeoutQuery>("""
+            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -113,7 +112,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.XMsVersionHeader>("""
+            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -127,7 +126,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsFileRequestIntent = request.Bind<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompFilepermission.ShareCreatePermission.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

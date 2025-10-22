@@ -1,5 +1,4 @@
 ﻿#nullable enable
-using OpenApiGenerator;
 using Corvus.Json;
 
 namespace CompList.ServiceListSharesSegment;
@@ -18,7 +17,7 @@ internal partial class Request
     {
         return new Request
         {
-            Comp = request.Bind<CompList.CompQuery>("""
+            Comp = OpenApiGenerator.HttpRequestExtensions.Bind<CompList.CompQuery>(request, """
 {
   "in": "query",
   "name": "comp",
@@ -30,7 +29,7 @@ internal partial class Request
   ]
 }
 """),
-            Prefix = request.Bind<Corvus.Json.JsonString>("""
+            Prefix = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "query",
   "name": "prefix",
@@ -39,7 +38,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Marker = request.Bind<Corvus.Json.JsonString>("""
+            Marker = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "query",
   "name": "marker",
@@ -48,7 +47,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Maxresults = request.Bind<CompList.ServiceListSharesSegment.MaxresultsQuery>("""
+            Maxresults = OpenApiGenerator.HttpRequestExtensions.Bind<CompList.ServiceListSharesSegment.MaxresultsQuery>(request, """
 {
   "in": "query",
   "name": "maxresults",
@@ -58,7 +57,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Include = request.Bind<CompList.ServiceListSharesSegment.IncludeQuery>("""
+            Include = OpenApiGenerator.HttpRequestExtensions.Bind<CompList.ServiceListSharesSegment.IncludeQuery>(request, """
 {
   "in": "query",
   "name": "include",
@@ -80,7 +79,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Timeout = request.Bind<CompList.ServiceListSharesSegment.TimeoutQuery>("""
+            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<CompList.ServiceListSharesSegment.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -90,7 +89,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<CompList.ServiceListSharesSegment.XMsVersionHeader>("""
+            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<CompList.ServiceListSharesSegment.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -104,7 +103,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsFileRequestIntent = request.Bind<CompList.ServiceListSharesSegment.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<CompList.ServiceListSharesSegment.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

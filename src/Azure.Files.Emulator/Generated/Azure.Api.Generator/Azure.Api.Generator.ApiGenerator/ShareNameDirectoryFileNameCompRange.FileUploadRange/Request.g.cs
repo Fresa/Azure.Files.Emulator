@@ -1,5 +1,4 @@
 ﻿#nullable enable
-using OpenApiGenerator;
 using Corvus.Json;
 
 namespace ShareNameDirectoryFileNameCompRange.FileUploadRange;
@@ -36,7 +35,7 @@ internal partial class Request
                 case "application/xml":
                     return new RequestContent
                     {
-                        ApplicationXml = request.BindBody<ShareNameDirectoryFileNameCompRange.FileUploadRange.RequestBodies.ApplicationXml>().AsOptional()
+                        ApplicationXml = OpenApiGenerator.HttpRequestExtensions.BindBody<ShareNameDirectoryFileNameCompRange.FileUploadRange.RequestBodies.ApplicationXml>(request).AsOptional()
                     };
                 case "":
                     return null;
@@ -50,7 +49,7 @@ internal partial class Request
     {
         return new Request
         {
-            ShareName = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "shareName",
@@ -60,7 +59,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Directory = request.Bind<Corvus.Json.JsonString>("""
+            Directory = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "directory",
@@ -71,7 +70,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            FileName = request.Bind<Corvus.Json.JsonString>("""
+            FileName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "fileName",
@@ -82,7 +81,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Comp = request.Bind<ShareNameDirectoryFileNameCompRange.CompQuery>("""
+            Comp = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameCompRange.CompQuery>(request, """
 {
   "in": "query",
   "name": "comp",
@@ -94,7 +93,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = request.Bind<ShareNameDirectoryFileNameCompRange.FileUploadRange.TimeoutQuery>("""
+            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameCompRange.FileUploadRange.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -104,7 +103,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsRange = request.Bind<Corvus.Json.JsonString>("""
+            XMsRange = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-range",
@@ -114,7 +113,7 @@ internal partial class Request
   "x-ms-client-name": "range"
 }
 """),
-            XMsWrite = request.Bind<ShareNameDirectoryFileNameCompRange.FileUploadRange.XMsWriteHeader>("""
+            XMsWrite = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameCompRange.FileUploadRange.XMsWriteHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-write",
@@ -133,7 +132,7 @@ internal partial class Request
   }
 }
 """),
-            ContentLength = request.Bind<Corvus.Json.JsonInt64>("""
+            ContentLength = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonInt64>(request, """
 {
   "in": "header",
   "name": "Content-Length",
@@ -145,7 +144,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            ContentMD5 = request.Bind<Corvus.Json.JsonString>("""
+            ContentMD5 = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "Content-MD5",
@@ -156,7 +155,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<ShareNameDirectoryFileNameCompRange.FileUploadRange.XMsVersionHeader>("""
+            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameCompRange.FileUploadRange.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -170,7 +169,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsLeaseId = request.Bind<Corvus.Json.JsonString>("""
+            XMsLeaseId = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-lease-id",
@@ -183,7 +182,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsFileLastWriteTime = request.Bind<ShareNameDirectoryFileNameCompRange.FileUploadRange.XMsFileLastWriteTimeHeader>("""
+            XMsFileLastWriteTime = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameCompRange.FileUploadRange.XMsFileLastWriteTimeHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-last-write-time",
@@ -201,7 +200,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsAllowTrailingDot = request.Bind<Corvus.Json.JsonBoolean>("""
+            XMsAllowTrailingDot = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonBoolean>(request, """
 {
   "in": "header",
   "name": "x-ms-allow-trailing-dot",
@@ -210,7 +209,7 @@ internal partial class Request
   "x-ms-client-name": "allowTrailingDot"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<ShareNameDirectoryFileNameCompRange.FileUploadRange.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameCompRange.FileUploadRange.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",
@@ -226,7 +225,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsStructuredBody = request.Bind<Corvus.Json.JsonString>("""
+            XMsStructuredBody = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-structured-body",
@@ -236,7 +235,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsStructuredContentLength = request.Bind<Corvus.Json.JsonInt64>("""
+            XMsStructuredContentLength = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonInt64>(request, """
 {
   "in": "header",
   "name": "x-ms-structured-content-length",

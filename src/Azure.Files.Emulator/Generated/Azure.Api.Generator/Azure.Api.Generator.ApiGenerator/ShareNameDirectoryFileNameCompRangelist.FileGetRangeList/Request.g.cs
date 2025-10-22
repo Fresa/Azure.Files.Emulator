@@ -1,5 +1,4 @@
 ﻿#nullable enable
-using OpenApiGenerator;
 using Corvus.Json;
 
 namespace ShareNameDirectoryFileNameCompRangelist.FileGetRangeList;
@@ -23,7 +22,7 @@ internal partial class Request
     {
         return new Request
         {
-            ShareName = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "shareName",
@@ -33,7 +32,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Directory = request.Bind<Corvus.Json.JsonString>("""
+            Directory = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "directory",
@@ -44,7 +43,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            FileName = request.Bind<Corvus.Json.JsonString>("""
+            FileName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "fileName",
@@ -55,7 +54,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Comp = request.Bind<ShareNameDirectoryFileNameCompRangelist.CompQuery>("""
+            Comp = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameCompRangelist.CompQuery>(request, """
 {
   "in": "query",
   "name": "comp",
@@ -67,7 +66,7 @@ internal partial class Request
   ]
 }
 """),
-            Sharesnapshot = request.Bind<Corvus.Json.JsonString>("""
+            Sharesnapshot = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "query",
   "name": "sharesnapshot",
@@ -76,7 +75,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Prevsharesnapshot = request.Bind<Corvus.Json.JsonString>("""
+            Prevsharesnapshot = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "query",
   "name": "prevsharesnapshot",
@@ -85,7 +84,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Timeout = request.Bind<ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.TimeoutQuery>("""
+            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -95,7 +94,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.XMsVersionHeader>("""
+            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -109,7 +108,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsRange = request.Bind<Corvus.Json.JsonString>("""
+            XMsRange = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-range",
@@ -118,7 +117,7 @@ internal partial class Request
   "x-ms-client-name": "range"
 }
 """).AsOptional(),
-            XMsLeaseId = request.Bind<Corvus.Json.JsonString>("""
+            XMsLeaseId = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-lease-id",
@@ -131,7 +130,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsAllowTrailingDot = request.Bind<Corvus.Json.JsonBoolean>("""
+            XMsAllowTrailingDot = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonBoolean>(request, """
 {
   "in": "header",
   "name": "x-ms-allow-trailing-dot",
@@ -140,7 +139,7 @@ internal partial class Request
   "x-ms-client-name": "allowTrailingDot"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",
@@ -156,7 +155,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsFileSupportRename = request.Bind<Corvus.Json.JsonBoolean>("""
+            XMsFileSupportRename = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonBoolean>(request, """
 {
   "in": "header",
   "name": "x-ms-file-support-rename",

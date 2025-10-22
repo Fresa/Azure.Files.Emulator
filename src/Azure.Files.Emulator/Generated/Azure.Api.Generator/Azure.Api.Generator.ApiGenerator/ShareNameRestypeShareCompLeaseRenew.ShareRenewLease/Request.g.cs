@@ -1,5 +1,4 @@
 ﻿#nullable enable
-using OpenApiGenerator;
 using Corvus.Json;
 
 namespace ShareNameRestypeShareCompLeaseRenew.ShareRenewLease;
@@ -20,7 +19,7 @@ internal partial class Request
     {
         return new Request
         {
-            ShareName = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "shareName",
@@ -30,7 +29,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Comp = request.Bind<ShareNameRestypeShareCompLeaseRenew.CompQuery>("""
+            Comp = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseRenew.CompQuery>(request, """
 {
   "in": "query",
   "name": "comp",
@@ -42,7 +41,7 @@ internal partial class Request
   ]
 }
 """),
-            XMsLeaseAction = request.Bind<ShareNameRestypeShareCompLeaseRenew.XMsLeaseActionHeader>("""
+            XMsLeaseAction = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseRenew.XMsLeaseActionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-lease-action",
@@ -60,7 +59,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Restype = request.Bind<ShareNameRestypeShareCompLeaseRenew.RestypeQuery>("""
+            Restype = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseRenew.RestypeQuery>(request, """
 {
   "in": "query",
   "name": "restype",
@@ -72,7 +71,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = request.Bind<ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.TimeoutQuery>("""
+            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -82,7 +81,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsLeaseId = request.Bind<Corvus.Json.JsonString>("""
+            XMsLeaseId = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-lease-id",
@@ -93,7 +92,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            XMsVersion = request.Bind<ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.XMsVersionHeader>("""
+            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -107,7 +106,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            Sharesnapshot = request.Bind<Corvus.Json.JsonString>("""
+            Sharesnapshot = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "query",
   "name": "sharesnapshot",
@@ -116,7 +115,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsClientRequestId = request.Bind<Corvus.Json.JsonString>("""
+            XMsClientRequestId = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-client-request-id",
@@ -126,7 +125,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

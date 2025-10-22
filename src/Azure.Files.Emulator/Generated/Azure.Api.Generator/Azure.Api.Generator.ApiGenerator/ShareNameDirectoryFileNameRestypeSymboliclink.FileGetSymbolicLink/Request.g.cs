@@ -1,5 +1,4 @@
 ﻿#nullable enable
-using OpenApiGenerator;
 using Corvus.Json;
 
 namespace ShareNameDirectoryFileNameRestypeSymboliclink.FileGetSymbolicLink;
@@ -19,7 +18,7 @@ internal partial class Request
     {
         return new Request
         {
-            ShareName = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "shareName",
@@ -29,7 +28,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Directory = request.Bind<Corvus.Json.JsonString>("""
+            Directory = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "directory",
@@ -40,7 +39,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            FileName = request.Bind<Corvus.Json.JsonString>("""
+            FileName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "fileName",
@@ -51,7 +50,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Restype = request.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.RestypeQuery>("""
+            Restype = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.RestypeQuery>(request, """
 {
   "in": "query",
   "name": "restype",
@@ -63,7 +62,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = request.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.FileGetSymbolicLink.TimeoutQuery>("""
+            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.FileGetSymbolicLink.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -73,7 +72,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Sharesnapshot = request.Bind<Corvus.Json.JsonString>("""
+            Sharesnapshot = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "query",
   "name": "sharesnapshot",
@@ -82,7 +81,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.FileGetSymbolicLink.XMsVersionHeader>("""
+            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.FileGetSymbolicLink.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -96,7 +95,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsClientRequestId = request.Bind<Corvus.Json.JsonString>("""
+            XMsClientRequestId = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-client-request-id",
@@ -106,7 +105,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.FileGetSymbolicLink.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameRestypeSymboliclink.FileGetSymbolicLink.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

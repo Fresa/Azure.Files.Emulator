@@ -1,5 +1,4 @@
 ﻿#nullable enable
-using OpenApiGenerator;
 using Corvus.Json;
 
 namespace ShareNameRestypeShare.ShareGetProperties;
@@ -17,7 +16,7 @@ internal partial class Request
     {
         return new Request
         {
-            ShareName = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "shareName",
@@ -27,7 +26,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Restype = request.Bind<ShareNameRestypeShare.RestypeQuery>("""
+            Restype = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShare.RestypeQuery>(request, """
 {
   "in": "query",
   "name": "restype",
@@ -39,7 +38,7 @@ internal partial class Request
   ]
 }
 """),
-            Sharesnapshot = request.Bind<Corvus.Json.JsonString>("""
+            Sharesnapshot = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "query",
   "name": "sharesnapshot",
@@ -48,7 +47,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Timeout = request.Bind<ShareNameRestypeShare.ShareGetProperties.TimeoutQuery>("""
+            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShare.ShareGetProperties.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -58,7 +57,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<ShareNameRestypeShare.ShareGetProperties.XMsVersionHeader>("""
+            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShare.ShareGetProperties.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -72,7 +71,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsLeaseId = request.Bind<Corvus.Json.JsonString>("""
+            XMsLeaseId = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-lease-id",
@@ -85,7 +84,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<ShareNameRestypeShare.ShareGetProperties.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShare.ShareGetProperties.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

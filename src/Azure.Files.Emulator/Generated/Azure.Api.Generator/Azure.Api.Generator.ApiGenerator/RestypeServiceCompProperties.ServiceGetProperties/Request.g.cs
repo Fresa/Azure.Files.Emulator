@@ -1,5 +1,4 @@
 ﻿#nullable enable
-using OpenApiGenerator;
 using Corvus.Json;
 
 namespace RestypeServiceCompProperties.ServiceGetProperties;
@@ -15,7 +14,7 @@ internal partial class Request
     {
         return new Request
         {
-            Restype = request.Bind<RestypeServiceCompProperties.RestypeQuery>("""
+            Restype = OpenApiGenerator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.RestypeQuery>(request, """
 {
   "in": "query",
   "name": "restype",
@@ -27,7 +26,7 @@ internal partial class Request
   ]
 }
 """),
-            Comp = request.Bind<RestypeServiceCompProperties.CompQuery>("""
+            Comp = OpenApiGenerator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.CompQuery>(request, """
 {
   "in": "query",
   "name": "comp",
@@ -39,7 +38,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = request.Bind<RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery>("""
+            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -49,7 +48,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<RestypeServiceCompProperties.ServiceGetProperties.XMsVersionHeader>("""
+            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.ServiceGetProperties.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -63,7 +62,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsFileRequestIntent = request.Bind<RestypeServiceCompProperties.ServiceGetProperties.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.ServiceGetProperties.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

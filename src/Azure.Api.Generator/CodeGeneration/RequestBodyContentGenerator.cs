@@ -4,7 +4,10 @@ using Corvus.Json.CodeGeneration.CSharp;
 
 namespace Azure.Api.Generator.CodeGeneration;
 
-internal sealed class RequestBodyContentGenerator(string contentType, TypeDeclaration typeDeclaration)
+internal sealed class RequestBodyContentGenerator(
+    string contentType, 
+    TypeDeclaration typeDeclaration,
+    HttpRequestExtensionsGenerator httpRequestExtensionsGenerator)
 {
     private string FullyQualifiedTypeName =>
         $"{FullyQualifiedTypeDeclarationIdentifier}?";
@@ -19,7 +22,10 @@ internal sealed class RequestBodyContentGenerator(string contentType, TypeDeclar
     {
         return $"""
                  {_propertyName} = 
-                    request.BindBody<{FullyQualifiedTypeDeclarationIdentifier}>().AsOptional()
+                    {httpRequestExtensionsGenerator.CreateBindBodyInvocation(
+                        "request", 
+                        FullyQualifiedTypeDeclarationIdentifier)}
+                        .AsOptional()
                 """;
     }
                  

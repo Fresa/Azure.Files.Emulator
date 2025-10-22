@@ -1,5 +1,4 @@
 ﻿#nullable enable
-using OpenApiGenerator;
 using Corvus.Json;
 
 namespace RestypeServiceCompProperties.ServiceSetProperties;
@@ -25,7 +24,7 @@ internal partial class Request
                 case "application/xml":
                     return new RequestContent
                     {
-                        ApplicationXml = request.BindBody<RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml>().AsOptional()
+                        ApplicationXml = OpenApiGenerator.HttpRequestExtensions.BindBody<RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml>(request).AsOptional()
                     };
                 default:
                     throw new BadHttpRequestException($"Request body does not support content type {requestContentType}");
@@ -37,7 +36,7 @@ internal partial class Request
     {
         return new Request
         {
-            Restype = request.Bind<RestypeServiceCompProperties.RestypeQuery>("""
+            Restype = OpenApiGenerator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.RestypeQuery>(request, """
 {
   "in": "query",
   "name": "restype",
@@ -49,7 +48,7 @@ internal partial class Request
   ]
 }
 """),
-            Comp = request.Bind<RestypeServiceCompProperties.CompQuery>("""
+            Comp = OpenApiGenerator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.CompQuery>(request, """
 {
   "in": "query",
   "name": "comp",
@@ -61,7 +60,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = request.Bind<RestypeServiceCompProperties.ServiceSetProperties.TimeoutQuery>("""
+            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.ServiceSetProperties.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -71,7 +70,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<RestypeServiceCompProperties.ServiceSetProperties.XMsVersionHeader>("""
+            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.ServiceSetProperties.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -85,7 +84,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsFileRequestIntent = request.Bind<RestypeServiceCompProperties.ServiceSetProperties.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<RestypeServiceCompProperties.ServiceSetProperties.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

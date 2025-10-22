@@ -1,5 +1,4 @@
 ﻿#nullable enable
-using OpenApiGenerator;
 using Corvus.Json;
 
 namespace ShareNameRestypeShare.ShareDelete;
@@ -29,7 +28,7 @@ internal partial class Request
     {
         return new Request
         {
-            ShareName = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "shareName",
@@ -39,7 +38,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Restype = request.Bind<ShareNameRestypeShare.RestypeQuery>("""
+            Restype = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShare.RestypeQuery>(request, """
 {
   "in": "query",
   "name": "restype",
@@ -51,7 +50,7 @@ internal partial class Request
   ]
 }
 """),
-            Sharesnapshot = request.Bind<Corvus.Json.JsonString>("""
+            Sharesnapshot = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "query",
   "name": "sharesnapshot",
@@ -60,7 +59,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Timeout = request.Bind<ShareNameRestypeShare.ShareDelete.TimeoutQuery>("""
+            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShare.ShareDelete.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -70,7 +69,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<ShareNameRestypeShare.ShareDelete.XMsVersionHeader>("""
+            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShare.ShareDelete.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -84,7 +83,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsLeaseId = request.Bind<Corvus.Json.JsonString>("""
+            XMsLeaseId = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-lease-id",
@@ -97,7 +96,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<ShareNameRestypeShare.ShareDelete.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShare.ShareDelete.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",
@@ -113,7 +112,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsMeta = request.Bind<Corvus.Json.JsonString>("""
+            XMsMeta = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-meta",
@@ -124,7 +123,7 @@ internal partial class Request
   "x-ms-header-collection-prefix": "x-ms-meta-"
 }
 """).AsOptional(),
-            XMsShareQuota = request.Bind<ShareNameRestypeShare.ShareCreate.XMsShareQuotaHeader>("""
+            XMsShareQuota = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShare.ShareCreate.XMsShareQuotaHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-share-quota",
@@ -135,7 +134,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsAccessTier = request.Bind<ShareNameRestypeShare.ShareCreate.XMsAccessTierHeader>("""
+            XMsAccessTier = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShare.ShareCreate.XMsAccessTierHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-access-tier",
@@ -155,7 +154,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsEnabledProtocols = request.Bind<Corvus.Json.JsonString>("""
+            XMsEnabledProtocols = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-enabled-protocols",
@@ -165,7 +164,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsRootSquash = request.Bind<ShareNameRestypeShare.ShareCreate.XMsRootSquashHeader>("""
+            XMsRootSquash = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShare.ShareCreate.XMsRootSquashHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-root-squash",
@@ -184,7 +183,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsEnableSnapshotVirtualDirectoryAccess = request.Bind<Corvus.Json.JsonBoolean>("""
+            XMsEnableSnapshotVirtualDirectoryAccess = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonBoolean>(request, """
 {
   "in": "header",
   "name": "x-ms-enable-snapshot-virtual-directory-access",
@@ -193,7 +192,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsSharePaidBurstingEnabled = request.Bind<Corvus.Json.JsonBoolean>("""
+            XMsSharePaidBurstingEnabled = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonBoolean>(request, """
 {
   "in": "header",
   "name": "x-ms-share-paid-bursting-enabled",
@@ -203,7 +202,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsSharePaidBurstingMaxBandwidthMibps = request.Bind<Corvus.Json.JsonInt64>("""
+            XMsSharePaidBurstingMaxBandwidthMibps = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonInt64>(request, """
 {
   "in": "header",
   "name": "x-ms-share-paid-bursting-max-bandwidth-mibps",
@@ -214,7 +213,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsSharePaidBurstingMaxIops = request.Bind<Corvus.Json.JsonInt64>("""
+            XMsSharePaidBurstingMaxIops = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonInt64>(request, """
 {
   "in": "header",
   "name": "x-ms-share-paid-bursting-max-iops",
@@ -225,7 +224,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsShareProvisionedIops = request.Bind<Corvus.Json.JsonInt64>("""
+            XMsShareProvisionedIops = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonInt64>(request, """
 {
   "in": "header",
   "name": "x-ms-share-provisioned-iops",
@@ -236,7 +235,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsShareProvisionedBandwidthMibps = request.Bind<Corvus.Json.JsonInt64>("""
+            XMsShareProvisionedBandwidthMibps = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonInt64>(request, """
 {
   "in": "header",
   "name": "x-ms-share-provisioned-bandwidth-mibps",
@@ -247,7 +246,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsDeleteSnapshots = request.Bind<ShareNameRestypeShare.ShareDelete.XMsDeleteSnapshotsHeader>("""
+            XMsDeleteSnapshots = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShare.ShareDelete.XMsDeleteSnapshotsHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-delete-snapshots",

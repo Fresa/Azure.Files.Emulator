@@ -71,9 +71,9 @@ public sealed class ApiGenerator : IIncrementalGenerator
 
     private static void GenerateCode(SourceProductionContext context, (SourceGeneratorHelpers.GlobalOptions Options, Microsoft.OpenApi.OpenApiDocument OpenApiDocument, Compilation Compilation, string? ProjectDir) generatorContext)
     {
-        var httpRequestExtensionsGenerator = new HttpRequestExtensionsGenerator();
+        var httpRequestExtensionsGenerator = new HttpRequestExtensionsGenerator(ApiGeneratorNamespace);
         var httpRequestExtensionsGeneratorSourceCode =
-            httpRequestExtensionsGenerator.GenerateHttpRequestExtensionsClass(ApiGeneratorNamespace);
+            httpRequestExtensionsGenerator.GenerateHttpRequestExtensionsClass();
         httpRequestExtensionsGeneratorSourceCode.AddTo(context);
         
         var openApi = generatorContext.OpenApiDocument;
@@ -98,7 +98,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
                     location: schema.Path,
                     rebaseToRootPath: false);
                 var typeDeclaration = GenerateCode(context, generationSpecification, schema, globalOptions);
-                parameterGenerators[parameter.GetName()] = new ParameterGenerator(typeDeclaration, parameter);
+                parameterGenerators[parameter.GetName()] = new ParameterGenerator(typeDeclaration, parameter, httpRequestExtensionsGenerator);
             }
 
             foreach (var openApiOperation in path.Value.GetOperations())
@@ -122,7 +122,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
                         rebaseToRootPath: false);
 
                     var typeDeclaration = GenerateCode(context, generationSpecification, schema, globalOptions);
-                    parameterGenerators[parameter.GetName()] = new ParameterGenerator(typeDeclaration, parameter);
+                    parameterGenerators[parameter.GetName()] = new ParameterGenerator(typeDeclaration, parameter, httpRequestExtensionsGenerator);
                 }
 
                 var requestBodyNamespace = @namespace + ".RequestBodies";
@@ -146,7 +146,10 @@ public sealed class ApiGenerator : IIncrementalGenerator
                             rebaseToRootPath: false);
 
                         var typeDeclaration = GenerateCode(context, contentSpecification, schema, globalOptions);
-                        return new RequestBodyContentGenerator(pair.Key, typeDeclaration);
+                        return new RequestBodyContentGenerator(
+                            pair.Key, 
+                            typeDeclaration,
+                            httpRequestExtensionsGenerator);
                     }).ToList();
                     requestBodyGenerator = new RequestBodyGenerator(
                         body,

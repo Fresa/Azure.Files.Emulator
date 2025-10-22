@@ -1,5 +1,4 @@
 ﻿#nullable enable
-using OpenApiGenerator;
 using Corvus.Json;
 
 namespace ShareNameRestypeShareCompLeaseChange.ShareChangeLease;
@@ -21,7 +20,7 @@ internal partial class Request
     {
         return new Request
         {
-            ShareName = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "shareName",
@@ -31,7 +30,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Comp = request.Bind<ShareNameRestypeShareCompLeaseChange.CompQuery>("""
+            Comp = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseChange.CompQuery>(request, """
 {
   "in": "query",
   "name": "comp",
@@ -43,7 +42,7 @@ internal partial class Request
   ]
 }
 """),
-            XMsLeaseAction = request.Bind<ShareNameRestypeShareCompLeaseChange.XMsLeaseActionHeader>("""
+            XMsLeaseAction = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseChange.XMsLeaseActionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-lease-action",
@@ -61,7 +60,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Restype = request.Bind<ShareNameRestypeShareCompLeaseChange.RestypeQuery>("""
+            Restype = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseChange.RestypeQuery>(request, """
 {
   "in": "query",
   "name": "restype",
@@ -73,7 +72,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = request.Bind<ShareNameRestypeShareCompLeaseChange.ShareChangeLease.TimeoutQuery>("""
+            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseChange.ShareChangeLease.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -83,7 +82,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsLeaseId = request.Bind<Corvus.Json.JsonString>("""
+            XMsLeaseId = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-lease-id",
@@ -94,7 +93,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            XMsProposedLeaseId = request.Bind<Corvus.Json.JsonString>("""
+            XMsProposedLeaseId = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-proposed-lease-id",
@@ -104,7 +103,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<ShareNameRestypeShareCompLeaseChange.ShareChangeLease.XMsVersionHeader>("""
+            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseChange.ShareChangeLease.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -118,7 +117,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            Sharesnapshot = request.Bind<Corvus.Json.JsonString>("""
+            Sharesnapshot = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "query",
   "name": "sharesnapshot",
@@ -127,7 +126,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsClientRequestId = request.Bind<Corvus.Json.JsonString>("""
+            XMsClientRequestId = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-client-request-id",
@@ -137,7 +136,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<ShareNameRestypeShareCompLeaseChange.ShareChangeLease.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompLeaseChange.ShareChangeLease.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

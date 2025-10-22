@@ -1,5 +1,4 @@
 ﻿#nullable enable
-using OpenApiGenerator;
 using Corvus.Json;
 
 namespace ShareNameRestypeShareCompUndelete.ShareRestore;
@@ -19,7 +18,7 @@ internal partial class Request
     {
         return new Request
         {
-            ShareName = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "shareName",
@@ -29,7 +28,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Restype = request.Bind<ShareNameRestypeShareCompUndelete.RestypeQuery>("""
+            Restype = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompUndelete.RestypeQuery>(request, """
 {
   "in": "query",
   "name": "restype",
@@ -41,7 +40,7 @@ internal partial class Request
   ]
 }
 """),
-            Comp = request.Bind<ShareNameRestypeShareCompUndelete.CompQuery>("""
+            Comp = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompUndelete.CompQuery>(request, """
 {
   "in": "query",
   "name": "comp",
@@ -53,7 +52,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = request.Bind<ShareNameRestypeShareCompUndelete.ShareRestore.TimeoutQuery>("""
+            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompUndelete.ShareRestore.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -63,7 +62,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<ShareNameRestypeShareCompUndelete.ShareRestore.XMsVersionHeader>("""
+            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompUndelete.ShareRestore.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -77,7 +76,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsClientRequestId = request.Bind<Corvus.Json.JsonString>("""
+            XMsClientRequestId = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-client-request-id",
@@ -87,7 +86,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsDeletedShareName = request.Bind<Corvus.Json.JsonString>("""
+            XMsDeletedShareName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-deleted-share-name",
@@ -97,7 +96,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsDeletedShareVersion = request.Bind<Corvus.Json.JsonString>("""
+            XMsDeletedShareVersion = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-deleted-share-version",
@@ -107,7 +106,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<ShareNameRestypeShareCompUndelete.ShareRestore.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameRestypeShareCompUndelete.ShareRestore.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

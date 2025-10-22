@@ -7,7 +7,10 @@ using Microsoft.OpenApi;
 
 namespace Azure.Api.Generator.CodeGeneration;
 
-internal sealed class ParameterGenerator(TypeDeclaration typeDeclaration, IOpenApiParameter parameter)
+internal sealed class ParameterGenerator(
+    TypeDeclaration typeDeclaration, 
+    IOpenApiParameter parameter,
+    HttpRequestExtensionsGenerator httpRequestExtensionsGenerator)
 {
     private string FullyQualifiedTypeName =>
         $"{FullyQualifiedTypeDeclarationIdentifier}{(parameter.Required ? "" : "?")}";
@@ -33,13 +36,9 @@ internal sealed class ParameterGenerator(TypeDeclaration typeDeclaration, IOpenA
         parameter.SerializeAsV2(jsonWriter);
         textWriter.Flush();
 
-        return $""""
-                 {_propertyName} = 
-                    request.Bind<{FullyQualifiedTypeName.TrimEnd('?')}>(
-                """
-                {textWriter.GetStringBuilder()}
-                """
-                ){(parameter.Required ? "" : ".AsOptional()")},
-                """";
+        return $" {_propertyName} = {httpRequestExtensionsGenerator.CreateBindParameterInvocation(
+            "request",
+            FullyQualifiedTypeName.TrimEnd('?'),
+            textWriter.GetStringBuilder().ToString())}{(parameter.Required ? "" : ".AsOptional()")},";
     }
 }

@@ -1,5 +1,4 @@
 ﻿#nullable enable
-using OpenApiGenerator;
 using Corvus.Json;
 
 namespace ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata;
@@ -19,7 +18,7 @@ internal partial class Request
     {
         return new Request
         {
-            ShareName = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "shareName",
@@ -29,7 +28,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Directory = request.Bind<Corvus.Json.JsonString>("""
+            Directory = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "directory",
@@ -40,7 +39,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Restype = request.Bind<ShareNameDirectoryRestypeDirectoryCompMetadata.RestypeQuery>("""
+            Restype = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryRestypeDirectoryCompMetadata.RestypeQuery>(request, """
 {
   "in": "query",
   "name": "restype",
@@ -52,7 +51,7 @@ internal partial class Request
   ]
 }
 """),
-            Comp = request.Bind<ShareNameDirectoryRestypeDirectoryCompMetadata.CompQuery>("""
+            Comp = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryRestypeDirectoryCompMetadata.CompQuery>(request, """
 {
   "in": "query",
   "name": "comp",
@@ -64,7 +63,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = request.Bind<ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.TimeoutQuery>("""
+            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -74,7 +73,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsMeta = request.Bind<Corvus.Json.JsonString>("""
+            XMsMeta = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-meta",
@@ -85,7 +84,7 @@ internal partial class Request
   "x-ms-header-collection-prefix": "x-ms-meta-"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.XMsVersionHeader>("""
+            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -99,7 +98,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsAllowTrailingDot = request.Bind<Corvus.Json.JsonBoolean>("""
+            XMsAllowTrailingDot = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonBoolean>(request, """
 {
   "in": "header",
   "name": "x-ms-allow-trailing-dot",
@@ -108,7 +107,7 @@ internal partial class Request
   "x-ms-client-name": "allowTrailingDot"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

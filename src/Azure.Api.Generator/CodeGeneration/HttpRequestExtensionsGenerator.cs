@@ -1,10 +1,37 @@
 ﻿namespace Azure.Api.Generator.CodeGeneration;
 
-internal sealed class HttpRequestExtensionsGenerator
+internal sealed class HttpRequestExtensionsGenerator(string @namespace)
 {
     private const string HttpRequestExtensionsClassName = "HttpRequestExtensions";
     
-    internal SourceCode GenerateHttpRequestExtensionsClass(string @namespace) =>
+    internal string CreateBindParameterInvocation(
+        string requestVariableName, 
+        string bindingTypeName,
+        string parameterSpecificationAsJson)
+    {
+        return
+            $""""
+            {@namespace}.{HttpRequestExtensionsClassName}.Bind<{bindingTypeName}>(
+            {requestVariableName},
+            """
+            {parameterSpecificationAsJson}
+            """
+            )
+            """";
+    }
+    
+    internal string CreateBindBodyInvocation(
+        string requestVariableName, 
+        string bindingTypeName)
+    {
+        return
+            $""""
+             {@namespace}.{HttpRequestExtensionsClassName}.BindBody<{bindingTypeName}>(
+                {requestVariableName})
+             """";
+    }
+    
+    internal SourceCode GenerateHttpRequestExtensionsClass() =>
         new(@$"{@namespace}/{HttpRequestExtensionsClassName}.g.cs",
         $$$""""
         #nullable enable

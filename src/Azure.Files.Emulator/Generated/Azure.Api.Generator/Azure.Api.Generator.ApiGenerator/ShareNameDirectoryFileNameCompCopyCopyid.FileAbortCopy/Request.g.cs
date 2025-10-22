@@ -1,5 +1,4 @@
 ﻿#nullable enable
-using OpenApiGenerator;
 using Corvus.Json;
 
 namespace ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy;
@@ -21,7 +20,7 @@ internal partial class Request
     {
         return new Request
         {
-            ShareName = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "shareName",
@@ -31,7 +30,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Directory = request.Bind<Corvus.Json.JsonString>("""
+            Directory = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "directory",
@@ -42,7 +41,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            FileName = request.Bind<Corvus.Json.JsonString>("""
+            FileName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "fileName",
@@ -53,7 +52,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Comp = request.Bind<ShareNameDirectoryFileNameCompCopyCopyid.CompQuery>("""
+            Comp = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameCompCopyCopyid.CompQuery>(request, """
 {
   "in": "query",
   "name": "comp",
@@ -65,7 +64,7 @@ internal partial class Request
   ]
 }
 """),
-            Copyid = request.Bind<Corvus.Json.JsonString>("""
+            Copyid = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "query",
   "name": "copyid",
@@ -76,7 +75,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Timeout = request.Bind<ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.TimeoutQuery>("""
+            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -86,7 +85,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsCopyAction = request.Bind<ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.XMsCopyActionHeader>("""
+            XMsCopyAction = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.XMsCopyActionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-copy-action",
@@ -100,7 +99,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            XMsVersion = request.Bind<ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.XMsVersionHeader>("""
+            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -114,7 +113,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsLeaseId = request.Bind<Corvus.Json.JsonString>("""
+            XMsLeaseId = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-lease-id",
@@ -127,7 +126,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsAllowTrailingDot = request.Bind<Corvus.Json.JsonBoolean>("""
+            XMsAllowTrailingDot = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonBoolean>(request, """
 {
   "in": "header",
   "name": "x-ms-allow-trailing-dot",
@@ -136,7 +135,7 @@ internal partial class Request
   "x-ms-client-name": "allowTrailingDot"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = request.Bind<ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",

@@ -1,5 +1,4 @@
 ﻿#nullable enable
-using OpenApiGenerator;
 using Corvus.Json;
 
 namespace ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink;
@@ -21,7 +20,7 @@ internal partial class Request
     {
         return new Request
         {
-            ShareName = request.Bind<Corvus.Json.JsonString>("""
+            ShareName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "shareName",
@@ -31,7 +30,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Directory = request.Bind<Corvus.Json.JsonString>("""
+            Directory = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "directory",
@@ -42,7 +41,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            FileName = request.Bind<Corvus.Json.JsonString>("""
+            FileName = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",
   "name": "fileName",
@@ -53,7 +52,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Restype = request.Bind<ShareNameDirectoryFileNameRestypeHardlink.RestypeQuery>("""
+            Restype = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameRestypeHardlink.RestypeQuery>(request, """
 {
   "in": "query",
   "name": "restype",
@@ -65,7 +64,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = request.Bind<ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.TimeoutQuery>("""
+            Timeout = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.TimeoutQuery>(request, """
 {
   "in": "query",
   "name": "timeout",
@@ -75,7 +74,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = request.Bind<ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.XMsVersionHeader>("""
+            XMsVersion = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.XMsVersionHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -89,7 +88,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsType = request.Bind<ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.XMsTypeHeader>("""
+            XMsType = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.XMsTypeHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-type",
@@ -103,7 +102,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            XMsClientRequestId = request.Bind<Corvus.Json.JsonString>("""
+            XMsClientRequestId = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-client-request-id",
@@ -113,7 +112,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsLeaseId = request.Bind<Corvus.Json.JsonString>("""
+            XMsLeaseId = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-lease-id",
@@ -126,7 +125,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsFileTargetFile = request.Bind<Corvus.Json.JsonString>("""
+            XMsFileTargetFile = OpenApiGenerator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "header",
   "name": "x-ms-file-target-file",
@@ -137,7 +136,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            XMsFileRequestIntent = request.Bind<ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.XMsFileRequestIntentHeader>("""
+            XMsFileRequestIntent = OpenApiGenerator.HttpRequestExtensions.Bind<ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.XMsFileRequestIntentHeader>(request, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",
