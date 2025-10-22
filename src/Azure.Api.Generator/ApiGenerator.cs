@@ -37,12 +37,6 @@ public sealed class ApiGenerator : IIncrementalGenerator
             .Collect();
         
         var openapiDocumentProvider = provider.Select((array, _) => array.First());
-        var projectDir = context.AnalyzerConfigOptionsProvider.Select((config, _) =>
-            config.GlobalOptions
-                .TryGetValue("build_property.ProjectDir", out var projectDir)
-                ? projectDir
-                : null
-        );
         
         // Get global options
         var globalOptions =
@@ -57,19 +51,20 @@ public sealed class ApiGenerator : IIncrementalGenerator
         var openApiProvider = globalOptions
             .Combine(openapiDocumentProvider)
             .Combine(context.CompilationProvider)
-            .Combine(projectDir)
             .Select((tuple, _) => (
-                Options: tuple.Left.Left.Left,
-                OpenApiDocument: tuple.Left.Left.Right,
-                Compilation: tuple.Left.Right,
-                ProjectDir: tuple.Right
+                Options: tuple.Left.Left,
+                OpenApiDocument: tuple.Left.Right,
+                Compilation: tuple.Right
             ));
 
         context.RegisterSourceOutput(openApiProvider,
-            WithExceptionReporting<(SourceGeneratorHelpers.GlobalOptions, Microsoft.OpenApi.OpenApiDocument, Compilation, string?)>(GenerateCode));
+            WithExceptionReporting<(SourceGeneratorHelpers.GlobalOptions, OpenApiDocument, Compilation)>(GenerateCode));
     }
 
-    private static void GenerateCode(SourceProductionContext context, (SourceGeneratorHelpers.GlobalOptions Options, Microsoft.OpenApi.OpenApiDocument OpenApiDocument, Compilation Compilation, string? ProjectDir) generatorContext)
+    private static void GenerateCode(SourceProductionContext context, (
+        SourceGeneratorHelpers.GlobalOptions Options, 
+        OpenApiDocument OpenApiDocument, 
+        Compilation Compilation) generatorContext)
     {
         var httpRequestExtensionsGenerator = new HttpRequestExtensionsGenerator(ApiGeneratorNamespace);
         var httpRequestExtensionsGeneratorSourceCode =
