@@ -10,7 +10,6 @@ internal sealed class ResponseGenerator(List<ResponseContentGenerator> responseB
     {
         return
             $$"""
-                using Azure.Files.Emulator.Http;
                 using Corvus.Json;
                 
                 namespace {{@namespace}};

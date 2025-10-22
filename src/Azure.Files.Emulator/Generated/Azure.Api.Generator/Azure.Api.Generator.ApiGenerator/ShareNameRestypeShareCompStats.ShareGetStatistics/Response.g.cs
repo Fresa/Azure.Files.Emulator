@@ -1,5 +1,4 @@
-﻿using Azure.Files.Emulator.Http;
-using Corvus.Json;
+﻿using Corvus.Json;
 
 namespace ShareNameRestypeShareCompStats.ShareGetStatistics;
 internal abstract partial class Response

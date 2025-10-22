@@ -1,5 +1,5 @@
 ﻿#nullable enable
-using Azure.Files.Emulator.Http;
+using OpenApiGenerator;
 using Corvus.Json;
 
 namespace ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease;

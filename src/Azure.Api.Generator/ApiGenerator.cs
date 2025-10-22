@@ -25,6 +25,8 @@ public sealed class ApiGenerator : IIncrementalGenerator
     private static readonly IDocumentResolver MetaSchemaResolver = SourceGeneratorHelpers.CreateMetaSchemaResolver();
     private static readonly VocabularyRegistry VocabularyRegistry = SourceGeneratorHelpers.CreateVocabularyRegistry(MetaSchemaResolver);
 
+    private const string ApiGeneratorNamespace = "OpenApiGenerator";
+    
     public void Initialize(IncrementalGeneratorInitializationContext context)
     {
         // Debugger.Launch();
@@ -69,6 +71,11 @@ public sealed class ApiGenerator : IIncrementalGenerator
 
     private static void GenerateCode(SourceProductionContext context, (SourceGeneratorHelpers.GlobalOptions Options, Microsoft.OpenApi.OpenApiDocument OpenApiDocument, Compilation Compilation, string? ProjectDir) generatorContext)
     {
+        var httpRequestExtensionsGenerator = new HttpRequestExtensionsGenerator();
+        var httpRequestExtensionsGeneratorSourceCode =
+            httpRequestExtensionsGenerator.GenerateHttpRequestExtensionsClass(ApiGeneratorNamespace);
+        httpRequestExtensionsGeneratorSourceCode.AddTo(context);
+        
         var openApi = generatorContext.OpenApiDocument;
         var globalOptions = generatorContext.Options;
         var compilation = generatorContext.Compilation;

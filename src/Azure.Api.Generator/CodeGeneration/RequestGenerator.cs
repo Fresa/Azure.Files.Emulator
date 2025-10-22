@@ -11,7 +11,7 @@ internal sealed class RequestGenerator(List<ParameterGenerator> parameterGenerat
         return
             $$"""
                 #nullable enable
-                using Azure.Files.Emulator.Http;
+                using OpenApiGenerator;
                 using Corvus.Json;
                 
                 namespace {{@namespace}};
