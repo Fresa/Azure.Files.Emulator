@@ -1,6 +1,8 @@
-﻿namespace Azure.Api.Generator.CodeGeneration;
+﻿using System.IO;
 
-internal sealed class HttpRequestExtensionsGenerator(string @namespace, string path)
+namespace Azure.Api.Generator.CodeGeneration;
+
+internal sealed class HttpRequestExtensionsGenerator(string @namespace)
 {
     private const string HttpRequestExtensionsClassName = "HttpRequestExtensions";
     
@@ -32,7 +34,7 @@ internal sealed class HttpRequestExtensionsGenerator(string @namespace, string p
     }
     
     internal SourceCode GenerateHttpRequestExtensionsClass() =>
-        new(@$"{path}/{HttpRequestExtensionsClassName}.g.cs",
+        new($"{HttpRequestExtensionsClassName}.g.cs",
         $$$""""
         #nullable enable
         using System.Collections.Concurrent;

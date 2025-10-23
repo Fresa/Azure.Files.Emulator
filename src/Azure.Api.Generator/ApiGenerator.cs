@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text;
 using Azure.Api.Generator.CodeGeneration;
 using Azure.Api.Generator.Extensions;
 using Azure.Api.Generator.OpenApi;
@@ -26,8 +23,6 @@ public sealed class ApiGenerator : IIncrementalGenerator
     private static readonly IDocumentResolver MetaSchemaResolver = SourceGeneratorHelpers.CreateMetaSchemaResolver();
     private static readonly VocabularyRegistry VocabularyRegistry = SourceGeneratorHelpers.CreateVocabularyRegistry(MetaSchemaResolver);
 
-    private static readonly string GeneratorAssemblyName = Assembly.GetExecutingAssembly().GetName().Name;
-    
     public void Initialize(IncrementalGeneratorInitializationContext context)
     {
         // Debugger.Launch();
@@ -72,9 +67,8 @@ public sealed class ApiGenerator : IIncrementalGenerator
         var compilation = generatorContext.Compilation;
         var endpointGenerator = new EndpointGenerator(compilation);
         var rootNamespace = compilation.Assembly.Name;
-        var rootPath = GeneratorAssemblyName;
         
-        var httpRequestExtensionsGenerator = new HttpRequestExtensionsGenerator(rootNamespace, rootPath);
+        var httpRequestExtensionsGenerator = new HttpRequestExtensionsGenerator(rootNamespace);
         var httpRequestExtensionSourceCode =
             httpRequestExtensionsGenerator.GenerateHttpRequestExtensionsClass();
         httpRequestExtensionSourceCode.AddTo(context);
@@ -85,7 +79,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
             var pathItem = path.Value;
             var entityType = pathExpression.ToPascalCase();
             var entityNamespace = $"{rootNamespace}.{entityType}";
-            var entityDirectory = $"{rootPath}/{entityType}";
+            var entityDirectory = entityType;
             var parameterGenerators = new Dictionary<string, ParameterGenerator>();
             foreach (var parameter in pathItem.Parameters ?? [])
             {
