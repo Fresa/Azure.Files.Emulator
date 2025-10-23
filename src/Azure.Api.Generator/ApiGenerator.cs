@@ -29,7 +29,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
 
         var provider = context.AdditionalTextsProvider
             .Where(additionalText => Path.GetFileName(additionalText.Path).EndsWith(".json"))
-            .Select((text, token) => Microsoft.OpenApi.OpenApiDocument.Load(text.AsStream(), "json").Document ?? throw new InvalidOperationException($"Could not load OpenAPI document {text.Path}"))
+            .Select((text, _) => OpenApiDocument.Load(text.AsStream(), "json").Document ?? throw new InvalidOperationException($"Could not load OpenAPI document {text.Path}"))
             .Collect();
         
         var openapiDocumentProvider = provider.Select((array, _) => array.First());
@@ -89,7 +89,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
                 
                 var generationSpecification = new SourceGeneratorHelpers.GenerationSpecification(
                     ns: entityNamespace,
-                    typeName: parameter.GetTypeDeclarationIdentifier(),
+                    typeName: Path.Combine(entityDirectory, parameter.GetTypeDeclarationIdentifier()),
                     location: schema.Path,
                     rebaseToRootPath: false);
                 var typeDeclaration = GenerateCode(context, generationSpecification, schema, globalOptions);
@@ -112,7 +112,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
                     
                     var generationSpecification = new SourceGeneratorHelpers.GenerationSpecification(
                         ns: operationNamespace,
-                        typeName: parameter.GetTypeDeclarationIdentifier(),
+                        typeName: Path.Combine(operationDirectory, parameter.GetTypeDeclarationIdentifier()),
                         location: schema.Path,
                         rebaseToRootPath: false);
 
@@ -121,7 +121,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
                 }
 
                 var requestBodyNamespace = $"{operationNamespace}.RequestBodies";
-                var requestBodyDirectory = $"{operationDirectory}/RequestBodies";
+                var requestBodyDirectory = Path.Combine(operationDirectory, "RequestBodies");
                 var body = operation.RequestBody;
                 var requestBodyGenerator = RequestBodyGenerator.Empty;
                 if (body is not null)
@@ -137,7 +137,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
 
                         var contentSpecification = new SourceGeneratorHelpers.GenerationSpecification(
                             ns: requestBodyNamespace,
-                            typeName: bodyTypeDeclarationIdentifier,
+                            typeName: Path.Combine(requestBodyDirectory, bodyTypeDeclarationIdentifier),
                             location: schema.Path,
                             rebaseToRootPath: false);
 
@@ -159,7 +159,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
                 requestSourceCode.AddTo(context);
                 
                 var responseContentNamespace = operationNamespace + ".Content";
-                var responseContentDirectory = operationNamespace + ".Content";
+                var responseContentDirectory = Path.Combine(operationDirectory, "Content");
                 var responses = operation.Responses ?? new OpenApiResponses
                 {
                     ["default"] = new OpenApiResponse()
@@ -184,7 +184,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
 
                         var contentSpecification = new SourceGeneratorHelpers.GenerationSpecification(
                             ns: $"{responseContentNamespace}._{responseStatusCodePattern}",
-                            typeName: contentType,
+                            typeName: Path.Combine(responseContentDirectory, responseStatusCodePattern, contentType),
                             location: schema.Path,
                             rebaseToRootPath: false);
 
@@ -252,6 +252,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
         }
 
         List<TypeDeclaration> typeDeclarationsToGenerate = [];
+        Dictionary<string, string> namespaceToPathConversion = [];
         List<CSharpLanguageProvider.NamedType> namedTypes = [];
         JsonSchemaTypeBuilder typeBuilder = new(typesToGenerate.DocumentResolver, vocabularyRegistry);
 
@@ -287,16 +288,23 @@ public sealed class ApiGenerator : IIncrementalGenerator
 
             defaultNamespace ??= spec.Namespace;
 
+            var filePath = string.Empty;
             // Only add the named type if the spec.TypeName is not null or empty.
             if (!string.IsNullOrEmpty(spec.TypeName))
             {
+                // Corvus doesn't support defining paths for the source code file hint, so we piggyback such information on the type name property 
+                filePath = Path.GetDirectoryName(spec.TypeName!);
+                var typeName = Path.GetFileName(spec.TypeName!);
+                
                 namedTypes.Add(
                     new CSharpLanguageProvider.NamedType(
                         rootType.ReducedTypeDeclaration().ReducedType.LocatedSchema.Location,
-                        spec.TypeName!,
+                        typeName,
                         spec.Namespace,
                         spec.Accessibility));
             }
+
+            namespaceToPathConversion[spec.Namespace] = filePath;
         }
 
         CSharpLanguageProvider.Options options = new(
@@ -336,8 +344,11 @@ public sealed class ApiGenerator : IIncrementalGenerator
         {
             if (!context.CancellationToken.IsCancellationRequested)
             {
+                var filePath = namespaceToPathConversion[codeFile.TypeDeclaration.DotnetNamespace()];
+                var fileName = Path.Combine(filePath, codeFile.FileName);
+                
                 var sourceCode = new SourceCode(
-                    codeFile.TypeDeclaration.DotnetNamespace().Replace('.', '/') + $"/{codeFile.FileName}",
+                    fileName,
                     codeFile.FileContent
                 );
                 sourceCode.AddTo(context);

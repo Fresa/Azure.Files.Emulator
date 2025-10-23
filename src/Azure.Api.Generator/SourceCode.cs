@@ -15,7 +15,9 @@ internal sealed class SourceCode(string fileName, string code)
     // becomes:
     // this.is.a.deep.hierarchy.file.cs
     // https://youtrack.jetbrains.com/issue/RIDER-130837
-    private readonly string _fileName = fileName.Replace('/', '.');
+    private readonly string _fileName = fileName
+        .Replace('/', '.')
+        .Replace('\\', '.');
 
     internal void AddTo(SourceProductionContext context)
     {
