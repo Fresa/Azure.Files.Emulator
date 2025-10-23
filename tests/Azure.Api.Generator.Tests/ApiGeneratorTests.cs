@@ -43,9 +43,9 @@ public class ApiGeneratorTests
             .ToArray();
         
         generatedFiles.Should().HaveCountGreaterThan(0);
-        generatedFiles.Should().Contain("Request.g.cs");
-        generatedFiles.Should().Contain("Response.g.cs");
-        generatedFiles.Should().Contain("Operation.g.cs");
+        generatedFiles.Should().ContainMatch("*.Request.g.cs");
+        generatedFiles.Should().ContainMatch("*.Response.g.cs");
+        generatedFiles.Should().ContainMatch("*.Operation.g.cs");
     }
 
     [Fact]
