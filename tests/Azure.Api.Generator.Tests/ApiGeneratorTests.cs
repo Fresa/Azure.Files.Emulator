@@ -1,14 +1,11 @@
-using System;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
 using AwesomeAssertions;
 using Azure.Api.Generator.CodeGeneration;
 using Microsoft.CodeAnalysis;
 using Azure.Api.Generator.Tests.Utils;
 using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
 using Xunit;
 
@@ -99,12 +96,13 @@ public class ApiGeneratorTests
             ]
         );
 
-        var compilation = CSharpCompilation.Create(nameof(ApiGeneratorTests),
+        const string assemblyName = nameof(ApiGeneratorTests);
+        var compilation = CSharpCompilation.Create(assemblyName,
             options: new CSharpCompilationOptions(outputKind: OutputKind.DynamicallyLinkedLibrary));
 
         var implementedOperationSourceCode = CSharpSyntaxTree.ParseText(SourceText.From(
-            """
-            namespace Foo.ServiceSetProperties
+            $$"""
+            namespace {{assemblyName}}.Foo.ServiceSetProperties
             {
                 internal partial class Operation
                 {
@@ -127,7 +125,7 @@ public class ApiGeneratorTests
         newCompilation.SyntaxTrees.Should().HaveCountGreaterThan(0);
         var operationType = newCompilation.GetSymbolsWithName("Operation", cancellationToken: Cancellation)
             .OfType<INamedTypeSymbol>()
-            .Where(symbol => symbol.ContainingNamespace.ToDisplayString() == "Foo.ServiceSetProperties")
+            .Where(symbol => symbol.ContainingNamespace.ToDisplayString() == $"{assemblyName}.Foo.ServiceSetProperties")
             .Should().HaveCount(1).And.Subject.First();
         var handleAsyncSymbol = operationType.GetMembers("HandleAsync")
             .OfType<IMethodSymbol>()

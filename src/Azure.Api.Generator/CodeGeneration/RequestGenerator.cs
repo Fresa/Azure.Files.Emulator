@@ -6,9 +6,9 @@ namespace Azure.Api.Generator.CodeGeneration;
 
 internal sealed class RequestGenerator(List<ParameterGenerator> parameterGenerators, RequestBodyGenerator bodyGenerator)
 {
-    internal string GenerateRequestClass(string @namespace)
+    internal SourceCode GenerateRequestClass(string @namespace, string path)
     {
-        return
+        return new SourceCode($"{path}/Request.g.cs",
             $$"""
                 #nullable enable
                 using Corvus.Json;
@@ -34,6 +34,6 @@ internal sealed class RequestGenerator(List<ParameterGenerator> parameterGenerat
                     }
                 }
                 #nullable restore
-              """;
+              """);
     }
 }

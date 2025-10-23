@@ -9,7 +9,7 @@ internal sealed class EndpointGenerator(Compilation compilation)
 {
     private readonly List<(string Namespace, string Path)> _missingHandlers = [];
 
-    internal SourceCode Generate(string @namespace, string pathTemplate, string method)
+    internal SourceCode Generate(string @namespace, string path, string pathTemplate, string method)
     {
         var endpointSource =
             $$"""
@@ -26,7 +26,6 @@ internal sealed class EndpointGenerator(Compilation compilation)
               }
               """;
         
-        var path = @namespace.Replace('.', '/');
         var hasImplementedHandleMethod = compilation.GetSymbolsWithName("Operation", SymbolFilter.Type)
             .OfType<INamedTypeSymbol>()
             .Where(symbol => symbol.ContainingNamespace.ToDisplayString() == @namespace)

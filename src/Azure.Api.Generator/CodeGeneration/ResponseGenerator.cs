@@ -6,9 +6,9 @@ namespace Azure.Api.Generator.CodeGeneration;
 
 internal sealed class ResponseGenerator(List<ResponseContentGenerator> responseBodyGenerators)
 {
-    public string GenerateResponseClass(string @namespace)
+    public SourceCode GenerateResponseClass(string @namespace, string path)
     {
-        return
+        return new SourceCode($"{path}/Response.g.cs",
             $$"""
                 using Corvus.Json;
                 
@@ -18,6 +18,6 @@ internal sealed class ResponseGenerator(List<ResponseContentGenerator> responseB
                 {
                     {{responseBodyGenerators.AggregateToString(generator => generator.GenerateResponseContentClass())}}
                 }
-              """;
+              """);
     }
 }

@@ -5,6 +5,7 @@ using System.Collections.Immutable;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using Azure.Api.Generator.CodeGeneration;
 using Azure.Api.Generator.Extensions;
@@ -25,6 +26,8 @@ public sealed class ApiGenerator : IIncrementalGenerator
     private static readonly IDocumentResolver MetaSchemaResolver = SourceGeneratorHelpers.CreateMetaSchemaResolver();
     private static readonly VocabularyRegistry VocabularyRegistry = SourceGeneratorHelpers.CreateVocabularyRegistry(MetaSchemaResolver);
 
+    private static readonly string GeneratorAssemblyName = Assembly.GetExecutingAssembly().GetName().Name;
+    
     public void Initialize(IncrementalGeneratorInitializationContext context)
     {
         // Debugger.Launch();
@@ -69,26 +72,29 @@ public sealed class ApiGenerator : IIncrementalGenerator
         var compilation = generatorContext.Compilation;
         var endpointGenerator = new EndpointGenerator(compilation);
         var rootNamespace = compilation.Assembly.Name;
+        var rootPath = GeneratorAssemblyName;
         
-        var httpRequestExtensionsGenerator = new HttpRequestExtensionsGenerator(rootNamespace);
-        var httpRequestExtensionsGeneratorSourceCode =
+        var httpRequestExtensionsGenerator = new HttpRequestExtensionsGenerator(rootNamespace, rootPath);
+        var httpRequestExtensionSourceCode =
             httpRequestExtensionsGenerator.GenerateHttpRequestExtensionsClass();
-        httpRequestExtensionsGeneratorSourceCode.AddTo(context);
+        httpRequestExtensionSourceCode.AddTo(context);
         
         foreach (var path in openApi.Paths)
         {
             var pathExpression = path.Key;
             var pathItem = path.Value;
             var entityType = pathExpression.ToPascalCase();
+            var entityNamespace = $"{rootNamespace}.{entityType}";
+            var entityDirectory = $"{rootPath}/{entityType}";
             var parameterGenerators = new Dictionary<string, ParameterGenerator>();
             foreach (var parameter in pathItem.Parameters ?? [])
             {
                 var schema = new InMemoryAdditionalText(
-                    $"/{entityType}.{parameter.GetTypeDeclarationIdentifier()}.json",
+                    $"/{entityDirectory}/{parameter.GetTypeDeclarationIdentifier()}.json",
                         parameter.GetSchema().SerializeToJson());
                 
                 var generationSpecification = new SourceGeneratorHelpers.GenerationSpecification(
-                    ns: entityType,
+                    ns: entityNamespace,
                     typeName: parameter.GetTypeDeclarationIdentifier(),
                     location: schema.Path,
                     rebaseToRootPath: false);
@@ -100,18 +106,18 @@ public sealed class ApiGenerator : IIncrementalGenerator
             {
                 var operationType = openApiOperation.Key;
                 var operation = openApiOperation.Value;
-                var operationId = ((string?)operation.OperationId ?? operationType.ToString()).ToPascalCase();
-                var @namespace = $"{entityType}.{operationId}";
-                var directory = @namespace.Replace('.', '/');
+                var operationId = (operation.OperationId ?? operationType.ToString()).ToPascalCase();
+                var operationNamespace = $"{entityNamespace}.{operationId}";
+                var operationDirectory = $"{entityDirectory}/{operationId}";
                 
                 foreach (var parameter in operation.GetParameters())
                 {
                     var schema = new InMemoryAdditionalText(
-                        $"/{@namespace}.{parameter.GetTypeDeclarationIdentifier()}.json",
+                        $"/{operationDirectory}/{parameter.GetTypeDeclarationIdentifier()}.json",
                         parameter.GetSchema().SerializeToJson());
                     
                     var generationSpecification = new SourceGeneratorHelpers.GenerationSpecification(
-                        ns: @namespace,
+                        ns: operationNamespace,
                         typeName: parameter.GetTypeDeclarationIdentifier(),
                         location: schema.Path,
                         rebaseToRootPath: false);
@@ -120,7 +126,8 @@ public sealed class ApiGenerator : IIncrementalGenerator
                     parameterGenerators[parameter.GetName()] = new ParameterGenerator(typeDeclaration, parameter, httpRequestExtensionsGenerator);
                 }
 
-                var requestBodyNamespace = @namespace + ".RequestBodies";
+                var requestBodyNamespace = $"{operationNamespace}.RequestBodies";
+                var requestBodyDirectory = $"{operationDirectory}/RequestBodies";
                 var body = operation.RequestBody;
                 var requestBodyGenerator = RequestBodyGenerator.Empty;
                 if (body is not null)
@@ -131,7 +138,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
                         var bodyTypeDeclarationIdentifier = pair.Key.ToPascalCase();
 
                         var schema = new InMemoryAdditionalText(
-                            $"/{requestBodyNamespace}.{bodyTypeDeclarationIdentifier}.json",
+                            $"/{requestBodyDirectory}/{bodyTypeDeclarationIdentifier}.json",
                             requestBodyContent.Schema.SerializeToJson());
 
                         var contentSpecification = new SourceGeneratorHelpers.GenerationSpecification(
@@ -152,13 +159,13 @@ public sealed class ApiGenerator : IIncrementalGenerator
                 }
 
                 var requestGenerator = new RequestGenerator(parameterGenerators.Values.ToList(), requestBodyGenerator);
-                var requestSource = requestGenerator.GenerateRequestClass(@namespace);
-                var requestSourceCode = new SourceCode(
-                    $"{directory}/Request.g.cs",
-                    requestSource);
+                var requestSourceCode = requestGenerator.GenerateRequestClass(
+                    operationNamespace,
+                    operationDirectory);
                 requestSourceCode.AddTo(context);
                 
-                var responseContentNamespace = @namespace + ".Content";
+                var responseContentNamespace = operationNamespace + ".Content";
+                var responseContentDirectory = operationNamespace + ".Content";
                 var responses = operation.Responses ?? new OpenApiResponses
                 {
                     ["default"] = new OpenApiResponse()
@@ -178,7 +185,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
                         var content = valuePair.Value;
                         var contentType = valuePair.Key.ToPascalCase();
                         var schema = new InMemoryAdditionalText(
-                            $"/{responseContentNamespace}.{responseStatusCodePattern}.{contentType}.json",
+                            $"/{responseContentDirectory}/{responseStatusCodePattern}/{contentType}.json",
                             content.Schema.SerializeToJson());
 
                         var contentSpecification = new SourceGeneratorHelpers.GenerationSpecification(
@@ -196,15 +203,18 @@ public sealed class ApiGenerator : IIncrementalGenerator
                 }).ToList();
                 var responseGenerator = new ResponseGenerator(
                     responseBodyGenerators);
-                var responseSource =
-                    responseGenerator.GenerateResponseClass(@namespace);
-                var responseSourceCode = new SourceCode(
-                    $"{directory}/Response.g.cs",
-                    responseSource);
+                var responseSourceCode =
+                    responseGenerator.GenerateResponseClass(
+                        operationNamespace, 
+                        operationDirectory);
                 responseSourceCode.AddTo(context);
 
-                endpointGenerator
-                    .Generate(@namespace, pathExpression, operationId)
+                var endpointSource = endpointGenerator
+                    .Generate(operationNamespace,
+                        operationDirectory,
+                        pathExpression, 
+                        operationId);
+                endpointSource
                     .AddTo(context);
             }
         }
