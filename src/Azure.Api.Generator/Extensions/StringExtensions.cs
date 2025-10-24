@@ -27,4 +27,22 @@ internal static class StringExtensions
 
         return string.Concat(sections);
     }
+
+    [return: NotNullIfNotNull(nameof(str))]
+    public static string? ToCamelCase(this string? str, params char[] delimiters)
+    {
+        var strAsPascalCase = str.ToPascalCase();
+        if (strAsPascalCase is null or "")
+        {
+            return strAsPascalCase;
+        }
+
+        var firstCharacter = strAsPascalCase[..1].ToLower();
+        if (strAsPascalCase.Length == 1)
+        {
+            return firstCharacter;
+        }
+
+        return firstCharacter + strAsPascalCase[1..];
+    }
 }

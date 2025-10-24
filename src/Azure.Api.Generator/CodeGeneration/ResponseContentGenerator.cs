@@ -42,7 +42,24 @@ internal sealed class ResponseContentGenerator
             $$"""
             internal sealed class {{_responseClassName}} : Response
             {
-                {{_contentGenerators.AggregateToString(generator => generator.GenerateContentProperty())}}
+                {{_contentGenerators.AggregateToString(generator =>
+                    generator.GenerateConstructor(_responseClassName))}}
+                
+                {{_contentGenerators.AggregateToString(generator => 
+                    generator.GenerateContentProperty())}}
+                
+                internal void WriteTo(HttpResponse httpResponse)
+                {
+                    IJsonValue content = true switch
+                    { 
+                    {{_contentGenerators.AggregateToString(generator => 
+                        $"_ when {generator.ContentPropertyName} is not null => {generator.ContentPropertyName}")}}!,
+                        _ => throw new InvalidOperationException("No content was defined") 
+                    };
+                    
+                    using var jsonWriter = new Utf8JsonWriter(httpResponse.BodyWriter);
+                    content.WriteTo(jsonWriter);
+                }
             }
             """;
     }

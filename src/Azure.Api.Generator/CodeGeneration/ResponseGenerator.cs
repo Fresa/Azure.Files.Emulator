@@ -10,14 +10,18 @@ internal sealed class ResponseGenerator(List<ResponseContentGenerator> responseB
     {
         return new SourceCode($"{path}/Response.g.cs",
             $$"""
+                #nullable enable
                 using Corvus.Json;
-                
+                using System.Text.Json;
+              
                 namespace {{@namespace}};
                 
                 internal abstract partial class Response
                 {
-                    {{responseBodyGenerators.AggregateToString(generator => generator.GenerateResponseContentClass())}}
+                    {{responseBodyGenerators.AggregateToString(generator => 
+                        generator.GenerateResponseContentClass())}}
                 }
+                #nullable restore
               """);
     }
 }

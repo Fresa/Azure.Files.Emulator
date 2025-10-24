@@ -1,15 +1,49 @@
-﻿using Corvus.Json;
+﻿#nullable enable
+using Corvus.Json;
+using System.Text.Json;
 
 namespace Azure.Files.Emulator.CompList.ServiceListSharesSegment;
 internal abstract partial class Response
 {
     internal sealed class OK200 : Response
     {
-        internal Azure.Files.Emulator.CompList.ServiceListSharesSegment.Content._200.ApplicationXml ApplicationXml { get; set; }
+        public OK200(Azure.Files.Emulator.CompList.ServiceListSharesSegment.Content._200.ApplicationXml applicationXml)
+        {
+            ApplicationXml = applicationXml;
+        }
+
+        internal Azure.Files.Emulator.CompList.ServiceListSharesSegment.Content._200.ApplicationXml? ApplicationXml { get; set; }
+
+        internal void WriteTo(HttpResponse httpResponse)
+        {
+            IJsonValue content = true switch
+            {
+                _ when ApplicationXml is not null => ApplicationXml,
+                _ => throw new InvalidOperationException("No content was defined")};
+            using var jsonWriter = new Utf8JsonWriter(httpResponse.BodyWriter);
+            content.WriteTo(jsonWriter);
+        }
     }
 
     internal sealed class Default : Response
     {
-        internal Azure.Files.Emulator.CompList.ServiceListSharesSegment.Content._Default.ApplicationXml ApplicationXml { get; set; }
+        public Default(Azure.Files.Emulator.CompList.ServiceListSharesSegment.Content._Default.ApplicationXml applicationXml)
+        {
+            ApplicationXml = applicationXml;
+        }
+
+        internal Azure.Files.Emulator.CompList.ServiceListSharesSegment.Content._Default.ApplicationXml? ApplicationXml { get; set; }
+
+        internal void WriteTo(HttpResponse httpResponse)
+        {
+            IJsonValue content = true switch
+            {
+                _ when ApplicationXml is not null => ApplicationXml,
+                _ => throw new InvalidOperationException("No content was defined")};
+            using var jsonWriter = new Utf8JsonWriter(httpResponse.BodyWriter);
+            content.WriteTo(jsonWriter);
+        }
     }
 }
+#nullable restore
+
