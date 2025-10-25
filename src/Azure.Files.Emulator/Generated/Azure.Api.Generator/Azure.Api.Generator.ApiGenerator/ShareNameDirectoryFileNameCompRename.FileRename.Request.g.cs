@@ -4,6 +4,7 @@ using Corvus.Json;
 namespace Azure.Files.Emulator.ShareNameDirectoryFileNameCompRename.FileRename;
 internal partial class Request
 {
+    internal required HttpContext HttpContext { get; init; }
     internal required Corvus.Json.JsonString ShareName { get; init; }
     internal required Corvus.Json.JsonString Directory { get; init; }
     internal required Corvus.Json.JsonString FileName { get; init; }
@@ -28,10 +29,12 @@ internal partial class Request
     internal Corvus.Json.JsonBoolean? XMsSourceAllowTrailingDot { get; init; }
     internal Azure.Files.Emulator.ShareNameDirectoryFileNameCompRename.FileRename.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
-    public static Request Bind(HttpRequest request)
+    public static Request Bind(HttpContext context)
     {
+        var request = context.Request;
         return new Request
         {
+            HttpContext = context,
             ShareName = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",

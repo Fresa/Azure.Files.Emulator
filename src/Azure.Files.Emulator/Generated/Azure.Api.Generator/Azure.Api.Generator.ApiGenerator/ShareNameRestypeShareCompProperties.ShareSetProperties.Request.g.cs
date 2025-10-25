@@ -4,6 +4,7 @@ using Corvus.Json;
 namespace Azure.Files.Emulator.ShareNameRestypeShareCompProperties.ShareSetProperties;
 internal partial class Request
 {
+    internal required HttpContext HttpContext { get; init; }
     internal required Corvus.Json.JsonString ShareName { get; init; }
     internal required Azure.Files.Emulator.ShareNameRestypeShareCompProperties.RestypeQuery Restype { get; init; }
     internal required Azure.Files.Emulator.ShareNameRestypeShareCompProperties.CompQuery Comp { get; init; }
@@ -21,10 +22,12 @@ internal partial class Request
     internal Corvus.Json.JsonInt64? XMsShareProvisionedIops { get; init; }
     internal Corvus.Json.JsonInt64? XMsShareProvisionedBandwidthMibps { get; init; }
 
-    public static Request Bind(HttpRequest request)
+    public static Request Bind(HttpContext context)
     {
+        var request = context.Request;
         return new Request
         {
+            HttpContext = context,
             ShareName = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
 {
   "in": "path",

@@ -4,16 +4,19 @@ using Corvus.Json;
 namespace Azure.Files.Emulator.RestypeServiceCompProperties.ServiceGetProperties;
 internal partial class Request
 {
+    internal required HttpContext HttpContext { get; init; }
     internal required Azure.Files.Emulator.RestypeServiceCompProperties.RestypeQuery Restype { get; init; }
     internal required Azure.Files.Emulator.RestypeServiceCompProperties.CompQuery Comp { get; init; }
     internal Azure.Files.Emulator.RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery? Timeout { get; init; }
     internal required Azure.Files.Emulator.RestypeServiceCompProperties.ServiceGetProperties.XMsVersionHeader XMsVersion { get; init; }
     internal Azure.Files.Emulator.RestypeServiceCompProperties.ServiceGetProperties.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
-    public static Request Bind(HttpRequest request)
+    public static Request Bind(HttpContext context)
     {
+        var request = context.Request;
         return new Request
         {
+            HttpContext = context,
             Restype = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.RestypeServiceCompProperties.RestypeQuery>(request, """
 {
   "in": "query",

@@ -4,6 +4,7 @@ using Corvus.Json;
 namespace Azure.Files.Emulator.CompList.ServiceListSharesSegment;
 internal partial class Request
 {
+    internal required HttpContext HttpContext { get; init; }
     internal required Azure.Files.Emulator.CompList.CompQuery Comp { get; init; }
     internal Corvus.Json.JsonString? Prefix { get; init; }
     internal Corvus.Json.JsonString? Marker { get; init; }
@@ -13,10 +14,12 @@ internal partial class Request
     internal required Azure.Files.Emulator.CompList.ServiceListSharesSegment.XMsVersionHeader XMsVersion { get; init; }
     internal Azure.Files.Emulator.CompList.ServiceListSharesSegment.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
-    public static Request Bind(HttpRequest request)
+    public static Request Bind(HttpContext context)
     {
+        var request = context.Request;
         return new Request
         {
+            HttpContext = context,
             Comp = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.CompList.CompQuery>(request, """
 {
   "in": "query",

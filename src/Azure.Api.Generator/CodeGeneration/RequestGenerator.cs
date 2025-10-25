@@ -17,15 +17,19 @@ internal sealed class RequestGenerator(List<ParameterGenerator> parameterGenerat
                 
                 internal partial class Request
                 {
+                    internal required HttpContext HttpContext { get; init; }
+              
                     {{parameterGenerators.Aggregate(new StringBuilder(),(builder, generator) => 
                         builder.AppendLine(generator.GenerateRequestProperty()))}}
 
                     {{bodyGenerator.GenerateRequestProperty("Body")}}
-                                              
-                    public static Request Bind(HttpRequest request)
+                    
+                    public static Request Bind(HttpContext context)
                     {
+                        var request = context.Request;
                         return new Request
                         {
+                            HttpContext = context,
                             {{parameterGenerators.Aggregate(new StringBuilder(),(builder, generator) => 
                                 builder.AppendLine(generator.GenerateRequestBindingDirective()))}}
                                 
