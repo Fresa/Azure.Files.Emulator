@@ -18,6 +18,8 @@ internal sealed class ResponseGenerator(List<ResponseContentGenerator> responseB
                 
                 internal abstract partial class Response
                 {
+                    internal abstract void WriteTo(HttpResponse httpResponse);
+                
                     {{responseBodyGenerators.AggregateToString(generator => 
                         generator.GenerateResponseContentClass())}}
                 }

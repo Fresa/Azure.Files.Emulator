@@ -23,6 +23,17 @@ internal sealed class EndpointGenerator(Compilation compilation)
                 internal const string Method = "{{method}}";
 
                 {{HandleMethodSignature}};
+                
+                internal static async Task HandleAsync(
+                    HttpContext context, 
+                    Operation operation, 
+                    CancellationToken cancellationToken)
+                {
+                    var request = Request.Bind(context.Request);
+                    var response = await operation.HandleAsync(request, cancellationToken)
+                        .ConfigureAwait(false);
+                    response.WriteTo(context.Response);
+                }
               }
               """;
         

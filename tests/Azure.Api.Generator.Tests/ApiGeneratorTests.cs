@@ -127,11 +127,14 @@ public class ApiGeneratorTests
             .OfType<INamedTypeSymbol>()
             .Where(symbol => symbol.ContainingNamespace.ToDisplayString() == $"{assemblyName}.Foo.ServiceSetProperties")
             .Should().HaveCount(1).And.Subject.First();
-        var handleAsyncSymbol = operationType.GetMembers("HandleAsync")
+        var handleAsyncSymbols = operationType.GetMembers("HandleAsync")
             .OfType<IMethodSymbol>()
-            .Should().HaveCount(1, "there should be a single implementation of HandleAsync").And.Subject.First();
+            .Should().HaveCountGreaterThanOrEqualTo(1, "there should be at least one implementation of HandleAsync")
+            .And.Subject;
 
-        handleAsyncSymbol.Parameters.Should().HaveCount(2);
+        var handleAsyncSymbol = handleAsyncSymbols.Should()
+            .ContainSingle(symbol => symbol.Parameters.Length == 2, "there should be a handler with two parameters; request and cancellation token")
+            .Subject;
         handleAsyncSymbol.Parameters[0].Type.ToDisplayString(SymbolDisplayFormat.MinimallyQualifiedFormat).Should()
             .Be("Request");
         handleAsyncSymbol.Parameters[1].Type.ToDisplayString(SymbolDisplayFormat.MinimallyQualifiedFormat).Should()

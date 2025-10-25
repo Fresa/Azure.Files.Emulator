@@ -48,7 +48,7 @@ internal sealed class ResponseContentGenerator
                 {{_contentGenerators.AggregateToString(generator => 
                     generator.GenerateContentProperty())}}
                 
-                internal void WriteTo(HttpResponse httpResponse)
+                internal override void WriteTo(HttpResponse httpResponse)
                 {
                     IJsonValue content = true switch
                     { 
