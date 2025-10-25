@@ -4,7 +4,7 @@ namespace Azure.Files.Emulator.ShareNameDirectoryFileNameCompListhandles.FileLis
 internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}/{directory}/{fileName}?comp=listhandles";
-    internal const string Method = "FileListHandles";
+    internal const string Method = "GET";
     internal partial Task<Response> HandleAsync(Request request, CancellationToken cancellationToken);
     internal static async Task HandleAsync(HttpContext context, Operation operation, CancellationToken cancellationToken)
     {

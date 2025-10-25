@@ -4,6 +4,7 @@ using System.Collections.Immutable;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using Azure.Api.Generator.CodeGeneration;
 using Azure.Api.Generator.Extensions;
 using Azure.Api.Generator.OpenApi;
@@ -72,6 +73,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
         var httpRequestExtensionSourceCode =
             httpRequestExtensionsGenerator.GenerateHttpRequestExtensionsClass();
         httpRequestExtensionSourceCode.AddTo(context);
+        var operations = new List<(string Namespace, HttpMethod HttpMethod)>();
         
         foreach (var path in openApi.Paths)
         {
@@ -98,9 +100,9 @@ public sealed class ApiGenerator : IIncrementalGenerator
 
             foreach (var openApiOperation in path.Value.GetOperations())
             {
-                var operationType = openApiOperation.Key;
+                var operationMethod = openApiOperation.Key;
                 var operation = openApiOperation.Value;
-                var operationId = (operation.OperationId ?? operationType.ToString()).ToPascalCase();
+                var operationId = (operation.OperationId ?? operationMethod.ToString()).ToPascalCase();
                 var operationNamespace = $"{entityNamespace}.{operationId}";
                 var operationDirectory = $"{entityDirectory}/{operationId}";
                 
@@ -203,11 +205,12 @@ public sealed class ApiGenerator : IIncrementalGenerator
                         operationDirectory);
                 responseSourceCode.AddTo(context);
 
+                operations.Add((operationNamespace, operationMethod));
                 var endpointSource = endpointGenerator
                     .Generate(operationNamespace,
                         operationDirectory,
                         pathExpression, 
-                        operationId);
+                        operationMethod);
                 endpointSource
                     .AddTo(context);
             }
@@ -221,6 +224,10 @@ public sealed class ApiGenerator : IIncrementalGenerator
                 context.ReportDiagnostic(missingHandler.Diagnostic);
             }
         }
+
+        var operationRouterGenerator = new OperationRouterGenerator(rootNamespace);
+        var routerSourceCode = operationRouterGenerator.ForMinimalApi(operations);
+        routerSourceCode.AddTo(context);
     }
 
     private static readonly DiagnosticDescriptor Crv1001ErrorGeneratingCSharpCode =

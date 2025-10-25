@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Text;
 
@@ -9,7 +10,7 @@ internal sealed class EndpointGenerator(Compilation compilation)
 {
     private readonly List<(string Namespace, string Path)> _missingHandlers = [];
 
-    internal SourceCode Generate(string @namespace, string path, string pathTemplate, string method)
+    internal SourceCode Generate(string @namespace, string path, string pathTemplate, HttpMethod method)
     {
         var endpointSource =
             $$"""
@@ -20,7 +21,7 @@ internal sealed class EndpointGenerator(Compilation compilation)
               internal partial class Operation
               {
                 internal const string PathTemplate = "{{pathTemplate}}";
-                internal const string Method = "{{method}}";
+                internal const string Method = "{{method.Method}}";
 
                 {{HandleMethodSignature}};
                 

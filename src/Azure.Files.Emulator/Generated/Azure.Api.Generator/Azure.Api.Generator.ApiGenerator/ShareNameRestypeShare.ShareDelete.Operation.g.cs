@@ -4,7 +4,7 @@ namespace Azure.Files.Emulator.ShareNameRestypeShare.ShareDelete;
 internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}?restype=share";
-    internal const string Method = "ShareDelete";
+    internal const string Method = "DELETE";
     internal partial Task<Response> HandleAsync(Request request, CancellationToken cancellationToken);
     internal static async Task HandleAsync(HttpContext context, Operation operation, CancellationToken cancellationToken)
     {

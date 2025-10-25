@@ -4,7 +4,7 @@ namespace Azure.Files.Emulator.ShareNameDirectoryFileNameCompLeaseBreak.FileBrea
 internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}/{directory}/{fileName}?comp=lease&break";
-    internal const string Method = "FileBreakLease";
+    internal const string Method = "PUT";
     internal partial Task<Response> HandleAsync(Request request, CancellationToken cancellationToken);
     internal static async Task HandleAsync(HttpContext context, Operation operation, CancellationToken cancellationToken)
     {

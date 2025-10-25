@@ -4,7 +4,7 @@ namespace Azure.Files.Emulator.ShareNameDirectoryFileNameCompForceclosehandles.F
 internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}/{directory}/{fileName}?comp=forceclosehandles";
-    internal const string Method = "FileForceCloseHandles";
+    internal const string Method = "PUT";
     internal partial Task<Response> HandleAsync(Request request, CancellationToken cancellationToken);
     internal static async Task HandleAsync(HttpContext context, Operation operation, CancellationToken cancellationToken)
     {

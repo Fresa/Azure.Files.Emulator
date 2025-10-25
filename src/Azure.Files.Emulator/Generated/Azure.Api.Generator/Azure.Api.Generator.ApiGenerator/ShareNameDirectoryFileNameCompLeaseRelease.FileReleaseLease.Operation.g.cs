@@ -4,7 +4,7 @@ namespace Azure.Files.Emulator.ShareNameDirectoryFileNameCompLeaseRelease.FileRe
 internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}/{directory}/{fileName}?comp=lease&release";
-    internal const string Method = "FileReleaseLease";
+    internal const string Method = "PUT";
     internal partial Task<Response> HandleAsync(Request request, CancellationToken cancellationToken);
     internal static async Task HandleAsync(HttpContext context, Operation operation, CancellationToken cancellationToken)
     {

@@ -4,7 +4,7 @@ namespace Azure.Files.Emulator.CompList.ServiceListSharesSegment;
 internal partial class Operation
 {
     internal const string PathTemplate = "/?comp=list";
-    internal const string Method = "ServiceListSharesSegment";
+    internal const string Method = "GET";
     internal partial Task<Response> HandleAsync(Request request, CancellationToken cancellationToken);
     internal static async Task HandleAsync(HttpContext context, Operation operation, CancellationToken cancellationToken)
     {

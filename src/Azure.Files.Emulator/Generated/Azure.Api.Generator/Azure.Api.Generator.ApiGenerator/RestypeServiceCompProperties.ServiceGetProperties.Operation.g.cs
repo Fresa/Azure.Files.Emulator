@@ -4,7 +4,7 @@ namespace Azure.Files.Emulator.RestypeServiceCompProperties.ServiceGetProperties
 internal partial class Operation
 {
     internal const string PathTemplate = "/?restype=service&comp=properties";
-    internal const string Method = "ServiceGetProperties";
+    internal const string Method = "GET";
     internal partial Task<Response> HandleAsync(Request request, CancellationToken cancellationToken);
     internal static async Task HandleAsync(HttpContext context, Operation operation, CancellationToken cancellationToken)
     {

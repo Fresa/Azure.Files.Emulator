@@ -4,7 +4,7 @@ namespace Azure.Files.Emulator.ShareNameDirectoryRestypeDirectory.DirectoryCreat
 internal partial class Operation
 {
     internal const string PathTemplate = "/{shareName}/{directory}?restype=directory";
-    internal const string Method = "DirectoryCreate";
+    internal const string Method = "PUT";
     internal partial Task<Response> HandleAsync(Request request, CancellationToken cancellationToken);
     internal static async Task HandleAsync(HttpContext context, Operation operation, CancellationToken cancellationToken)
     {
