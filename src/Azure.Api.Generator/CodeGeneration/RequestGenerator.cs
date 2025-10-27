@@ -8,6 +8,9 @@ internal sealed class RequestGenerator(List<ParameterGenerator> parameterGenerat
 {
     internal SourceCode GenerateRequestClass(string @namespace, string path)
     {
+        var requestBindingDirective = bodyGenerator.GenerateRequestBindingDirective("Body",
+            "httpRequest",
+            out var isAsync);
         return new SourceCode($"{path}/Request.g.cs",
             $$"""
                 #nullable enable
@@ -24,17 +27,18 @@ internal sealed class RequestGenerator(List<ParameterGenerator> parameterGenerat
 
                     {{bodyGenerator.GenerateRequestProperty("Body")}}
                     
-                    public static Request Bind(HttpContext context)
+                    public static {{(isAsync ? "async" : "")}} Task<Request> BindAsync(HttpContext context, CancellationToken cancellationToken)
                     {
-                        var request = context.Request;
-                        return new Request
+                        var httpRequest = context.Request;
+                        var request = new Request
                         {
                             HttpContext = context,
                             {{parameterGenerators.Aggregate(new StringBuilder(),(builder, generator) => 
-                                builder.AppendLine(generator.GenerateRequestBindingDirective()))}}
+                                builder.AppendLine(generator.GenerateRequestBindingDirective("httpRequest")))}}
                                 
-                            {{bodyGenerator.GenerateRequestBindingDirective("Body")}}
+                            {{requestBindingDirective}}
                         };
+                        return {{(isAsync ? "request" : "Task.FromResult(request)")}};
                     }
                 }
                 #nullable restore

@@ -16,13 +16,13 @@ internal partial class Request
     internal Corvus.Json.JsonBoolean? XMsAllowTrailingDot { get; init; }
     internal Azure.Files.Emulator.ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
-    public static Request Bind(HttpContext context)
+    public static Task<Request> BindAsync(HttpContext context, CancellationToken cancellationToken)
     {
-        var request = context.Request;
-        return new Request
+        var httpRequest = context.Request;
+        var request = new Request
         {
             HttpContext = context,
-            ShareName = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            ShareName = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(httpRequest, """
 {
   "in": "path",
   "name": "shareName",
@@ -32,7 +32,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Directory = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            Directory = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(httpRequest, """
 {
   "in": "path",
   "name": "directory",
@@ -43,7 +43,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            FileName = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            FileName = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(httpRequest, """
 {
   "in": "path",
   "name": "fileName",
@@ -54,7 +54,7 @@ internal partial class Request
   "x-ms-skip-url-encoding": false
 }
 """),
-            Comp = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.ShareNameDirectoryFileNameCompMetadata.CompQuery>(request, """
+            Comp = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.ShareNameDirectoryFileNameCompMetadata.CompQuery>(httpRequest, """
 {
   "in": "query",
   "name": "comp",
@@ -66,7 +66,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.TimeoutQuery>(request, """
+            Timeout = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.TimeoutQuery>(httpRequest, """
 {
   "in": "query",
   "name": "timeout",
@@ -76,7 +76,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsMeta = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            XMsMeta = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(httpRequest, """
 {
   "in": "header",
   "name": "x-ms-meta",
@@ -87,7 +87,7 @@ internal partial class Request
   "x-ms-header-collection-prefix": "x-ms-meta-"
 }
 """).AsOptional(),
-            XMsVersion = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.XMsVersionHeader>(request, """
+            XMsVersion = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.XMsVersionHeader>(httpRequest, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -101,7 +101,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsLeaseId = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            XMsLeaseId = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(httpRequest, """
 {
   "in": "header",
   "name": "x-ms-lease-id",
@@ -114,7 +114,7 @@ internal partial class Request
   }
 }
 """).AsOptional(),
-            XMsAllowTrailingDot = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonBoolean>(request, """
+            XMsAllowTrailingDot = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonBoolean>(httpRequest, """
 {
   "in": "header",
   "name": "x-ms-allow-trailing-dot",
@@ -123,7 +123,7 @@ internal partial class Request
   "x-ms-client-name": "allowTrailingDot"
 }
 """).AsOptional(),
-            XMsFileRequestIntent = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.XMsFileRequestIntentHeader>(request, """
+            XMsFileRequestIntent = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.XMsFileRequestIntentHeader>(httpRequest, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",
@@ -140,6 +140,7 @@ internal partial class Request
 }
 """).AsOptional(),
         };
+        return Task.FromResult(request);
     }
 }
 #nullable restore

@@ -13,13 +13,13 @@ internal partial class Request
     internal required Azure.Files.Emulator.ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.XMsVersionHeader XMsVersion { get; init; }
     internal Azure.Files.Emulator.ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
-    public static Request Bind(HttpContext context)
+    public static Task<Request> BindAsync(HttpContext context, CancellationToken cancellationToken)
     {
-        var request = context.Request;
-        return new Request
+        var httpRequest = context.Request;
+        var request = new Request
         {
             HttpContext = context,
-            ShareName = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            ShareName = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(httpRequest, """
 {
   "in": "path",
   "name": "shareName",
@@ -29,7 +29,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """),
-            Restype = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.ShareNameRestypeShareCompSnapshot.RestypeQuery>(request, """
+            Restype = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.ShareNameRestypeShareCompSnapshot.RestypeQuery>(httpRequest, """
 {
   "in": "query",
   "name": "restype",
@@ -41,7 +41,7 @@ internal partial class Request
   ]
 }
 """),
-            Comp = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.ShareNameRestypeShareCompSnapshot.CompQuery>(request, """
+            Comp = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.ShareNameRestypeShareCompSnapshot.CompQuery>(httpRequest, """
 {
   "in": "query",
   "name": "comp",
@@ -53,7 +53,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.TimeoutQuery>(request, """
+            Timeout = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.TimeoutQuery>(httpRequest, """
 {
   "in": "query",
   "name": "timeout",
@@ -63,7 +63,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsMeta = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            XMsMeta = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(httpRequest, """
 {
   "in": "header",
   "name": "x-ms-meta",
@@ -74,7 +74,7 @@ internal partial class Request
   "x-ms-header-collection-prefix": "x-ms-meta-"
 }
 """).AsOptional(),
-            XMsVersion = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.XMsVersionHeader>(request, """
+            XMsVersion = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.XMsVersionHeader>(httpRequest, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -88,7 +88,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsFileRequestIntent = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.XMsFileRequestIntentHeader>(request, """
+            XMsFileRequestIntent = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.XMsFileRequestIntentHeader>(httpRequest, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",
@@ -105,6 +105,7 @@ internal partial class Request
 }
 """).AsOptional(),
         };
+        return Task.FromResult(request);
     }
 }
 #nullable restore

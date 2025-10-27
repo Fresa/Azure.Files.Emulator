@@ -26,7 +26,7 @@ internal sealed class ParameterGenerator(
                 """;
     }
 
-    internal string GenerateRequestBindingDirective()
+    internal string GenerateRequestBindingDirective(string requestVariableName)
     {
         using var textWriter = new StringWriter();
         var jsonWriter = new OpenApiJsonWriter(textWriter, new OpenApiJsonWriterSettings()
@@ -37,7 +37,7 @@ internal sealed class ParameterGenerator(
         textWriter.Flush();
 
         return $" {_propertyName} = {httpRequestExtensionsGenerator.CreateBindParameterInvocation(
-            "request",
+            requestVariableName,
             FullyQualifiedTypeName.TrimEnd('?'),
             textWriter.GetStringBuilder().ToString())}{(parameter.Required ? "" : ".AsOptional()")},";
     }

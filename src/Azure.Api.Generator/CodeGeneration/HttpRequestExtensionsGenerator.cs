@@ -28,8 +28,9 @@ internal sealed class HttpRequestExtensionsGenerator(string @namespace)
     {
         return
             $""""
-             {@namespace}.{HttpRequestExtensionsClassName}.BindBody<{bindingTypeName}>(
-                {requestVariableName})
+             await {@namespace}.{HttpRequestExtensionsClassName}.BindBodyAsync<{bindingTypeName}>(
+                {requestVariableName}, cancellationToken)
+                    .ConfigureAwait(false)
              """";
     }
     
@@ -68,7 +69,7 @@ internal sealed class HttpRequestExtensionsGenerator(string @namespace)
                 var value = parameter switch
                 {
                     null => T.Undefined,
-                    _ when parameter.InBody => T.Parse(request.Body),
+                    _ when parameter.InBody => T.Parse(request.BodyReader.AsStream()),
                     _ when TryGetValue(request, parameter, out var stringValue) =>
                         Parse<T>(parameter, stringValue),
                     _ => T.Undefined
@@ -77,10 +78,13 @@ internal sealed class HttpRequestExtensionsGenerator(string @namespace)
                 return Validate(value);
             }
 
-            internal static T BindBody<T>(this HttpRequest request)
+            internal static async Task<T> BindBodyAsync<T>(this HttpRequest request, CancellationToken cancellationToken)
                 where T : struct, IJsonValue<T>
             {
-                var value = T.Parse(request.Body);
+                var document = await JsonDocument.ParseAsync(request.Body, 
+                    cancellationToken: cancellationToken)
+                        .ConfigureAwait(false);
+                var value = T.FromJson(document.RootElement.Clone());
 
                 return Validate(value);
             }

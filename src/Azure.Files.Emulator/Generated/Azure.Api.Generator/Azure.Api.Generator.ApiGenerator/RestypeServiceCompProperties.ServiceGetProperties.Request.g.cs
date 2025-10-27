@@ -11,13 +11,13 @@ internal partial class Request
     internal required Azure.Files.Emulator.RestypeServiceCompProperties.ServiceGetProperties.XMsVersionHeader XMsVersion { get; init; }
     internal Azure.Files.Emulator.RestypeServiceCompProperties.ServiceGetProperties.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
-    public static Request Bind(HttpContext context)
+    public static Task<Request> BindAsync(HttpContext context, CancellationToken cancellationToken)
     {
-        var request = context.Request;
-        return new Request
+        var httpRequest = context.Request;
+        var request = new Request
         {
             HttpContext = context,
-            Restype = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.RestypeServiceCompProperties.RestypeQuery>(request, """
+            Restype = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.RestypeServiceCompProperties.RestypeQuery>(httpRequest, """
 {
   "in": "query",
   "name": "restype",
@@ -29,7 +29,7 @@ internal partial class Request
   ]
 }
 """),
-            Comp = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.RestypeServiceCompProperties.CompQuery>(request, """
+            Comp = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.RestypeServiceCompProperties.CompQuery>(httpRequest, """
 {
   "in": "query",
   "name": "comp",
@@ -41,7 +41,7 @@ internal partial class Request
   ]
 }
 """),
-            Timeout = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery>(request, """
+            Timeout = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.RestypeServiceCompProperties.ServiceGetProperties.TimeoutQuery>(httpRequest, """
 {
   "in": "query",
   "name": "timeout",
@@ -51,7 +51,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.RestypeServiceCompProperties.ServiceGetProperties.XMsVersionHeader>(request, """
+            XMsVersion = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.RestypeServiceCompProperties.ServiceGetProperties.XMsVersionHeader>(httpRequest, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -65,7 +65,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsFileRequestIntent = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.RestypeServiceCompProperties.ServiceGetProperties.XMsFileRequestIntentHeader>(request, """
+            XMsFileRequestIntent = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.RestypeServiceCompProperties.ServiceGetProperties.XMsFileRequestIntentHeader>(httpRequest, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",
@@ -82,6 +82,7 @@ internal partial class Request
 }
 """).AsOptional(),
         };
+        return Task.FromResult(request);
     }
 }
 #nullable restore

@@ -22,9 +22,9 @@ internal sealed class RequestBodyContentGenerator(
     {
         return $"""
                  {_propertyName} = 
-                    {httpRequestExtensionsGenerator.CreateBindBodyInvocation(
+                    ({httpRequestExtensionsGenerator.CreateBindBodyInvocation(
                         "request", 
-                        FullyQualifiedTypeDeclarationIdentifier)}
+                        FullyQualifiedTypeDeclarationIdentifier)})
                         .AsOptional()
                 """;
     }

@@ -29,15 +29,17 @@ internal sealed class RequestBodyGenerator
 
     internal static readonly RequestBodyGenerator Empty = new();
     
-    internal string GenerateRequestBindingDirective(string propertyName)
+    internal string GenerateRequestBindingDirective(string propertyName, string requestVariableName, out bool isAsync)
     {
+        isAsync = _body is not null;
         if (_body is null)
         {
             return string.Empty;
         }
 
         return $"""
-                 {propertyName} = RequestContent.Bind(request)
+                 {propertyName} = await RequestContent.BindAsync({requestVariableName}, cancellationToken)
+                    .ConfigureAwait(false)
                 """;
     }
 
@@ -55,7 +57,9 @@ internal sealed class RequestBodyGenerator
                  {
                     {{_contentGenerators.Aggregate(new StringBuilder(), (builder, content) => builder.AppendLine(content.GenerateRequestProperty()))}}
                     
-                    internal static RequestContent{{(_body.Required ? "" : "?")}} Bind(HttpRequest request)
+                    internal static async Task<RequestContent{{(_body.Required ? "" : "?")}}> BindAsync(
+                        HttpRequest request,
+                        CancellationToken cancellationToken)
                     {
                         var requestContentType = request.ContentType;
                         var requestContentMediaType = requestContentType == null ? null : System.Net.Http.Headers.MediaTypeHeaderValue.Parse(requestContentType);

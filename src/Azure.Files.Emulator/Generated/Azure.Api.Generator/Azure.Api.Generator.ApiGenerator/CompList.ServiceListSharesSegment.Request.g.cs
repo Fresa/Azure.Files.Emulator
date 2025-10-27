@@ -14,13 +14,13 @@ internal partial class Request
     internal required Azure.Files.Emulator.CompList.ServiceListSharesSegment.XMsVersionHeader XMsVersion { get; init; }
     internal Azure.Files.Emulator.CompList.ServiceListSharesSegment.XMsFileRequestIntentHeader? XMsFileRequestIntent { get; init; }
 
-    public static Request Bind(HttpContext context)
+    public static Task<Request> BindAsync(HttpContext context, CancellationToken cancellationToken)
     {
-        var request = context.Request;
-        return new Request
+        var httpRequest = context.Request;
+        var request = new Request
         {
             HttpContext = context,
-            Comp = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.CompList.CompQuery>(request, """
+            Comp = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.CompList.CompQuery>(httpRequest, """
 {
   "in": "query",
   "name": "comp",
@@ -32,7 +32,7 @@ internal partial class Request
   ]
 }
 """),
-            Prefix = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            Prefix = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(httpRequest, """
 {
   "in": "query",
   "name": "prefix",
@@ -41,7 +41,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Marker = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(request, """
+            Marker = Azure.Files.Emulator.HttpRequestExtensions.Bind<Corvus.Json.JsonString>(httpRequest, """
 {
   "in": "query",
   "name": "marker",
@@ -50,7 +50,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Maxresults = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.CompList.ServiceListSharesSegment.MaxresultsQuery>(request, """
+            Maxresults = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.CompList.ServiceListSharesSegment.MaxresultsQuery>(httpRequest, """
 {
   "in": "query",
   "name": "maxresults",
@@ -60,7 +60,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Include = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.CompList.ServiceListSharesSegment.IncludeQuery>(request, """
+            Include = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.CompList.ServiceListSharesSegment.IncludeQuery>(httpRequest, """
 {
   "in": "query",
   "name": "include",
@@ -82,7 +82,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            Timeout = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.CompList.ServiceListSharesSegment.TimeoutQuery>(request, """
+            Timeout = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.CompList.ServiceListSharesSegment.TimeoutQuery>(httpRequest, """
 {
   "in": "query",
   "name": "timeout",
@@ -92,7 +92,7 @@ internal partial class Request
   "x-ms-parameter-location": "method"
 }
 """).AsOptional(),
-            XMsVersion = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.CompList.ServiceListSharesSegment.XMsVersionHeader>(request, """
+            XMsVersion = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.CompList.ServiceListSharesSegment.XMsVersionHeader>(httpRequest, """
 {
   "in": "header",
   "name": "x-ms-version",
@@ -106,7 +106,7 @@ internal partial class Request
   "x-ms-parameter-location": "client"
 }
 """),
-            XMsFileRequestIntent = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.CompList.ServiceListSharesSegment.XMsFileRequestIntentHeader>(request, """
+            XMsFileRequestIntent = Azure.Files.Emulator.HttpRequestExtensions.Bind<Azure.Files.Emulator.CompList.ServiceListSharesSegment.XMsFileRequestIntentHeader>(httpRequest, """
 {
   "in": "header",
   "name": "x-ms-file-request-intent",
@@ -123,6 +123,7 @@ internal partial class Request
 }
 """).AsOptional(),
         };
+        return Task.FromResult(request);
     }
 }
 #nullable restore

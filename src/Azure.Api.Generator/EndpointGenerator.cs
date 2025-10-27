@@ -30,7 +30,8 @@ internal sealed class EndpointGenerator(Compilation compilation)
                     Operation operation, 
                     CancellationToken cancellationToken)
                 {
-                    var request = Request.Bind(context);
+                    var request = await Request.BindAsync(context, cancellationToken)
+                        .ConfigureAwait(false);
                     var response = await operation.HandleAsync(request, cancellationToken)
                         .ConfigureAwait(false);
                     response.WriteTo(context.Response);
