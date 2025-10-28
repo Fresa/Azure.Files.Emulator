@@ -4,9 +4,9 @@ using System.Net.Http;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Text;
 
-namespace Azure.Api.Generator;
+namespace Azure.Api.Generator.CodeGeneration;
 
-internal sealed class EndpointGenerator(Compilation compilation)
+internal sealed class OperationGenerator(Compilation compilation)
 {
     private readonly List<(string Namespace, string Path)> _missingHandlers = [];
 

@@ -66,7 +66,7 @@ public sealed class ApiGenerator : IIncrementalGenerator
         var openApi = generatorContext.OpenApiDocument;
         var globalOptions = generatorContext.Options;
         var compilation = generatorContext.Compilation;
-        var endpointGenerator = new EndpointGenerator(compilation);
+        var endpointGenerator = new OperationGenerator(compilation);
         var rootNamespace = compilation.Assembly.Name;
         
         var httpRequestExtensionsGenerator = new HttpRequestExtensionsGenerator(rootNamespace);
