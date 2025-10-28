@@ -6,7 +6,7 @@ namespace Azure.Api.Generator.CodeGeneration;
 
 internal sealed class OperationRouterGenerator(string @namespace)
 {
-    internal SourceCode ForMinimalApi(IEnumerable<(string Namespace, HttpMethod HttpMethod)> operations) =>
+    internal SourceCode ForMinimalApi(List<(string Namespace, HttpMethod HttpMethod)> operations) =>
         new($"{@namespace}/OperationRouter.g.cs",
 $$"""
 #nullable enable
@@ -19,6 +19,13 @@ internal static class OperationRouter
         {{operations.AggregateToString(operation => 
             $"""app.MapMethods({operation.Namespace}.Operation.PathTemplate, ["{operation.HttpMethod.Method}"], {operation.Namespace}.Operation.HandleAsync);""")}}
         return app;
+    }
+    
+    internal static WebApplicationBuilder AddOperations(this WebApplicationBuilder builder)
+    {
+        {{operations.AggregateToString(operation => 
+            $"builder.Services.AddScoped<{operation.Namespace}.Operation>();")}}
+        return builder;
     }
 }
 #nullable restore

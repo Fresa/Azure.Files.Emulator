@@ -14,6 +14,7 @@ internal sealed class EndpointGenerator(Compilation compilation)
     {
         var endpointSource =
             $$"""
+              using Microsoft.AspNetCore.Mvc;
               using System.Threading;
 
               namespace {{@namespace}};
@@ -27,7 +28,7 @@ internal sealed class EndpointGenerator(Compilation compilation)
                 
                 internal static async Task HandleAsync(
                     HttpContext context, 
-                    Operation operation, 
+                    [FromServices] Operation operation, 
                     CancellationToken cancellationToken)
                 {
                     var request = await Request.BindAsync(context, cancellationToken)
