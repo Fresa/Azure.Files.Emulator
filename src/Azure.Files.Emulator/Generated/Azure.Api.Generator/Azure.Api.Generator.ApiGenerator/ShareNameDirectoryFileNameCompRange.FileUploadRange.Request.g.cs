@@ -25,7 +25,7 @@ internal partial class Request
 
     internal sealed class RequestContent
     {
-        internal Azure.Files.Emulator.ShareNameDirectoryFileNameCompRange.FileUploadRange.RequestBodies.ApplicationXml? ApplicationXml { get; private set; }
+        internal Azure.Files.Emulator.ShareNameDirectoryFileNameCompRange.FileUploadRange.Requests.ApplicationXml? ApplicationXml { get; private set; }
 
         internal static async Task<RequestContent?> BindAsync(HttpRequest request, CancellationToken cancellationToken)
         {
@@ -36,7 +36,7 @@ internal partial class Request
                 case "application/xml":
                     return new RequestContent
                     {
-                        ApplicationXml = (await Azure.Files.Emulator.HttpRequestExtensions.BindBodyAsync<Azure.Files.Emulator.ShareNameDirectoryFileNameCompRange.FileUploadRange.RequestBodies.ApplicationXml>(request, cancellationToken).ConfigureAwait(false)).AsOptional()
+                        ApplicationXml = (await Azure.Files.Emulator.HttpRequestExtensions.BindBodyAsync<Azure.Files.Emulator.ShareNameDirectoryFileNameCompRange.FileUploadRange.Requests.ApplicationXml>(request, cancellationToken).ConfigureAwait(false)).AsOptional()
                     };
                 case "":
                     return null;

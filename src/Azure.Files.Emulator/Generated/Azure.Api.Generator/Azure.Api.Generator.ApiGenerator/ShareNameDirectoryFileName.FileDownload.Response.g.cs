@@ -8,12 +8,12 @@ internal abstract partial class Response
     internal abstract void WriteTo(HttpResponse httpResponse);
     internal sealed class OK200 : Response
     {
-        public OK200(Azure.Files.Emulator.ShareNameDirectoryFileName.FileDownload.Content._200.ApplicationXml applicationXml)
+        public OK200(Azure.Files.Emulator.ShareNameDirectoryFileName.FileDownload.Responses._200.ApplicationXml applicationXml)
         {
             ApplicationXml = applicationXml;
         }
 
-        internal Azure.Files.Emulator.ShareNameDirectoryFileName.FileDownload.Content._200.ApplicationXml? ApplicationXml { get; set; }
+        internal Azure.Files.Emulator.ShareNameDirectoryFileName.FileDownload.Responses._200.ApplicationXml? ApplicationXml { get; set; }
 
         internal override void WriteTo(HttpResponse httpResponse)
         {
@@ -28,12 +28,12 @@ internal abstract partial class Response
 
     internal sealed class PartialContent206 : Response
     {
-        public PartialContent206(Azure.Files.Emulator.ShareNameDirectoryFileName.FileDownload.Content._206.ApplicationXml applicationXml)
+        public PartialContent206(Azure.Files.Emulator.ShareNameDirectoryFileName.FileDownload.Responses._206.ApplicationXml applicationXml)
         {
             ApplicationXml = applicationXml;
         }
 
-        internal Azure.Files.Emulator.ShareNameDirectoryFileName.FileDownload.Content._206.ApplicationXml? ApplicationXml { get; set; }
+        internal Azure.Files.Emulator.ShareNameDirectoryFileName.FileDownload.Responses._206.ApplicationXml? ApplicationXml { get; set; }
 
         internal override void WriteTo(HttpResponse httpResponse)
         {
@@ -48,12 +48,12 @@ internal abstract partial class Response
 
     internal sealed class Default : Response
     {
-        public Default(Azure.Files.Emulator.ShareNameDirectoryFileName.FileDownload.Content._Default.ApplicationXml applicationXml)
+        public Default(Azure.Files.Emulator.ShareNameDirectoryFileName.FileDownload.Responses._Default.ApplicationXml applicationXml)
         {
             ApplicationXml = applicationXml;
         }
 
-        internal Azure.Files.Emulator.ShareNameDirectoryFileName.FileDownload.Content._Default.ApplicationXml? ApplicationXml { get; set; }
+        internal Azure.Files.Emulator.ShareNameDirectoryFileName.FileDownload.Responses._Default.ApplicationXml? ApplicationXml { get; set; }
 
         internal override void WriteTo(HttpResponse httpResponse)
         {

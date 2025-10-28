@@ -1,4 +1,4 @@
-﻿using Example.Api.Foo.UpdateFoo.Content._200;
+﻿using Example.Api.Foo.UpdateFoo.Responses._200;
 
 namespace Example.Api.Foo.UpdateFoo;
 

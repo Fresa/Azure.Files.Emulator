@@ -28,12 +28,12 @@ internal abstract partial class Response
 
     internal sealed class Default : Response
     {
-        public Default(Azure.Files.Emulator.ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.Content._Default.ApplicationXml applicationXml)
+        public Default(Azure.Files.Emulator.ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.Responses._Default.ApplicationXml applicationXml)
         {
             ApplicationXml = applicationXml;
         }
 
-        internal Azure.Files.Emulator.ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.Content._Default.ApplicationXml? ApplicationXml { get; set; }
+        internal Azure.Files.Emulator.ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.Responses._Default.ApplicationXml? ApplicationXml { get; set; }
 
         internal override void WriteTo(HttpResponse httpResponse)
         {

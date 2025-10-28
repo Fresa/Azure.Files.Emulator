@@ -28,12 +28,12 @@ internal abstract partial class Response
 
     internal sealed class Default : Response
     {
-        public Default(Azure.Files.Emulator.ShareNameDirectoryFileNameCompRange.FileUploadRange.Content._Default.ApplicationXml applicationXml)
+        public Default(Azure.Files.Emulator.ShareNameDirectoryFileNameCompRange.FileUploadRange.Responses._Default.ApplicationXml applicationXml)
         {
             ApplicationXml = applicationXml;
         }
 
-        internal Azure.Files.Emulator.ShareNameDirectoryFileNameCompRange.FileUploadRange.Content._Default.ApplicationXml? ApplicationXml { get; set; }
+        internal Azure.Files.Emulator.ShareNameDirectoryFileNameCompRange.FileUploadRange.Responses._Default.ApplicationXml? ApplicationXml { get; set; }
 
         internal override void WriteTo(HttpResponse httpResponse)
         {

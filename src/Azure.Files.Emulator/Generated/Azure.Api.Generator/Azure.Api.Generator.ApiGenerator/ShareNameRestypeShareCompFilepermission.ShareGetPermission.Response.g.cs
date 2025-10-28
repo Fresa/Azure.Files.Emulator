@@ -8,12 +8,12 @@ internal abstract partial class Response
     internal abstract void WriteTo(HttpResponse httpResponse);
     internal sealed class OK200 : Response
     {
-        public OK200(Azure.Files.Emulator.ShareNameRestypeShareCompFilepermission.ShareGetPermission.Content._200.ApplicationJson applicationJson)
+        public OK200(Azure.Files.Emulator.ShareNameRestypeShareCompFilepermission.ShareGetPermission.Responses._200.ApplicationJson applicationJson)
         {
             ApplicationJson = applicationJson;
         }
 
-        internal Azure.Files.Emulator.ShareNameRestypeShareCompFilepermission.ShareGetPermission.Content._200.ApplicationJson? ApplicationJson { get; set; }
+        internal Azure.Files.Emulator.ShareNameRestypeShareCompFilepermission.ShareGetPermission.Responses._200.ApplicationJson? ApplicationJson { get; set; }
 
         internal override void WriteTo(HttpResponse httpResponse)
         {
@@ -28,12 +28,12 @@ internal abstract partial class Response
 
     internal sealed class Default : Response
     {
-        public Default(Azure.Files.Emulator.ShareNameRestypeShareCompFilepermission.ShareGetPermission.Content._Default.ApplicationJson applicationJson)
+        public Default(Azure.Files.Emulator.ShareNameRestypeShareCompFilepermission.ShareGetPermission.Responses._Default.ApplicationJson applicationJson)
         {
             ApplicationJson = applicationJson;
         }
 
-        internal Azure.Files.Emulator.ShareNameRestypeShareCompFilepermission.ShareGetPermission.Content._Default.ApplicationJson? ApplicationJson { get; set; }
+        internal Azure.Files.Emulator.ShareNameRestypeShareCompFilepermission.ShareGetPermission.Responses._Default.ApplicationJson? ApplicationJson { get; set; }
 
         internal override void WriteTo(HttpResponse httpResponse)
         {

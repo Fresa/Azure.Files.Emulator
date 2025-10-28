@@ -56,6 +56,61 @@ internal static class OperationRouter
         app.MapMethods(Azure.Files.Emulator.ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.Operation.PathTemplate, ["PUT"], Azure.Files.Emulator.ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.Operation.HandleAsync);
         return app;
     }
+
+    internal static WebApplicationBuilder AddOperations(this WebApplicationBuilder builder)
+    {
+        builder.Services.AddScoped<Azure.Files.Emulator.RestypeServiceCompProperties.ServiceGetProperties.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.RestypeServiceCompProperties.ServiceSetProperties.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.CompList.ServiceListSharesSegment.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameRestypeShare.ShareGetProperties.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameRestypeShare.ShareCreate.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameRestypeShare.ShareDelete.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameRestypeShareCompLeaseAcquire.ShareAcquireLease.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameRestypeShareCompLeaseRelease.ShareReleaseLease.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameRestypeShareCompLeaseChange.ShareChangeLease.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameRestypeShareCompLeaseRenew.ShareRenewLease.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameRestypeShareCompLeaseBreak.ShareBreakLease.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameRestypeShareCompSnapshot.ShareCreateSnapshot.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameRestypeShareCompFilepermission.ShareGetPermission.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameRestypeShareCompFilepermission.ShareCreatePermission.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameRestypeShareCompProperties.ShareSetProperties.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameRestypeShareCompMetadata.ShareSetMetadata.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameRestypeShareCompAcl.ShareGetAccessPolicy.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameRestypeShareCompAcl.ShareSetAccessPolicy.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameRestypeShareCompStats.ShareGetStatistics.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameRestypeShareCompUndelete.ShareRestore.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryRestypeDirectory.DirectoryGetProperties.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryRestypeDirectory.DirectoryCreate.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryRestypeDirectory.DirectoryDelete.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryRestypeDirectoryCompProperties.DirectorySetProperties.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryRestypeDirectoryCompMetadata.DirectorySetMetadata.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryRestypeDirectoryCompList.DirectoryListFilesAndDirectoriesSegment.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryCompListhandles.DirectoryListHandles.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryCompForceclosehandles.DirectoryForceCloseHandles.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryRestypeDirectoryCompRename.DirectoryRename.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryFileName.FileDownload.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryFileName.FileCreate.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryFileName.FileDelete.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryFileName.FileGetProperties.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryFileNameCompProperties.FileSetHTTPHeaders.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryFileNameCompMetadata.FileSetMetadata.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryFileNameCompLeaseAcquire.FileAcquireLease.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryFileNameCompLeaseRelease.FileReleaseLease.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryFileNameCompLeaseChange.FileChangeLease.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryFileNameCompLeaseBreak.FileBreakLease.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryFileNameCompRange.FileUploadRange.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryFileNameCompRangeFromURL.FileUploadRangeFromURL.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryFileNameCompRangelist.FileGetRangeList.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryFileNameCompCopy.FileStartCopy.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryFileNameCompCopyCopyid.FileAbortCopy.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryFileNameCompListhandles.FileListHandles.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryFileNameCompForceclosehandles.FileForceCloseHandles.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryFileNameCompRename.FileRename.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryFileNameRestypeSymboliclink.FileGetSymbolicLink.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryFileNameRestypeSymboliclink.FileCreateSymbolicLink.Operation>();
+        builder.Services.AddScoped<Azure.Files.Emulator.ShareNameDirectoryFileNameRestypeHardlink.FileCreateHardLink.Operation>();
+        return builder;
+    }
 }
 #nullable restore
 

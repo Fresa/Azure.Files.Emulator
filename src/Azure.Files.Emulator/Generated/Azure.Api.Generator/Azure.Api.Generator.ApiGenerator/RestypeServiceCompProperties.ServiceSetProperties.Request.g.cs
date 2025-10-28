@@ -14,7 +14,7 @@ internal partial class Request
 
     internal sealed class RequestContent
     {
-        internal Azure.Files.Emulator.RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml? ApplicationXml { get; private set; }
+        internal Azure.Files.Emulator.RestypeServiceCompProperties.ServiceSetProperties.Requests.ApplicationXml? ApplicationXml { get; private set; }
 
         internal static async Task<RequestContent> BindAsync(HttpRequest request, CancellationToken cancellationToken)
         {
@@ -25,7 +25,7 @@ internal partial class Request
                 case "application/xml":
                     return new RequestContent
                     {
-                        ApplicationXml = (await Azure.Files.Emulator.HttpRequestExtensions.BindBodyAsync<Azure.Files.Emulator.RestypeServiceCompProperties.ServiceSetProperties.RequestBodies.ApplicationXml>(request, cancellationToken).ConfigureAwait(false)).AsOptional()
+                        ApplicationXml = (await Azure.Files.Emulator.HttpRequestExtensions.BindBodyAsync<Azure.Files.Emulator.RestypeServiceCompProperties.ServiceSetProperties.Requests.ApplicationXml>(request, cancellationToken).ConfigureAwait(false)).AsOptional()
                     };
                 default:
                     throw new BadHttpRequestException($"Request body does not support content type {requestContentType}");

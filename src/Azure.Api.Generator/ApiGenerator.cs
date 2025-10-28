@@ -122,8 +122,8 @@ public sealed class ApiGenerator : IIncrementalGenerator
                     parameterGenerators[parameter.GetName()] = new ParameterGenerator(typeDeclaration, parameter, httpRequestExtensionsGenerator);
                 }
 
-                var requestBodyNamespace = $"{operationNamespace}.RequestBodies";
-                var requestBodyDirectory = Path.Combine(operationDirectory, "RequestBodies");
+                var requestBodyNamespace = $"{operationNamespace}.Requests";
+                var requestBodyDirectory = Path.Combine(operationDirectory, "Requests");
                 var body = operation.RequestBody;
                 var requestBodyGenerator = RequestBodyGenerator.Empty;
                 if (body is not null)
@@ -160,8 +160,8 @@ public sealed class ApiGenerator : IIncrementalGenerator
                     operationDirectory);
                 requestSourceCode.AddTo(context);
                 
-                var responseContentNamespace = operationNamespace + ".Content";
-                var responseContentDirectory = Path.Combine(operationDirectory, "Content");
+                var responseContentNamespace = operationNamespace + ".Responses";
+                var responseContentDirectory = Path.Combine(operationDirectory, "Responses");
                 var responses = operation.Responses ?? new OpenApiResponses
                 {
                     ["default"] = new OpenApiResponse()
