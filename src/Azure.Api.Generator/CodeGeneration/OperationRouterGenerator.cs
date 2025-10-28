@@ -7,7 +7,7 @@ namespace Azure.Api.Generator.CodeGeneration;
 internal sealed class OperationRouterGenerator(string @namespace)
 {
     internal SourceCode ForMinimalApi(List<(string Namespace, HttpMethod HttpMethod)> operations) =>
-        new($"{@namespace}/OperationRouter.g.cs",
+        new("OperationRouter.g.cs",
 $$"""
 #nullable enable
 namespace {{@namespace}};
